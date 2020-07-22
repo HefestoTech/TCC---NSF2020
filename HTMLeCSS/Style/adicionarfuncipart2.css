@@ -13,25 +13,24 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row;
-    background-image: linear-gradient(#4F4F4F,#808080);
     height: 12vh;
-    margin-left: 12%;
-    width: 15%;
+    width: 100%;
     justify-content: space-between;
-    z-index: 400;
+    background-color: rgb(221, 219, 219);
+
+
 
 }
-.head2{
-  display: flex;
+.head2 {
+background-color: rgba(163, 0, 0, 0.849);
+    margin-left: 12%;
+    display: flex;
     align-items: center;
     flex-direction: row;
-    background-image: linear-gradient(#4F4F4F,#808080);
     height: 12vh;
-    width:88%;
-    justify-content: space-between; 
-    position: fixed; 
-z-index: 400;
-
+    width: 88%;
+    justify-content: space-between;
+    position: fixed;
 }
 .lg {
     display: flex;
@@ -54,26 +53,41 @@ z-index: 400;
     flex-direction: row;
     width: 30vw;
 }
+
+
 .login {
     margin-left: 50px;
     margin-right: 10px;
 }
 
-.usuario{
-    width: 100px;
+.usuario {
+    width: 150px;
     display: flex;
     height: 4vh;
     margin-right: 30px;
+    align-items: center;
+    justify-content: center;
 }
 .sino img {
+
     width: 4vw;
     height: 4vh;
 }
+
 .user img {
 
     width: 4vw;
     height: 4vh;
 }
+.perfilselec {
+    background-color: transparent;
+    border-color: #808080;
+    width: 18px;
+    border-style: none;
+    height: 30px;
+}
+
+
 .containermeio{
     height: 110vh;
     display: flex;
@@ -82,8 +96,8 @@ z-index: 400;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: linear-gradient(#4F4F4F,#808080);
-    width: 12vw;
+    background-color: rgba(163, 0, 0, 0.849);
+    width: 12%;
     height: 100vh;
     position: fixed;
     margin-top: -79px;

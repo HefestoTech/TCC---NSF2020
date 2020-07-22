@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/procurarfunci.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Procurar Funcionário</title>
+</head>
+<body>
+    
+
+<header class="header">
+    <div class="head2">
+        <div class="lg">
+            <img src="../Images/logo.png">
+            <h2><span>LOGOOO</span></h2>
+        </div>
+
+        <div class="search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="se btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+
+
+        <div class="usuario">
+            <div class="sino">
+                <img src="../Images/sino.svg">
+            </div>
+
+            <div class="user">
+                <img src="../Images/user.svg">
+            </div>
+            <div class="perfil">
+                <select class="perfilselec" name="" id="">
+                    <option value="1">Conta</option>
+                    <option value="2">Sair</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="MEIO">
+        <div class="menu">
+            <div class="lateral">
+                <div class="log">
+                    <h3>
+                        <a class="link" href="../Pages/opcoesusuario.html">> RH</a>
+                    </h3>
+                </div>
+
+                <div class="reg">
+                    <h3>
+                        <a class="link" href="">> Compras</a>
+                    </h3>
+                </div>
+
+                <div class="data">
+                    <h3>
+                        <a class="link" href=""> > Vendas</a>
+                    </h3>
+                </div>
+
+                <div class="end">
+                    <h3>
+                        <a class="link" href=""> > Estoque</a>
+                    </h3>
+                </div>
+
+                <div class="end">
+                    <h3>
+                        <a class="link" href=""> > Financeiro</a>
+                    </h3>
+                </div>
+               
+            </div>
+        <div class="support">
+            <img src="../Images/support.png">
+            <h3>
+                <a class="link" href="">Suporte</a>
+            </h3>
+        </div>
+        </div>
+            <div class="containercentral">
+                <div class="centro">
+                    <div class="faixa0">
+                        <h4>Procurar Funcionário</h4>
+                    </div>
+                    <div class="faixa">
+                        <div class="nome">
+                            Nome: &nbsp;
+                            <div class="inputs">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="nascimento">
+                            Nascimento: &nbsp;
+                            <div class="inputs2">
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="id">
+                            ID: &nbsp;
+                            <div class="inputs3">
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            Sexo:
+                            <span class="masc"> <input type="radio" name="sexo" id="sexofunci"> M</span>
+                            <span class="masc"> <input type="radio" name="sexo" id=""> F</span>
+                            <span class="masc"> <input type="radio" name="sexo" id=""> NB</span>
+                        </div>
+                    </div>
+                    <div class="faixa2">
+                        <div class="nome">
+                            Email: &nbsp;
+                            <div class="inputs">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="depart">
+                            Departamento:&nbsp;
+                            <select class="form-control" name="" id="select1">
+                                <option value="1">Tecnico de Informação (TI)</option>
+                                <option value="1">Comercial</option>
+                                <option value="1">Administação</option>
+                                <option value="1">Recursos Humanos (RH)</option>
+                                <option value="1">Financeiro</option>
+                            </select>
+                        </div>
+                        <div class="cargo">
+                            Cargo:&nbsp;
+                            <select class="form-control" name="" id="select1">
+                                <option value="1">Programador</option>
+                            </select>
+                        </div>
+                        <div class="procura">
+                            <img class="search2" src="../Images/search.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="containertable ">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th>Nome</th>
+                                            <th>Telefone</th>
+                                            <th>CPF</th>
+                                            <th>Email</th>
+                                            <th>Endereço</th>
+                                            <th>CEP</th>
+                                            <th>NºResidêncial</th>
+                                            <th>Complemento</th>
+                                            <th>Nascimento</th>
+                                            <th>Sexo</th>
+                                            <th>NIS</th>
+                                            <th>Alergico&nbsp;Medicação</th>
+                                            <th>Alergico&nbsp;Refeição</th>
+                                            <th>Departamento</th>
+                                            <th>Cargo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Felipe Conceição Silva</td>
+                                            <td>(11)971333770</td>
+                                            <td>878923789173801</td>
+                                            <td>felipecsilva@gmail.com</td>
+                                            <td>Frederick Dellius</td>
+                                            <td>04855240</td>
+                                            <td>41</td>
+                                            <td>Não tem</td>
+                                            <td>10/05/2000</td>
+                                            <td>M</td>
+                                            <td>04855243210</td>
+                                            <td>Falso</td>
+                                            <td>Falso</td>
+                                            <td>Técnico de Informação (TI)</td>
+                                            <td>Programador</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>José Silveiro</td>
+                                            <td>(11)971333770</td>
+                                            <td>878923789173801</td>
+                                            <td>jose@gmail.com</td>
+                                            <td>Frederick Dellius</td>
+                                            <td>04855240</td>
+                                            <td>41</td>
+                                            <td>Não tem</td>
+                                            <td>10/05/2000</td>
+                                            <td>M</td>
+                                            <td>04855243210</td>
+                                            <td>Falso</td>
+                                            <td>Falso</td>
+                                            <td>Técnico de Informação (TI)</td>
+                                            <td>Programador</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>José Silveiro</td>
+                                            <td>(11)971333770</td>
+                                            <td>878923789173801</td>
+                                            <td>jose@gmail.com</td>
+                                            <td>Frederick Dellius</td>
+                                            <td>04855240</td>
+                                            <td>41</td>
+                                            <td>Não tem</td>
+                                            <td>10/05/2000</td>
+                                            <td>M</td>
+                                            <td>04855243210</td>
+                                            <td>Falso</td>
+                                            <td>Falso</td>
+                                            <td>Técnico de Informação (TI)</td>
+                                            <td>Programador</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                    </div>
+                </div>
+                       
+                       
+            </div>
+        </section>           
+                    
+
+
+</body>
+</html>
