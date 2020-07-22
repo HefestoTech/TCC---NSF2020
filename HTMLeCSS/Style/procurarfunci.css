@@ -280,3 +280,12 @@ background-color: rgba(163, 0, 0, 0.849);
     margin-right: 50px;
     align-items: center;
 }
+.remover{
+    width: 32px;
+    height: 33px;
+}
+.btnremover{
+    border-color: transparent;
+    border-style: solid;
+    background-color: transparent;
+}
