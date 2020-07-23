@@ -236,4 +236,13 @@ background-color: rgba(163, 0, 0, 0.849);
     margin-left: 5px;
     width: 300px;
 }
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88%;
+    margin-left: 12%;
+    height: 10vh;
+    background-color: rgba(163, 0, 0, 0.849);
+}
 

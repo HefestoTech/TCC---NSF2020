@@ -21,7 +21,7 @@ body {
 
 }
 .head2 {
-    background-color: rgba(15, 15, 25, 0.849);
+    background-color: rgba(163, 0, 0, 0.849);
     margin-left: 12%;
     display: flex;
     align-items: center;
@@ -95,7 +95,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(15, 15, 25, 0.849);
+    background-color: rgba(163, 0, 0, 0.849);
     width: 12%;
     height: 100vh;
     position: fixed;
@@ -168,5 +168,18 @@ body {
 .bemvindo{
     width: 50%;
     height: 50%;
-    background-color: turquoise;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88%;
+    margin-left: 12%;
+    height: 10vh;
+    background-color: rgba(163, 0, 0, 0.849);
 }

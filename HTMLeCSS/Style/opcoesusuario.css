@@ -274,3 +274,12 @@ h4{
 .links{
     color: greenyellow;
 }
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88%;
+    margin-left: 12%;
+    height: 10vh;
+    background-color: rgba(163, 0, 0, 0.849);
+}
