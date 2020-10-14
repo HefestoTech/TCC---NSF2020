@@ -7,7 +7,8 @@
  CREATE TABLE tb_login (
   id_login INT PRIMARY KEY AUTO_INCREMENT,
   ds_email VARCHAR(45) NOT NULL,
-  ds_senha VARCHAR(45) NULL NULL
+  ds_senha VARCHAR(45) NOT NULL,
+  ds_perfil VARCHAR(45)  NOT NULL
   );
 
  CREATE TABLE tb_funcionario (

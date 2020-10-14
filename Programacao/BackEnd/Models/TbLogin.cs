@@ -20,8 +20,12 @@ namespace BackEnd.Models
         [Required]
         [Column("ds_email", TypeName = "varchar(45)")]
         public string DsEmail { get; set; }
+        [Required]
         [Column("ds_senha", TypeName = "varchar(45)")]
         public string DsSenha { get; set; }
+        [Required]
+        [Column("ds_perfil", TypeName = "varchar(45)")]
+        public string DsPerfil { get; set; }
 
         [InverseProperty("IdLoginNavigation")]
         public virtual ICollection<TbCliente> TbCliente { get; set; }
