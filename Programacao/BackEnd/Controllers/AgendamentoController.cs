@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Net;
+using System.Text.RegularExpressions;
 
 
 namespace BackEnd.Controllers
@@ -13,6 +17,7 @@ namespace BackEnd.Controllers
     public class AgendamentoController : ControllerBase
     {
         Business.AgendamentoBusiness business = new Business.AgendamentoBusiness();
+        Business.EnviarEmailBusiness enviarEmailBusiness = new Business.EnviarEmailBusiness();
         Utils.GeralConversor conversor = new Utils.GeralConversor();
         
         [HttpGet("Dentista/Disponivel")]
@@ -39,12 +44,14 @@ namespace BackEnd.Controllers
         }
        
         [HttpPost("cadastrar/cliente")]
-        public ActionResult<Models.TbConsulta> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
+        public ActionResult<string> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
         {
             try
             {
                 Models.TbConsulta consulta = conversor.ParaTbConsulta(request);
-                return business.AgendarNovaConsultaCliente(consulta); 
+                business.AgendarNovaConsultaCliente(consulta); 
+                string email = business.PegarEmailUsuario(consulta.IdCliente);
+                return enviarEmailBusiness.EnviarEmail(email);
             }
             catch (System.Exception ex)
             {
@@ -53,6 +60,9 @@ namespace BackEnd.Controllers
                 ));
             }
         }
+
+       
+       
 
         [HttpPut("Remarcar")]
         public ActionResult<Models.Response.SucessoResponse> RemarcarConsulta (Models.Request.RemarcacaoRequest request)

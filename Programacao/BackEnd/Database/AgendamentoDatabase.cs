@@ -103,5 +103,12 @@ namespace BackEnd.Database
             consultaNova.DtConsulta = request.NovoHorario;
             ctx.SaveChanges();
         }
+
+        public string PegarEmailUsuario(int idCliente)
+        {
+            Models.TbCliente tbCliente = ctx.TbCliente.Include( x => x.IdLoginNavigation).FirstOrDefault( item => item.IdCliente == idCliente);
+            string email = tbCliente.IdLoginNavigation.DsEmail;
+            return email;     
+        }
     }
 }

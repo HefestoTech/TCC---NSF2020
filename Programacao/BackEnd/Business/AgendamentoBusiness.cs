@@ -60,5 +60,10 @@ namespace BackEnd.Business
             
             dbAgendamento.RemarcarConsulta(request);
         }
+
+        public string PegarEmailUsuario (int idCliente)
+        {
+            return dbAgendamento.PegarEmailUsuario(idCliente);
+        }
     }
 }

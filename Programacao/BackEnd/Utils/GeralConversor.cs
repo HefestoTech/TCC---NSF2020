@@ -56,7 +56,7 @@ namespace BackEnd.Utils
         public Models.TbConsulta ParaTbConsulta (Models.Request.NovaConsultaClienteRequest request)
         {
             Models.TbConsulta NovaConsulta = new Models.TbConsulta();
-
+            
             NovaConsulta.IdFuncionario = request.IdFuncionario;
             NovaConsulta.DsSituacao = "Agendado";
             NovaConsulta.DtConsulta = request.Data;
