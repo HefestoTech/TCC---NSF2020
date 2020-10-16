@@ -15,12 +15,19 @@ namespace BackEnd.Controllers
         Business.AgendamentoBusiness business = new Business.AgendamentoBusiness();
         Utils.GeralConversor conversor = new Utils.GeralConversor();
         
+        [HttpGet("Dentista/Disponivel")]
+        public ActionResult<List<Models.Response.DentistaResponse>> ListarDentistasDisponiveis (Models.Request.HorarioRequest horario)
+        {
+             List<Models.TbFuncionario> funcionarios = business.ListarDentistasDisponiveis(horario.Horario);
+             return conversor.ParaListaDentistasResponse(funcionarios);
+        }
+        
         [HttpGet("ValorDaConsulta")]
         public ActionResult<Models.Response.ValoresDaConsulta> PegarValorDaConsulta (Models.Request.ValoresDaConsultaRequest request)
         {
             try
             {
-                Models.TbServico servico = business.PegarValorDaConsulta(request.IdServico);
+                Models.TbServico servico = business.PegarValorDaConsulta(request);
                 return conversor.TransformarParaValoresDaConsulta(servico, request);
             }
             catch (System.Exception ex)
@@ -31,7 +38,7 @@ namespace BackEnd.Controllers
             }   
         }
        
-        [HttpPost("cadastrar/agendamento/cliente")]
+        [HttpPost("cadastrar/cliente")]
         public ActionResult<Models.TbConsulta> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
         {
             try

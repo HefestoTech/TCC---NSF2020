@@ -12,6 +12,21 @@ namespace BackEnd.Utils
 
         Database.LoginDatabase dbLogin = new Database.LoginDatabase();
 
+        public List<Models.Response.DentistaResponse> ParaListaDentistasResponse (List<Models.TbFuncionario> funcionarios)
+        {
+            List<Models.Response.DentistaResponse> dentistaResponse = new List<Models.Response.DentistaResponse>();
+
+            foreach(Models.TbFuncionario item in funcionarios)
+            {
+                Models.Response.DentistaResponse resp = new Models.Response.DentistaResponse();
+                resp.Id = item.IdFuncionario;
+                resp.Nome = item.NmFuncionario;
+                dentistaResponse.Add(resp);
+            }
+
+            return dentistaResponse;
+        }
+
         public Models.Response.LoginResponse ParaLoginResponse (Models.TbLogin login)
         {
        
@@ -26,7 +41,8 @@ namespace BackEnd.Utils
                 loginResponse.Nome = cliente.NmCliente;
                 loginResponse.IdUsuario = cliente.IdCliente;
             }
-            else if(loginResponse.Perfil == "Funcionário")
+            
+            if(loginResponse.Perfil == "Funcionário")
             {
                 Models.TbFuncionario funcionario = dbLogin.PegarInformacoesFuncionario(login.IdLogin);
                 loginResponse.Nome = funcionario.NmFuncionario;

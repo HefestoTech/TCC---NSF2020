@@ -19,12 +19,16 @@ namespace BackEnd.Database
 
         public Models.TbFuncionario PegarInformacoesFuncionario (int idLogin)
         {
-            return ctx.TbFuncionario.FirstOrDefault( x => x.IdLogin == idLogin);
+            Models.TbLogin login = ctx.TbLogin.FirstOrDefault(x => x.IdLogin == idLogin);
+            int numeroIdLogin = login.IdLogin;
+            Models.TbFuncionario funcionario = ctx.TbFuncionario.FirstOrDefault(x => x.IdLogin == numeroIdLogin);
+            return funcionario;
         }
 
         public Models.TbCliente PegarInformacoesCliente(int idLogin)
         {
-            return ctx.TbCliente.FirstOrDefault(x => x.IdLogin == idLogin);
+            Models.TbCliente cliente = ctx.TbCliente.FirstOrDefault(x => x.IdLogin == idLogin);
+            return cliente;
         }
     }
 }
