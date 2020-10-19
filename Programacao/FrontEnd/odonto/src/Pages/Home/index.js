@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './App.css';
+import Dentista from '../../Assets/dentista.jpg'
+import './Home.css';
 
-function App() {
+export default function App() {
   return (
     <div className="Cont">
       <div className="head">
@@ -31,7 +32,7 @@ function App() {
               
             </div>
             <div className="ft"> 
-              
+                <img src={Dentista}/>
             </div>
 
         </div>
@@ -95,4 +96,4 @@ function App() {
   );
 }
 
-export default App;
+

@@ -43,12 +43,13 @@
     .buttns{
       display: flex;
       flex-direction: column;
+      justify-content: center;
       width: 15vw;
       height: 13vh;
     }             
 
       .bt2{
-        margin-top: 5px;
+        margin-top: 15px;
       }
 
       .bt2,.bt1{
@@ -83,7 +84,8 @@
         justify-content: space-between;
         width: 32vw;
         height: 65vh;
-        margin-left: 40px;
+        margin-left: 10px;
+        background-color: aqua;
       }
 
         .local{
@@ -106,11 +108,17 @@
 
 
       .ft{
-        width: 41vw;
-        height: 65vh;
-        margin-left: 25px;
-        background-color: rgb(70, 102, 128);
+        width: 50vw;
+        height: 43vh;
         border-radius: 20px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+      }
+
+      img{
+        width: 45vw;
+        height: 50;
+        border-radius: 10px;
       }
 
     .tab{
