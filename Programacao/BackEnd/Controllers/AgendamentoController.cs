@@ -41,14 +41,15 @@ namespace BackEnd.Controllers
         }
        
         [HttpPost("cadastrar/cliente")]
-        public ActionResult<string> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
+        public ActionResult<Models.Response.SucessoResponse> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
         {
             try
             {
                 Models.TbConsulta consulta = conversor.ClienteParaTbConsulta(request);
                 business.AgendarNovaConsulta(consulta, null); 
                 string email = business.PegarEmailUsuario(consulta.IdCliente);
-                return enviarEmailBusiness.EnviarEmail(email);
+                enviarEmailBusiness.EnviarEmail(email);
+                return new Models.Response.SucessoResponse($"Enviamos um email para {email} com as informações da consulta!");
             }
             catch (System.Exception ex)
             {
@@ -75,11 +76,23 @@ namespace BackEnd.Controllers
         }
 
         [HttpPost("cadastrar/funcionario")]
-        public ActionResult<string> AgendarNovaConsultaFuncionario (Models.Request.NovaConsultaFuncionarioRequest request)
+        public ActionResult<Models.Response.SucessoResponse> AgendarNovaConsultaFuncionario (Models.Request.NovaConsultaFuncionarioRequest request)
         {
-            Models.TbConsulta tbConsulta = conversor.FuncionarioParaTbConsulta(request);
-            business.AgendarNovaConsulta(tbConsulta, request.EmailCliente);
-            return null;
+
+            try
+            {
+                Models.TbConsulta tbConsulta = conversor.FuncionarioParaTbConsulta(request);
+                Models.TbConsulta consultaAgendada = business.AgendarNovaConsulta(tbConsulta, request.EmailCliente);
+                string email = request.EmailCliente;
+                enviarEmailBusiness.EnviarEmail(email);
+                return new Models.Response.SucessoResponse($"Enviamos um email para {email} com as informações da consulta!");
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
         }
 
     }

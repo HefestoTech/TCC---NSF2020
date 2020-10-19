@@ -11,7 +11,7 @@ namespace BackEnd.Business
 {
     public class EnviarEmailBusiness
     {
-        public string EnviarEmail(string destinatario)
+        public void EnviarEmail(string destinatario)
         {
 
             MailMessage mensagem = new MailMessage("teste0123401234@gmail.com", "felipecsilva207@gmail.com", "testee", "só testandooo");
@@ -28,7 +28,6 @@ namespace BackEnd.Business
                 smtpClient.Send(mensagem);
             }
 
-            return "Enviamos um email para sua conta com as informações da consulta!";
         }
 
     }

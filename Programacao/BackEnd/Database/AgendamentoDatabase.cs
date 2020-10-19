@@ -85,7 +85,7 @@ namespace BackEnd.Database
            return servico;
         }
         
-        public Models.TbConsulta AgendarNovaConsultaCliente(Models.TbConsulta request)
+        public Models.TbConsulta AgendarNovaConsulta(Models.TbConsulta request)
         {
            ctx.TbConsulta.Add(request);
            ctx.SaveChanges();
@@ -109,6 +109,17 @@ namespace BackEnd.Database
             Models.TbCliente tbCliente = ctx.TbCliente.Include( x => x.IdLoginNavigation).FirstOrDefault( item => item.IdCliente == idCliente);
             string email = tbCliente.IdLoginNavigation.DsEmail;
             return email;     
+        }
+
+        public int DescobrirClientePeloEmail (string email)
+        {
+            Models.TbLogin tbLogin = ctx.TbLogin.FirstOrDefault(x => x.DsEmail == email);
+            
+            if(tbLogin == null)
+               throw new ArgumentException($"Nenhum cliente com o email {email} econtrado");
+            
+            Models.TbCliente cliente = ctx.TbCliente.FirstOrDefault( x => x.IdLogin == tbLogin.IdLogin);
+            return cliente.IdCliente;
         }
     }
 }

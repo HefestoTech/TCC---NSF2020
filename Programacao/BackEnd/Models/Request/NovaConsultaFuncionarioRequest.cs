@@ -7,7 +7,6 @@ namespace BackEnd.Models.Request
 {
     public class NovaConsultaFuncionarioRequest
     {
-       public int IdCliente {get; set;}
        public int IdFuncionario {get; set;}
        public int IdServico {get; set;}
        public string EmailCliente { get; set; }

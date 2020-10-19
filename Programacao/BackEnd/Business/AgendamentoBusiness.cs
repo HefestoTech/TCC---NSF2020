@@ -46,7 +46,16 @@ namespace BackEnd.Business
             validador.ValidarPagamento(request.TpFormaPagamento, request.NrParcelas);
 
             if(email == null)
-                return dbAgendamento.AgendarNovaConsultaCliente(request); 
+                return dbAgendamento.AgendarNovaConsulta(request); 
+            else
+            {
+                validador.ValidarEmail(email);
+                int IdCliente = dbAgendamento.DescobrirClientePeloEmail(email);
+                
+                request.IdCliente = IdCliente;
+                return dbAgendamento.AgendarNovaConsulta(request);
+
+            }    
            
         }
 

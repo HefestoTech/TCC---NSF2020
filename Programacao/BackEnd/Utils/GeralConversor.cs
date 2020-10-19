@@ -82,7 +82,6 @@ namespace BackEnd.Utils
             NovaConsulta.DsSituacao = "Agendado";
             NovaConsulta.DtConsulta = request.Data;
             NovaConsulta.DtInclusao = DateTime.Now;
-            NovaConsulta.IdCliente = request.IdCliente;
             NovaConsulta.IdFuncionario = request.IdFuncionario;
             NovaConsulta.IdServico = request.IdServico;
             NovaConsulta.NrParcelas = request.QtdParcelas;
