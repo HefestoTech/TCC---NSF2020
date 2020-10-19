@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Mail;
-using System.Net.Mime;
-using System.Net;
-using System.Text.RegularExpressions;
+
 
 
 namespace BackEnd.Controllers
