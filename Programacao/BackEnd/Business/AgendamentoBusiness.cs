@@ -27,7 +27,7 @@ namespace BackEnd.Business
             return dbAgendamento.PegarInformacoesServico(request);
         }
         
-        public Models.TbConsulta AgendarNovaConsultaCliente(Models.TbConsulta request)
+        public Models.TbConsulta AgendarNovaConsulta(Models.TbConsulta request, string email)
         {
             if(request.IdServico.ToString() == null)
                throw new ArgumentException("Obrigatório a escolha de um serviço");
@@ -45,7 +45,9 @@ namespace BackEnd.Business
 
             validador.ValidarPagamento(request.TpFormaPagamento, request.NrParcelas);
 
-            return dbAgendamento.AgendarNovaConsultaCliente(request); 
+            if(email == null)
+                return dbAgendamento.AgendarNovaConsultaCliente(request); 
+           
         }
 
         public void RemarcarConsulta(Models.Request.RemarcacaoRequest request)

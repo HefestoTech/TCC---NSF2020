@@ -45,8 +45,8 @@ namespace BackEnd.Controllers
         {
             try
             {
-                Models.TbConsulta consulta = conversor.ParaTbConsulta(request);
-                business.AgendarNovaConsultaCliente(consulta); 
+                Models.TbConsulta consulta = conversor.ClienteParaTbConsulta(request);
+                business.AgendarNovaConsulta(consulta, null); 
                 string email = business.PegarEmailUsuario(consulta.IdCliente);
                 return enviarEmailBusiness.EnviarEmail(email);
             }
@@ -57,9 +57,6 @@ namespace BackEnd.Controllers
                 ));
             }
         }
-
-       
-       
 
         [HttpPut("Remarcar")]
         public ActionResult<Models.Response.SucessoResponse> RemarcarConsulta (Models.Request.RemarcacaoRequest request)
@@ -75,6 +72,14 @@ namespace BackEnd.Controllers
                     ex.Message, 400
                 ));
             }
+        }
+
+        [HttpPost("cadastrar/funcionario")]
+        public ActionResult<string> AgendarNovaConsultaFuncionario (Models.Request.NovaConsultaFuncionarioRequest request)
+        {
+            Models.TbConsulta tbConsulta = conversor.FuncionarioParaTbConsulta(request);
+            business.AgendarNovaConsulta(tbConsulta, request.EmailCliente);
+            return null;
         }
 
     }
