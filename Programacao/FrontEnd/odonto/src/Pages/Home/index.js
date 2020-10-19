@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Dentista from '../../Assets/dentista.jpg'
+import Odonto from '../../Assets/odonto.png'
 import './Home.css';
 
 export default function App() {
@@ -10,7 +11,7 @@ export default function App() {
         <h1 className="logoname">Odonto</h1>
         <h3 className="text1">Seu sorriso fica muito mais lindo perto de nós, Dentistas, cuidando dele!</h3>
         <div className="buttns">
-          <button className="bt1 btn btn-outline-danger">Logar</button>
+        <Link to="/login"><button className="bt1 btn btn-outline-danger" > Logar</button></Link> 
           <button className="bt2 btn btn-outline-danger">Cadastrar</button>
         </div>
       </div>
@@ -20,7 +21,7 @@ export default function App() {
             <div className="inf">
 
               <div className="local">
-                <h2>Onde estamos</h2> 
+                <h2> Onde estamos.</h2> 
                 <h3>R. Sorrisão, 123</h3>
                 <h3>Jd. Bucal,SP</h3>
               </div>
@@ -40,8 +41,8 @@ export default function App() {
         <div className="tab">
             <div className="tabinto">
             <h4>Tabela de preços das especializações em destaque!</h4>
-              <table className="table table-borderless"> 
-                
+              <table className="table table-borderless">
+
                 <thead>
                   <tr>
                     <td>Clareamento</td>
@@ -85,7 +86,7 @@ export default function App() {
             </div>
 
             <div className="icon1">
-              <image></image>
+              <img src={Odonto} />
             </div>
         </div>
       </div>
