@@ -1,10 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
-
 
 namespace BackEnd.Business
 {
@@ -13,9 +9,15 @@ namespace BackEnd.Business
     {
         Database.AgendamentoDatabase dbAgendamento = new Database.AgendamentoDatabase();
         Validador.ValidadorBusiness validador = new Validador.ValidadorBusiness();
+        
         public List<Models.TbFuncionario> ListarDentistasDisponiveis(DateTime data)
         {
-            return dbAgendamento.ListarDentistasDisponiveis(data);
+            List<Models.TbFuncionario> funcionarios = dbAgendamento.ListarDentistasDisponiveis(data);
+            
+            if(funcionarios.Count == 0 || funcionarios == null)
+               throw new ArgumentException("Não ha dentistas disponiveis nesse horário.");
+                
+                return funcionarios;
         }
         
         public Models.TbServico PegarValorDaConsulta(Models.Request.ValoresDaConsultaRequest request)
@@ -54,9 +56,7 @@ namespace BackEnd.Business
                 
                 request.IdCliente = IdCliente;
                 return dbAgendamento.AgendarNovaConsulta(request);
-
-            }    
-           
+            }      
         }
 
         public void RemarcarConsulta(Models.Request.RemarcacaoRequest request)

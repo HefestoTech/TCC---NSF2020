@@ -80,6 +80,18 @@ namespace BackEnd.Business.Validador
                 throw new ArgumentException("Você ja tem uma consulta nesse horário");
         }
 
+        public void ValidarNota (int? nota)
+        {
+            if(nota == null)
+               throw new ArgumentException("A nota é obrigatória");
+
+            if(nota < 1)
+               throw new ArgumentException("A nota não pode ser menor do que 1");
+
+            if(nota > 5)
+               throw new ArgumentException("A nota não pode ser maior do que 5");   
+        }
+
 
     }
 }
