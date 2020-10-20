@@ -11,7 +11,7 @@ namespace BackEnd.Business.Validador
         Database.AgendamentoDatabase dbAgendamento = new Database.AgendamentoDatabase();
         public void ValidarEmail (string email)
         {
-           if(!email.Contains("@gmail.com") && !email.Contains("@outlook.com") && 
+           if(!email.Contains("@gmail.com") && !email.Contains("@hotmail.com") && 
               !email.Contains("@bol.com"))
             throw new ArgumentException("O E-mail esta incorreto");
         }
