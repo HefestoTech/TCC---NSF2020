@@ -119,11 +119,20 @@ namespace BackEnd.Database
             return cliente.IdCliente;
         }
 
-        public void CancelarConsulta(int id)
+        public  Models.TbConsulta CancelarConsulta(int id)
         {
             Models.TbConsulta consulta = this.PegarConsulta(id);
             consulta.DsSituacao = "Cancelado";
             ctx.SaveChanges();
+            return consulta;
+        }
+
+        public Models.TbConsulta AlterarSituação(int idConsulta, string novaSituacao)
+        {
+            Models.TbConsulta consulta = this.PegarConsulta(idConsulta);
+            consulta.DsSituacao = novaSituacao;
+            ctx.SaveChanges();
+            return consulta;
         }
     }
 }

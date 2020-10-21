@@ -72,11 +72,18 @@ namespace BackEnd.Business
             return dbAgendamento.RemarcarConsulta(request);
         }
 
-        public void CancelarConsulta(int id)
+        public Models.TbConsulta CancelarConsulta(int id)
         {
            validador.ValidarId(id);
 
-           dbAgendamento.CancelarConsulta(id);
+           return dbAgendamento.CancelarConsulta(id);
+        }
+
+        public Models.TbConsulta AlterarSituação(int idConsulta, string novaSituacao)
+        {
+           validador.ValidarId(idConsulta);
+
+           return dbAgendamento.AlterarSituação(idConsulta, novaSituacao);
         }
 
     }

@@ -108,12 +108,40 @@ namespace BackEnd.Controllers
         {
             try
             {
-                business.CancelarConsulta(idconsulta);
+                Models.TbConsulta consulta = business.CancelarConsulta(idconsulta);
+
+                Models.Response.ConsultaResponse consultaResponse = conversor.ParaConsultaResponse(consulta);
+
+                enviarEmailBusiness.EnviarEmailDeCancelamentoDaConsulta(consultaResponse);
+
                 return new Models.Response.SucessoResponse("Consulta cancelada com sucesso");
             }
             catch (System.Exception ex)
             {
                 return BadRequest(new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
+        }
+
+        [HttpPut("alterar/situacao/{idConsulta}")]
+        public ActionResult<Models.Response.SucessoResponse> AlterarSituação (int idConsulta, string novaSituacao)
+        {
+            try
+            {
+                Models.TbConsulta consulta = business.AlterarSituação(idConsulta, novaSituacao);
+
+                if(consulta.DsSituacao == "Concluido")
+                {
+                    Models.Response.ConsultaResponse consultaResponse = conversor.ParaConsultaResponse(consulta);
+                    enviarEmailBusiness.EnviarEmailDeAvaliacaoDaConsulta(consultaResponse);
+                }
+
+                return new Models.Response.SucessoResponse("Situação da consulta alterada com sucesso!");
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest (new Models.Response.ErroResponse(
                     ex.Message, 400
                 ));
             }
