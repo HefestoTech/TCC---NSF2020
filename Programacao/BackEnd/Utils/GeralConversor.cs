@@ -58,12 +58,11 @@ namespace BackEnd.Utils
             Models.TbConsulta NovaConsulta = new Models.TbConsulta();
             
             NovaConsulta.IdFuncionario = request.IdFuncionario;
+            NovaConsulta.IdCliente = request.IdCliente;
+            NovaConsulta.IdServico = request.IdServico;
             NovaConsulta.DsSituacao = "Agendado";
             NovaConsulta.DtConsulta = request.Data;
             NovaConsulta.DtInclusao = DateTime.Now;
-            NovaConsulta.IdCliente = request.IdCliente;
-            NovaConsulta.IdFuncionario = request.IdFuncionario;
-            NovaConsulta.IdServico = request.IdServico;
             NovaConsulta.NrParcelas = request.QtdParcelas;
             NovaConsulta.TpFormaPagamento = request.FormaDePagamento;
             NovaConsulta.VlDesconto = request.Desconto;
@@ -113,8 +112,20 @@ namespace BackEnd.Utils
               valores.ValorParcelado = valores.Total / request.QuantidadeParcelas;
             }
             
-            
             return valores;
+        }
+
+        
+        public Models.Response.ConsultaResponse ParaConsultaResponse (Models.TbConsulta consulta)
+        {
+            Models.Response.ConsultaResponse consultaResponse = new Models.Response.ConsultaResponse();
+            consultaResponse.Email = consulta.IdClienteNavigation.IdLoginNavigation.DsEmail;
+            consultaResponse.HorarioConsulta = consulta.DtConsulta;
+            consultaResponse.HorarioInclusao = consulta.DtInclusao;
+            consultaResponse.NomeCliente = consulta.IdClienteNavigation.NmCliente;
+            consultaResponse.NomeFuncionario = consulta.IdFuncionarioNavigation.NmFuncionario;
+            consultaResponse.Servico = consulta.IdServicoNavigation.NmServico;
+            return consultaResponse;
         }
     }
 }

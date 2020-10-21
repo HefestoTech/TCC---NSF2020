@@ -41,15 +41,18 @@ namespace BackEnd.Controllers
         }
        
         [HttpPost("cadastrar/cliente")]
-        public ActionResult<Models.Response.SucessoResponse> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
+        public ActionResult<Models.Response.ConsultaResponse> AgendarNovaConsultaCliente (Models.Request.NovaConsultaClienteRequest request)
         {
             try
             {
                 Models.TbConsulta consulta = conversor.ClienteParaTbConsulta(request);
-                business.AgendarNovaConsulta(consulta, null); 
-                string email = business.PegarEmailUsuario(consulta.IdCliente);
-                enviarEmailBusiness.EnviarEmail(email);
-                return new Models.Response.SucessoResponse($"Enviamos um email para {email} com as informações da consulta!");
+                
+                consulta = business.AgendarNovaConsulta(consulta, null); 
+               
+                Models.Response.ConsultaResponse consultaResponse = conversor.ParaConsultaResponse(consulta);
+
+                enviarEmailBusiness.EnviarEmailDeAgendamentoDaConsulta(consultaResponse);
+                return consultaResponse;
             }
             catch (System.Exception ex)
             {
@@ -60,12 +63,14 @@ namespace BackEnd.Controllers
         }
 
         [HttpPut("Remarcar")]
-        public ActionResult<Models.Response.SucessoResponse> RemarcarConsulta (Models.Request.RemarcacaoRequest request)
+        public ActionResult<Models.Response.ConsultaResponse> RemarcarConsulta (Models.Request.RemarcacaoRequest request)
         {
             try
             {
-                business.RemarcarConsulta(request);
-                return new Models.Response.SucessoResponse("Remarcado com sucesso!!!"); 
+                Models.TbConsulta consulta = business.RemarcarConsulta(request);
+                Models.Response.ConsultaResponse response = conversor.ParaConsultaResponse(consulta);
+                enviarEmailBusiness.EnviarEmailDeRemarcacaoDaConsulta(response);
+                return response; 
             }
             catch (System.Exception ex)
             {
@@ -76,16 +81,35 @@ namespace BackEnd.Controllers
         }
 
         [HttpPost("cadastrar/funcionario")]
-        public ActionResult<Models.Response.SucessoResponse> AgendarNovaConsultaFuncionario (Models.Request.NovaConsultaFuncionarioRequest request)
+        public ActionResult<Models.Response.ConsultaResponse> AgendarNovaConsultaFuncionario (Models.Request.NovaConsultaFuncionarioRequest request)
         {
-
             try
             {
                 Models.TbConsulta tbConsulta = conversor.FuncionarioParaTbConsulta(request);
+              
                 Models.TbConsulta consultaAgendada = business.AgendarNovaConsulta(tbConsulta, request.EmailCliente);
-                string email = request.EmailCliente;
-                enviarEmailBusiness.EnviarEmail(email);
-                return new Models.Response.SucessoResponse($"Enviamos um email para {email} com as informações da consulta!");
+                
+                Models.Response.ConsultaResponse response = conversor.ParaConsultaResponse(consultaAgendada);
+
+                enviarEmailBusiness.EnviarEmailDeAgendamentoDaConsulta(response);
+                
+                return response;
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
+        }
+
+        [HttpPut("cancelar/{idconsulta}")]
+        public ActionResult<Models.Response.SucessoResponse> CancelarConsulta (int idconsulta)
+        {
+            try
+            {
+                business.CancelarConsulta(idconsulta);
+                return new Models.Response.SucessoResponse("Consulta cancelada com sucesso");
             }
             catch (System.Exception ex)
             {

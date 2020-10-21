@@ -59,7 +59,7 @@ namespace BackEnd.Business
             }      
         }
 
-        public void RemarcarConsulta(Models.Request.RemarcacaoRequest request)
+        public Models.TbConsulta RemarcarConsulta(Models.Request.RemarcacaoRequest request)
         {
             validador.ValidarHorarios(request.NovoHorario);
 
@@ -69,12 +69,15 @@ namespace BackEnd.Business
             
             validador.ValidarSeOClienteEstaDisponivel(request.NovoHorario, consulta.IdCliente);
             
-            dbAgendamento.RemarcarConsulta(request);
+            return dbAgendamento.RemarcarConsulta(request);
         }
 
-        public string PegarEmailUsuario (int idCliente)
+        public void CancelarConsulta(int id)
         {
-            return dbAgendamento.PegarEmailUsuario(idCliente);
+           validador.ValidarId(id);
+
+           dbAgendamento.CancelarConsulta(id);
         }
+
     }
 }

@@ -89,26 +89,23 @@ namespace BackEnd.Database
         {
            ctx.TbConsulta.Add(request);
            ctx.SaveChanges();
-           return request;
+           return this.PegarConsulta(request.IdConsulta);
         }
 
         public Models.TbConsulta PegarConsulta(int id)
         {
-            return ctx.TbConsulta.FirstOrDefault(x => x.IdConsulta == id);
+            return ctx.TbConsulta.Include(x => x.IdFuncionarioNavigation).Include(x => x.IdClienteNavigation)
+                                 .Include(x => x.IdServicoNavigation).Include( x => x.IdClienteNavigation.IdLoginNavigation).FirstOrDefault(x => x.IdConsulta == id);
         }
 
-        public void RemarcarConsulta(Models.Request.RemarcacaoRequest request)
+        public Models.TbConsulta RemarcarConsulta(Models.Request.RemarcacaoRequest request)
         {
             Models.TbConsulta consultaNova = this.PegarConsulta(request.IdAgendamento);
+            
             consultaNova.DtConsulta = request.NovoHorario;
             ctx.SaveChanges();
-        }
-
-        public string PegarEmailUsuario(int idCliente)
-        {
-            Models.TbCliente tbCliente = ctx.TbCliente.Include( x => x.IdLoginNavigation).FirstOrDefault( item => item.IdCliente == idCliente);
-            string email = tbCliente.IdLoginNavigation.DsEmail;
-            return email;     
+            
+            return this.PegarConsulta(consultaNova.IdConsulta);
         }
 
         public int DescobrirClientePeloEmail (string email)
@@ -120,6 +117,13 @@ namespace BackEnd.Database
             
             Models.TbCliente cliente = ctx.TbCliente.FirstOrDefault( x => x.IdLogin == tbLogin.IdLogin);
             return cliente.IdCliente;
+        }
+
+        public void CancelarConsulta(int id)
+        {
+            Models.TbConsulta consulta = this.PegarConsulta(id);
+            consulta.DsSituacao = "Cancelado";
+            ctx.SaveChanges();
         }
     }
 }
