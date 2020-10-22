@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import App from './Pages/Home'
 import Login from './Pages/Login'
-
+import Remarcar from './Pages/Remarcar'
 
 export default function Routes() {
     return(
@@ -11,6 +11,7 @@ export default function Routes() {
           <Switch>
               <Route path="/" exact={true} component={App} />
               <Route path="/login" component={Login} />
+              <Route path="/remarcar" component={Remarcar} />
           </Switch>
         </BrowserRouter>
     )
