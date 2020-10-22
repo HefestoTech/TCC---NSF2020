@@ -12,7 +12,7 @@ export default function App() {
         <h3 className="text1">Seu sorriso fica muito mais lindo perto de nós, Dentistas, cuidando dele!</h3>
         <div className="buttns">
         <Link to="/login"><button className="bt1 btn btn-outline-danger" > Logar</button></Link> 
-          <button className="bt2 btn btn-outline-danger">Cadastrar</button>
+          <button className="bt2 btn btn-danger">Cadastrar</button>
         </div>
       </div>
 
@@ -85,9 +85,16 @@ export default function App() {
               </table>
             </div>
 
-            <div className="icon1">
-              <img src={Odonto} />
+            <div className="box">
+              <div className="icon1">
+                <img src={Odonto} />
+              </div>
+
+              <div className="text2">
+                <h3>Um dia sem um Sorriso, é um dia Perdido.</h3>
+              </div>
             </div>
+
         </div>
       </div>
 

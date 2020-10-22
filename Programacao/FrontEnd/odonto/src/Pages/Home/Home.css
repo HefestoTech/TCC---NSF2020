@@ -159,24 +159,41 @@
       }
 
 
-    .icon1{
-      display: flex;
-      width: 30vw;
-      height: 50vh;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      border-radius: 20px;
-      margin-left: 145px;
-      margin-bottom: 113px;
-    }
-
-
-      .icon1 img{
-        width: 24vw;
-        height: 42vh;
-        margin-left: 0px;
+      .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 68vh;
+        width: 41vw;
+        margin-left: 70px;
       }
+
+        .icon1{
+          display: flex;
+          width: 30vw;
+          height: 50vh;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          border-radius: 10px;
+        }
+
+
+          .icon1 img{
+            width: 24vw;
+            height: 42vh;
+            margin-left: 0px;
+          }
+
+
+          .text2{
+            height: 11vh;
+            width: 30vw;
+            background-color: white;
+            margin-top: 27px;
+            border-radius:5px;
+            text-align: center;
+          }
 
   .foot{
     display: flex;
