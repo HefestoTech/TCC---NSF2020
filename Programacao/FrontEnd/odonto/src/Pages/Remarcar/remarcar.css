@@ -7,3 +7,125 @@ body{
     box-sizing: border-box;
 }
 
+.Contre{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 110vh;
+}
+
+
+.headre{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 15vh;
+        width: 98.7vw;
+        background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
+}
+
+        .text3{
+            height: 10vh;
+            width: 50vw;
+            text-align: center;
+            color: white;
+        }
+
+        .user{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5.5vw;
+            height: 12vh;
+            background-color: rgb(70, 102, 128);
+            border-radius: 50px;
+            margin-right: 10px;
+        }
+
+        .user img{
+            width: 4vw;
+            height: 8vh;
+            margin-right: 80px;
+            margin-bottom: 4px;
+        }
+
+.bodyre{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 98.7vw;
+    height: 90vh;
+}
+
+        .boxre{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 60vw;
+            height: 60vh;
+            background-color: rgb(70, 102, 128);
+            border-radius: 15px;
+        }
+
+
+
+                .titlere{
+                    color: white;
+                }
+
+                .infore{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 40vh;
+                    margin-top: 20px;
+                }
+
+                        label{
+                            color: white;
+                            margin-top: 25px;
+                        }
+
+
+                        .date{
+                            border-radius: 10px;
+                            height: 5vh;
+                            margin-right: 40px;
+                        }
+
+                        .chosehour{
+                            margin-right: 50px;
+                        }
+
+                        .time{
+                            border-radius: 10px;
+                            width: 10vw;
+                            height: 5vh;
+                            margin-right: 75px;
+                        }
+
+        .btsre{
+            display: flex;
+            justify-content: space-between;
+            width: 40vw;
+            margin-top: 5px;
+        }
+
+                .btn{
+                    width: 10vw;
+                    
+                }
+
+.footre{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 98.7vw;
+    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
+    color: white;
+}
