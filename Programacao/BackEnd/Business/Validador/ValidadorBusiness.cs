@@ -30,7 +30,7 @@ namespace BackEnd.Business.Validador
 
         public void ValidarId (int? id)
         {
-            if(id == null)
+            if(id == null || id == 0)
               throw new ArgumentException("Ocorreu um erro, tente novamente");
                
         }
