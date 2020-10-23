@@ -21,7 +21,6 @@
     justify-content: center;
     width: 100%;
    
-     
   }
 
 
@@ -91,7 +90,12 @@
     .pequenoLogin p {
         font-size: 15px;
         margin-bottom: -25px;
+    }
 
+    .cardnt{
+        width: 15vw;
+        margin-left: -45px;
+        
     }
 
     .linkCadastrar{
