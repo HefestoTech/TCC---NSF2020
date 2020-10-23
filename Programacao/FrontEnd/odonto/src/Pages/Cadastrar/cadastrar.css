@@ -1,0 +1,66 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.ContCad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200vh;
+    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(238, 243, 248));
+
+}
+
+
+.bodyCad{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 180vh;
+    background-color: white;
+}
+
+
+        .Tt1cad{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+
+        .FormPers{
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+            height: 140vh;
+        }
+
+                .Tt2Cad{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+                }
+
+                .obr{
+                    color: rgb(167, 59, 59);
+                }
+
+
+        .FormRegist{
+            display: flex;
+            background-color: teal;
+            width: 70vw;
+            height: 60vh;
+        }
+
+
+        
