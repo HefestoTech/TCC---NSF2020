@@ -2,6 +2,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './remarcar.css'
+import Menu from '../../Components/Menu'
+import Rodape from '../../Components/Footer'
 import User from '../../Assets/user.png'
 
 export default function Remarcar(){
@@ -9,15 +11,11 @@ export default function Remarcar(){
     return(
         <div className="Contre">
 
-            <div className="headre">
-                <Link to="/"> <h1 className="logoname">Odonto</h1> </Link>
-                <h3 className="text3">Seu sorriso fica muito mais lindo perto de nós, Dentistas, cuidando dele!</h3>
-
+            <Menu>
                 <div className="user">
-                    <img src={User} />
+                        <img src={User} />
                 </div>
-            </div>
-
+            </Menu>
             <div className="bodyre">
                 <div className="boxre">
                     <h3 className="titlere">Remarque sua Consulta</h3>
@@ -34,9 +32,8 @@ export default function Remarcar(){
                     </div>
                 </div>
             </div>
-        
-            <div className="footre"><h2> Hefesto Tech, 2020 All rights reserved</h2></div>      
-        
+           
+            <Rodape/>
         
         </div>
     )

@@ -13,6 +13,7 @@ import './cadastrar.css';
                         <h3>Insira seus Dados Pessoais</h3>
                         <h5 className="obr">Os campos com(*)são obrigatórios</h5>
                     </div>
+                    <div className=""></div>
 
                     <div className="form1"></div>
 

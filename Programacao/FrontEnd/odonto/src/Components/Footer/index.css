@@ -1,0 +1,12 @@
+
+.footre{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 98.7vw;
+    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
+    color: white;
+}

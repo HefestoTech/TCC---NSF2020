@@ -2,19 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Dentista from '../../Assets/dentista.jpg'
 import Odonto from '../../Assets/odonto.png'
+import Rodape from '../../Components/Footer';
+import Menu from '../../Components/Menu'
 import './Home.css';
 
 export default function App() {
   return (
     <div className="Cont">
-      <div className="head">
-        <h1 className="logoname">Odonto</h1>
-        <h3 className="text1">Seu sorriso fica muito mais lindo perto de nós, Dentistas, cuidando dele!</h3>
+      
+      <Menu>
         <div className="buttns">
         <Link to="/login"><button className="bt1 btn btn-outline-danger" > Logar</button></Link> 
-          <button className="bt2 btn btn-danger">Cadastrar</button>
+        <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
         </div>
-      </div>
+      </Menu>
 
       <div className="body">
         <div className="msgs">
@@ -98,7 +99,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="foot"><h2>Hefesto Tech,2020 All rights reserved</h2></div>
+        <Rodape/>
 
     </div>
   );
