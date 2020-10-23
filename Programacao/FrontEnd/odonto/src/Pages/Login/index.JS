@@ -4,7 +4,7 @@ import './login.css';
  export default function Login(){
 
     return(
-        <div>
+        <div className= "bodyLogin">
             <div>
                 <h1 class="logo">Odonto</h1>
             </div>
