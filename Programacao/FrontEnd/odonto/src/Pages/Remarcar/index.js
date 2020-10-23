@@ -23,10 +23,10 @@ export default function Remarcar(){
                     <h3 className="titlere">Remarque sua Consulta</h3>
                     <div className="infore">
                         <label><h5>Escolha uma nova Data</h5></label>
-                        <input className="date" type="date" />
+                        <input className="date form-control" type="date" />
                         
                         <label className="chosehour"><h5>Escolha uma hora</h5></label>
-                        <input className="time" type="time" />
+                        <input className="time form-control" type="time" />
                     </div>
                     <div className="btsre">
                         <button className="btn btn-danger">Cancelar</button>
