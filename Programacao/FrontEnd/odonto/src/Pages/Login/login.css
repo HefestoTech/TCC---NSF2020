@@ -1,1 +1,91 @@
+body{
+    background-color:#9BC5D8;
+    
+}
+
+    
+
+     .logo{
+    display: flex;
+    background-color: whitesmoke;
+    box-shadow: 3px, 3px, 3px  #9BC5D8;
+    text-align: center;  
+    color:#3FA6D3;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+   
+     
+  }
+
+
+
+    .form {
+        width: 500px;
+        margin: auto;
+        padding-top: 100px;
+
+
+    }
+
+    .card{
+     box-shadow: 2px 2px 2px #3FA6D3;
+     background-color:#E3F2FA;
+     padding: 50px;
+     border-radius: 5px;
+
+    }
+
+    .card-top{
+         color: whitesmoke;
+         text-align: center;
+         background: #ec0000;
+         width:500px;
+        border-radius: 5px;
+        box-shadow:2px 2px 2px #3FA6D3; 
+    }
+     
+    .cardlogin >label{
+        
+        width: auto;
+        color: #000000;
+        display: block;
+
+
+    } 
+    
+    
+    .cardlogin >input{
+        width:70%;
+        border-radius: 3px;
+        height: 30px;
+        outline: 0;
+        padding: 7px;
+       
+
+    }
+
+    .cardlogin > button {
+
+        width: 100%;
+        padding: 2px;
+
+     }
+
+ 
+
+
+    .cardlogin > p{
+ 
+        width: 130%;
+        height: 9px;
+        margin-top: 39px;
+        
+    
+
+      
+       
+        
+
+    }
 
