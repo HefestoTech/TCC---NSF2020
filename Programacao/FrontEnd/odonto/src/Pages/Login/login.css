@@ -1,7 +1,10 @@
-.bodylogin{
-    background-color:#808b91;
+.bodyLogin{
+    background-color: #9BC5D8;
     height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     
 }
 
@@ -16,6 +19,7 @@
     height: 80px;
     align-items: center;
     justify-content: center;
+    width: 100%;
    
      
   }
@@ -25,9 +29,6 @@
     .form {
         width: 500px;
         margin: auto;
-        padding-top: 100px;
-
-
     }
 
     .card{
@@ -35,8 +36,9 @@
      background-color:#E3F2FA;
      padding: 50px;
      border-radius: 5px;
-
+     display: flex;
     }
+
 
     .card-top{
          color: whitesmoke;
@@ -63,7 +65,6 @@
         height: 30px;
         outline: 0;
         padding: 7px;
-       
 
     }
 
@@ -74,20 +75,30 @@
 
      }
 
- 
 
 
-    .cardlogin > p{
- 
-        width: 130%;
-        height: 9px;
-        margin-top: 39px;
-        
-    
+    .pequenoLogin{
 
-      
-       
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 32%;
+        height: 140px;
+        margin-top: 10px;
+  
+    }
+
+    .pequenoLogin p {
+        font-size: 15px;
+        margin-bottom: -25px;
 
     }
 
+    .linkCadastrar{
+        color: red;
+    }
+
+    .linkCadastrar :hover{
+        background-color: white;
+        color: white;
+    }
