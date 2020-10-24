@@ -9,7 +9,7 @@ export default class OdontoApi {
     //Login
     Logar = async (modeloLogin)  => {
        const resp = await api.post("/login", modeloLogin);
-       return resp;
+       return resp.data;
     }
 
     //Agendar novo - ambos

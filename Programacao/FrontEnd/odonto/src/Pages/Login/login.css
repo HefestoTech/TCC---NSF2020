@@ -1,10 +1,11 @@
 .bodyLogin{
     background-color: #9BC5D8;
-    height: 100vh;
-    width: 100%;
+    height: calc(100vh - 80px);
+    max-width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     
 }
 
@@ -24,11 +25,6 @@
   }
 
 
-
-    .form {
-        width: 500px;
-        margin: auto;
-    }
 
     .card{
      box-shadow: 2px 2px 2px #3FA6D3;
