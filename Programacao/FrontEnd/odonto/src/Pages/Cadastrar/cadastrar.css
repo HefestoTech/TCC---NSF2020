@@ -55,6 +55,14 @@ body{
                 }
 
 
+                .line1{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 70vw;
+                    height: 10vh;
+                    margin-top: 50px;
+                }
+
         .FormRegist{
             display: flex;
             background-color: teal;
