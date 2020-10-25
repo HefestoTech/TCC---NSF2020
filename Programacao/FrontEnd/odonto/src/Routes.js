@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import App from './Pages/Home'
-import Login from './Pages/Login/index.js'
+import Login from './Pages/Login'
 import Remarcar from './Pages/Remarcar'
 import Cadastrar from './Pages/Cadastrar'
 

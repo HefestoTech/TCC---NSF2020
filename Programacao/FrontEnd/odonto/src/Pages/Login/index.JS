@@ -31,7 +31,7 @@ const api = new OdontoApi();
 
         setLoginResponse(response);
 
-        history.push({
+        history.push({  
             pathname:" " + response.idUsuario,
             state: loginResponse})
             
