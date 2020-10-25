@@ -1,33 +1,14 @@
 
-import react from 'react';
-import {Link} from 'react-router-dom';
-import Dentista from '../../Assets/dentista.jpg';
-import Odonto from '../../Assets/odonto.png'
+import React from 'react';
 import './agenda.css'
 import Menu from '../../Components/Menu'
 import Rodape from '../../Components/Footer'
 
-export default function agendarconsultacliente (){
-    return (
-
+export default function AgendarConsultaCliente () {
+    return(
         <div>
-           <Menu/>
-
-            <div>
-
-
-
-            </div>
-
-
+            <Menu/>
+           <h1>Agendar Consulta</h1>
         </div>
-       
-      
-           
-           
-
-       
-
     )
-
-}   
+}  
