@@ -10,9 +10,11 @@ namespace BackEnd.Database
     public class FeedbackDatabase
     {
         Models.db_odontoContext ctx = new Models.db_odontoContext();
+
+        Database.AgendamentoDatabase dbAgendamento = new AgendamentoDatabase();
         public Models.TbConsulta AvaliarConsulta (Models.Request.AvaliarRequest feedback)
         {
-            Models.TbConsulta consulta = ctx.TbConsulta.FirstOrDefault(x => x.IdConsulta == feedback.IdConsulta);
+            Models.TbConsulta consulta = dbAgendamento.PegarConsulta(feedback.IdConsulta);
             consulta.NrNota = feedback.Nota;
             consulta.DsComentarioFeedback = feedback.Comentario;
             ctx.SaveChanges();

@@ -13,11 +13,25 @@ namespace BackEnd.Controllers
     public class FeedbackController : ControllerBase
     {
         Business.FeedbackBusiness business = new Business.FeedbackBusiness();
+
+        Utils.GeralConversor conversor = new Utils.GeralConversor();
        
         [HttpPost]
-        public Models.TbConsulta AvaliarConsulta (Models.Request.AvaliarRequest feedback)
+        public ActionResult<Models.Response.ConsultaResponse> AvaliarConsulta (Models.Request.AvaliarRequest feedback)
         {
-            return business.AvaliarConsulta(feedback);
+            try
+            {
+                Models.TbConsulta consulta = business.AvaliarConsulta(feedback);
+                Models.Response.ConsultaResponse consultaResponse = conversor.ParaConsultaResponse(consulta);
+                return consultaResponse;
+
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
         }
         
     }

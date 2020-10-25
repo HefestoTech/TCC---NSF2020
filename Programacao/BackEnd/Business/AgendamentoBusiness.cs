@@ -40,8 +40,6 @@ namespace BackEnd.Business
             validador.ValidarSeOFuncionarioEstaDisponivel(request.DtConsulta, request.IdFuncionario);
             
             validador.ValidarSeOClienteEstaDisponivel(request.DtConsulta, request.IdCliente);
-           
-            validador.ValidarId(request.IdCliente);
 
             validador.ValidarHorarios(request.DtConsulta);
 

@@ -22,9 +22,6 @@ namespace BackEnd.Controllers
             {
                 Models.TbLogin login = business.Logar(loginRequest);
 
-                if (login == null)
-                    return BadRequest("Nenhum Registo Encontrado!!!");
-
                 return conversor.ParaLoginResponse(login);   
             }
             catch (System.Exception ex)

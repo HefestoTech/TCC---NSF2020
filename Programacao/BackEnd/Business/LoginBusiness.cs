@@ -15,7 +15,12 @@ namespace BackEnd.Business
 
             validador.ValidarSenha(loginRequest.Senha);
 
-            return dbLogin.PegarLoginUsuario(loginRequest);
+            Models.TbLogin login = dbLogin.PegarLoginUsuario(loginRequest);
+
+            if (login == null)
+                throw new ArgumentException("Nenhum Registo Encontrado!!!");
+
+            return login;    
         }   
     }
 }
