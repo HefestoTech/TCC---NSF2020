@@ -57,11 +57,91 @@ body{
 
                 .line1{
                     display: flex;
-                    justify-content: space-evenly;
                     width: 70vw;
                     height: 10vh;
                     margin-top: 50px;
                 }
+
+                        .formName{
+                            display: flex;
+                            flex-direction: column;
+                            width: 20vw;
+                            height: 15vh;
+                        }
+
+
+                        .formSexo{
+                            display: flex;
+                            flex-direction: column;
+                            width: 20vw;
+                            height: 15vh;
+                        }
+
+                        .formSexo h5{
+                            margin-left: 25px;
+                        }
+
+                        .radios{
+                            display: flex;
+                            align-items: center;
+                            width: 20vw;
+                            height: 5vh;
+                            margin-top: 5px;
+                            margin-right: 10px;
+                        }
+
+
+                        .radios h5{
+                            margin-left: 5px;
+                        }
+
+                        .fem{
+                            margin-left: 25px;
+                        }
+
+
+                        .formPhone{
+                            display: flex;
+                            flex-direction: column;
+                            width: 20vw;
+                            height: 15vh;
+                        }
+
+                        .formPhone h5,.numb{
+                            margin-left: 40px;
+                        }
+
+                        .numb{
+                            width: 15vw;
+                        }
+
+                .line2{
+                    display: flex;
+                    width: 70vw;
+                    height: 10vh;
+                    margin-top: 50px;
+                }
+
+
+                        .formCPF{
+                            width: 12vw;
+                        }
+
+                        .formCEP{
+                            width: 10vw;
+                            margin-left: 40px;
+                        }
+
+                        .formLograd{
+                            margin-left: 45px;
+                        }
+
+                        .formNum{
+                            width: 6vw;
+                            margin-left: 10px;
+                        }
+
+
 
         .FormRegist{
             display: flex;
