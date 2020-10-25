@@ -58,7 +58,7 @@ const api = new OdontoApi();
                     <div className= "card">
                     <div className = "cardlogin">
                         <label >Digite seu e-mail</label>
-                        <input onChange={e => setEmail(e.target.value)} type="email"   placeholder =" adonto@exemplo"  required ></input>
+                        <input onChange={e => setEmail(e.target.value)} type="email"   placeholder =" odonto@exemplo "  required ></input>
 
                         <div className = "cardlogin">
                         <label >Senha</label>
