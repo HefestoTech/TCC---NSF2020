@@ -31,11 +31,11 @@ const api = new OdontoApi();
 
         setLoginResponse(response);
 
-        console.log(loginResponse);
+        console.log(response);
 
         history.push({  
             pathname:"/menu/" + response.idUsuario,
-            state: loginResponse})
+            state: response})
             
         } catch (e) {
             toast.error(e.response.data.erro)
