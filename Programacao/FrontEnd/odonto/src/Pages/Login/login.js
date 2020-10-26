@@ -9,13 +9,6 @@ const api = new OdontoApi();
 
  export default function Login(){
 
-    const [loginResponse, setLoginResponse] = useState({
-        "idLogin": 0,
-        "idUsuario" : 0,
-        "nomeUsuario" : "",
-        "perfil" : ""
-    });
-
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
@@ -28,10 +21,6 @@ const api = new OdontoApi();
         const modeloLogin = ({"email":email, "senha":senha});
 
         const response = await api.Logar(modeloLogin);
-
-        setLoginResponse(response);
-
-        console.log(response);
 
         history.push({  
             pathname:"/menu/" + response.idUsuario,

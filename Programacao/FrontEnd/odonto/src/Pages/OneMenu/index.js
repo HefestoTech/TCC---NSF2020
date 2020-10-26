@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Menu from '../../Components/Menu';
 import Rodape from '../../Components/Footer';
 import './menu.css';
 import Fotozinha from '../../Assets/deu tudo errado.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
  export default function MenuCliente(props)
- {
-    
-   
-       const [idLogin, setIdLogin] =  useState(props.location.state.idLogin);
-       const [idUsuario, setIdUsuario] = useState(props.location.state.idUsuario);
-       const [nomeUsuario, setNomeUsario] = useState(props.location.state.nomeUsuario);
-       const [perfil, setPerfil] = useState(props.location.state.perfil);
-       
-       console.log(idLogin);
-       console.log(idUsuario);
-       console.log(nomeUsuario);
-       console.log(perfil);
-      
+ { 
+        const [responseCompleto, setResponseCompleto] = useState(props.location.state)
+        
+        const history = useHistory();
+        const validarUsuario = () => {
+            if(responseCompleto.idUsuario == 0 || responseCompleto.idUsuario == null)
+               history.push("/login"); 
+        }
+
+        useEffect(() => {
+        validarUsuario();
+        }, [])
        return(
 
         <>
@@ -35,8 +34,11 @@ import { Link } from 'react-router-dom';
                     </div>
                     
                     <div className = "botaolindo">
-                    <Link to="/agendarconsultacliente"><button type="button" class="btn_1 btn btn-outline-danger">Meus Agendamentos</button></Link>
-                    <button type="button" class="btn btn-outline-danger">Novo Agendamento</button>
+                    <button type="button" class="btn_1 btn btn-outline-danger">Meus Agendamentos</button>
+                    <Link to={{
+                        pathname:`/agendarconsultacliente/${responseCompleto.idUsuario}`,
+                        state:responseCompleto
+                    }}><button type="button" class="btn_1 btn btn-outline-danger">Novo Agendamento</button></Link>
                     </div>
                     </div>
 
