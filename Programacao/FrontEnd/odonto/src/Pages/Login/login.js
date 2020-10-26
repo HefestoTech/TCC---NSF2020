@@ -32,7 +32,7 @@ const api = new OdontoApi();
         setLoginResponse(response);
 
         history.push({  
-            pathname:" " + response.idUsuario,
+            pathname:"/menu/" + response.idUsuario,
             state: loginResponse})
             
         } catch (e) {
