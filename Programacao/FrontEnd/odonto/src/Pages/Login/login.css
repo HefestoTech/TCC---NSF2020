@@ -67,6 +67,8 @@
 
         width: 100%;
         padding: 2px;
+        box-shadow: 2px 2px 2px  #ec0000;
+        outline: 0;
 
      }
 

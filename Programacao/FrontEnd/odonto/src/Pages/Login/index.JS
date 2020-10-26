@@ -45,7 +45,7 @@ const api = new OdontoApi();
         <>
         
          <div className="logo">
-                <h1>Odonto</h1>
+                <Link to= "/"><h1>Odonto</h1> </Link>
             </div>
         <div className= "bodyLogin">
            
