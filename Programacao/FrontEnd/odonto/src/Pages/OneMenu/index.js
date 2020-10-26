@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Menu from '../../Components/Menu';
 import Rodape from '../../Components/Footer';
 import './menu.css';
 import Fotozinha from '../../Assets/deu tudo errado.png';
 import { Link } from 'react-router-dom';
 
- export default function MenuCliente()
+ export default function MenuCliente(props)
  {
-     return(
+    
+   
+       const [idLogin, setIdLogin] =  useState(props.location.state.idLogin);
+       const [idUsuario, setIdUsuario] = useState(props.location.state.idUsuario);
+       const [nomeUsuario, setNomeUsario] = useState(props.location.state.nomeUsuario);
+       const [perfil, setPerfil] = useState(props.location.state.perfil);
+       
+       console.log(idLogin);
+       console.log(idUsuario);
+       console.log(nomeUsuario);
+       console.log(perfil);
+      
+       return(
 
         <>
         
