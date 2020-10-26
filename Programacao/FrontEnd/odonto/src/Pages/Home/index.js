@@ -1,9 +1,9 @@
-import React from 'react';
+import React    from 'react';
 import { Link } from 'react-router-dom';
 import Dentista from '../../Assets/dentista.jpg'
-import Odonto from '../../Assets/odonto.png'
-import Rodape from '../../Components/Footer';
-import Menu from '../../Components/Menu'
+import Odonto   from '../../Assets/odonto.png'
+import Rodape   from '../../Components/Footer';
+import Menu     from '../../Components/Menu'
 import './Home.css';
 
 export default function App() {

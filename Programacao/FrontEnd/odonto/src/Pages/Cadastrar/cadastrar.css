@@ -215,3 +215,15 @@ body{
                         .formConfiPassw{
                             margin-left: 15px;
                         }
+
+
+                .line7{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .line7 button{
+                    display: flex;
+                    width: 15vw;
+
+                }

@@ -1,6 +1,7 @@
-import React from 'react';
-import './cadastrar.css';
+import React    from 'react';
+import SetaDir  from '../../Assets/arrowr.png' 
 import { Link } from 'react-router-dom';
+import './cadastrar.css';
 
  export default function Cadastrar()
  {
@@ -75,10 +76,10 @@ import { Link } from 'react-router-dom';
                         <div className="formState">
                             <h5>Estado*</h5>
                             <select className="form-control">
-                                <option>ola</option>
-                                <option>ola</option>
-                                <option>ola</option>
-                                <option>ola</option>
+                                <option>Selecione</option>
+                                <option>São Paulo</option>
+                                <option>Rio de Janeiro</option>
+                                <option>Minas Gerais  </option>
                             </select>
                             
                         </div>
@@ -115,6 +116,12 @@ import { Link } from 'react-router-dom';
                             <h5>Confirme sua senha</h5>
                             <input type="text" className="form-control" placeholder="******" />
                         </div>
+                    </div>
+
+                    <div className="line7"> 
+                         <button className="btn btn-primary"> 
+                            <h5>Confirmar <img src={SetaDir} /> </h5>
+                         </button>
                     </div>
                 </div>
 
