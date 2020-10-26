@@ -6,8 +6,8 @@ import Fotozinha from '../../Assets/deu tudo errado.png';
  export default function onepagesmenu ()
  {
      return(
-
-        <div> 
+        
+        <div className="menu"> 
             <Menu/>
 
                  <div className= "fundo">

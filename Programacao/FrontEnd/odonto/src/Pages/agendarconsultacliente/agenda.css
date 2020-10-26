@@ -2,7 +2,7 @@
     
     width: 50%;
     height: 100vh;
-    border: 20px royalblue solid;
+    
 
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
 
 
 

@@ -6,7 +6,8 @@ import Rodape from '../../Components/Footer'
 
 export default function AgendarConsultaCliente () {
     return(
-        <div className="dad">
+      <>
+        
             
               <Menu/>
             <div className="mom">
@@ -60,7 +61,7 @@ export default function AgendarConsultaCliente () {
                         </div>
 
                      </div>  
-            </div>          
+              </div>          
             
         </div>  
 

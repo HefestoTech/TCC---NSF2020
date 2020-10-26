@@ -71,7 +71,7 @@ const api = new OdontoApi();
                     
                             <p className="cardnt"> Não tem uma conta?</p> 
                            
-                        <button className = "btn btn-outline-danger"> <Link className="linkCadastrar" to="/cadastrar">Cadastrar-se</Link></button>
+                            <Link className="linkCadastrar" to="/cadastrar"><button className = "btn btn-outline-danger"> Cadastrar-se</button></Link>
                         </div>
                     </div>
                     </div> 
