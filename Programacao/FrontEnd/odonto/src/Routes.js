@@ -5,7 +5,7 @@ import Home from './Pages/Home'
 import Login from './Pages/Login/index.js'
 import Remarcar from './Pages/Remarcar'
 import Cadastrar from './Pages/Cadastrar'
-import agendarconsultacliente from './Pages/agendarconsultacliente'
+import agendarconsultacliente from './Pages/AgendarCliente'
 import Menu from "./Pages/OneMenu"
 
 
@@ -18,7 +18,7 @@ export default function Routes() {
               <Route path="/remarcar" exact component={Remarcar} />
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente" exact component={agendarconsultacliente}/>
-              <Route path="/menu/:id" exact component={Menu}/>
+              <Route path="/menu/:id" path="/menu" exact component={Menu}/>
           </Switch>
         </BrowserRouter>
     )

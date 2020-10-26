@@ -2,8 +2,9 @@ import React from 'react';
 import Menu from '../../Components/Menu';
 import './menu.css';
 import Fotozinha from '../../Assets/deu tudo errado.png';
+import { Link } from 'react-router-dom';
 
- export default function onepagesmenu ()
+ export default function MenuCliente()
  {
      return(
         
@@ -19,7 +20,7 @@ import Fotozinha from '../../Assets/deu tudo errado.png';
                     </div>
                     
                     <div className = "botaolindo">
-                    <button type="button" class="btn btn-outline-danger">Meus Agendamentos</button>
+                    <Link to="/agendarconsultacliente"><button type="button" class="btn btn-outline-danger">Meus Agendamentos</button></Link>
                     <button type="button" class="btn btn-outline-danger">Novo Agendamento</button>
                     </div>
                     </div>
