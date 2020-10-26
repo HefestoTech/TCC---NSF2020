@@ -219,11 +219,27 @@ body{
 
                 .line7{
                     display: flex;
-                    justify-content: flex-end;
+                    
                 }
 
                 .line7 button{
                     display: flex;
                     width: 15vw;
 
+                }
+
+                .ButConf {
+                    display: flex;
+                    width: 10vw;
+                    height: 10vh;
+                }
+
+                .btn{
+                    width: 10vw;
+                    
+                }
+
+                .imgconf{
+                    width: 3vw;
+                    height:3vh;
                 }

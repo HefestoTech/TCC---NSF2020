@@ -119,9 +119,11 @@ import './cadastrar.css';
                     </div>
 
                     <div className="line7"> 
-                         <button className="btn btn-primary"> 
-                            <h5>Confirmar <img src={SetaDir} /> </h5>
-                         </button>
+                        <div className="ButConf ">
+                            <button className="btn btn-primary"> 
+                                <h5>Confirmar <img src={SetaDir} className="imgconf"/> </h5>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
