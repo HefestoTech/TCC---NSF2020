@@ -18,7 +18,7 @@ export default function Routes() {
               <Route path="/remarcar" exact component={Remarcar} />
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente" exact component={agendarconsultacliente}/>
-              <Route path="/menu/:id" path="/menu" exact component={Menu}/>
+              <Route path="/menu/:id" exact component={Menu}/>
           </Switch>
         </BrowserRouter>
     )
