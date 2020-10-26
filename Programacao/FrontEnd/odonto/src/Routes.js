@@ -5,7 +5,7 @@ import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Remarcar from './Pages/Remarcar'
 import Cadastrar from './Pages/Cadastrar'
-import AgendarConsultaCliente from './Pages/AgendarConsultaCliente'
+import agendarconsultacliente from './Pages/agendarconsultacliente'
 
 
 export default function Routes() {
@@ -16,7 +16,7 @@ export default function Routes() {
               <Route path="/login" exact component={Login} />
               <Route path="/remarcar" exact component={Remarcar} />
               <Route path="/cadastrar" exact component={Cadastrar} />
-              <Route path="/agendarconsultacliente" exact component={AgendarConsultaCliente}/>
+              <Route path="/agendarconsultacliente" exact component={agendarconsultacliente}/>
           </Switch>
         </BrowserRouter>
     )

@@ -1,0 +1,208 @@
+.mom{
+    
+    width: 50%;
+    height: 100vh;
+    border: 20px royalblue solid;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;    
+
+}
+
+.dad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+
+
+
+}
+
+
+.tituloagendar {
+    text-align: center
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.linha1{
+    
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+    height: 10vh;
+    align-items: center;
+    
+
+
+
+}
+
+.cardregistro{
+    
+    
+    margin: 40px;
+    height: 15vh;
+    width: 15vw;
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+
+.cardregistro2 {
+    
+    margin: 3px;
+    height: 15vh;
+    width: 15vw;
+    display: flex;
+ 
+    flex-direction: column;
+    
+    
+}
+
+.linha2{
+    
+    display: flex;
+    
+    justify-content: center;
+    margin: 30px;
+    height: 10vh;
+    align-items: center;
+    
+    
+
+
+
+}
+
+.cardregistro3 {
+
+    
+  
+    margin: 40px;
+    height: 15vh;
+    width: 15vw;
+    display: flex;
+    
+    flex-direction: column;
+    
+}
+
+
+
+.cardregistro4 {
+
+    margin-top: 52px;
+    height: 30vh;
+    width: 15vw;
+    display: flex;
+ 
+    flex-direction: column;
+    
+    
+}
+
+.cardregistro4 >h5 {
+    width: 20vw;
+    margin-right: 15px;
+    margin-top: 24px;
+    
+}
+
+.linha3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+    height: 10vh;
+    align-items: center;
+    
+
+
+
+}
+
+.cardregistro5 {
+
+    margin-top: 50px;
+    height: 30vh;
+    width: 15vw;
+    display: flex;
+   margin-left: 50px;
+ 
+    flex-direction: column;
+}
+
+.cardregistro5 >h5 {
+    width: 20vw;
+    margin-left: 15px;
+    margin-top: 24px;
+    background: sandybrown;
+}
+
+.radios{
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    height: 5vh;
+    margin-top: 5px;
+    margin-right: 80px;
+}
+
+
+.radios h5{
+    margin-right: 30px;
+}
+
+.cards{
+    margin-right: 5px;
+}
+
+.linha4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 150px;
+    height: 10vh;
+    align-items: center;
+    
+    
+    
+
+}
+
+.cardregistro6 >h5 {
+    
+    margin-left: 30px;
+    margin-top: 24px;
+}
+
+
+.cardregistro7{
+
+    margin-top: 20px;
+    margin-left: 60;
+}
+
+
+
+
+
