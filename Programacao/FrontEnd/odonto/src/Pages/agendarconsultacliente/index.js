@@ -9,7 +9,9 @@ export default function AgendarConsultaCliente () {
       <>
         
             
-              <Menu/>
+              <div><Menu/>
+              </div>
+            <div class = "fundo"
             <div className="mom">
               <h1 className="tituloagendar">Agende uma consulta</h1>
             
@@ -60,10 +62,12 @@ export default function AgendarConsultaCliente () {
 
                         </div>
 
-                     </div>  
+                     </div> 
+                     </div> 
               </div>          
             
-        </div>  
+       
+        </>
 
     )
 }  
