@@ -1,10 +1,18 @@
-import React    from 'react';
+import React, { useState }    from 'react';
 import SetaDir  from '../../Assets/arrowr.png' 
 import { Link } from 'react-router-dom';
 import './cadastrar.css';
 
  export default function Cadastrar()
  {
+     const [mostrarSenha, setMostrarSenha] = useState("password");
+
+     const mudarMostrarSenha = () => {
+         if(mostrarSenha == "password")
+            setMostrarSenha("text");
+         else 
+            setMostrarSenha("password")    
+     }
      return(
 
         <div className="ContCad">
@@ -109,13 +117,15 @@ import './cadastrar.css';
                     <div className="line6">
                         <div className="formPassw">
                             <h5>Crie uma senha</h5>
-                            <input type="text" className="form-control" placeholder="******" />
+                            <input type={mostrarSenha} className="form-control" placeholder="******" />
                         </div>
 
                         <div className="formConfiPassw">
                             <h5>Confirme sua senha</h5>
-                            <input type="text" className="form-control" placeholder="******" />
+                            <input type={mostrarSenha} className="form-control" placeholder="******" />
                         </div>
+
+                       <i onClick={mudarMostrarSenha} class="far fa-eye-slash"></i>
                     </div>
 
                     <div className="line7"> 
