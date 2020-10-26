@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from '../../Components/Menu';
+import Rodape from '../../Components/Footer';
 import './menu.css';
 import Fotozinha from '../../Assets/deu tudo errado.png';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,8 @@ import { Link } from 'react-router-dom';
  export default function MenuCliente()
  {
      return(
+
+        <>
         
         <div className="menu"> 
             <Menu/>
@@ -20,7 +23,7 @@ import { Link } from 'react-router-dom';
                     </div>
                     
                     <div className = "botaolindo">
-                    <Link to="/agendarconsultacliente"><button type="button" class="btn btn-outline-danger">Meus Agendamentos</button></Link>
+                    <Link to="/agendarconsultacliente"><button type="button" class="btn_1 btn btn-outline-danger">Meus Agendamentos</button></Link>
                     <button type="button" class="btn btn-outline-danger">Novo Agendamento</button>
                     </div>
                     </div>
@@ -29,8 +32,8 @@ import { Link } from 'react-router-dom';
             
             
         </div>
-
-        
+         <Rodape/>
+        </>
      )
  }
 
