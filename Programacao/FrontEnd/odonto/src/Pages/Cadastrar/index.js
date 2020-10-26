@@ -1,11 +1,13 @@
 import React from 'react';
 import './cadastrar.css';
+import { Link } from 'react-router-dom';
 
  export default function Cadastrar()
  {
      return(
 
         <div className="ContCad">
+            <Link to="/" ><h1 className="logohome">ODONTO</h1></Link>
             <div className="bodyCad">
                 <div className="Tt1cad"><h1>Crie seu perfil</h1></div>
                 <div className="FormPers">
@@ -30,9 +32,9 @@ import './cadastrar.css';
                             </div>
                         </div>
 
-                        <div className="formPhone" >
-                            <h5>Telefone*</h5>
-                            <input type="text" className="numb form-control" placeholder="(xx) 99999-3333" />
+                        <div className="formNasc">
+                            <h5>Data de Nascimento*</h5>
+                            <input type="date" className="form-control" />
                         </div>
 
                     </div>
@@ -55,14 +57,67 @@ import './cadastrar.css';
 
                         <div className="formNum">
                             <h5>Nº*</h5>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" placeholder="Ex:12" />
                         </div>
                     </div>
 
+                    <div className="line3">
+                        <div className="formComple">
+                            <h5>Complemento</h5>
+                            <input type="text" className="form-control" placeholder="Apt.30" />
+                        </div>
+
+                        <div className="formCity">
+                            <h5>Cidade*</h5>
+                            <input type="text" className="form-control" placeholder="São Paulo" />
+                        </div>
+
+                        <div className="formState">
+                            <h5>Estado*</h5>
+                            <select className="form-control">
+                                <option>ola</option>
+                                <option>ola</option>
+                                <option>ola</option>
+                                <option>ola</option>
+                            </select>
+                            
+                        </div>
+
+                    </div>
+
+                    <div className="line4">
+                        <div className="formPhone">
+                            <h5>Telefone para contato*</h5>
+                            <input type="text" className="form-control" placeholder="(xx) 99999-5555" />
+                        </div>
+                    </div>
                 </div>
 
+                <div className="FormRegist">
+                    <div className="TtReg1">
+                        <h3>Crie uma conta</h3>
+                    </div>
 
-                <div className="FormRegist"></div>
+                    <div className="line5">
+                       <div className="formEmail">
+                            <h5>Crie um e-mail</h5>
+                            <input type="text" className="form-control" placeholder="Fulano123@example.com" />
+                       </div>
+                    </div>
+
+                    <div className="line6">
+                        <div className="formPassw">
+                            <h5>Crie uma senha</h5>
+                            <input type="text" className="form-control" placeholder="******" />
+                        </div>
+
+                        <div className="formConfiPassw">
+                            <h5>Confirme sua senha</h5>
+                            <input type="text" className="form-control" placeholder="******" />
+                        </div>
+                    </div>
+                </div>
+
             </div>
              
         </div>

@@ -9,6 +9,7 @@ body{
 
 .ContCad{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -17,6 +18,10 @@ body{
 
 }
 
+.logohome{
+    margin-bottom: 15px;
+    color: white;
+}
 
 .bodyCad{
     display: flex;
@@ -32,7 +37,7 @@ body{
         .Tt1cad{
             display: flex;
             justify-content: center;
-            margin-top: 10px;
+            margin-top: 35px;
             font-weight: bold;
         }
 
@@ -47,7 +52,7 @@ body{
                 .Tt2Cad{
                     display: flex;
                     flex-direction: column;
-                    margin-top: 20px;
+                    margin-top: 40px;
                 }
 
                 .obr{
@@ -58,7 +63,7 @@ body{
                 .line1{
                     display: flex;
                     width: 70vw;
-                    height: 10vh;
+                    height: 12vh;
                     margin-top: 50px;
                 }
 
@@ -75,6 +80,7 @@ body{
                             flex-direction: column;
                             width: 20vw;
                             height: 15vh;
+                            margin-left: 30px;
                         }
 
                         .formSexo h5{
@@ -100,26 +106,17 @@ body{
                         }
 
 
-                        .formPhone{
-                            display: flex;
-                            flex-direction: column;
-                            width: 20vw;
-                            height: 15vh;
-                        }
-
-                        .formPhone h5,.numb{
+                        .formNasc{
                             margin-left: 40px;
                         }
 
-                        .numb{
-                            width: 15vw;
-                        }
 
                 .line2{
                     display: flex;
                     width: 70vw;
-                    height: 10vh;
+                    height: 12vh;
                     margin-top: 50px;
+
                 }
 
 
@@ -130,25 +127,91 @@ body{
                         .formCEP{
                             width: 10vw;
                             margin-left: 40px;
+
                         }
 
                         .formLograd{
                             margin-left: 45px;
+
                         }
 
                         .formNum{
                             width: 6vw;
                             margin-left: 10px;
+
+                        }
+
+                .line3{
+                    display: flex;
+                    width: 70vw;
+                    height: 12vh;
+                    margin-top: 50px;
+                }
+
+                        .formComple{
+                            width: 10vw;
+                        }
+
+                        .formCity{
+                            margin-left: 70px;
+                        }
+
+                        .formState{
+                            width: 10vw;
+                            margin-left: 25px;
                         }
 
 
 
+                .line4{
+                    display: flex;
+                    width: 70vw;
+                    height: 12vh;
+                    margin-top: 50px;
+                }
+
+                    .formPhone input{
+                        width: 12vw;
+                    }
+
         .FormRegist{
             display: flex;
-            background-color: teal;
+            flex-direction: column;
             width: 70vw;
-            height: 60vh;
+            height: 70vh;
         }
 
 
+        .TtReg1{
+            color: rgb(46, 143, 223);
+
+        }
+
+
+
+                .line5{
+                    display: flex;
+                    width: 70vw;
+                    height: 12vh;
+                    margin-top: 20px;
+                }
+
         
+
+                        .formEmail input{
+                            width: 18vw;
+                        }
+
+
+                
+                .line6{
+                    display: flex;
+                    width: 70vw;
+                    height: 12vh;
+                    margin-top: 50px;
+                }
+
+
+                        .formConfiPassw{
+                            margin-left: 15px;
+                        }
