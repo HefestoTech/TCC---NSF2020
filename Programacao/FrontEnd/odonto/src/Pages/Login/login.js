@@ -9,6 +9,15 @@ const api = new OdontoApi();
 
  export default function Login(){
 
+    const [mostrarSenha, setMostrarSenha] = useState("password");
+
+     const mudarMostrarSenha = () => {
+         if(mostrarSenha == "password")
+            setMostrarSenha("text");
+         else 
+            setMostrarSenha("password")    
+     }
+
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
@@ -52,9 +61,16 @@ const api = new OdontoApi();
                         <input onChange={e => setEmail(e.target.value)} type="email"   placeholder =" odonto@exemplo "  required ></input>
 
                         <div className = "cardlogin">
+                        <div className="div_senhaLogin">
+                                <div className="div1_login">
                         <label >Senha</label>
-                        <input onChange={e => setSenha(e.target.value)} type = "password"  placeholder =" Digite sua senha" required ></input>
-
+                        <input onChange={e => setSenha(e.target.value)} type={mostrarSenha}  placeholder =" Digite sua senha" required ></input>
+                                </div>
+                                <div className="div_icon">
+                        <i onClick={mudarMostrarSenha} class="senha_icon far fa-eye-slash"></i>
+                                </div>
+                               
+                            </div>
                         <div className = "cardlogin btn pequenoLogin">
                         <button
                         onClick={logarClick}

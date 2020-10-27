@@ -2,10 +2,32 @@ import React, { useState }    from 'react';
 import SetaDir  from '../../Assets/arrowr.png' 
 import { Link } from 'react-router-dom';
 import './cadastrar.css';
+import CepApi from "../../Services/CepApi";
+import OdontoApi from "../../Services/OdontoApi"
+
+const cepApi = new CepApi();
 
  export default function Cadastrar()
  {
      const [mostrarSenha, setMostrarSenha] = useState("password");
+
+     const [cep, setCep] = useState(0);
+     const [logradouro, setLogradouro] = useState(null);
+     const [cidade, setCidade] = useState(null);
+     const [estado, setEstado] = useState(null);
+     const [complemento, setComplemento] = useState(null);
+
+     const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
+        const response = await cepApi.consultar(cepEnviadoPeloUsuario);
+         setLogradouro(response.logradouro);
+         setComplemento(response.complemento);
+         setCidade(response.localidade);
+         setEstado(response.uf)
+         setCep(response.cep);
+        
+         if(response.erro === true) 
+            alert("CEP não encontrado");
+        }
 
      const mudarMostrarSenha = () => {
          if(mostrarSenha == "password")
@@ -56,12 +78,12 @@ import './cadastrar.css';
 
                         <div className="formCEP">
                             <h5>CEP*</h5>
-                            <input type="text" className="form-control"  placeholder="12345-678" />
+                            <input onChange={(e) => pegarInformacoesApartirDoCep(e.target.value)} type="text" className="form-control"  placeholder="12345-678" />
                         </div>
 
                         <div className="formLograd">
                             <h5>Logradouro*</h5>
-                            <input type="text" className="form-control" placeholder="R. Fulandia das Águas"/>
+                            <input value={logradouro} readOnly type="text" className="form-control" placeholder="R. Fulandia das Águas"/>
                         </div>
 
                         <div className="formNum">
@@ -73,22 +95,17 @@ import './cadastrar.css';
                     <div className="line3">
                         <div className="formComple">
                             <h5>Complemento</h5>
-                            <input type="text" className="form-control" placeholder="Apt.30" />
+                            <input value={complemento} type="text" className="form-control" placeholder="Apt.30" />
                         </div>
 
                         <div className="formCity">
                             <h5>Cidade*</h5>
-                            <input type="text" className="form-control" placeholder="São Paulo" />
+                            <input value={cidade} readOnly type="text" className="form-control" placeholder="São Paulo" />
                         </div>
 
                         <div className="formState">
                             <h5>Estado*</h5>
-                            <select className="form-control">
-                                <option>Selecione</option>
-                                <option>São Paulo</option>
-                                <option>Rio de Janeiro</option>
-                                <option>Minas Gerais  </option>
-                            </select>
+                            <input value={estado} readOnly type="text" className="form-control" placeholder="São Paulo" />
                             
                         </div>
 
@@ -144,4 +161,3 @@ import './cadastrar.css';
 
      )
  }
-
