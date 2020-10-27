@@ -57,5 +57,12 @@ namespace BackEnd.Business
             this.EnviarEmail(consultaResponse.Email, titulo, corpo);
         }
 
+        public void EnviarEmailDeCadastroNoSite (Models.Response.LoginResponse loginResponse)
+        {
+            string titulo = "Confirmação de Cadastro";
+            string corpo = $"Olá {loginResponse.Nome}, nós da Odonto estamos muito felizes pelo seu cadastro em nosso site. Estamos esperando pela sua primeira consulta.";
+            this.EnviarEmail(loginResponse.Email, titulo, corpo);
+        }
+
     }
 }

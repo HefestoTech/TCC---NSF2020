@@ -13,9 +13,9 @@ namespace BackEnd.Business
         {
             validador.ValidarEmail(loginRequest.Email);
 
-            validador.ValidarSenha(loginRequest.Senha);
+            validador.ValidarStrings(loginRequest.Senha, "senha");
 
-            Models.TbLogin login = dbLogin.PegarLoginUsuario(loginRequest);
+            Models.TbLogin login = dbLogin.PegarLoginUsuario(loginRequest.Email, loginRequest.Senha);
 
             if (login == null)
                 throw new ArgumentException("Nenhum Registo Encontrado!!!");

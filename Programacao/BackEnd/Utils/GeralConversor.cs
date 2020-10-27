@@ -34,6 +34,7 @@ namespace BackEnd.Utils
 
             loginResponse.IdLogin = login.IdLogin; 
             loginResponse.Perfil = login.DsPerfil;
+            loginResponse.Email = login.DsEmail;
 
             if(loginResponse.Perfil == "Cliente")
             {
@@ -126,6 +127,32 @@ namespace BackEnd.Utils
             consultaResponse.NomeFuncionario = consulta.IdFuncionarioNavigation.NmFuncionario;
             consultaResponse.Servico = consulta.IdServicoNavigation.NmServico;
             return consultaResponse;
+        }
+
+        public Models.TbLogin ParaTbLogin (Models.Request.CadastrarClienteRequest cadastroRequest)
+        {
+            Models.TbLogin tbLogin = new Models.TbLogin();
+            tbLogin.DsEmail = cadastroRequest.Email;
+            tbLogin.DsPerfil = "Cliente";
+            tbLogin.DsSenha =cadastroRequest.Senha;
+            return tbLogin;
+        }
+
+        public Models.TbCliente ParaTbCliente (Models.Request.CadastrarClienteRequest cadastroRequest)
+        {
+            Models.TbCliente tbCliente = new Models.TbCliente();
+            tbCliente.DsCep = cadastroRequest.CEP;
+            tbCliente.DsCidade = cadastroRequest.Cidade;
+            tbCliente.DsComplemento = cadastroRequest.Complemento;
+            tbCliente.DsCpf = cadastroRequest.CPF;
+            tbCliente.DsEstado = cadastroRequest.Estado;
+            tbCliente.DsLougradouro = cadastroRequest.Logradouro;
+            tbCliente.DsSexo = cadastroRequest.Sexo;
+            tbCliente.DsTelefone = cadastroRequest.Telefone;
+            tbCliente.DtNascimento = cadastroRequest.Nascimento;
+            tbCliente.NmCliente = cadastroRequest.Nome;
+            tbCliente.NrResidenical = cadastroRequest.NumeroResidencial;
+            return tbCliente;
         }
     }
 }

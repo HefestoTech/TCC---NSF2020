@@ -9,10 +9,10 @@ namespace BackEnd.Database
     public class LoginDatabase
     {
         Models.db_odontoContext ctx = new Models.db_odontoContext();
-        public Models.TbLogin PegarLoginUsuario (Models.Request.LoginRequest loginRequest)
+        public Models.TbLogin PegarLoginUsuario (string email, string senha)
         {
-           Models.TbLogin login = ctx.TbLogin.FirstOrDefault(x => x.DsEmail == loginRequest.Email && 
-                                                             x.DsSenha == loginRequest.Senha);
+           Models.TbLogin login = ctx.TbLogin.FirstOrDefault(x => x.DsEmail == email && 
+                                                             x.DsSenha == senha);
 
            return login;                                                   
         }

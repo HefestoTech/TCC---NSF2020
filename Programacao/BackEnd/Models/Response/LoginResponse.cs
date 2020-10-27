@@ -12,6 +12,7 @@ namespace BackEnd.Models.Response
 
         public int IdLogin {get; set;}
         public int IdUsuario {get; set;}
+        public string Email {get; set;}
         public string Nome {get; set;}
         public string Perfil {get; set;}
     }
