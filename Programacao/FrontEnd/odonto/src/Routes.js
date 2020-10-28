@@ -15,7 +15,7 @@ export default function Routes() {
           <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/login" exact component={Login} />
-              <Route path="/remarcar" exact component={Remarcar} />
+              <Route path="/remarcar/:id" exact component={Remarcar} />
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente/:id" exact component={agendarconsultacliente}/>
               <Route path="/menu/:id" exact component={Menu}/>

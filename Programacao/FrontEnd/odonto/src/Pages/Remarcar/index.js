@@ -14,29 +14,45 @@ const api = new OdontoApi();
 
 export default function Remarcar(props){
 
-    const [horario, setHorario] = useState( );
+    const [horario, setHorario] = useState("08:00");
     const [data, setData] = useState();
     const [idAgendamento, setIdAgendamento] = useState(null);
+    
+  
+    const transformarEmDataComMinutos = () => {
+      
+      /* 
+       const tipoDate = new Date(data);
+       const dia = tipoDate.getDate();
+       const mes = tipoDate.getMonth();
+       const ano = tipoDate.getFullYear();
+       const hora = horario.substring(0,2);
+       const minuto = horario.substring(3,5)
+       */
+       
+       const horarioEDataDaConsulta = `${data} ${horario}`;
+       return horarioEDataDaConsulta;
+    }
+   
+    const remarcarClick = async () => {  
+        try {     
+            const dataFinal = transformarEmDataComMinutos();
+            const request = {
+                "IdAgendamento":33,
+                "NovoHorario": dataFinal
+            };
 
-    const remarcarClick = async () => { 
+            console.log(request);
 
-        try {
+            const resp = await api.RemarcarConsulta(request);
+            console.log(resp);
 
-        const modeloRemarcacao =
-        {
-            "IdAgendamento": idAgendamento,
-            "NovoHorario": new Date(data, horario)
-        }
-        
-        const response = api.RemarcarConsulta(modeloRemarcacao)
+            toast.success("Consulta remarcada com sucesso!");
             
         } catch (e) {
             toast.error(e.response.data.erro);
         }
     }
-
-    console.log(horario);
-    console.log(data);
 
     return(
         <div className="Contre">
@@ -54,7 +70,7 @@ export default function Remarcar(props){
                         <input onChange={e => setData(e.target.value)}  className="date form-control" type="date" />
                         
                         <label className="chosehour"><h5>Escolha uma hora</h5></label>
-                        <input onChange={e => setHorario(e.target.value)} className="time form-control" type="time" />
+                        <input value={horario} onChange={e => setHorario(e.target.value)} className="time form-control" type="time" />
                     </div>
                     <div className="btsre">
                         <button className="btn btn-danger">Cancelar</button>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://52.20.185.38:5000'
+    baseURL: 'http://localhost:5000'
 });
 
 export default class OdontoApi {
@@ -26,7 +26,7 @@ export default class OdontoApi {
     //Agendar novo - cliente
     AgendarConsultaPorCliente = async (dadosDaConsulta) => {
         const resp = await api.post("/agendamento/cadastrar/cliente", dadosDaConsulta);
-        return resp;
+        return resp.data;
     }
 
     //Agendar novo - funcionário
@@ -37,23 +37,23 @@ export default class OdontoApi {
 
     
     RemarcarConsulta = async (novoHorario) => {
-        const resp = await api.put("/agendamento/remarcar");
-        return resp;
+        const resp = await api.put("/agendamento/remarcar", novoHorario);
+        return resp.data;
     }
 
     AvaliarConsulta = async (modeloAvaliacao) => {
         const resp = await api.post('/Feedback', modeloAvaliacao);
-        return resp;
+        return resp.data;
     }
 
     CancelarConsulta = async (idConsulta) => {
         const resp = await api.put(`/agendamento/cancelar/${idConsulta}`);
-        return resp;
+        return resp.data;
     }
 
     AlterarSituacao = async (idConsulta, novaSituacao) => {
         const resp = await api.put(`/agendamento/situacao/${idConsulta}?novaSituacao=${novaSituacao}`);
-        return resp;
+        return resp.data;
     }
 
 
