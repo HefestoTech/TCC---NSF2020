@@ -223,16 +223,18 @@ body{
                 }
 
                 .line7 .btn{
-                    display: flex;
+                    display: inline;
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
                     width: 13vw;
+                    padding-top: 13px;
+                  
                 }
 
                 .imgconf{
-                    width: 3vw;
-                    height: 3vh;
+                    width: 40px;
+                    height: 25px;
                     margin: 2px;
                 }
 
