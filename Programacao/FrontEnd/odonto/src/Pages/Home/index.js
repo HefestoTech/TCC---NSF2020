@@ -1,7 +1,7 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
-import Dentista from '../../Assets/dentista.jpg'
-import Odonto   from '../../Assets/odonto.png'
+import Dentista from '../../Assets/Fotos/dentista.jpg'
+import Odonto   from '../../Assets/Fotos/odonto.png'
 import Rodape   from '../../Components/Footer';
 import Menu     from '../../Components/Menu'
 import './Home.css';

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Menu from '../../Components/Menu';
 import Rodape from '../../Components/Footer';
 import './menu.css';
-import Fotozinha from '../../Assets/deu tudo errado.png';
+import Fotozinha from '../../Assets/Fotos/deu tudo errado.png';
 import { Link, useHistory } from 'react-router-dom';
 
  export default function MenuCliente(props)

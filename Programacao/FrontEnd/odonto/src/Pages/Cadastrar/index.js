@@ -1,5 +1,5 @@
 import React, { useState }    from 'react';
-import SetaDir  from '../../Assets/arrowr.png' 
+import SetaDir  from '../../Assets/Fotos/arrowr.png' 
 import { Link } from 'react-router-dom';
 import './cadastrar.css';
 import CepApi from "../../Services/CepApi";
@@ -16,18 +16,27 @@ const cepApi = new CepApi();
      const [cidade, setCidade] = useState(null);
      const [estado, setEstado] = useState(null);
      const [complemento, setComplemento] = useState(null);
+     const [numeroResidencial, setNumeroResidencial] = useState(0);
+
+
+    
+
 
      const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
-        const response = await cepApi.consultar(cepEnviadoPeloUsuario);
-         setLogradouro(response.logradouro);
-         setComplemento(response.complemento);
-         setCidade(response.localidade);
-         setEstado(response.uf)
-         setCep(response.cep);
-        
-         if(response.erro === true) 
-            alert("CEP não encontrado");
+                const response = await cepApi.consultar(cepEnviadoPeloUsuario);
+                setLogradouro(response.logradouro);
+                setComplemento(response.complemento);
+                setCidade(response.localidade);
+                setEstado(response.uf)
+                setCep(response.cep);
+            
+            if (response.erro === true)
+                alert("CEP não encontrado");
+            
+            
         }
+
+        
 
      const mudarMostrarSenha = () => {
          if(mostrarSenha == "password")
@@ -42,6 +51,7 @@ const cepApi = new CepApi();
             <div className="bodyCad">
                 <div className="Tt1cad"><h1>Crie seu perfil</h1></div>
                 <div className="FormPers">
+
                     
                     <div className="Tt2Cad">
                         <h3>Insira seus Dados Pessoais</h3>
@@ -75,6 +85,7 @@ const cepApi = new CepApi();
                             <h5>CPF*</h5>
                             <input type="text" className=" form-control" placeholder="000.000.000-0" />
                         </div>
+                        
 
                         <div className="formCEP">
                             <h5>CEP*</h5>
@@ -86,9 +97,13 @@ const cepApi = new CepApi();
                             <input value={logradouro} readOnly type="text" className="form-control" placeholder="R. Fulandia das Águas"/>
                         </div>
 
+                       
+
+                        
+
                         <div className="formNum">
                             <h5>Nº*</h5>
-                            <input type="number" className="form-control" placeholder="Ex:12" />
+                            <input value={numeroResidencial} type="number" className="form-control" placeholder="Ex:12" />
                         </div>
                     </div>
 

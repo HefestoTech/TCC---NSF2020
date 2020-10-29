@@ -24,8 +24,12 @@ namespace BackEnd.Business
             if(string.IsNullOrEmpty(tbCliente.DsLougradouro))
                 throw new ArgumentException("O CEP está incorreto.");
 
-            if(tbCliente.NrResidenical == 0 )
+            if(tbCliente.NrResidenical < 0 )
+                throw new ArgumentException("O número residêncial não pode ser negativo.");
+
+            if (tbCliente.NrResidenical == 0)
                 throw new ArgumentException("O número residêncial é obrigatório.");
+
 
             if(tbCliente.DsTelefone.Length > 15 || tbCliente.DsTelefone.Length < 11)
                 throw new ArgumentException("O número telefônico está incorreto.");         
