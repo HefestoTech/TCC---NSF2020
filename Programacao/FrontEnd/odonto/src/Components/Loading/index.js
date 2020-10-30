@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactLoading from 'r';
+import ReactLoading from 'react-loading';
 import './index.css'
-im
 
 export default function Loading () {
     return(
