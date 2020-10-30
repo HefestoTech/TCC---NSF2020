@@ -1,5 +1,7 @@
 
 import React from 'react'
+import Menu from '../../Components/Menu';
+import Rodape from '../../Components/Footer';
 export default function Feedback(){
     return(
         <div>
