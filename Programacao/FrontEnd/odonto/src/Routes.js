@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route, Router} from 'react-router-dom'
 
 import Home from './Pages/Home'
 import Login from './Pages/Login/login.js'
@@ -8,6 +8,7 @@ import Cadastrar from './Pages/Cadastrar'
 import agendarconsultacliente from './Pages/AgendarCliente'
 import Menu from "./Pages/OneMenu"
 import NotFound from "./Pages/NotFound"
+import Feedback from "./Pages/Feedback"
 
 export default function Routes() {
     return(
@@ -19,7 +20,9 @@ export default function Routes() {
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente/:id" exact component={agendarconsultacliente}/>
               <Route path="/menu/:id" exact component={Menu}/>
+              <Router path = "/feedback" component = {Feedback}/>
               <Route path="*" component={NotFound}/>
+              
           </Switch>
         </BrowserRouter>
     )
