@@ -36,7 +36,8 @@ namespace BackEnd.Database
             List<Models.TbConsulta> listaDeConsultas = this.PegarTodasAsConsultas();
            
             listaDeConsultas = listaDeConsultas.Where(x => x.DsSituacao.Contains(situacao) 
-                               && x.IdClienteNavigation.NmCliente.Contains(nome)  && x.IdServicoNavigation.NmServico.Contains(servico)
+                               && x.IdClienteNavigation.NmCliente.Contains(nome) 
+                               && x.IdServicoNavigation.NmServico.Contains(servico)
                                && x.IdFuncionarioNavigation.NmFuncionario.Contains(doutor)).ToList();
            
             //Pega pelo horário + data

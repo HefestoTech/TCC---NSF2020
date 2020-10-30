@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'http://52.20.185.38:5000'
 });
 
 export default class OdontoApi {
