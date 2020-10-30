@@ -30,7 +30,7 @@ namespace BackEnd.Controllers
             try
             {
                 Models.TbServico servico = business.PegarValorDaConsulta(request);
-                return conversor.TransformarParaValoresDaConsulta(servico, request);
+                return business.TransformarParaValoresDaConsulta(servico, request);
             }
             catch (System.Exception ex)
             {

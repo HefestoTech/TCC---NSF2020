@@ -19,6 +19,7 @@ namespace BackEnd.Business
                 
                 return funcionarios;
         }
+
         
         public Models.TbServico PegarValorDaConsulta(Models.Request.ValoresDaConsultaRequest request)
         {   
@@ -27,6 +28,28 @@ namespace BackEnd.Business
             validador.ValidarPagamento(request.FormaDePagamento, request.QuantidadeParcelas);
             
             return dbAgendamento.PegarInformacoesServico(request);
+        }
+
+        public Models.Response.ValoresDaConsulta TransformarParaValoresDaConsulta(Models.TbServico servico, Models.Request.ValoresDaConsultaRequest request)
+        {
+            Models.Response.ValoresDaConsulta valores = new Models.Response.ValoresDaConsulta();
+
+            valores.Subtotal = servico.VlPrecoServico;
+
+            if (request.FormaDePagamento == "Dinheiro")
+            {
+                valores.Desconto = 10 * servico.VlPrecoServico / 100;
+                valores.ValorParcelado = 0;
+                valores.Total = servico.VlPrecoServico - valores.Desconto;
+            }
+            else
+            {
+                valores.Desconto = 0;
+                valores.Total = servico.VlPrecoServico - valores.Desconto;
+                valores.ValorParcelado = valores.Total / request.QuantidadeParcelas;
+            }
+
+            return valores;
         }
         
         public Models.TbConsulta AgendarNovaConsulta(Models.TbConsulta request, string email)

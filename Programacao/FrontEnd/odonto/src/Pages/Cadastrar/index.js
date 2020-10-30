@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import './cadastrar.css';
 import CepApi from "../../Services/CepApi";
 import OdontoApi from "../../Services/OdontoApi"
+import { ToastContainer, toast } from 'react-toastify';
 
 const cepApi = new CepApi();
+const odontoApi = new OdontoApi();
 
  export default function Cadastrar()
  {
@@ -17,12 +19,21 @@ const cepApi = new CepApi();
      const [estado, setEstado] = useState(null);
      const [complemento, setComplemento] = useState(null);
      const [numeroResidencial, setNumeroResidencial] = useState(0);
+     const [nome, setNome] = useState(null);
+     const [sexo, setSexo] = useState(null);
+     const [dataNascimento, setDataNascimento] = useState();
+     const [Cpf, setCpf] = useState(null);
+     const [telefone, setTelefone] = useState(null);
+     const [email, setEmail] = useState(null);
+     const [senha1, setSenha1] = useState(null);
+     const [senha2, setSenha2] = useState(null);
 
+    
 
     
 
 
-     const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
+        const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
                 const response = await cepApi.consultar(cepEnviadoPeloUsuario);
                 setLogradouro(response.logradouro);
                 setComplemento(response.complemento);
@@ -32,13 +43,37 @@ const cepApi = new CepApi();
             
             if (response.erro === true)
                 alert("CEP não encontrado");
-            
-            
         }
+
+        const verSeSenhasSãoIguais = () => {
+               const x = senha1 === senha2;
+               return x
+        }
+
+        const cadastrarClick = async () => {
+
+            try {
+
+                const x = verSeSenhasSãoIguais();
+        
+                if(x == false)
+                    toast.error("A senhas são diferentes.");
+                else{   
+                    const request = {  };
+                    const response = odontoApi.Cadastrar(request);
+                }
+                
+            } catch (error) {
+                
+            }
+                
+           
+        }
+
 
         
 
-     const mudarMostrarSenha = () => {
+        const mudarMostrarSenha = () => {
          if(mostrarSenha == "password")
             setMostrarSenha("text");
          else 
@@ -47,6 +82,7 @@ const cepApi = new CepApi();
      return(
 
         <div className="ContCad">
+            <ToastContainer/>
             <Link to="/" ><h1 className="logohome">ODONTO</h1></Link>
             <div className="bodyCad">
                 <div className="Tt1cad"><h1>Crie seu perfil</h1></div>
@@ -149,12 +185,12 @@ const cepApi = new CepApi();
                     <div className="line6">
                         <div className="formPassw">
                             <h5>Crie uma senha</h5>
-                            <input type={mostrarSenha} className="form-control" placeholder="******" />
+                            <input onChange={e => setSenha1(e.target.value)} type={mostrarSenha} className="form-control" placeholder="******" />
                         </div>
 
                         <div className="formConfiPassw">
                             <h5>Confirme sua senha</h5>
-                            <input type={mostrarSenha} className="form-control" placeholder="******" />
+                            <input onChange={e => setSenha2(e.target.value)}  type={mostrarSenha} className="form-control" placeholder="******" />
                         </div>
 
                        <i onClick={mudarMostrarSenha} class="far fa-eye-slash"></i>
@@ -162,7 +198,7 @@ const cepApi = new CepApi();
 
                     <div className="line7"> 
                         <div className="ButConf ">
-                            <button className="btn btn-primary"> 
+                            <button onClick={cadastrarClick} className="btn btn-primary"> 
                                 <h5>Confirmar <img src={SetaDir} className="imgconf"/></h5>
                             </button>
                         </div>

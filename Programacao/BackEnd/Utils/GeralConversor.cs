@@ -94,28 +94,6 @@ namespace BackEnd.Utils
             return NovaConsulta;
         }
 
-        public Models.Response.ValoresDaConsulta TransformarParaValoresDaConsulta (Models.TbServico servico, Models.Request.ValoresDaConsultaRequest request)
-        {
-            Models.Response.ValoresDaConsulta valores = new Models.Response.ValoresDaConsulta();
-            
-            valores.Subtotal = servico.VlPrecoServico;
-            
-            if(request.FormaDePagamento == "Dinheiro")
-            {
-              valores.Desconto = 10 * servico.VlPrecoServico / 100;
-              valores.ValorParcelado = 0;
-              valores.Total = servico.VlPrecoServico - valores.Desconto;
-            }
-            else 
-            {
-              valores.Desconto = 0;
-              valores.Total = servico.VlPrecoServico - valores.Desconto;
-              valores.ValorParcelado = valores.Total / request.QuantidadeParcelas;
-            }
-            
-            return valores;
-        }
-
         
         public Models.Response.ConsultaResponse ParaConsultaResponse (Models.TbConsulta consulta)
         {
@@ -154,5 +132,69 @@ namespace BackEnd.Utils
             tbCliente.NrResidenical = cadastroRequest.NumeroResidencial;
             return tbCliente;
         }
+        
+
+        public Models.Response.AgendadosSeparadosPorSituacao OrganizadorListarConsultas (List<Models.TbConsulta> listaDeConsultas)
+        {
+            List<Models.Response.AgendadosResponse> agendadosResponse = this.ParaAgendadadosResponse(listaDeConsultas);
+            
+            return this.AgendadosSeparadosPorSituacao(agendadosResponse);
+        }
+
+        public List<Models.Response.AgendadosResponse> ParaAgendadadosResponse (List<Models.TbConsulta> listaDeConsultas)
+        {
+            List<Models.Response.AgendadosResponse> agendadosResponse = new List<Models.Response.AgendadosResponse>();
+
+            foreach(Models.TbConsulta item in listaDeConsultas)
+            {
+                Models.Response.AgendadosResponse response = new Models.Response.AgendadosResponse();
+                response.Data = item.DtConsulta;
+                response.Desconto = item.VlDesconto;
+                response.Doutor = item.IdFuncionarioNavigation.NmFuncionario;
+                response.FormaPagamento = item.TpFormaPagamento;
+                response.IdConsulta = item.IdConsulta;
+                response.NomeCliente = item.IdClienteNavigation.NmCliente;
+                response.Servico = item.IdServicoNavigation.NmServico;
+                response.Situacao = item.DsSituacao;
+                response.Subtotal = item.VlSubtotal;
+                response.ValorTotal = item.VlTotal;
+                
+                agendadosResponse.Add(response);
+            }
+
+            return agendadosResponse.OrderByDescending( x => x.Data).ToList();
+        }
+
+     
+        public Models.Response.AgendadosSeparadosPorSituacao AgendadosSeparadosPorSituacao(List<Models.Response.AgendadosResponse> agendadosResponse)
+        {
+
+            Models.Response.AgendadosSeparadosPorSituacao separadosPorSituacao = new Models.Response.AgendadosSeparadosPorSituacao();
+            separadosPorSituacao.Agendados = new List<Models.Response.AgendadosResponse>();
+            separadosPorSituacao.Cancelados = new List<Models.Response.AgendadosResponse>();
+            separadosPorSituacao.Concluidos = new List<Models.Response.AgendadosResponse>();
+            separadosPorSituacao.NaoCompareceu = new List<Models.Response.AgendadosResponse>();
+
+            foreach(Models.Response.AgendadosResponse item in agendadosResponse)
+            {
+                if(item.Situacao == "Concluido")
+                    separadosPorSituacao.Concluidos.Add(item);
+
+                else if(item.Situacao == "Agendado")
+                    separadosPorSituacao.Agendados.Add(item);
+
+                else if(item.Situacao == "Cancelado")
+                    separadosPorSituacao.Cancelados.Add(item);
+
+                else if(item.Situacao == "Não Compareceu")
+                    separadosPorSituacao.NaoCompareceu.Add(item);        
+            }
+
+            return separadosPorSituacao;
+
+        }
+ 
+ 
     }
+
 }
