@@ -18,7 +18,7 @@ const odontoApi = new OdontoApi();
      const [cidade, setCidade] = useState(null);
      const [estado, setEstado] = useState(null);
      const [complemento, setComplemento] = useState(null);
-     const [numeroResidencial, setNumeroResidencial] = useState(0);
+     const [numeroResidencial, setNumeroResidencial] = useState();
      const [nome, setNome] = useState(null);
      const [sexo, setSexo] = useState(null);
      const [dataNascimento, setDataNascimento] = useState();
@@ -63,8 +63,8 @@ const odontoApi = new OdontoApi();
                     const response = odontoApi.Cadastrar(request);
                 }
                 
-            } catch (error) {
-                
+            } catch (e) {
+                toast.error(e.response.data.erro)
             }
                 
            
@@ -97,21 +97,36 @@ const odontoApi = new OdontoApi();
                     <div className="line1">
                         <div className="formName">
                             <h5>Nome Completo*</h5>
-                            <input type="text" class="form-control"  placeholder="Fulano de Tal" />
+                            <input type="text" class="form-control"  placeholder="Fulano de Tal" 
+                            value={nome}
+                            onChange={e => setNome(e.target.value)}
+                            />
                         </div>
 
                         <div className="formSexo">
                             <h5>Selecione seu Sexo*</h5>
                             <div className="radios custom-control custom-radio custom-control-inline">
                                 
-                                <input type="radio" name="sexo"/><h5>Masculino</h5>
-                                <input type="radio" name="sexo"  className="fem" /><h5>Feminino</h5>
+                                <input type="radio" name="sexo"
+                                value={sexo}
+                                onChange={e => setSexo(e.target.checked ?"m":"")}
+                                /><h5>Masculino</h5>
+
+
+                                <input type="radio" name="sexo"  className="fem" 
+                                value={sexo}
+                                onChange={e => setSexo(e.target.checked ?"f":"")}
+                                /><h5>Feminino</h5>
+                                
                             </div>
                         </div>
 
                         <div className="formNasc">
                             <h5>Data de Nascimento*</h5>
-                            <input type="date" className="form-control" />
+                            <input type="date" className="form-control" 
+                            value={dataNascimento}
+                            onChange={e => setDataNascimento(e.target.value)}
+                            />
                         </div>
 
                     </div>
@@ -119,7 +134,10 @@ const odontoApi = new OdontoApi();
                     <div className="line2">
                         <div className="formCPF">
                             <h5>CPF*</h5>
-                            <input type="text" className=" form-control" placeholder="000.000.000-0" />
+                            <input type="text" className=" form-control" placeholder="000.000.000-0" 
+                            value={Cpf}
+                            onChange={e => setCpf(e.target.value)}
+                            />
                         </div>
                         
 
@@ -139,14 +157,20 @@ const odontoApi = new OdontoApi();
 
                         <div className="formNum">
                             <h5>Nº*</h5>
-                            <input value={numeroResidencial} type="number" className="form-control" placeholder="Ex:12" />
+                            <input value={numeroResidencial} type="number" className="form-control" placeholder="Ex:12" 
+                            value={numeroResidencial}
+                            onChange={e => setNumeroResidencial(e.target.value)}
+                            />
                         </div>
                     </div>
 
                     <div className="line3">
                         <div className="formComple">
                             <h5>Complemento</h5>
-                            <input value={complemento} type="text" className="form-control" placeholder="Apt.30" />
+                            <input value={complemento} type="text" className="form-control" placeholder="Apt.30" 
+                            value={complemento}
+                            onChange={e => setComplemento(e.target.value)}
+                            />
                         </div>
 
                         <div className="formCity">
@@ -165,7 +189,10 @@ const odontoApi = new OdontoApi();
                     <div className="line4">
                         <div className="formPhone">
                             <h5>Telefone para contato*</h5>
-                            <input type="text" className="form-control" placeholder="(xx) 99999-5555" />
+                            <input type="text" className="form-control" placeholder="(xx) 99999-5555" 
+                            value={telefone}
+                            onChange={e => setTelefone(e.target.value)}
+                            />
                         </div>
                     </div>
                 </div>
@@ -178,7 +205,10 @@ const odontoApi = new OdontoApi();
                     <div className="line5">
                        <div className="formEmail">
                             <h5>Crie um e-mail</h5>
-                            <input type="text" className="form-control" placeholder="Fulano123@example.com" />
+                            <input type="text" className="form-control" placeholder="Fulano123@example.com" 
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            />
                        </div>
                     </div>
 
