@@ -1,16 +1,39 @@
+.divmon{
 
-.margone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    
+}
 
-    text-align: center;
+
+.margOne{
+    display: flex;
     background-color:#9BC5D8;
-    margin: 40px 100px 40px 100px;
+    color: whitesmoke;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    height:69vh;
+    border-radius: 5px
+    
+
+    
+
 }
 
 .star{
 
+    display: flex;
+    align-items: center;
     background-color: #009FE5;
-    margin-right: 300px;
-    margin-left: 300px;
+    justify-content: space-evenly;
+    width:40%;
+    height:30vh ;
+    border-radius:8px
+    
 }
 
 
@@ -20,6 +43,15 @@ i {
 
 }
 
-textarea{
+    textarea{
     resize: none;
+    outline: 2px;
+}
+
+    .botao{
+    display: flex;
+    padding: 5vh;
+    background-color: rgb(238, 255, 0);
+    align-items: center;
+    
 }
