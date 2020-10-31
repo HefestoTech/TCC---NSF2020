@@ -9,6 +9,7 @@ import agendarconsultacliente from './Pages/AgendarCliente'
 import Menu from "./Pages/OneMenu"
 import NotFound from "./Pages/NotFound"
 import Feedback from "./Pages/Feedback"
+import ConsultarCliente from './Pages/ConsultaCliente'
 
 export default function Routes() {
     return(
@@ -20,7 +21,8 @@ export default function Routes() {
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente/:id" exact component={agendarconsultacliente}/>
               <Route path="/menu/:id" exact component={Menu}/>
-              <Router path = "/feedback" component = {Feedback}/>
+              <Route path = "/feedback" component = {Feedback}/>
+              <Route path="/consultacliente" component={ConsultarCliente} />
               <Route path="*" component={NotFound}/>
               
           </Switch>
