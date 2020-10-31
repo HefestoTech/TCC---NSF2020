@@ -12,25 +12,48 @@ namespace BackEnd.Controllers
 
     public class LoginController : ControllerBase
     {
-        Business.LoginBusiness business = new Business.LoginBusiness();
         Utils.GeralConversor conversor = new Utils.GeralConversor();
-        
-       [HttpPost]
-        public ActionResult<Models.Response.LoginResponse> Logar (Models.Request.LoginRequest loginRequest)
+        Business.CadastroBusiness business = new Business.CadastroBusiness();
+
+        /*[HttpPost]
+         public ActionResult<Models.Response.LoginResponse> Logar (Models.Request.LoginRequest loginRequest)
+         {
+             try
+             {
+                 Models.TbLogin login = business.Logar(loginRequest);
+
+                 return conversor.ParaLoginResponse(login);   
+             }
+             catch (System.Exception ex)
+             {
+                 return BadRequest( new Models.Response.ErroResponse(
+                     ex.Message, 400
+                 ));
+             }
+
+         }
+         */
+
+
+
+        [HttpPost]
+        public ActionResult<Models.Response.LoginResponse> CadastrarCliente(Models.Request.CadastrarClienteRequest cadastroCliente)
         {
             try
             {
-                Models.TbLogin login = business.Logar(loginRequest);
+                Models.TbCliente dadosCliente = conversor.ParaTbCliente(cadastroCliente);
+                Models.TbLogin dadosLogin = conversor.ParaTbLogin(cadastroCliente);
+                dadosLogin = business.CadastrarCliente(dadosLogin, dadosCliente);
+                Models.Response.LoginResponse loginResponse = conversor.ParaLoginResponse(dadosLogin);
+                return loginResponse;
 
-                return conversor.ParaLoginResponse(login);   
             }
             catch (System.Exception ex)
             {
-                return BadRequest( new Models.Response.ErroResponse(
+                return BadRequest(new Models.Response.ErroResponse(
                     ex.Message, 400
                 ));
             }
-             
         }
     }
 }
