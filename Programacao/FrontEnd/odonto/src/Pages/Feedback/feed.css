@@ -11,17 +11,15 @@
 .margOne{
     display: flex;
     background-color:#9BC5D8;
-    color: whitesmoke;
+    color: black;
     align-items: center;
     width: 80%;
     flex-direction: column;
     align-items: center;
     height:69vh;
-    border-radius: 5px
+    border-radius: 5px;
+    justify-content: space-evenly;
     
-
-    
-
 }
 
 .star{
@@ -29,11 +27,22 @@
     display: flex;
     align-items: center;
     background-color: #009FE5;
-    justify-content: space-evenly;
-    width:40%;
+    justify-content: space-around;
+    width:100%;
     height:30vh ;
     border-radius:8px
     
+}
+
+.star :hover{
+    color: #9BC5D8;
+}
+
+.divStarFeedback{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
 }
 
 
@@ -50,8 +59,12 @@ i {
 
     .botao{
     display: flex;
-    padding: 5vh;
-    background-color: rgb(238, 255, 0);
     align-items: center;
+    justify-content: space-between;
+    width: 50%;
     
+}
+
+.bta2, .bta1{
+margin-left: 35px;
 }

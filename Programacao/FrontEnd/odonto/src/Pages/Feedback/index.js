@@ -11,26 +11,27 @@ export default function Feedback(){
            
             <div class= "divmon">
             <div class = "margOne">
-                <h2>Avaliar última consulta </h2>
+                       
+                       <div className="divStarFeedback">
+                       <h2>Avaliar última consulta </h2>
                         <div className="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                         </div>
-                    
+                        </div>
+               
+
                         <div class="coment">                          
-                            <textarea className="comentario" rows="1" cols="60" maxLength="45"></textarea>                                                             
+                            <textarea placeholder="Deixe seu comentário (Opcional)" className="comentario form-control" rows="1" cols="60" maxLength="85"></textarea>                                                             
                         </div>
                     
                         <div class="botao">
                             <button class="btn bta1 btn-danger">Cancelar</button>
                             <button class="btn bta2 btn-success">Salvar</button>
-
-
-                    </div>
+                        </div>
             </div>
             </div>
             <Rodape></Rodape>
