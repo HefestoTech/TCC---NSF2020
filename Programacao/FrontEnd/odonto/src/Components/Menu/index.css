@@ -1,7 +1,7 @@
 .headre{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         height: 15vh;
         width: 100%;
