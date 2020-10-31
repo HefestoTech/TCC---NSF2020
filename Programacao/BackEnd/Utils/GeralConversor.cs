@@ -12,6 +12,23 @@ namespace BackEnd.Utils
 
         Database.LoginDatabase dbLogin = new Database.LoginDatabase();
 
+        public List<Models.Response.ServicoResponse> ParaServicoResponse (List<Models.TbServico> servicos)
+        {
+            List<Models.Response.ServicoResponse> servicoResponse = new List<Models.Response.ServicoResponse>();
+
+            foreach(Models.TbServico item in servicos)
+            {
+                Models.Response.ServicoResponse servicoItem = new Models.Response.ServicoResponse();
+
+                servicoItem.IdServico = item.IdServico;
+                servicoItem.NomeServico = item.NmServico;
+
+                servicoResponse.Add(servicoItem);
+            }
+
+            return servicoResponse;
+        }
+
         public List<Models.Response.DentistaResponse> ParaListaDentistasResponse (List<Models.TbFuncionario> funcionarios)
         {
             List<Models.Response.DentistaResponse> dentistaResponse = new List<Models.Response.DentistaResponse>();

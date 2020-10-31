@@ -9,6 +9,16 @@ namespace BackEnd.Business
     {
         Database.AgendamentoDatabase dbAgendamento = new Database.AgendamentoDatabase();
         Validador.ValidadorBusiness validador = new Validador.ValidadorBusiness();
+
+        public List<Models.TbServico> ListarTodosOsServicos()
+        {   
+            List<Models.TbServico> servicos = dbAgendamento.ListarTodosOsServicos();
+
+            if(servicos.Count == 0)
+               throw new ArgumentException("Houve um erro ao pegar os serviços disponíveis");
+
+            return servicos;   
+        }
         
         public List<Models.TbFuncionario> ListarDentistasDisponiveis(DateTime data)
         {

@@ -16,6 +16,24 @@ namespace BackEnd.Controllers
         Business.AgendamentoBusiness business = new Business.AgendamentoBusiness();
         Business.EnviarEmailBusiness enviarEmailBusiness = new Business.EnviarEmailBusiness();
         Utils.GeralConversor conversor = new Utils.GeralConversor();
+
+        
+        [HttpGet("PegarServicos")]
+        public ActionResult<List<Models.Response.ServicoResponse>> ListarTodosOsServicos()
+        {
+            try
+            {
+                List<Models.TbServico> servicos = business.ListarTodosOsServicos();
+
+                return conversor.ParaServicoResponse(servicos);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
+        }
         
         [HttpGet("Dentista/Disponivel")]
         public ActionResult<List<Models.Response.DentistaResponse>> ListarDentistasDisponiveis (Models.Request.HorarioRequest horario)
@@ -23,6 +41,7 @@ namespace BackEnd.Controllers
              List<Models.TbFuncionario> funcionarios = business.ListarDentistasDisponiveis(horario.Horario);
              return conversor.ParaListaDentistasResponse(funcionarios);
         }
+
         
         [HttpGet("ValorDaConsulta")]
         public ActionResult<Models.Response.ValoresDaConsulta> PegarValorDaConsulta (Models.Request.ValoresDaConsultaRequest request)

@@ -18,7 +18,7 @@ const odontoApi = new OdontoApi();
      const [cidade, setCidade] = useState(null);
      const [estado, setEstado] = useState(null);
      const [complemento, setComplemento] = useState(null);
-     const [numeroResidencial, setNumeroResidencial] = useState();
+     const [numeroResidencial, setNumeroResidencial] = useState(0);
      const [nome, setNome] = useState(null);
      const [sexo, setSexo] = useState(null);
      const [dataNascimento, setDataNascimento] = useState();
@@ -59,7 +59,23 @@ const odontoApi = new OdontoApi();
                 if(x == false)
                     toast.error("A senhas são diferentes.");
                 else{   
-                    const request = {  };
+                    const request = { 
+                        "Email": email,
+                        "Senha": senha1,
+                        "Nome": nome,
+                        "Sexo": sexo,
+                        "Nascimento": dataNascimento,
+                        "CPF": Cpf,
+                        "CEP": cep,
+                        "Logradouro": logradouro,
+                        "NumeroResidencial": numeroResidencial,
+                        "Complemento": complemento,
+                        "Cidade": cidade,
+                        "Estado": estado,
+                        "Telefone": telefone
+                     };
+
+                    console.log(request);
                     const response = odontoApi.Cadastrar(request);
                 }
                 
@@ -158,7 +174,6 @@ const odontoApi = new OdontoApi();
                         <div className="formNum">
                             <h5>Nº*</h5>
                             <input value={numeroResidencial} type="number" className="form-control" placeholder="Ex:12" 
-                            value={numeroResidencial}
                             onChange={e => setNumeroResidencial(e.target.value)}
                             />
                         </div>

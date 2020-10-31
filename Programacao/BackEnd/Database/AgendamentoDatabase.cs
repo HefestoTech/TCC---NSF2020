@@ -13,6 +13,14 @@ namespace BackEnd.Database
         Models.db_odontoContext ctx = new Models.db_odontoContext();
 
 
+        [HttpGet("PegarServicos")]
+        public List<Models.TbServico> ListarTodosOsServicos()
+        {
+            List<Models.TbServico> servicos = ctx.TbServico.ToList();
+
+            return servicos;
+        }
+        
         public List<Models.TbFuncionario> ListarDentistasDisponiveis(DateTime data)
         {
              
