@@ -14,26 +14,88 @@
     height: 90vh;
 }
 
+.Tt1Cons{
 
+}
 
 
 .boxCons{
     display: flex;
     flex-direction: row;
-    width: 70vw;
+    width: 85vw;
     height: 50vh;
     background-color: blue;
 }
 
         .geralCons{
             display: flex;
+            flex-direction: column;
             width: 30vw;
             height: 45vh;
             background-color: blueviolet;
             margin: 15px;
         }
 
-                .
+                .lineForm1{
+                    display: flex;
+                    flex-direction: row;
+
+                }
+
+                        .nameCons{
+                            width: 12vw;
+                        }
+                        
+
+                        .dateCons{
+                            width: 12vw;
+                            margin-left: 20px;
+                        }
+
+                        .date{
+                            height: 6vh;
+                        }
+                
+
+                .lineForm2{
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+                }
+
+
+                                
+                        .servCons{
+                            width: 10vw;
+                        }
+
+                        .drCons{
+                            width: 10vw;
+                            margin-left: 40px;
+                        }
+                        
+
+                .lineForm3{
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+
+                }
+                
+                        
+
+                        .sitCons{
+                            width: 10vw;
+                        }
+
+
+                .lineForm4{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+
+
 
         .pagmCons{
             display: flex;
