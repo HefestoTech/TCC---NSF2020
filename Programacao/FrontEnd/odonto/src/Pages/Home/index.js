@@ -10,7 +10,11 @@ export default function App() {
   return (
     <div className="Cont">
       
-      <Menu>
+      <Menu className="header">
+        <div className="Tt1Home">
+          <h5>O seu sorriso fica muito mais Lindo perto de nós, Dentistas, cuidando dele.</h5>
+        </div>
+
         <div className="buttns">
         <Link to="/login"><button className="bt1 btn btn-outline-danger" > Logar</button></Link> 
         <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
