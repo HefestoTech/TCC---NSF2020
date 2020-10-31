@@ -193,3 +193,14 @@
             border-radius:5px;
             text-align: center;
           }
+
+  .foot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 98.7vw;
+    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(238, 243, 248));
+    color: white;
+  }

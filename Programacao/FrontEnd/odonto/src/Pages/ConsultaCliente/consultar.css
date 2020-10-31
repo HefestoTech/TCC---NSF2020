@@ -23,29 +23,46 @@
 
 .boxCons{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 85vw;
-    height: 50vh;
-    background-color: blue;
+    height: 52vh;
+    background-color: rgb(85, 136, 177);
+}
+
+.TtsCons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 63vw;
+    height: 7vh;
+    margin-left: 150px;
+    margin-top: 15px;
+}
+
+.BoxForms{
+    display: flex;
+    
 }
 
         .geralCons{
             display: flex;
             flex-direction: column;
-            width: 30vw;
-            height: 45vh;
+            width: 40vw;
+            height: 40vh;
             background-color: rgb(70, 102, 128);
-            margin: 15px;
+            margin-left: 15px;
         }
 
                 .lineForm1{
                     display: flex;
                     flex-direction: row;
-
+                    margin-top: 15px;
                 }
 
                         .nameCons{
                             width: 12vw;
+                            margin-left: 10px;
                         }
                         
 
@@ -69,40 +86,43 @@
                                 
                         .servCons{
                             width: 10vw;
+                            margin-left: 10px;
                         }
 
                         .drCons{
                             width: 10vw;
-                            margin-left: 40px;
+                            margin-left: 45px;
                         }
                         
 
-                .lineForm3{
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: 10px;
-
-                }
-                
                         
-
                         .sitCons{
                             width: 10vw;
+                            margin-left: 50px;
                         }
+
 
 
                 .lineForm4{
                     display: flex;
-                    justify-content: flex-end;
+                    width: 40vw;
+                    height: 15vh;
+                    justify-content: center;
+                    align-items: center;
                 }
 
+
+                        .btn{
+                            margin-right: 35px;
+                            width: 15vw;
+                        }
 
 
 
         .pagmCons{
             display: flex;
-            width: 40vw;
-            height: 45vh;
-            background-color: blueviolet;
-            margin: 15px;
+            width: 41vw;
+            height: 40vh;
+            background-color: rgb(70, 102, 128);
+            margin-left: 22px;
         }

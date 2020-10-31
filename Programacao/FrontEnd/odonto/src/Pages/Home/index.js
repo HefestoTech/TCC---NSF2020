@@ -103,7 +103,7 @@ export default function App() {
         </div>
       </div>
 
-        <Rodape/>
+        <Rodape></Rodape>
 
     </div>
   );
