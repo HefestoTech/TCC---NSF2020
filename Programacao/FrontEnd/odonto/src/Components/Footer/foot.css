@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     height: 10vh;
-    min-width: 100vw;
-    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
+    width: 10vw;
+    background-image: linear-gradient(to right,rgb(85, 109, 129),rgb(224, 234, 243));
     color: white;
 }

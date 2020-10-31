@@ -1,0 +1,44 @@
+.ContCons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.BodyCons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+
+
+
+
+.boxCons{
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    height: 50vh;
+    background-color: blue;
+}
+
+        .geralCons{
+            display: flex;
+            width: 30vw;
+            height: 45vh;
+            background-color: blueviolet;
+            margin: 15px;
+        }
+
+                .
+
+        .pagmCons{
+            display: flex;
+            width: 40vw;
+            height: 45vh;
+            background-color: blueviolet;
+            margin: 15px;
+        }

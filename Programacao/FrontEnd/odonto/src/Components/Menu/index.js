@@ -9,7 +9,6 @@ export default function Menu(props){
         <div>
             <div className="headre">
                 <Link to="/"> <h1 className="logoname">Odonto</h1> </Link>
-                <h3 className="text3">Seu sorriso fica muito mais lindo perto de nós, Dentistas, cuidando dele!</h3>
                 {props.children}
             </div>
         </div>

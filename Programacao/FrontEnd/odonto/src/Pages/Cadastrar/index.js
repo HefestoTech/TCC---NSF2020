@@ -58,7 +58,8 @@ const odontoApi = new OdontoApi();
         
                 if(x == false)
                     toast.error("A senhas são diferentes.");
-                else{   
+                
+                    else{   
                     const request = { 
                         "Email": email,
                         "Senha": senha1,
@@ -76,11 +77,13 @@ const odontoApi = new OdontoApi();
                      };
 
                     console.log(request);
-                    const response = odontoApi.Cadastrar(request);
+                    const response = await odontoApi.Cadastrar(request);
+                    console.log(response);
                 }
                 
             } catch (e) {
                 toast.error(e.response.data.erro)
+                console.log(e.response.data)
             }
                 
            

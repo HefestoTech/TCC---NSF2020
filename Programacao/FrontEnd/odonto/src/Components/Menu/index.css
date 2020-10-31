@@ -1,19 +1,14 @@
 .headre{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         height: 15vh;
         width: 100%;
         background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
 }
 
-        .text3{
-            height: 10vh;
-            width: 50vw;
-            text-align: center;
-            color: white;
-        }
+        
 
         .user{
             display: flex;
