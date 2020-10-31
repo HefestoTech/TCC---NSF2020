@@ -1,6 +1,6 @@
 import React, { useState }    from 'react';
 import SetaDir  from '../../Assets/Fotos/arrowr.png' 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './cadastrar.css';
 import CepApi from "../../Services/CepApi";
 import OdontoApi from "../../Services/OdontoApi"
@@ -11,83 +11,88 @@ const odontoApi = new OdontoApi();
 
  export default function Cadastrar()
  {
-     const [mostrarSenha, setMostrarSenha] = useState("password");
+    const history = useHistory();
 
-     const [cep, setCep] = useState(0);
-     const [logradouro, setLogradouro] = useState(null);
-     const [cidade, setCidade] = useState(null);
-     const [estado, setEstado] = useState(null);
-     const [complemento, setComplemento] = useState(null);
-     const [numeroResidencial, setNumeroResidencial] = useState(0);
-     const [nome, setNome] = useState(null);
-     const [sexo, setSexo] = useState(null);
-     const [dataNascimento, setDataNascimento] = useState();
-     const [Cpf, setCpf] = useState(null);
-     const [telefone, setTelefone] = useState(null);
-     const [email, setEmail] = useState(null);
-     const [senha1, setSenha1] = useState(null);
-     const [senha2, setSenha2] = useState(null);
+    const [mostrarSenha, setMostrarSenha] = useState("password");
+    const [cep, setCep] = useState(0);
+    const [logradouro, setLogradouro] = useState(null);
+    const [cidade, setCidade] = useState(null);
+    const [estado, setEstado] = useState(null);
+    const [complemento, setComplemento] = useState(null);
+    const [numeroResidencial, setNumeroResidencial] = useState(0);
+    const [nome, setNome] = useState(null);
+    const [sexo, setSexo] = useState(null);
+    const [dataNascimento, setDataNascimento] = useState();
+    const [Cpf, setCpf] = useState(null);
+    const [telefone, setTelefone] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [senha1, setSenha1] = useState(null);
+    const [senha2, setSenha2] = useState(null);
 
     
-
-    
-
-
-        const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
-                const response = await cepApi.consultar(cepEnviadoPeloUsuario);
-                setLogradouro(response.logradouro);
-                setComplemento(response.complemento);
-                setCidade(response.localidade);
-                setEstado(response.uf)
-                setCep(response.cep);
-            
-            if (response.erro === true)
-                alert("CEP não encontrado");
-        }
-
-        const verSeSenhasSãoIguais = () => {
-               const x = senha1 === senha2;
-               return x
-        }
-
-        const cadastrarClick = async () => {
-
-            try {
-
-                const x = verSeSenhasSãoIguais();
+    const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
+            const response = await cepApi.consultar(cepEnviadoPeloUsuario);
+            setLogradouro(response.logradouro);
+            setComplemento(response.complemento);
+            setCidade(response.localidade);
+            setEstado(response.uf)
+            setCep(response.cep);
         
-                if(x == false)
-                    toast.error("A senhas são diferentes.");
-                
-                    else{   
-                    const request = { 
-                        "Email": email,
-                        "Senha": senha1,
-                        "Nome": nome,
-                        "Sexo": sexo,
-                        "Nascimento": dataNascimento,
-                        "CPF": Cpf,
-                        "CEP": cep,
-                        "Logradouro": logradouro,
-                        "NumeroResidencial": numeroResidencial,
-                        "Complemento": complemento,
-                        "Cidade": cidade,
-                        "Estado": estado,
-                        "Telefone": telefone
-                     };
+        if (response.erro === true)
+            alert("CEP não encontrado");
+    }
 
-                    console.log(request);
-                    const response = await odontoApi.Cadastrar(request);
-                    console.log(response);
-                }
-                
-            } catch (e) {
-                toast.error(e.response.data.erro)
-                console.log(e.response.data)
-            }
-                
-           
+
+    const verSeSenhasSãoIguais = () => {
+            const x = senha1 === senha2;
+            return x
+    }
+
+
+    const cadastrarClick = async () => {
+
+    try {
+
+        const x = verSeSenhasSãoIguais();
+
+        if(x == false)
+            toast.error("A senhas são diferentes.");
+        
+        else{   
+            const request = { 
+                "Email": email,
+                "Senha": senha1,
+                "Nome": nome,
+                "Sexo": sexo,
+                "Nascimento": dataNascimento,
+                "CPF": Cpf,
+                "CEP": cep,
+                "Logradouro": logradouro,
+                "NumeroResidencial": numeroResidencial,
+                "Complemento": complemento,
+                "Cidade": cidade,
+                "Estado": estado,
+                "Telefone": telefone
+                };
+
+            
+            const response = await odontoApi.Cadastrar(request);
+
+            history.push({
+                pathname: `/menu/${response.idUsuario}`,
+                state: response
+
+        });
+            
         }
+        
+    } catch (e) {
+        toast.error(e.response.data.erro)
+        console.log(e.response.data)
+    }
+        
+    
+}
 
 
         
