@@ -15,27 +15,6 @@ namespace BackEnd.Controllers
         Utils.GeralConversor conversor = new Utils.GeralConversor();
         Business.CadastroBusiness business = new Business.CadastroBusiness();
 
-        /*[HttpPost]
-         public ActionResult<Models.Response.LoginResponse> Logar (Models.Request.LoginRequest loginRequest)
-         {
-             try
-             {
-                 Models.TbLogin login = business.Logar(loginRequest);
-
-                 return conversor.ParaLoginResponse(login);   
-             }
-             catch (System.Exception ex)
-             {
-                 return BadRequest( new Models.Response.ErroResponse(
-                     ex.Message, 400
-                 ));
-             }
-
-         }
-         */
-
-
-
         [HttpPost]
         public ActionResult<Models.Response.LoginResponse> CadastrarCliente(Models.Request.CadastrarClienteRequest cadastroCliente)
         {
