@@ -6,13 +6,13 @@ const api = axios.create({
 
 export default class OdontoApi {
 
-    Logar = async (modeloCadastro)  => {
+    Cadastrar = async (modeloCadastro)  => {
         const resp = await api.post("/cadastro", modeloCadastro);
         return resp.data;
     }
 
 
-    Cadastrar = async (modeloLogin)  => {
+    Logar = async (modeloLogin)  => {
        const resp = await api.post("/login", modeloLogin);
        return resp.data;
     }
