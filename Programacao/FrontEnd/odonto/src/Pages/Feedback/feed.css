@@ -1,0 +1,25 @@
+
+.margone{
+
+    text-align: center;
+    background-color:#9BC5D8;
+    margin: 40px 100px 40px 100px;
+}
+
+.star{
+
+    background-color: #009FE5;
+    margin-right: 300px;
+    margin-left: 300px;
+}
+
+
+i {
+    color: rgb(223, 189, 0);
+    font-size: 55px;
+
+}
+
+textarea{
+    resize: none;
+}

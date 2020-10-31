@@ -74,11 +74,11 @@ const api = new OdontoApi();
                         <div className = "cardlogin btn pequenoLogin">
                         <button
                         onClick={logarClick}
-                        className = "btn btn-outline-danger"> Entrar </button>
+                        className = "btn btn-danger"> Entrar </button>
                     
                             <p className="cardnt"> Não tem uma conta?</p> 
                            
-                            <Link className="linkCadastrar" to="/cadastrar"><button className = "btn btn-outline-danger"> Cadastrar-se</button></Link>
+                            <Link className="linkCadastrar" to="/cadastrar"><button className = "btn btn-danger"> Cadastrar-se</button></Link>
                         </div>
                     </div>
                     </div> 
