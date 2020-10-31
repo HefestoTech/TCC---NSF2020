@@ -1,29 +1,14 @@
 .headre{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        height: 15vh;
+        height: 10vh;
         width: 100%;
         background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
 }
 
-        
-
-        .user{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 5.5vw;
-            height: 12vh;
-            background-color: rgb(70, 102, 128);
-            border-radius: 50px;
+        .logonamei{
             margin-right: 10px;
         }
 
-        .user img{
-            width: 4vw;
-            height: 8vh;
-            margin-right: 80px;
-            margin-bottom: 4px;
-        }
+        

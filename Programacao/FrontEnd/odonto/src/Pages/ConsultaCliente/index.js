@@ -14,7 +14,7 @@ export default function ConsultarCliente() {
             <div className="BodyCons">
 
                 <div className="Tt1Cons">
-                    <h3>Meus Agendamentos</h3>
+                    <h3 className="display-23">Meus Agendamentos</h3>
                 </div>
 
                 <div className="boxCons">
