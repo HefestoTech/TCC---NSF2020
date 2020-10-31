@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './foot.css'
 
 export default function Rodape(){
 
