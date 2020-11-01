@@ -32,12 +32,19 @@
     height:30vh ;
     border-radius:8px;
     
-    
-    
 }
 
 .star :hover{
-    color: #ffd900;
+    color : #ffd900;
+    cursor: pointer;
+}
+
+.star > ul{
+    display: flex;
+    width: 110%;
+    list-style: none;
+    justify-content: space-around;
+    margin-left: -10%;
     
 }
 
@@ -56,11 +63,8 @@ i {
 }
 
 
-
-
     textarea{
     resize: none;
-    
 }
 
     .botao{
@@ -71,19 +75,19 @@ i {
     
 }
 
- .bta1{
+.bta2, .bta1{
 margin-left: 35px;
-box-shadow: 2px 2px 2px #8a0000;
 }
+.bta1 {
+    margin-left : 35px;
+    box-shadow : 2px 2px 2px #8a0000;
+}.bta2 
+{
+    margin-left : 35px;
+    box-shadow : 2px 2px 2px #006905;
+    background-color : #21c500;
+}.bta1 :hover {
 
-.bta2{
-    margin-left: 35px;
-    box-shadow: 2px 2px 2px #006905;
-    background-color: #21c500;
-}
-
-.bta1:hover{
-
-    background-color: #910000;
+    background-color : #910000;
 
 }
