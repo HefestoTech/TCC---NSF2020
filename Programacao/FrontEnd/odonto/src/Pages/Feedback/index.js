@@ -12,15 +12,16 @@ export default function Feedback(){
             <div class= "divmon">
             <div class = "margOne">
                        
-                       <div className="divStarFeedback">
+                    <div className="divStarFeedback">
                        <h2>Avaliar última consulta </h2>
-                        <div className="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                            <div className="star">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>                      
+                    </div>
+                        
                         </div>
                
 
