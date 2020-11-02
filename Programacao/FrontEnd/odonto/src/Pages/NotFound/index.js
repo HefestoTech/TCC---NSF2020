@@ -6,6 +6,7 @@ import "./index.css"
 export default function NotFound () {
     return(
         <div>
+            <Menu/>
            
            <div className="divImageNotFound">
 

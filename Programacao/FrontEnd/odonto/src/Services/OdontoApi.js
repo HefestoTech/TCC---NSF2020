@@ -37,7 +37,22 @@ export default class OdontoApi {
     //Agendar novo - funcionário
     AgendarConsultaPorFuncionario = async (dadosDaConsulta) => {
         const resp = await api.post("/agendamento/cadastrar/funcionario", dadosDaConsulta);
-        return resp;
+        return resp.data;
+    }
+
+    PegarServicos = async () => {
+        const resp = await api.get("/agendamento/PegarServicos");
+        return resp.data;
+    }
+
+    PegarConsultasCliente = async (idCliente) => {
+        const resp = await api.get("/consultaagendamento/agendados/cliente/" + idCliente);
+        return resp.data;
+    }
+    
+    PegarConsultasFuncionario = async (nome, servico, doutor, data, situacao) => {
+        const resp = await api.get(`/consultaagendamento/agendados/filtro?nome=${nome}&servico=${servico}&doutor=${doutor}&data=${data}&situacao=${situacao}`);
+        return resp.data;
     }
 
     
@@ -60,6 +75,7 @@ export default class OdontoApi {
         const resp = await api.put(`/agendamento/situacao/${idConsulta}?novaSituacao=${novaSituacao}`);
         return resp.data;
     }
+
 
 
 }
