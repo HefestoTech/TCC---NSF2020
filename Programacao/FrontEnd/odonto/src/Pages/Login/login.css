@@ -70,7 +70,7 @@
 
     .cardlogin > button {
 
-        width: 100%;
+        width: 70%;
         padding: 2px;
         box-shadow: 2px 2px 2px #990000;
         outline: 0;
@@ -111,9 +111,11 @@
     }
 
     .linkCadastrar > button{
-        width: 90%;
+        display: flex;
+        width: 70%;
         padding: 2px;
         box-shadow: 2px 2px 2px  #990000;
+        justify-content: space-around;
         
     }
 
