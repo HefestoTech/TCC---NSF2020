@@ -21,8 +21,8 @@ export default function Routes() {
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente/:id" exact component={agendarconsultacliente}/>
               <Route path="/menu/:id" exact component={Menu}/>
-              <Route path = "/feedback" component = {Feedback}/>
-              <Route path="/consultacliente" component={ConsultarCliente} />
+              <Route path="/feedback/:id" component = {Feedback}/>
+              <Route path="/consultacliente/:id" component={ConsultarCliente} />
               <Route path="*" component={NotFound}/>
               
           </Switch>

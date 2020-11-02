@@ -15,6 +15,35 @@ import { Link, useHistory } from 'react-router-dom';
                history.push("/login"); 
         }
 
+        const irParaTelaDeVerAgendamentos = () => {
+            if(responseCompleto.perfil === "Funcionário")
+               history.push({
+                   pathname:"/consultafuncionario/" + responseCompleto.idUsuario,
+                   state:responseCompleto
+            });
+            else {
+               history.push({
+                   pathname:"/consultacliente/" + responseCompleto.idUsuario,
+                   state:responseCompleto
+            });
+            }
+        }
+
+        const irParaTelaDeAgendarNovaConsulta = () => {
+            if(responseCompleto.perfil === "Funcionário")
+              history.push({
+                  pathname:"/agendarconsultafuncionario/" + responseCompleto.idUsuario,
+                  state:responseCompleto
+              });
+
+            else {
+                history.push({
+                    pathname:"/agendarconsultacliente/" + responseCompleto.idUsuario,
+                    state:responseCompleto
+                });
+            }  
+        }
+
         useEffect(() => {
         validarUsuario();
         }, [])
@@ -34,11 +63,11 @@ import { Link, useHistory } from 'react-router-dom';
                     </div>
                     
                     <div className = "botaolindo">
-                    <button type="button" class="btn_1 btn btn-outline-danger">Meus Agendamentos</button>
-                    <Link to={{
-                        pathname:`/agendarconsultacliente/${responseCompleto.idUsuario}`,
-                        state:responseCompleto
-                    }}><button type="button" class="btn_1 btn btn-outline-danger">Novo Agendamento</button></Link>
+                    <button onClick={irParaTelaDeVerAgendamentos} type="button" class="btn_1 btn btn-outline-danger">Meus Agendamentos</button>
+                   
+                    
+                    <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" class="btn_1 btn btn-outline-danger">Novo Agendamento</button>
+                   
                     </div>
                     </div>
 
