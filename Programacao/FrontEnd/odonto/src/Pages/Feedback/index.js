@@ -62,6 +62,11 @@ export default function Feedback(props) {
             await api.AvaliarConsulta(request);
 
             setMostrarLoading(false);
+
+            history.push({
+                pathname:"/consultacliente/:id",
+                state:responseCompleto
+            })
             
         } catch (e) {
             setMostrarLoading(false);

@@ -5,6 +5,7 @@ import './cadastrar.css';
 import CepApi from "../../Services/CepApi";
 import OdontoApi from "../../Services/OdontoApi"
 import { ToastContainer, toast } from 'react-toastify';
+import Loading from "../../Components/Loading";
 
 const cepApi = new CepApi();
 const odontoApi = new OdontoApi();
@@ -13,6 +14,8 @@ const odontoApi = new OdontoApi();
  {
     const history = useHistory();
 
+
+    const [mostrarLoading, setMostrarLoading] = useState(false);
     const [mostrarSenha, setMostrarSenha] = useState("password");
     const [cep, setCep] = useState(0);
     const [logradouro, setLogradouro] = useState(null);
@@ -51,13 +54,16 @@ const odontoApi = new OdontoApi();
 
     const cadastrarClick = async () => {
 
+    setMostrarLoading(true);
+
     try {
 
         const x = verSeSenhasSãoIguais();
 
-        if(x == false)
+        if(x == false){
+            setMostrarLoading(false);
             toast.error("A senhas são diferentes.");
-        
+        }
         else{   
             const request = { 
                 "Email": email,
@@ -78,6 +84,8 @@ const odontoApi = new OdontoApi();
             
             const response = await odontoApi.Cadastrar(request);
 
+            setMostrarLoading(false);
+
             history.push({
                 pathname: `/menu/${response.idUsuario}`,
                 state: response
@@ -87,16 +95,12 @@ const odontoApi = new OdontoApi();
         }
         
     } catch (e) {
+        setMostrarLoading(false);
         toast.error(e.response.data.erro)
-        console.log(e.response.data)
+        
     }
         
-    
 }
-
-
-        
-
         const mudarMostrarSenha = () => {
          if(mostrarSenha == "password")
             setMostrarSenha("text");
@@ -104,9 +108,17 @@ const odontoApi = new OdontoApi();
             setMostrarSenha("password")    
      }
      return(
+         <>
+          {mostrarLoading === true &&
+            <div>
+                <Loading/>
+            </div>
+            }
 
         <div className="ContCad">
             <ToastContainer/>
+
+           
             <Link to="/" ><h1 className="logohome">ODONTO</h1></Link>
             <div className="bodyCad">
                 <div className="Tt1cad"><h1>Crie seu perfil</h1></div>
@@ -133,13 +145,13 @@ const odontoApi = new OdontoApi();
                                 
                                 <input type="radio" name="sexo"
                                 value={sexo}
-                                onChange={e => setSexo(e.target.checked ?"m":"")}
+                                onChange={e => setSexo(e.target.checked ?"M":null)}
                                 /><h5>Masculino</h5>
 
 
                                 <input type="radio" name="sexo"  className="fem" 
                                 value={sexo}
-                                onChange={e => setSexo(e.target.checked ?"f":"")}
+                                onChange={e => setSexo(e.target.checked ?"F":null)}
                                 /><h5>Feminino</h5>
                                 
                             </div>
@@ -262,6 +274,6 @@ const odontoApi = new OdontoApi();
              
         </div>
          
-
+     </>
      )
  }
