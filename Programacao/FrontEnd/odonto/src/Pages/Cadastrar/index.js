@@ -146,13 +146,13 @@ const odontoApi = new OdontoApi();
                                 <input type="radio" name="sexo"
                                 value={sexo}
                                 onChange={e => setSexo(e.target.checked ?"M":null)}
-                                /><h5>Masculino</h5>
+                                /> <h5>Masculino</h5>
 
 
                                 <input type="radio" name="sexo"  className="fem" 
                                 value={sexo}
                                 onChange={e => setSexo(e.target.checked ?"F":null)}
-                                /><h5>Feminino</h5>
+                                /> <h5>Feminino</h5>
                                 
                             </div>
                         </div>

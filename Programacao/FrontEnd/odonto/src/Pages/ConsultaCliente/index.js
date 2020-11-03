@@ -64,7 +64,46 @@ export default function ConsultarCliente() {
 
 
                             </div>
-                            <div className="pagmCons"></div>
+                            <div className="pagmCons">
+                                <div className="linePag1">
+
+                                    <div className="formPag">
+                                        <h5>Forma de Pagamento:</h5>
+                                        <div className="radios custom-control-inline">
+                                            
+                                            <input type="radio" name="pag" className="din " /><h5>Dinheiro</h5>
+
+                                            <input type="radio" name="pag"/><h5>Cartão</h5>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div className="formSub">
+                                        <h5>Subtotal:</h5>
+                                        <input type="text" readOnly className="sub form-control" placeholder="R$ 1.500,00" />
+                                    </div>
+                                                                       
+                                </div>
+
+                                <div className="linePag2">
+                                    <div className="formDescont">
+                                        <h5>Desconto:</h5>
+                                        <input type="text" readOnly className="desc form-control" />
+                                    </div>
+
+                                    <div className="formTotal">
+                                        <h5>Valor Total:</h5>
+                                        <input type="text" className="tota form-control" placeholder="R$ 1.500,00" />
+                                    </div>
+                                </div>  
+
+
+                                <div className="linePag3">
+                                    <div className="buttsPag">
+                                        <button className="btn btn-danger">Cancelar consulta</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </div>
