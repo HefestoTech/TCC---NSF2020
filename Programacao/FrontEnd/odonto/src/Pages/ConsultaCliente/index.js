@@ -1,10 +1,22 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import Menu from '../../Components/Menu'
 import Footer from '../../Components/Footer'
 import './consultar.css'
+import { useHistory } from 'react-router-dom';
 
-export default function ConsultarCliente() {
+export default function ConsultarCliente(props) {
+
+    const [responseCompleto] = useState();
+
+    const history = useHistory();
+
+    const IrParaTelaDeRemarcar = () => {
+        history.push({
+            pathname:"/remarcar/1",
+            state:responseCompleto
+        });
+    }
 
     return(
         <div className="ContCons">
@@ -59,7 +71,7 @@ export default function ConsultarCliente() {
 
                             
                             <div className="lineForm4">
-                                    <button className="btn btn-primary">Remarcar</button>
+                                    <button onClick={IrParaTelaDeRemarcar} className="btn btn-primary">Remarcar</button>
                             </div>
 
 

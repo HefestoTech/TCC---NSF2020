@@ -16,7 +16,7 @@ const api = new OdontoApi();
 export default function Remarcar(props){
 
     const [horario, setHorario] = useState("08:00");
-    const [data, setData] = useState();
+    const [data, setData] = useState(null);
     const [idAgendamento, setIdAgendamento] = useState(null);
     const [mostrarSpin, setMostrarSpin] = useState(false);
     
@@ -68,9 +68,7 @@ export default function Remarcar(props){
             }
 
             <Menu>
-                <div className="user">
-                        <img src={User} />
-                </div>
+               
             </Menu>
            
             <div className="bodyre">
