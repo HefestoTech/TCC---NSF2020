@@ -1,22 +1,24 @@
 
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './remarcar.css'
 import Menu from '../../Components/Menu'
 import Rodape from '../../Components/Footer'
-import User from '../../Assets/user.png'
 import OdontoApi from '../../Services/OdontoApi';
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../Components/Loading'
+import { useHistory } from 'react-router-dom';
 
 const api = new OdontoApi();
 
 export default function Remarcar(props){
 
+    const history = useHistory();
+    
+    const [responseCompleto, setResponseCompleto] = useState({props});
     const [horario, setHorario] = useState("08:00");
-    const [data, setData] = useState(null);
+    const [data, setData] = useState("01/01/0001");
     const [idAgendamento, setIdAgendamento] = useState(null);
     const [mostrarSpin, setMostrarSpin] = useState(false);
     
@@ -48,6 +50,8 @@ export default function Remarcar(props){
             };
            
             const resp = await api.RemarcarConsulta(request);
+
+            console.log(resp);
             
             setMostrarSpin(false)
 
@@ -56,7 +60,27 @@ export default function Remarcar(props){
         } catch (e) {
             setMostrarSpin(false);
             toast.error(e.response.data.erro);
+            const erro = e.response.data.errors;
+            
         }
+    }
+
+    const voltarParaATelaDeAgendamento = () => {
+
+        if(responseCompleto == "Cliente"){
+        history.push({
+            pathname:"/consultacliente/:id",
+            state: responseCompleto
+        });
+    }
+
+        else{
+         history.push({
+            pathname:"/consultafuncionario/:id",
+            state: responseCompleto
+        });
+    }
+
     }
 
     return(
@@ -74,16 +98,16 @@ export default function Remarcar(props){
             <div className="bodyre">
                 <div className="boxre">
                    
-                    <h3 className="titlere">Remarque sua Consulta</h3>
+                    <h2 className="titlere">Remarque sua Consulta</h2>
                     <div className="infore">
-                        <label><h5>Escolha uma nova Data</h5></label>
-                        <input onChange={e => setData(e.target.value)}  className="date form-control" type="date" />
+                        <label><h5>Escolha uma data</h5></label>
+                        <input value={data} onChange={e => setData(e.target.value)}  className="date form-control" type="date" />
                     
-                        <label className="chosehour"><h5>Escolha uma hora</h5></label>
-                        <input value={horario} onChange={e => setHorario(e.target.value)} className="time form-control" type="time" />
+                        <label className="chosehour"><h5>Escolha uma  hora</h5></label>
+                        <input value={horario}  onChange={e => setHorario(e.target.value)} className="time form-control" type="time" />
                     </div>
                     <div className="btsre">
-                        <button className="btn btn-danger">Cancelar</button>
+                        <button onClick={voltarParaATelaDeAgendamento} className="btn btn-danger">Cancelar</button>
                         <button 
                         onClick={remarcarClick}
                         className="btn btn-success">Salvar</button>
