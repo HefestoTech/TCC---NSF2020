@@ -83,9 +83,7 @@ export default function ConsultarCliente(props) {
                                         <h5>Forma de Pagamento:</h5>
                                         <div className="radios custom-control-inline">
                                             
-                                            <input type="radio" name="pag" className="din " /><h5>Dinheiro</h5>
-
-                                            <input type="radio" name="pag"/><h5>Cartão</h5>
+                                          <input readOnly placeholder="Cartão de Crédito" className="desc form-control"/>
                                             
                                         </div>
                                     </div>
