@@ -5,6 +5,7 @@ import OdontoApi from '../../Services/OdontoApi'
 import { ToastContainer, toast } from 'react-toastify';
 import Loading from "../../Components/Loading"
 import 'react-toastify/dist/ReactToastify.css';
+import Rodape from '../../Components/Footer'
 
 const api = new OdontoApi();
 
@@ -104,6 +105,7 @@ const api = new OdontoApi();
 
           <ToastContainer/>
         </div>
+        <Rodape/>
         </>
     )
  }

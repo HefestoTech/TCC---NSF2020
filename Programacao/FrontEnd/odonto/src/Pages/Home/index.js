@@ -8,6 +8,7 @@ import './Home.css';
 
 export default function App() {
   return (
+    <>
     <div className="Cont">
       
       <Menu className="header">
@@ -45,7 +46,7 @@ export default function App() {
 
         <div className="tab">
             <div className="tabinto">
-            <h4>Tabela de preços das especializações em destaque!</h4>
+            <h4 className="h4_tabelaHome">Tabela de preços das especializações em destaque!</h4>
               <table className="table table-borderless">
 
                 <thead>
@@ -103,9 +104,9 @@ export default function App() {
         </div>
       </div>
 
-        <Rodape></Rodape>
-
     </div>
+    <Rodape/>
+    </>
   );
 }
 
