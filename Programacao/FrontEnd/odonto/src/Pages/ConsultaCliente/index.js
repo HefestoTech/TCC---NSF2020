@@ -71,13 +71,18 @@ export default function ConsultarCliente(props) {
     const cancelarConsultaClick  = async(idConsulta) => {
          try {
             setMostrarLoading(true);
+           
             api.CancelarConsulta(idConsulta);
+           
             pegarConsultasClienteClick(responseCompleto.idUsuario);
+
             setMostrarLoading(false);
+           
             toast.success("Consulta cancelada com sucesso");
              
          } catch (e) {
             setMostrarLoading(false);
+            
             toast.error(e.response.data.erro);
          }
     }
@@ -292,7 +297,17 @@ export default function ConsultarCliente(props) {
                         </div>
                     </div>
                 )}</div>}
-
+                 {situacaoMostrar === "Cancelados" && cancelados.length === 0 &&
+                 <div className="semConsultasAgendadas"> 
+                    <h3>Você não tem consultas canceladas.
+                        <br/>
+                       <Link to={{
+                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           state: responseCompleto
+                       }}> Agendar Consulta</Link>
+                    </h3>
+                </div>
+                }
 
                 {situacaoMostrar === "Concluidos" && concluidos !== undefined &&
                 <div>
@@ -381,6 +396,17 @@ export default function ConsultarCliente(props) {
                     
                 )}
                 </div>}
+                 {situacaoMostrar === "Concluidos" && concluidos.length === 0 &&
+                 <div className="semConsultasAgendadas"> 
+                    <h3>Você não tem consultas concluidas.
+                        <br/>
+                       <Link to={{
+                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           state: responseCompleto
+                       }}> Agendar Consulta</Link>
+                    </h3>
+                </div>
+                }
 
                 {situacaoMostrar === "Não Compareceu" && naoCompareceu !== undefined && 
                 <div>
@@ -463,6 +489,17 @@ export default function ConsultarCliente(props) {
                     
                 )}
                 </div>}
+                 {situacaoMostrar === "Não Compareceu" && naoCompareceu.length === 0 &&
+                <div className="semConsultasAgendadas"> 
+                    <h3>Não há consultas em que voce não compareceu.
+                        <br/>
+                       <Link to={{
+                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           state: responseCompleto
+                       }}> Agendar Consulta</Link>
+                    </h3>
+                </div>
+                }
 
 
             </div>
