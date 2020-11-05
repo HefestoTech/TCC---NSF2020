@@ -100,6 +100,8 @@
         }
 
 
-                .linePag1
+                .linePag1{
+                    display: inline;
+                }
 
 
