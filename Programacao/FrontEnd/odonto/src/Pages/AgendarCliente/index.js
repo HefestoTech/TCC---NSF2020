@@ -2,73 +2,70 @@
 import React  from 'react';
 import './agenda.css'
 import Menu   from '../../Components/Menu'
-import User   from '../../Assets/user.png'
 import Rodape from '../../Components/Footer'
+
+import Dente from '../../Assets/Fotos/dente.png'
+import { Link } from 'react-router-dom';
 
 export default function AgendarConsultaCliente () {
     return(
-        <div>
-            
-            <Menu>
-              <div className="user">
-                        <img src={User} />
+        <div className="ContAgendar">
+            <Link to="/" ><h1 className="TtLogo">ODONTO</h1></Link>
+            <div className="BodyAgend">
+                <div className="TtAgend">
+                    <h1>Agende sua Consulta<img src={Dente} /></h1>
+                    <h4>Os campos com(*) são obrigratórios</h4>
                 </div>
-            </Menu>
-         
-                <h1 className="tituloagendar">Agende uma consulta</h1>
-              
-                    <div className="linha1">
-                        <div className="cardregistro">
-                          <h5>Selecione uma data</h5>
-                          <input  type="Date"   placeholder =" dd/mm/aaaa "  required ></input>
+
+                <div className="BoxAgend">
+                        <div className="lineAgend1">
+                            <div className="formDate">
+                            <h5>Selecione uma data:</h5>
+                            <input type="date" className="form-control" />
+                            </div>
+
+                            <div className="formHour">
+                            <h5>Selecione uma hora:</h5>
+                            <input  type="time" className="form-control" />
+                            </div>
+
                         </div>
-                  
-                        <div className="cardregistro2">
-                          <h5>Selecione um serviço</h5>
-                          <input type="Text" Placeholder ="Clareamento" required></input>
+
+                        <div className="lineAgend2">
+                            <div className="formServ">
+                                <h5>Selecione um serviço:</h5>
+                                <input type="text" className="form-control" />
+                            </div>
+
+                            <div className="formProf">
+                                <h5>Escolha um profissional:</h5>
+                                <input type="text" className="form-control" />
+                            </div>
+                        </div>
+                </div>
+
+                <div className="BoxPagmt">
+                    <h2>Pagamento da consulta</h2>
+
+                    <div className="linePag1">
+                        <div className="formPagm">
+                            <h5>Selecione a forma de Pagamento</h5>
+                            <div className="radPag custom-control-inline">
+                                <h5>Dinheiro</h5>
+                                <input type="radio" name="pagm" />
+                                <h5>Cartão</h5>
+                                <input type="radio" name="pagm" />
+                                
+                            </div> 
                         </div>
                     </div>
 
-                    <div className="linha2">
-                        <div className="cardregistro3">
-                          <h5>Selecione um Horario</h5>
-                          <input type="Time" placeholder ="00:00" required></input>
-                        </div>
-                                      
-                        <div className="cardregistro4">
-                            <h5>Escolha um profissional</h5>
-                            <input type="text" placeholder="DrSiqueira" required></input>
-                        </div>
-                    </div>
 
-             
-                    <div className="linha3">
-                          <div className="cardregistro5">
-                              <h5 >Digite seu e-mail</h5>
-                              <input type= "email"   placeholder = "odonto@exemplo.com"  required ></input>
-                          </div>
-                    </div>
+                </div>
 
-                    <div className="linha4">
-                          <div className="cardregistro6">
-                                <h5>Formas de pagamento</h5>
-                                  <div className="radios custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="pag"/><h5>Dinheiro</h5>
-                                    <input type="radio" name="pag" className="cards"/><h5>Cartão</h5>
-                                  </div>
-                          </div>
-
-                          <div className="cardregistro7">
-                              <h5>Parcelas</h5>
-                              <input type="Number" min="1" max="8" required></input>
-                          </div>
-
+            </div>
                     
-                  </div>
-                          
                          
-
-                  
         </div>
 
     )
