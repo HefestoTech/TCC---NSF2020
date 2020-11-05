@@ -50,13 +50,16 @@ export default function AgendarConsultaCliente () {
                     <div className="linePag1">
                         <div className="formPagm">
                             <h5>Selecione a forma de Pagamento</h5>
-                            <div className="radPag custom-control-inline">
-                                <h5>Dinheiro</h5>
-                                <input type="radio" name="pagm" />
-                                <h5>Cartão</h5>
-                                <input type="radio" name="pagm" />
+                            <div className="radPag custom-control custom-radio custom-control-inline">
                                 
-                            </div> 
+                                <input type="radio" name="pagm"
+                                /> <h5>Dinheiro</h5>
+
+
+                                <input type="radio" name="pagm"  className="cart" 
+                                /> <h5>Cartão</h5>
+                                
+                            </div>
                         </div>
                     </div>
 

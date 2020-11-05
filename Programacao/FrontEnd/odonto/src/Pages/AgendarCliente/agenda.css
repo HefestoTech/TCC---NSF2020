@@ -100,8 +100,23 @@
         }
 
 
-                .linePag1{
-                    display: inline;
+                .formPagm{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
 
+                .radPag{
+                    display: flex;
+                    align-items: center;
+                }
 
+                        .radPag h5{
+                            margin-left: 10px;
+                        }
+
+                        .cart{
+                            
+                        }
+
+                
