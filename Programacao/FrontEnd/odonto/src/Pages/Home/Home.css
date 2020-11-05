@@ -52,11 +52,13 @@
       .bt1{
         width: 20vw;
         font-style: normal;
+        background: #ec0000;
       }
 
 
       .bt2{
         width: 15vw;
+        background: #ec0000;
       }
 
   .body{
@@ -204,3 +206,59 @@
     background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(238, 243, 248));
     color: white;
   }
+
+
+  .fundorodapé{
+
+    background-color: #51595e;
+    height: 30vh;
+
+  }
+ 
+  .sobrenos{
+    display: flex;
+    width: 0vh;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    margin-left: 10vh;
+    padding-top: 5vh;
+    
+  }
+
+  .sobrenos:hover{
+
+  color: #00a2ff;
+}
+
+
+    .endline{
+
+      margin-left: 10vh;
+      
+      display: flex;
+      color: azure;
+      justify-content: space-between;
+      width: 50vw;
+      padding-top: 15vh;
+
+}
+
+
+    .endlineTwo{
+
+      display: flex;
+      justify-items: right;
+
+}
+    img.imgbrasil{
+
+      width: 30px;
+      height: 20px;
+      border-radius: 0px;
+
+}
+
+.endline3{
+
+  
+}

@@ -71,6 +71,7 @@
 
     .cardlogin > button {
 
+        background-color: #ec0000;
         width: 70%;
         padding: 2px;
         box-shadow: 2px 2px 2px #990000;
@@ -102,9 +103,6 @@
         
     }
 
-    .linkCadastrar{
-        color: red;
-    }
 
     .linkCadastrar :hover{
         
@@ -113,6 +111,7 @@
 
     .linkCadastrar > button{
         display: flex;
+        background-color: #ec0000;
         width: 70%;
         padding: 2px;
         box-shadow: 2px 2px 2px  #990000;

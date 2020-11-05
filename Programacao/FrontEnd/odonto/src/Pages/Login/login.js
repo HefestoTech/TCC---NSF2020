@@ -50,6 +50,10 @@ const api = new OdontoApi();
         }
     }
 
+    const IrParaTelaDeCadastrar = () => {
+        history.push({
+            pathname:"/Cadastrar"
+        }); }
 
     return(
         <>
@@ -92,7 +96,7 @@ const api = new OdontoApi();
                     
                             <p className="cardnt"> Não tem uma conta?</p> 
                            
-                            <Link className="linkCadastrar" to="/cadastrar"><button className = "btn btn-danger"> Cadastrar-se</button></Link>
+                           <button onClick = {IrParaTelaDeCadastrar} className = "btn btn-danger"> Cadastrar-se</button>
                         </div>
                     </div>
                     </div> 

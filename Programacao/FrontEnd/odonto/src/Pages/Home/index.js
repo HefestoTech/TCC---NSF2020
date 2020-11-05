@@ -5,6 +5,7 @@ import Odonto   from '../../Assets/Fotos/odonto.png'
 import Rodape   from '../../Components/Footer';
 import Menu     from '../../Components/Menu'
 import './Home.css';
+import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
         </div>
 
         <div className="buttns">
-        <Link to="/login"><button className="bt1 btn btn-outline-danger" > Logar</button></Link> 
+        <Link to="/login"><button className="bt1 btn btn-danger" > Logar</button></Link> 
         <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
         </div>
       </Menu>
@@ -105,7 +106,37 @@ export default function App() {
       </div>
 
     </div>
-    <Rodape/>
+         <div className= "fundorodapé">
+              <div class="sobrenos">
+                Sobre 
+              </div>
+                  <div class="endline">
+                      <p>
+                        Centro de Privacidade
+                      </p>
+                      <p>
+                      Política de privacidade
+                      </p>
+                      <p>
+                        Cookies
+                      </p>    
+                    
+                      <div class="endlineTwo">
+                        <p>Brasil</p>
+                        <img class="imgbrasil" src={ Brasil } />
+                    </div>
+
+                    <div class="endline3">
+                      <p>
+                        Hefesto Tech, 2020 All rights reserved ® 
+                      </p>
+                    </div>
+            
+
+              </div>
+        
+         </div>
+
     </>
   );
 }
