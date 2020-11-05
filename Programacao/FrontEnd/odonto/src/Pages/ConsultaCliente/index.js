@@ -20,15 +20,24 @@ export default function ConsultarCliente(props) {
     const [naoCompareceu, setNaoCompareceu] = useState([]);
     const [mostrarLoading, setMostrarLoading] = useState(false);
     const [situacaoMostrar, setSituacaoMostrar] = useState("Agendados");
+
+
    
    
     const history = useHistory();
 
     const IrParaTelaDeRemarcar = (idAgendamento) => {
         history.push({
-            pathname:"/remarcar/"+props.location.state.idUsuario,
+            pathname:"/remarcar/"+ responseCompleto.idUsuario,
             state: {responseCompleto, "idAgendamento": idAgendamento}
         });
+    }
+
+    const avaliarConsultaClick = (idAgendamento) => {
+        history.push({
+            pathname:"/feedback/" + responseCompleto.idUsuario,
+            state: {responseCompleto, "idAgendamento": idAgendamento}
+        })
     }
 
    const pegarConsultasClienteClick = async () => {
@@ -36,19 +45,19 @@ export default function ConsultarCliente(props) {
             setMostrarLoading(true)
            
             const response = await api.PegarConsultasCliente(responseCompleto.idUsuario);
-           
-            console.log(response.concluidos);
-            console.log("oiii")
+
+            console.log(response);
            
             setAgendados(response.agendados);
             setCancelados(response.cancelados);
-            setNaoCompareceu(responseCompleto.naoCompareceu);
-            setConcluidos(responseCompleto.concluidos);
+            setNaoCompareceu(response.naoCompareceu);
+            setConcluidos(response.concluidos);
            
             setMostrarLoading(false);
 
             
         } catch (e) {
+            toast.error(e.response.data.erro)
             setMostrarLoading(false);
         }
    }
@@ -99,7 +108,7 @@ export default function ConsultarCliente(props) {
                     
                 </div>
 
-                {situacaoMostrar == "Agendados" &&
+                {situacaoMostrar === "Agendados" && agendados !== undefined &&
                 <div>
                 {agendados.map (x => 
                 <div className="boxCons">
@@ -193,7 +202,7 @@ export default function ConsultarCliente(props) {
                 )}
                 </div>}
 
-                {situacaoMostrar == "Cancelados" && <div>
+                {situacaoMostrar === "Cancelados" && cancelados !== undefined &&  <div>
                 {cancelados.map (x => 
                 <div className="boxCons">
                     <div className="TtsCons">
@@ -271,6 +280,177 @@ export default function ConsultarCliente(props) {
                         </div>
                     </div>
                 )}</div>}
+
+
+                {situacaoMostrar === "Concluidos" && concluidos !== undefined &&
+                <div>
+                {concluidos.map (x => 
+                <div className="boxCons">
+                    <div className="TtsCons">
+                        <h3>Dados da consulta</h3>
+                        <h3>Pagamento da consulta</h3>
+                    </div>
+
+                    <div className="BoxForms">
+                            <div className="geralCons">
+
+                                <div className="lineForm1">
+                                    <div className="nameCons">
+                                        <h5>Nome: </h5>
+                                        <input value={x.nomeCliente} type="text" readOnly className="nam form-control"  />
+                                    </div>
+                                
+                                    <div className="dateCons">
+                                        <h5>Data:</h5>
+                                        <input value={x.data} type="text" readOnly className="date form-control"  />
+                                    </div>
+                                </div>
+
+
+                            <div className="lineForm2">
+                                    <div className="servCons">
+                                        <h5>Serviço:</h5>
+                                        <input value={x.servico} type="text" readOnly className="serv form-control"  />
+                                    </div>
+
+                                    <div className="drCons">
+                                        <h5>Doutor:</h5>
+                                        <input value={x.doutor} type="text" readOnly className="dr form-control"/>
+                                    </div>
+
+                                    
+                                    <div className="sitCons">
+                                        <h5>Situação:</h5>
+                                        <input value={x.situacao} type="text" readOnly className="situ form-control"  />
+                                    </div>
+                            </div>
+
+                            </div>
+                            <div className="pagmCons">
+                                <div className="linePag1">
+
+                                    <div className="formPag">
+                                        <h5>Forma de Pagamento:</h5>
+                                        <div className="radios custom-control-inline">
+                                            
+                                          <input readOnly value={x.formaPagamento} className="desc form-control"/>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div className="formSub">
+                                        <h5>Subtotal:</h5>
+                                        <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
+                                    </div>
+                                                                       
+                                </div>
+
+                                <div className="linePag2">
+                                    <div className="formDescont">
+                                        <h5>Desconto:</h5>
+                                        <input value={"R$" + x.desconto} type="text" readOnly className="desc form-control" />
+                                    </div>
+
+                                    <div className="formTotal">
+                                        <h5>Valor Total:</h5>
+                                        <input value={"R$" + x.valorTotal} type="text" className="tota form-control"/>
+                                    </div>
+                                </div>  
+
+
+                                <div className="linePag3">
+                                    <div className="buttsPag">
+                                        <button onClick={() => avaliarConsultaClick(x.idConsulta)} className="btn btn-primary">Avaliar consulta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                )}
+                </div>}
+
+                {situacaoMostrar === "Não Compareceu" && naoCompareceu !== undefined && 
+                <div>
+                {naoCompareceu.map (x => 
+                <div className="boxCons">
+                    <div className="TtsCons">
+                        <h3>Dados da consulta</h3>
+                        <h3>Pagamento da consulta</h3>
+                    </div>
+
+                    <div className="BoxForms">
+                            <div className="geralCons">
+
+                                <div className="lineForm1">
+                                    <div className="nameCons">
+                                        <h5>Nome: </h5>
+                                        <input value={x.nomeCliente} type="text" readOnly className="nam form-control"  />
+                                    </div>
+                                
+                                    <div className="dateCons">
+                                        <h5>Data:</h5>
+                                        <input value={x.data} type="text" readOnly className="date form-control"  />
+                                    </div>
+                                </div>
+
+
+                            <div className="lineForm2">
+                                    <div className="servCons">
+                                        <h5>Serviço:</h5>
+                                        <input value={x.servico} type="text" readOnly className="serv form-control"  />
+                                    </div>
+
+                                    <div className="drCons">
+                                        <h5>Doutor:</h5>
+                                        <input value={x.doutor} type="text" readOnly className="dr form-control"/>
+                                    </div>
+
+                                    
+                                    <div className="sitCons">
+                                        <h5>Situação:</h5>
+                                        <input value={x.situacao} type="text" readOnly className="situ form-control"  />
+                                    </div>
+                            </div>
+
+                            </div>
+                            <div className="pagmCons">
+                                <div className="linePag1">
+
+                                    <div className="formPag">
+                                        <h5>Forma de Pagamento:</h5>
+                                        <div className="radios custom-control-inline">
+                                            
+                                          <input readOnly value={x.formaPagamento} className="desc form-control"/>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div className="formSub">
+                                        <h5>Subtotal:</h5>
+                                        <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
+                                    </div>
+                                                                       
+                                </div>
+
+                                <div className="linePag2">
+                                    <div className="formDescont">
+                                        <h5>Desconto:</h5>
+                                        <input value={"R$" + x.desconto} type="text" readOnly className="desc form-control" />
+                                    </div>
+
+                                    <div className="formTotal">
+                                        <h5>Valor Total:</h5>
+                                        <input value={"R$" + x.valorTotal} type="text" className="tota form-control"/>
+                                    </div>
+                                </div>  
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                )}
+                </div>}
 
 
             </div>
