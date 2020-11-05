@@ -16,12 +16,13 @@ export default function Remarcar(props){
 
     const history = useHistory();
     
-    const [responseCompleto, setResponseCompleto] = useState({props});
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state.responseCompleto);
     const [horario, setHorario] = useState("08:00");
     const [data, setData] = useState("01/01/0001");
-    const [idAgendamento, setIdAgendamento] = useState(null);
+    const [idAgendamento, setIdAgendamento] = useState(props.location.state.idAgendamento);
     const [mostrarSpin, setMostrarSpin] = useState(false);
-    
+
+   
   
     const transformarEmDataComMinutos = () => {
       
@@ -40,14 +41,18 @@ export default function Remarcar(props){
    
     const remarcarClick = async () => {  
         try {
+
+
             setMostrarSpin(true)
             
             const dataFinal = transformarEmDataComMinutos();
 
             const request = {
-                "IdAgendamento":33,
+                "IdAgendamento":idAgendamento,
                 "NovoHorario": dataFinal
             };
+
+            console.log(request);
            
             const resp = await api.RemarcarConsulta(request);
 
@@ -60,28 +65,31 @@ export default function Remarcar(props){
         } catch (e) {
             setMostrarSpin(false);
             toast.error(e.response.data.erro);
-            const erro = e.response.data.errors;
+
+            console.log(e.response.data.erro);
             
         }
     }
 
     const voltarParaATelaDeAgendamento = () => {
-
-        if(responseCompleto == "Cliente"){
+        
+        if(responseCompleto.perfil == "Cliente"){
         history.push({
-            pathname:"/consultacliente/:id",
+            pathname:"/consultacliente/" + responseCompleto.idUsuario,
             state: responseCompleto
         });
     }
 
         else{
          history.push({
-            pathname:"/consultafuncionario/:id",
+            pathname:"/consultafuncionario/" + responseCompleto.idUsuario,
             state: responseCompleto
         });
     }
 
     }
+
+
 
     return(
         <div className="Contre">
