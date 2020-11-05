@@ -15,10 +15,10 @@ export default function Feedback(props) {
 
     const [nota, setNota] = useState(0);
     const [comentario, setComentario] = useState(null);
-
-    const [responseCompleto] = useState();
-    const [idConsulta, setIdConsulta] = useState();
+    const [responseCompleto] = useState(props.location.state.responseCompleto);
+    const [idConsulta, setIdConsulta] = useState(props.location.state.idAgendamento);
     const [mostrarLoading, setMostrarLoading] = useState(false);
+
 
     const history = useHistory();
 

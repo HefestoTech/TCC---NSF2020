@@ -66,7 +66,7 @@ namespace BackEnd.Database
 
             foreach(Models.TbConsulta item in consultas)
             {
-                if(item.IdFuncionario == id && item.DtConsulta.Hour == data.Hour)
+                if(item.IdFuncionario == id && item.DtConsulta.Hour == data.Hour && item.DsSituacao == "Agendado")
                    return true;
             }
 
@@ -79,7 +79,7 @@ namespace BackEnd.Database
 
             foreach (Models.TbConsulta item in consultas)
             {
-                if (item.IdCliente == id && item.DtConsulta.Hour == data.Hour)
+                if (item.IdCliente == id && item.DtConsulta.Hour == data.Hour && item.DsSituacao == "Agendado")
                     return true;
             }
 
@@ -96,7 +96,9 @@ namespace BackEnd.Database
         public Models.TbConsulta AgendarNovaConsulta(Models.TbConsulta request)
         {
            ctx.TbConsulta.Add(request);
+          
            ctx.SaveChanges();
+          
            return this.PegarConsulta(request.IdConsulta);
         }
 

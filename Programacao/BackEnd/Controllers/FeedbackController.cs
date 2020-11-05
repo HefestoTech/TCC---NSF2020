@@ -17,14 +17,12 @@ namespace BackEnd.Controllers
         Utils.GeralConversor conversor = new Utils.GeralConversor();
        
         [HttpPost]
-        public ActionResult<Models.Response.ConsultaResponse> AvaliarConsulta (Models.Request.AvaliarRequest feedback)
+        public ActionResult<Models.Response.SucessoResponse> AvaliarConsulta (Models.Request.AvaliarRequest feedback)
         {
             try
             {
-                Models.TbConsulta consulta = business.AvaliarConsulta(feedback);
-                Models.Response.ConsultaResponse consultaResponse = conversor.ParaConsultaResponse(consulta);
-                return consultaResponse;
-
+                business.AvaliarConsulta(feedback);
+                return new Models.Response.SucessoResponse("A consulta foi avaliada com sucesso");
             }
             catch (System.Exception ex)
             {

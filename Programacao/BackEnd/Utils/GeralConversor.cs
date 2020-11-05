@@ -179,7 +179,7 @@ namespace BackEnd.Utils
                 agendadosResponse.Add(response);
             }
 
-            return agendadosResponse.OrderByDescending( x => x.Data).ToList();
+            return agendadosResponse.OrderBy( x => x.Data).ToList();
         }
 
      
