@@ -11,11 +11,13 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    min-height: calc(68vh - 15px);
+    justify-content: space-evenly;
 }
 
 .Tt1Cons{
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
     flex-direction: column;
     align-items: center;
 }
@@ -25,7 +27,7 @@
     display: flex;
     flex-direction: column;
     width: 85vw;
-    height: 52vh;
+    height: 45vh;
     background-color: rgb(85, 136, 177);
     margin-top: 15px;
     margin-bottom: 15px;
@@ -37,9 +39,10 @@
     align-items: center;
     color: white;
     width: 63vw;
-    height: 7vh;
+    height: 4vh;
     margin-left: 150px;
-    margin-top: 15px;
+    margin-top: 6px;
+    margin-bottom: 4px;
 }
 
 .BoxForms{
@@ -51,7 +54,7 @@
             display: flex;
             flex-direction: column;
             width: 40vw;
-            height: 40vh;
+            height: 35vh;
             background-color: rgb(70, 102, 128);
             margin-left: 15px;
         }
@@ -75,6 +78,7 @@
 
                         .date{
                             height: 6vh;
+                            width: 200px;
                         }
                 
 
@@ -87,20 +91,20 @@
 
                                 
                         .servCons{
-                            width: 10vw;
+                            width: 15vw;
                             margin-left: 10px;
                         }
 
                         .drCons{
                             width: 10vw;
-                            margin-left: 45px;
+                            margin-left: 20px;
                         }
                         
 
                         
                         .sitCons{
                             width: 10vw;
-                            margin-left: 50px;
+                            margin-left: 20px;
                         }
 
 
@@ -126,7 +130,7 @@
             display: flex;
             flex-direction: column;
             width: 41vw;
-            height: 40vh;
+            height: 35vh;
             background-color: rgb(70, 102, 128);
             margin-left: 22px;
         }
@@ -198,4 +202,7 @@
 .spanTitleConsulta > span:hover{
     color: blue;
 }
-                                
+.semConsultasAgendadas{
+    text-align: center;
+    margin-top: -35%;
+}     

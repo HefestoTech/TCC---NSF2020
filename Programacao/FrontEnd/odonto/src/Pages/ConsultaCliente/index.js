@@ -4,7 +4,7 @@ import Menu from '../../Components/Menu'
 import Footer from '../../Components/Footer'
 import OdontoApi from "../../Services/OdontoApi"
 import './consultar.css'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from "../../Components/Loading"
@@ -97,16 +97,16 @@ export default function ConsultarCliente(props) {
 
             <Menu></Menu>
 
-            <div className="BodyCons">
-
+            
                 <div className="Tt1Cons">
                     <h3 className="display-23">Meus Agendamentos</h3>
                     <span className="spanTitleConsulta">
                         <span onClick={() => qualSituacaoMostrarClick("Agendados")} >Agendados</span> | <span onClick={() => qualSituacaoMostrarClick("Concluidos")}>Concluidos</span> | <span onClick={() => qualSituacaoMostrarClick("Cancelados")}>Cancelados</span> | <span onClick={() => qualSituacaoMostrarClick("Não Compareceu")}>Não Compareceu</span>
-                    </span>
-                   
-                    
+                    </span>   
                 </div>
+
+            <div className="BodyCons">
+
 
                 {situacaoMostrar === "Agendados" && agendados !== undefined &&
                 <div>
@@ -201,6 +201,18 @@ export default function ConsultarCliente(props) {
                     
                 )}
                 </div>}
+
+                {situacaoMostrar === "Agendados" && agendados.length === 0 &&
+                <div className="semConsultasAgendadas"> 
+                    <h3>Você não tem consultas agendadas.
+                        <br/>
+                       <Link to={{
+                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           state: responseCompleto
+                       }}> Agendar Consulta</Link>
+                    </h3>
+                </div>
+                }
 
                 {situacaoMostrar === "Cancelados" && cancelados !== undefined &&  <div>
                 {cancelados.map (x => 
