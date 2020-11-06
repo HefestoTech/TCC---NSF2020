@@ -17,6 +17,8 @@ namespace BackEnd.Models.Response
         public decimal? Subtotal { get; set; }
         public decimal? Desconto { get; set; }
         public decimal? ValorTotal {get; set;}
+        public int? Parcelas {get; set;}
+        public decimal? TotalPorMes {get; set;}
     }
 
     public class AgendadosSeparadosPorSituacao

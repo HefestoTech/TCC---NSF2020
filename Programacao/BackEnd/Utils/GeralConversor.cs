@@ -175,6 +175,8 @@ namespace BackEnd.Utils
                 response.Situacao = item.DsSituacao;
                 response.Subtotal = item.VlSubtotal;
                 response.ValorTotal = item.VlTotal;
+                response.TotalPorMes = item.VlTotalPorMes;
+                response.Parcelas = item.NrParcelas;
                 
                 agendadosResponse.Add(response);
             }
