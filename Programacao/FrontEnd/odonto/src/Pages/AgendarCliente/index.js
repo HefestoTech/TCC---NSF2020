@@ -1,13 +1,66 @@
 
-import React  from 'react';
 import './agenda.css'
-import Menu   from '../../Components/Menu'
-import Rodape from '../../Components/Footer'
-
+import OdontoApi from '../../Services/OdontoApi'
 import Dente from '../../Assets/Fotos/dente.png'
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 
-export default function AgendarConsultaCliente () {
+const odontoApi = new OdontoApi();
+
+export default function AgendarConsultaCliente (props) {
+    
+    const [responsecompleto, setResponsecompleto] = useState(props.location.state);
+    const [idfuncionario, setIdfuncionario] = useState();
+    const [date, setDate] = useState();
+    const [hora, setHora] = useState();
+    const [idservico, seIdservico] = useState();
+    const [servico, setServico] = useState([]);
+    const [profissional, setProfissional] = useState();
+    const [formpagm, setFormpagm] = useState();
+    const [parcelas, setParcelas] = useState();
+    const [subtotal, setSubtotal] = useState();
+    const [desconto, setDesconto] = useState();
+    const [total, setTotal] = useState();
+
+    const pegarServicos = async () => {  
+        const resp = await odontoApi.PegarServicos(); 
+        setServico(resp) 
+    };
+
+    const agendarClick = async() => {
+        const resp = await odontoApi.AgendarConsultaPorCliente({
+            "IdCliente":responsecompleto.IdUsuario,
+            "IdFuncionario": idfuncionario,
+            "IdServico": idservico,
+            "Data": date,
+            "FormaDePagamento": formpagm,
+            "QtdParcelas": parcelas,
+            "SubTotal": subtotal,
+            "Desconto": desconto,
+            "Total": total
+        })
+    }
+
+    
+    useEffect(() => {
+    pegarServicos();
+    }, [])
+
+    const transformarEmDataComMinutos = () => {
+         
+         const horarioEDataDaConsulta = `${date} ${hora}`;
+         return horarioEDataDaConsulta;
+      }
+
+    const pegarProfissional = async() =>{
+        const horario = transformarEmDataComMinutos();
+        const req = {"Horario":horario}
+        console.log(req)
+        const resp = await odontoApi.SomenteDentistasDisponiveis(req)
+        console.log(horario)
+        console.log(resp)
+    }
+
     return(
         <div className="ContAgendar backg">
             <Link to="/" ><h1 className="TtLogo">ODONTO</h1></Link>
@@ -21,12 +74,16 @@ export default function AgendarConsultaCliente () {
                         <div className="lineAgend1">
                             <div className="formDate">
                             <h5>Selecione uma data:</h5>
-                            <input type="date" className="form-control" />
+                            <input type="date" className="form-control" 
+                            onChange={(e) => pegarProfissional(setDate(e.target.value))}
+                            />
                             </div>
 
                             <div className="formHour">
                             <h5>Selecione uma hora:</h5>
-                            <input  type="time" className="form-control" />
+                            <input  type="time" className="form-control" 
+                            onChange={e => setHora(e.target.value)}
+                            />
                             </div>
 
                         </div>
@@ -35,7 +92,8 @@ export default function AgendarConsultaCliente () {
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
                                 <select className="form-control" >
-                                    <option>Limpeza</option>
+                                    {servico.map(x => <option>{x.nomeServico}</option>) }
+                                
                                 </select>
                             </div>
 
@@ -57,10 +115,12 @@ export default function AgendarConsultaCliente () {
                             <div className="radPag  custom-radio custom-control-inline">
                                 
                                 <input type="radio" name="pagm" className="din"
+                                onChange={e => setFormpagm(e.target.checked ?"Dinheiro":null)}
                                 /> <h5>Dinheiro</h5>
 
 
                                 <input type="radio" name="pagm"  className="cart" 
+                                onChange={e => setFormpagm(e.target.checked ?"Cartão":null)}
                                 /> <h5>Cartão</h5>
                                 
                             </div>
@@ -70,24 +130,32 @@ export default function AgendarConsultaCliente () {
                     <div className="linePag2">
                         <div className="formParc">
                             <h5>Quantidade de parcelas:</h5>
-                            <input type="number" className="qtdParc form-control" min="1" max="8" />
+                            <input type="number" className="qtdParc form-control" min="1" max="8" 
+                            onChange={e => setParcelas(e.target.value)}
+                            />
                         </div>
 
                         <div className="formSub">
                             <h5>SubTotal:</h5>
-                            <input type="text" readOnly className="Subt form-control" placeholder="R$ 0,00" />
+                            <input type="text" readOnly className="Subt form-control" placeholder="R$ 0,00" 
+                            value={subtotal}
+                            />
                         </div>
                     </div>
 
                     <div className="linePagm3">
                         <div className="formDesc">
                             <h5>Desconto:</h5>
-                            <input type="text" className="Desc form-control" placeholder="R$ 0,00" />
+                            <input type="text" className="Desc form-control" placeholder="R$ 0,00" 
+                            value={desconto}
+                            />
                         </div>
 
                         <div className="formTot">
                             <h5>Total:</h5>
-                            <input type="text" readOnly className="Total form-control" placeholder="R$ 0,00"/>
+                            <input type="text" readOnly className="Total form-control" placeholder="R$ 0,00"
+                            value={total}
+                            />
                         </div>
 
                         <div className="ButtPag">
