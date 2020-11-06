@@ -12,8 +12,8 @@ export default function AgendarConsultaCliente (props) {
     const [responsecompleto, setResponsecompleto] = useState(props.location.state);
     const [idfuncionario, setIdfuncionario] = useState();
     const [date, setDate] = useState("2020-09-07");
-    const [hora, setHora] = useState("08:00");
-    const [idServico, setIdServico] = useState();
+    const [hora, setHora] = useState("09:00");
+    const [idServico, setIdServico] = useState(0);
     const [servico, setServico] = useState([]);
     const [profissional, setProfissional] = useState();
     const [formpagm, setFormpagm] = useState("Dinheiro");
@@ -25,6 +25,7 @@ export default function AgendarConsultaCliente (props) {
 
     const pegarServicos = async () => {  
         const resp = await odontoApi.PegarServicos(); 
+        
         setServico(resp) 
     };
 
@@ -73,34 +74,42 @@ export default function AgendarConsultaCliente (props) {
             
             const resp = await odontoApi.SomenteDentistasDisponiveis({"Horario": "2020-11-10 16:00" })
         
-            console.log(resp)
+            
                 
         } catch (e) {
 
-            console.log(e.response.data)
+            
         }
     }
 
 
-    const pegarValorDaConsulta  = async (id) => {
+    const pegarValorDaConsulta  = async (id, formaDePagamento) => {
         try {
-            
-            
 
-            const resp = await odontoApi.PegarValorDaConsulta({
-                "IdServico": 1,
-    "FormaDePagamento": "Cartão",
-    "QuantidadeParcelas": 8
-}  );
+             setIdServico(id);
+             console.log(formaDePagamento)
+ 
+ 
+                const request = ({
+                    "IdServico": id,
+                    "FormaDePagamento": formaDePagamento,
+                    "QuantidadeParcelas": 8
+                });  
+                
+                setFormpagm(formaDePagamento)
 
-            setSubtotal(resp.subtotal);
-            setDesconto(resp.desconto);
-            setTotal(resp.total);
-            setValorParcelado(resp.valorParcelado);
+                console.log(request);
+
+                const resp = await odontoApi.PegarValorDaConsulta(request);
+
+                setSubtotal(resp.subtotal);
+                setDesconto(resp.desconto);
+                setTotal(resp.total);
+                setValorParcelado(resp.valorParcelado);
             
             
         } catch (e) {
-            console.log(e.response.data)
+           
             
         }
     }
@@ -135,9 +144,9 @@ export default function AgendarConsultaCliente (props) {
                         <div className="lineAgend2">
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
-                                <select onChange={() => pegarValorDaConsulta(setIdServico(1))} className="form-control" >
+                                <select onChange={(e) => pegarValorDaConsulta(e.target.value, formpagm)} className="form-control" >
                                     <option></option>
-                                    {servico.map(x => <option>{x.nomeServico}</option>) }
+                                    {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}
                                 
                                 </select>
                             </div>
@@ -159,15 +168,10 @@ export default function AgendarConsultaCliente (props) {
                         <h5>Selecione a forma de Pagamento:</h5>
                             <div className="radPag  custom-radio custom-control-inline">
                                 
-                                <input type="radio" name="pagm" className="din"
-                                checked
-                                onChange={e => setFormpagm(e.target.checked ?"Dinheiro":null)}
-                                /> <h5>Dinheiro</h5>
-
-
-                                <input type="radio" name="pagm"  className="cart" 
-                                onChange={e => setFormpagm(e.target.checked ?"Cartão":null)}
-                                /> <h5>Cartão</h5>
+                                <select onChange={(e) => pegarValorDaConsulta(idServico, e.target.value)} className="form-control">
+                                    <option value="Dinheiro">Dinheiro</option>
+                                    <option value="Cartão">Cartão</option>
+                                </select>
                                 
                             </div>
                         </div>

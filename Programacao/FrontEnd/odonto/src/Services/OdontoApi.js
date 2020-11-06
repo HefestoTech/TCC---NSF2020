@@ -25,7 +25,6 @@ export default class OdontoApi {
     }
 
     PegarValorDaConsulta = async (dadosPagamento) => {
-        console.log(dadosPagamento);
         const resp = await api.get("/agendamento/valordaconsulta", dadosPagamento);
         return resp.data;
     }
