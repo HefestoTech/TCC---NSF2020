@@ -4,27 +4,37 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 140vh;
-    background-image: linear-gradient(47deg,rgb(46, 143, 223),rgb(238, 243, 248));
+    height: 145vh;
+}
+
+.backg{
+    background-image: url('../../Assets/Wallpapers/dental2.jpg');
+    background-size: 30vw;
 }
 
 .TtLogo{
     display: flex;
     align-items: center;
-    color: white;
+    height: 10vh;
+    color: rgb(255, 255, 255);
     font-weight: bolder;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
+
 
 .BodyAgend{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90vw;
-    height: 120vh;
+    width: 70vw;
+    height: 125vh;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+.shadow{
+    background-color:;
 }
 
 
@@ -35,8 +45,11 @@
             justify-content: center;
             width: 85vw;
             height: 20vh;
-            margin-top: 20px;            
+            margin-top: 30px;            
         }
+                .TtAgend h1{
+                    margin-left: 15px;
+                }
 
                 .TtAgend img{
                     width: 6vw;
@@ -45,10 +58,11 @@
                     transform: rotate(-12deg);
                 }
 
-                .TtAgend h4{
-                    
+                .TtAgend h4{                    
                     height: 30vh;
-                    margin-right: 90px;
+                    color: rgb(216, 51, 51);
+                    margin-right: 140px;
+                    margin-top: 20px;
                 }
 
 
@@ -56,7 +70,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 30px;
+            margin-right: 50px;
+            margin-top: 10px;
         }
 
 
@@ -94,29 +109,92 @@
         .BoxPagmt{
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: 60vw;
+            width: 40vw;
             height: 55vh;
+            margin-left: 10px;
+            margin-top: 30px;
         }
 
-
-                .formPagm{
+                .linePag1{
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+                    height: 10vh;
+                    margin-bottom: 10px;
                 }
 
-                .radPag{
-                    display: flex;
-                    align-items: center;
-                }
-
-                        .radPag h5{
-                            margin-left: 10px;
+                        .formPagm{
+                            display: flex;
+                            flex-direction: column;
+                            width: 30vw;
                         }
 
-                        .cart{
-                            
-                        }
+                                .radPag{
+                                    display: flex;
+                                }
+
+                                        .radPag h5{
+                                            margin-left: 5px;
+                                        }
+
+                                        .cart{
+                                            margin-left: 15px;
+                                        }
+
+                                        .radPag input{
+                                            margin-top: 7px; 
+                                        }
 
                 
+                .linePag2{
+                    display: flex;
+                    height: 12vh;
+                    margin-top: 40px;
+                }
+
+                        .formParc{
+                            width: 20vw;
+                        }
+
+                                .qtdParc{
+                                    width: 10vw;
+                                }
+
+                        .formSub{
+                            width: 10vw;
+                            margin-left: 30px;
+                        }
+
+
+                .linePagm3{
+                    display: flex;
+                    width: 55vw;
+                    height: 12vh;
+                    margin-top: 15px;
+                }
+
+                        .formDesc{
+                            width: 10vw;
+                        }
+
+                        .formTot{
+                            width: 12vw;
+                            margin-left: 165px;
+                        }
+
+
+                        .ButtPag{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 15vw;
+                            height: 12vh;
+                            margin-left: 50px;
+                            margin-top: 15px;
+                        }
+
+                        .btnCad{
+                            height: 8vh;
+                        }
+
+
+
+                        
