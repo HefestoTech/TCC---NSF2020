@@ -279,6 +279,8 @@ export default function ConsultarCliente(props) {
                                         <h5>Subtotal:</h5>
                                         <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
                                     </div>
+
+                                    <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 
@@ -370,6 +372,8 @@ export default function ConsultarCliente(props) {
                                         <h5>Subtotal:</h5>
                                         <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
                                     </div>
+
+                                    <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 
@@ -469,6 +473,8 @@ export default function ConsultarCliente(props) {
                                         <h5>Subtotal:</h5>
                                         <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
                                     </div>
+
+                                    <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 

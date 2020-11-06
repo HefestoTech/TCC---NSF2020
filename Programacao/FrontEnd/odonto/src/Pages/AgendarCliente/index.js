@@ -31,19 +31,21 @@ export default function AgendarConsultaCliente (props) {
 
     const agendarClick = async() => {
         try {
-             const resp = await odontoApi.AgendarConsultaPorCliente({
-            "IdCliente":1,
-            "IdFuncionario": 2,
-            "IdServico": 3,
-            "Data": "2020-11-10 16:00",
-            "FormaDePagamento": "Dinheiro",
-            "QtdParcelas": 1,
-            "SubTotal": 100,
-            "Desconto": 20,
-            "Total": 400
-        })
 
-            console.log(resp);
+           
+             const resp = await odontoApi.AgendarConsultaPorCliente({       
+                "IdCliente": 1,
+                "IdFuncionario": 2,
+                "IdServico": 2,
+                "Data": "2020-11-11 16:00",
+                "FormaDePagamento": "1",
+                "QtdParcelas": 1,
+                "SubTotal": 400,
+                "Desconto": 0,
+                "ValorTotal": 400
+            })
+    
+        console.log(resp);
         } catch (e) {
             console.log(e.response.data.erro)
         }
@@ -72,7 +74,9 @@ export default function AgendarConsultaCliente (props) {
             };
             */
             
-            const resp = await odontoApi.SomenteDentistasDisponiveis({"Horario": "2020-11-10 16:00" })
+            const resp = await odontoApi.SomenteDentistasDisponiveis({
+                "Horario": "2020-11-10 16:00" 
+            })
         
             
                 
@@ -86,26 +90,22 @@ export default function AgendarConsultaCliente (props) {
     const pegarValorDaConsulta  = async (id, formaDePagamento) => {
         try {
 
-             setIdServico(id);
-             console.log(formaDePagamento)
- 
- 
-                const request = ({
-                    "IdServico": id,
-                    "FormaDePagamento": formaDePagamento,
-                    "QuantidadeParcelas": 8
-                });  
+            setIdServico(id);
+            console.log(formaDePagamento)
                 
-                setFormpagm(formaDePagamento)
+            setFormpagm(formaDePagamento)
 
-                console.log(request);
 
-                const resp = await odontoApi.PegarValorDaConsulta(request);
+            const resp = await odontoApi.PegarValorDaConsulta({
+                "IdServico": id,
+                "FormaDePagamento": formaDePagamento,
+                "QuantidadeParcelas": 8
+            }); 
 
-                setSubtotal(resp.subtotal);
-                setDesconto(resp.desconto);
-                setTotal(resp.total);
-                setValorParcelado(resp.valorParcelado);
+            setSubtotal(resp.subtotal);
+            setDesconto(resp.desconto);
+            setTotal(resp.total);
+            setValorParcelado(resp.valorParcelado);
             
             
         } catch (e) {
