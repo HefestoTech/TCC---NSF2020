@@ -20,6 +20,11 @@
     font-weight: bolder;
     margin-top: 10px;
     margin-bottom: 5px;
+
+}
+
+a:link{
+    text-decoration: none;
 }
 
 
