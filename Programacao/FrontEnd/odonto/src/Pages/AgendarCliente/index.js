@@ -13,7 +13,7 @@ export default function AgendarConsultaCliente (props) {
     const [idfuncionario, setIdfuncionario] = useState();
     const [date, setDate] = useState("2020-09-07");
     const [hora, setHora] = useState("09:00");
-    const [idServico, setIdServico] = useState(0);
+    const [idServico, setIdServico] = useState(1);
     const [servico, setServico] = useState([]);
     const [profissional, setProfissional] = useState();
     const [formpagm, setFormpagm] = useState("Dinheiro");
@@ -144,8 +144,7 @@ export default function AgendarConsultaCliente (props) {
                         <div className="lineAgend2">
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
-                                <select onChange={(e) => pegarValorDaConsulta(e.target.value, formpagm)} className="form-control" >
-                                    <option></option>
+                                <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
                                     {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}
                                 
                                 </select>
@@ -190,7 +189,10 @@ export default function AgendarConsultaCliente (props) {
                             <input type="text" readOnly className="Subt form-control" placeholder="R$ 0,00" 
                             value={"R$" + subtotal}
                             />
+                            
                         </div>
+
+                        <p className="totalPorMesAgendar">( {parcelas}X de R${valorParcelado} )</p>
                     </div>
 
                     <div className="linePagm3">
