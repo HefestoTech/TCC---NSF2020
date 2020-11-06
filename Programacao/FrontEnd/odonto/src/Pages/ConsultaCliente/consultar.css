@@ -149,11 +149,21 @@
                             flex-direction: column;
                             width: 20vw;
                             margin-left: 10px;
+                            
                         }
 
                         
-                                .sub{
+                                .subTot{
                                     width: 10vw;
+                                
+                                }
+
+                                .formSub{
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: left;
+                                    width: 135px;
+                                    margin-left: 0px;
                                 }
                 
 

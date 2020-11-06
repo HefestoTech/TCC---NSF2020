@@ -177,8 +177,10 @@ export default function ConsultarCliente(props) {
 
                                     <div className="formSub">
                                         <h5>Subtotal:</h5>
-                                        <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
+                                        <input type="text" readOnly className="subTot form-control" value={"R$" + x.subtotal} />
                                     </div>
+
+                                     <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 
