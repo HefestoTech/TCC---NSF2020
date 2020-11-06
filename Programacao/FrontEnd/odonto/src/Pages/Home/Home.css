@@ -144,7 +144,7 @@
 
     .table{
       color: white;
-      background-color: rgb(70, 102, 128);
+      background-color: rgb(62, 73, 82) ;
       border-radius: 5px;
     }
 
@@ -153,7 +153,7 @@
         align-items: center;
         height: 10vh;
         text-align: center;
-        background-color: rgb(70, 102, 128);
+        background-color: rgb(62, 73, 82);
         color: white;
         margin-top: 2px;
         border-radius: 5px;
@@ -207,54 +207,4 @@
     color: white;
   }
 
-
-  .fundorodapé{
-
-    background-color: #51595e;
-    height: 30vh;
-
-  }
- 
-  .sobrenos{
-    display: flex;
-    width: 0vh;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    margin-left: 10vh;
-    padding-top: 5vh;
-    
-  }
-
-  .sobrenos:hover{
-
-  color: #00a2ff;
-}
-
-
-    .endline{
-
-      margin-left: 10vh;
-      
-      display: flex;
-      color: azure;
-      justify-content: space-between;
-      width: 50vw;
-      padding-top: 15vh;
-
-}
-
-
-    .endlineTwo{
-
-      display: flex;
-      justify-items: right;
-
-}
-    img.imgbrasil{
-
-      width: 30px;
-      height: 20px;
-      border-radius: 0px;
-
-}
 

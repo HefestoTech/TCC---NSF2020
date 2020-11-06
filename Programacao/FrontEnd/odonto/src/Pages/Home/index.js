@@ -6,6 +6,8 @@ import Rodape   from '../../Components/Footer';
 import Menu     from '../../Components/Menu'
 import './Home.css';
 import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
+import Instagram from '../../Assets/Fotos/Instagram.svg'
+
 
 export default function App() {
   return (
@@ -106,37 +108,6 @@ export default function App() {
       </div>
 
     </div>
-         <div className= "fundorodapé">
-              <div class="sobrenos">
-                Sobre 
-              </div>
-                  <div class="endline">
-                      <p>
-                        Centro de Privacidade
-                      </p>
-                      <p>
-                      Política de privacidade
-                      </p>
-                      <p>
-                        Cookies
-                      </p>    
-                    
-                      <div class="endlineTwo">
-                        <p>Brasil</p>
-                        <img class="imgbrasil" src={ Brasil } />
-                    </div>
-
-                    <div class="endline3">
-                      <p>
-                        Hefesto Tech, 2020 All rights reserved ® 
-                      </p>
-                    </div>
-            
-
-              </div>
-        
-         </div>
-
     </>
   );
 }
