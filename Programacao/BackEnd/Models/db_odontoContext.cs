@@ -26,7 +26,7 @@ namespace BackEnd.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;admin id=root;password=HefestoTech202@;database=db_odonto", x => x.ServerVersion("8.0.19-mysql"));
+                optionsBuilder.UseMySql("server=localhost;admin id=admin;password=HefestoTech202@;database=db_odonto", x => x.ServerVersion("8.0.19-mysql"));
             }
         }
 
