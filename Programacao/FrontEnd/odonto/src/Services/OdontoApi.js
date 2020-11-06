@@ -18,13 +18,15 @@ export default class OdontoApi {
     }
 
     //Agendar novo - ambos
-    SomenteDentistasDisponiveis = async (horario) => {
-        const resp = await api.get("/agendamento/dentista/disponivel", horario)
+    SomenteDentistasDisponiveis = async (horarioRequest) => {
+        console.log(horarioRequest);
+        const resp = await api.get("/agendamento/dentista/disponivel", horarioRequest)
         return resp.data;
     }
 
-    PegarValorDaConsulta = async (dadosDoPagamento) => {
-        const resp = await api.get("/agendamento/valordaconsulta", dadosDoPagamento);
+    PegarValorDaConsulta = async (dadosPagamento) => {
+        console.log(dadosPagamento);
+        const resp = await api.get("/agendamento/valordaconsulta", dadosPagamento);
         return resp.data;
     }
 

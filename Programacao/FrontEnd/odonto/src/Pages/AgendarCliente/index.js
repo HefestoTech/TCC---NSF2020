@@ -11,16 +11,17 @@ export default function AgendarConsultaCliente (props) {
     
     const [responsecompleto, setResponsecompleto] = useState(props.location.state);
     const [idfuncionario, setIdfuncionario] = useState();
-    const [date, setDate] = useState();
-    const [hora, setHora] = useState();
-    const [idservico, seIdservico] = useState();
+    const [date, setDate] = useState("2020-09-07");
+    const [hora, setHora] = useState("08:00");
+    const [idServico, setIdServico] = useState();
     const [servico, setServico] = useState([]);
     const [profissional, setProfissional] = useState();
-    const [formpagm, setFormpagm] = useState();
-    const [parcelas, setParcelas] = useState();
-    const [subtotal, setSubtotal] = useState();
-    const [desconto, setDesconto] = useState();
-    const [total, setTotal] = useState();
+    const [formpagm, setFormpagm] = useState("Dinheiro");
+    const [parcelas, setParcelas] = useState(1);
+    const [subtotal, setSubtotal] = useState(0);
+    const [desconto, setDesconto] = useState(0);
+    const [total, setTotal] = useState(0);
+    const [valorParcelado, setValorParcelado] = useState(0);
 
     const pegarServicos = async () => {  
         const resp = await odontoApi.PegarServicos(); 
@@ -28,17 +29,23 @@ export default function AgendarConsultaCliente (props) {
     };
 
     const agendarClick = async() => {
-        const resp = await odontoApi.AgendarConsultaPorCliente({
-            "IdCliente":responsecompleto.IdUsuario,
-            "IdFuncionario": idfuncionario,
-            "IdServico": idservico,
-            "Data": date,
-            "FormaDePagamento": formpagm,
-            "QtdParcelas": parcelas,
-            "SubTotal": subtotal,
-            "Desconto": desconto,
-            "Total": total
+        try {
+             const resp = await odontoApi.AgendarConsultaPorCliente({
+            "IdCliente":1,
+            "IdFuncionario": 2,
+            "IdServico": 3,
+            "Data": "2020-11-10 16:00",
+            "FormaDePagamento": "Dinheiro",
+            "QtdParcelas": 1,
+            "SubTotal": 100,
+            "Desconto": 20,
+            "Total": 400
         })
+
+            console.log(resp);
+        } catch (e) {
+            console.log(e.response.data.erro)
+        }
     }
 
     
@@ -53,12 +60,49 @@ export default function AgendarConsultaCliente (props) {
       }
 
     const pegarProfissional = async() =>{
-        const horario = transformarEmDataComMinutos();
-        const req = {"Horario":horario}
-        console.log(req)
-        const resp = await odontoApi.SomenteDentistasDisponiveis(req)
-        console.log(horario)
-        console.log(resp)
+        try {
+            const horario = transformarEmDataComMinutos();
+        
+            const horarioRequest = ({"Horario": "2020-10-26 16:00" })
+
+            /*const request = {
+                "IdAgendamento":idAgendamento,
+                "NovoHorario": dataFinal
+            };
+            */
+            
+            const resp = await odontoApi.SomenteDentistasDisponiveis({"Horario": "2020-11-10 16:00" })
+        
+            console.log(resp)
+                
+        } catch (e) {
+
+            console.log(e.response.data)
+        }
+    }
+
+
+    const pegarValorDaConsulta  = async (id) => {
+        try {
+            
+            
+
+            const resp = await odontoApi.PegarValorDaConsulta({
+                "IdServico": 1,
+    "FormaDePagamento": "Cartão",
+    "QuantidadeParcelas": 8
+}  );
+
+            setSubtotal(resp.subtotal);
+            setDesconto(resp.desconto);
+            setTotal(resp.total);
+            setValorParcelado(resp.valorParcelado);
+            
+            
+        } catch (e) {
+            console.log(e.response.data)
+            
+        }
     }
 
     return(
@@ -81,7 +125,7 @@ export default function AgendarConsultaCliente (props) {
 
                             <div className="formHour">
                             <h5>Selecione uma hora:</h5>
-                            <input  type="time" className="form-control" 
+                            <input value={hora} type="time" className="form-control" 
                             onChange={e => setHora(e.target.value)}
                             />
                             </div>
@@ -91,7 +135,8 @@ export default function AgendarConsultaCliente (props) {
                         <div className="lineAgend2">
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
-                                <select className="form-control" >
+                                <select onChange={() => pegarValorDaConsulta(setIdServico(1))} className="form-control" >
+                                    <option></option>
                                     {servico.map(x => <option>{x.nomeServico}</option>) }
                                 
                                 </select>
@@ -115,6 +160,7 @@ export default function AgendarConsultaCliente (props) {
                             <div className="radPag  custom-radio custom-control-inline">
                                 
                                 <input type="radio" name="pagm" className="din"
+                                checked
                                 onChange={e => setFormpagm(e.target.checked ?"Dinheiro":null)}
                                 /> <h5>Dinheiro</h5>
 
@@ -130,7 +176,7 @@ export default function AgendarConsultaCliente (props) {
                     <div className="linePag2">
                         <div className="formParc">
                             <h5>Quantidade de parcelas:</h5>
-                            <input type="number" className="qtdParc form-control" min="1" max="8" 
+                            <input value={parcelas} type="number" className="qtdParc form-control" min="1" max="8" 
                             onChange={e => setParcelas(e.target.value)}
                             />
                         </div>
@@ -138,7 +184,7 @@ export default function AgendarConsultaCliente (props) {
                         <div className="formSub">
                             <h5>SubTotal:</h5>
                             <input type="text" readOnly className="Subt form-control" placeholder="R$ 0,00" 
-                            value={subtotal}
+                            value={"R$" + subtotal}
                             />
                         </div>
                     </div>
@@ -146,20 +192,20 @@ export default function AgendarConsultaCliente (props) {
                     <div className="linePagm3">
                         <div className="formDesc">
                             <h5>Desconto:</h5>
-                            <input type="text" className="Desc form-control" placeholder="R$ 0,00" 
-                            value={desconto}
+                            <input type="text" readOnly className="Desc form-control" placeholder="R$ 0,00" 
+                            value={"R$" + desconto}
                             />
                         </div>
 
                         <div className="formTot">
                             <h5>Total:</h5>
                             <input type="text" readOnly className="Total form-control" placeholder="R$ 0,00"
-                            value={total}
+                            value={"R$" + total}
                             />
                         </div>
 
                         <div className="ButtPag">
-                            <button className="btnCad btn btn-primary"><h4>Agendar</h4></button>
+                            <button onClick={agendarClick} className="btnCad btn btn-primary"><h4>Agendar</h4></button>
                         </div>
                     </div>
 

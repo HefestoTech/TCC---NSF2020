@@ -14,16 +14,19 @@ const api = new OdontoApi();
 export default function ConsultarCliente(props) {
 
     const [responseCompleto] = useState(props.location.state);
+    
     const [agendados, setAgendados] = useState([]);
+    
     const [concluidos, setConcluidos] = useState([]);
+    
     const [cancelados, setCancelados] = useState([]);
+    
     const [naoCompareceu, setNaoCompareceu] = useState([]);
+    
     const [mostrarLoading, setMostrarLoading] = useState(false);
+    
     const [situacaoMostrar, setSituacaoMostrar] = useState("Agendados");
 
-
-   
-   
     const history = useHistory();
 
     const IrParaTelaDeRemarcar = (idAgendamento) => {
@@ -45,46 +48,42 @@ export default function ConsultarCliente(props) {
             setMostrarLoading(true)
            
             const response = await api.PegarConsultasCliente(responseCompleto.idUsuario);
-
-            console.log(response);
            
             setAgendados(response.agendados);
+           
             setCancelados(response.cancelados);
+           
             setNaoCompareceu(response.naoCompareceu);
+           
             setConcluidos(response.concluidos);
            
             setMostrarLoading(false);
-
             
         } catch (e) {
             toast.error(e.response.data.erro)
+            
             setMostrarLoading(false);
         }
    }
 
    const qualSituacaoMostrarClick = (situacaoQueVaiMostrar) => {
-
         setSituacaoMostrar(situacaoQueVaiMostrar);
-       
    }
 
-    const cancelarConsultaClick  = async(idConsulta) => {
-         try {
-            setMostrarLoading(true);
+    const cancelarConsultaClick  = async(idConsulta) => { 
+        try {
            
             api.CancelarConsulta(idConsulta);
            
             pegarConsultasClienteClick(responseCompleto.idUsuario);
-
-            setMostrarLoading(false);
            
-            toast.success("Consulta cancelada com sucesso");
+            toast.success("A consulta foi cancelada com sucesso");
              
-         } catch (e) {
-            setMostrarLoading(false);
-            
+        }catch (e) {
+       
             toast.error(e.response.data.erro);
-         }
+
+        }
     }
 
    useEffect(() => {
@@ -97,10 +96,11 @@ export default function ConsultarCliente(props) {
         <div>
           <Loading/>
         </div>}
+       
         <div className="ContCons" >
-            <ToastContainer></ToastContainer>
+            <ToastContainer/>
 
-            <Menu></Menu>
+            <Menu/>
 
             
                 <div className="Tt1Cons">
@@ -206,7 +206,6 @@ export default function ConsultarCliente(props) {
                     
                 )}
                 </div>}
-
                 {situacaoMostrar === "Agendados" && agendados.length === 0 &&
                 <div className="semConsultasAgendadas"> 
                     <h3>Você não tem consultas agendadas.
