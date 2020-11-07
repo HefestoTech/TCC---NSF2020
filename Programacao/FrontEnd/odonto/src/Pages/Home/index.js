@@ -5,7 +5,9 @@ import Odonto   from '../../Assets/Fotos/odonto.png'
 import Menu     from '../../Components/Menu'
 import './Home.css';
 import Instagram from '../../Assets/Fotos/Instagram.svg'
-
+import TT from '../../Assets//Fotos/ttlogo.svg'
+import Facebook from '../../Assets/Fotos/facelogo.svg'
+import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
 
 
 export default function App() {
@@ -107,11 +109,15 @@ export default function App() {
       </div>
    </div>
         
+  
+  
+
+
    <div class="cont3">
         <div class="Box">
             <div class="Nav">
                 <div class="logo2">
-                    <img></img>
+                    <h1>Odonto</h1>
                 </div>
                 <div class="g1">
                     <div class="l1">Empresa</div>
@@ -138,11 +144,11 @@ export default function App() {
 
                 <div class="Redes">
                     
-                    <div class="r">
-                        <img></img>
+                    <div class="face">
+                        <img src = {Facebook}/>
                     </div>
-                    <div class="r">
-                        <img></img>
+                    <div class="tt">
+                        <img src ={TT}/>
                     </div>
                     <div class="r">
                         <img src = {Instagram}/>
@@ -161,11 +167,14 @@ export default function App() {
                 <div class="in2">
                     <div class="br">
                         <p>Brasil</p>
-                        <img></img>              
-                    <div class="sla">© 2020 Spotify AB</div>
+                        <img src = {Brasil} />        
+                    </div>
+                    <div class="sla">© 2020 Spotify AB</div>       
                 </div>
-            </div>
-        </div>    
+
+            
+            
+        </div>   
     </div>
 
 </div>
