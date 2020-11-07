@@ -262,6 +262,16 @@
     padding-top: 15px;
     color: white;
 }
+ .l:hover{
+
+  color: rgb(46, 143, 223);
+  cursor: pointer;
+
+
+}
+
+
+
 
 .l1{
     padding: 5px;
@@ -290,6 +300,7 @@
     height: 40px;
     margin: 10px;
     background-color:rgb(231, 231, 231);
+    cursor: pointer;
 }
 
 .tt img{
@@ -299,7 +310,7 @@
   height: 40px;
   margin: 10px;
   background-color: rgb(231, 231, 231);
-
+  cursor: pointer;
 }
 
 .face img{
@@ -309,6 +320,7 @@
     height: 40px;
     margin: 10px;
     background-color: rgb(231, 231, 231);
+    cursor: pointer;
 }
 
 
@@ -358,6 +370,7 @@
     border-radius: 5%;
     margin: 0px;
     
+    
 }
 
 p{
@@ -377,3 +390,5 @@ p{
   flex-direction: column;
   margin-top: 3px;
 }
+
+

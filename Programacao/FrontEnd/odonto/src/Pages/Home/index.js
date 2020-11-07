@@ -158,7 +158,7 @@ export default function App() {
                     <div class="p">Centro de Privacidade</div>
                     <div class="p">Politica de Privacidade</div>
                     <div class="p">Cookies</div>
-                    <div class ="p">termos de uso</div>
+                    <div class ="p">Termos de Uso</div>
                     
                 </div>
 
