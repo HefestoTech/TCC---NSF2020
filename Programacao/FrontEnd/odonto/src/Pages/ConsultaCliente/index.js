@@ -49,6 +49,7 @@ export default function ConsultarCliente(props) {
            
             const response = await api.PegarConsultasCliente(responseCompleto.idUsuario);
            
+            
             setAgendados(response.agendados);
            
             setCancelados(response.cancelados);
@@ -133,7 +134,7 @@ export default function ConsultarCliente(props) {
                                 
                                     <div className="dateCons">
                                         <h5>Data:</h5>
-                                        <input value={x.data} type="text" readOnly className="date form-control"  />
+                                        <input value={new Date(x.data).toLocaleString()} type="text" readOnly className="date form-control"  />
                                     </div>
                                 </div>
 
@@ -180,7 +181,7 @@ export default function ConsultarCliente(props) {
                                         <input type="text" readOnly className="subTot form-control" value={"R$" + x.subtotal} />
                                     </div>
 
-                                     <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
+                                     <p className="totalPorMesAgendar totMesColor">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 
@@ -239,7 +240,7 @@ export default function ConsultarCliente(props) {
                                 
                                     <div className="dateCons">
                                         <h5>Data:</h5>
-                                        <input value={x.data} type="text" readOnly className="date form-control"  />
+                                        <input value={new Date(x.data).toLocaleString()} type="text" readOnly className="date form-control"  />
                                     </div>
                                 </div>
 
@@ -280,7 +281,7 @@ export default function ConsultarCliente(props) {
                                         <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
                                     </div>
 
-                                    <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
+                                    <p className="totalPorMesAgendar totMesColor">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 
@@ -332,7 +333,7 @@ export default function ConsultarCliente(props) {
                                 
                                     <div className="dateCons">
                                         <h5>Data:</h5>
-                                        <input value={x.data} type="text" readOnly className="date form-control"  />
+                                        <input value={new Date(x.data).toLocaleString()} type="text" readOnly className="date form-control"  />
                                     </div>
                                 </div>
 
@@ -373,7 +374,7 @@ export default function ConsultarCliente(props) {
                                         <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
                                     </div>
 
-                                    <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
+                                    <p className="totalPorMesAgendar totMesColor">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 
@@ -433,7 +434,7 @@ export default function ConsultarCliente(props) {
                                 
                                     <div className="dateCons">
                                         <h5>Data:</h5>
-                                        <input value={x.data} type="text" readOnly className="date form-control"  />
+                                        <input value={new Date(x.data).toLocaleString()} type="text" readOnly className="date form-control"  />
                                     </div>
                                 </div>
 
@@ -474,7 +475,7 @@ export default function ConsultarCliente(props) {
                                         <input type="text" readOnly className="sub form-control" value={"R$" + x.subtotal} />
                                     </div>
 
-                                    <p className="totalPorMesAgendar">( {x.parcelas}X de R${x.totalPorMes} )</p>
+                                    <p className="totalPorMesAgendar totMesColor">( {x.parcelas}X de R${x.totalPorMes} )</p>
                                                                        
                                 </div>
 

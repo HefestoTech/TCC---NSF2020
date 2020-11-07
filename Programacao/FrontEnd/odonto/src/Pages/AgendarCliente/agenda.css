@@ -181,7 +181,7 @@ a:link{
 
                         .formTot{
                             width: 12vw;
-                            margin-left: 165px;
+                            margin-left: 138px;
                         }
 
 
@@ -201,6 +201,7 @@ a:link{
 .totalPorMesAgendar{
     margin-top: 36px;
     margin-left: 10px;
+    color: black;
 }
 
 
