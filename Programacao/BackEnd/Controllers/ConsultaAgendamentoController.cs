@@ -34,12 +34,20 @@ namespace BackEnd.Controllers
 
 
         [HttpGet("agendados/filtro")]
-        public List<Models.Response.AgendadosResponse> AgendadosPorFiltro (string nome, string servico, string doutor, DateTime data, string situacao)
+        public ActionResult<List<Models.Response.AgendadosResponse>> AgendadosPorFiltro (string nome, string servico, string doutor, DateTime data, string situacao)
         {
-           
 
-            List<Models.TbConsulta> listaDeConsultas = business.AgendadosPorFiltro(nome, servico, doutor, data, situacao);
-            return conversor.ParaAgendadadosResponse(listaDeConsultas);
+            try
+            {
+                List<Models.TbConsulta> listaDeConsultas = business.AgendadosPorFiltro(nome, servico, doutor, data, situacao);
+                return conversor.ParaAgendadadosResponse(listaDeConsultas);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
         }
 
        
