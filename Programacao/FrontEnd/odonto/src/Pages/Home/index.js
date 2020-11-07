@@ -2,9 +2,9 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 import Dentista from '../../Assets/Fotos/dentista.jpg'
 import Odonto   from '../../Assets/Fotos/odonto.png'
-import Rodape   from '../../Components/Footer';
 import Menu     from '../../Components/Menu'
 import './Home.css';
+import Instagram from '../../Assets/Fotos/Instagram.svg'
 
 
 
@@ -145,7 +145,7 @@ export default function App() {
                         <img></img>
                     </div>
                     <div class="r">
-                        <img></img>
+                        <img src = {Instagram}/>
                     </div>
                 </div>
             </div>
