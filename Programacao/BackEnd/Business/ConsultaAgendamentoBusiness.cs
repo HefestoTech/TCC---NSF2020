@@ -34,7 +34,12 @@ namespace BackEnd.Business
             if(situacao == null)
                 situacao = "";
 
-            return dbConsulta.AgendadosPorFiltro(nome, servico, doutor, data, situacao);
+            List<Models.TbConsulta> consultas = dbConsulta.AgendadosPorFiltro(nome, servico, doutor, data, situacao);
+
+            if(consultas.Count == 0)
+                throw new ArgumentException("Nenhuma consulta encontrada a partir dos filtros passados.");
+
+            return consultas;    
         }
     }
 }
