@@ -5,8 +5,7 @@ import Odonto   from '../../Assets/Fotos/odonto.png'
 import Rodape   from '../../Components/Footer';
 import Menu     from '../../Components/Menu'
 import './Home.css';
-import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
-import Instagram from '../../Assets/Fotos/Instagram.svg'
+
 
 
 export default function App() {
@@ -106,8 +105,72 @@ export default function App() {
 
         </div>
       </div>
+   </div>
+        
+   <div class="cont3">
+        <div class="Box">
+            <div class="Nav">
+                <div class="logo2">
+                    <img></img>
+                </div>
+                <div class="g1">
+                    <div class="l1">Empresa</div>
+                    <div class="l">Sobre</div>
+                    <div class="l">Empregos</div>
+                    <div class="l">For the Record</div>
+                </div>
 
+                <div class="g2">
+                    <div class="l1">Comunidade</div>
+                    <div class="l">Para Artistas</div>
+                    <div class="l">Desenvolvedores</div>
+                    <div class="l">Marcas</div>
+                    <div class="l">Investidores</div>
+                    <div class="l">Fornecedores</div>
+                </div>
+
+                <div class="g3">
+                    <div class="l1">Links Úteis</div>
+                    <div class="l">Ajuda</div>
+                    <div class="l">Player da Web</div>
+                    <div class="l">Aplicativo móvel grátis</div>
+                </div>
+
+                <div class="Redes">
+                    
+                    <div class="r">
+                        <img></img>
+                    </div>
+                    <div class="r">
+                        <img></img>
+                    </div>
+                    <div class="r">
+                        <img></img>
+                    </div>
+                </div>
+            </div>
+            <div class="Rod">
+                <div class="in">    
+                    <div class="p">Legal</div>
+                    <div class="p">Centro de Privacidade</div>
+                    <div class="p">Politica de Privacidade</div>
+                    <div class="p">Cookies</div>
+                    <div class="p">Sobre Anúncios</div>
+                </div>
+
+                <div class="in2">
+                    <div class="br">
+                        <p>Brasil</p>
+                        <img></img>              
+                    <div class="sla">© 2020 Spotify AB</div>
+                </div>
+            </div>
+        </div>    
     </div>
+
+</div>
+
+    
     </>
   );
 }
