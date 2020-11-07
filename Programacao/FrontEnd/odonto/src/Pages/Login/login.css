@@ -1,28 +1,34 @@
-.bodyLogin{
-    background-color: #9BC5D8;
-    height: calc(100vh - 80px);
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
     
-}
-
-    
-
      .logo{
     display: flex;
-    background-color: whitesmoke;
     box-shadow: 3px, 3px, 3px  #9BC5D8;
     text-align: center;  
     color:#3FA6D3;
-    height: 80px;
+    height: 65px;
     align-items: center;
     justify-content: center;
     width: 100%;
    
   }
+
+
+
+  .bodyLogin{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #45aaf2;
+}
+
+    .back{
+        background-image: url("../../Assets/Wallpapers/dental3.jpg");
+        background-size: 60em;
+        background-repeat: no-repeat;
+    }
+
 
 
 
@@ -41,8 +47,10 @@
     .card-top{
          color: whitesmoke;
          text-align: center;
-         background: #ec0000;
+         background: #f73131;
          width:500px;
+         margin-left: 300px;
+         margin-top: 5px;
         border-radius: 5px;
         box-shadow:2px 2px 2px #3FA6D3; 
     }
@@ -71,10 +79,10 @@
 
     .cardlogin > button {
 
-        background-color: #ec0000;
+        background-color: #f73131;
         width: 70%;
         padding: 2px;
-        box-shadow: 2px 2px 2px #990000;
+        box-shadow: 2px 2px 2px #5e1818;
         outline: 0;
 
      }
@@ -111,10 +119,10 @@
 
     .linkCadastrar > button{
         display: flex;
-        background-color: #ec0000;
+        background-color: #f73131;
         width: 70%;
         padding: 2px;
-        box-shadow: 2px 2px 2px  #990000;
+        box-shadow: 2px 2px 2px  #331010;
         justify-content: space-around;
         
     }

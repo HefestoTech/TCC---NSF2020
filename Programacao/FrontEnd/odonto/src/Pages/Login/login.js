@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './login.css';
-import OdontoApi from '../../Services/OdontoApi'
+import OdontoApi from '../../Services/OdontoApi';
+import LoadingBar from 'react-top-loading-bar';
 import { ToastContainer, toast } from 'react-toastify';
 import Loading from "../../Components/Loading"
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +11,7 @@ import Rodape from '../../Components/Footer'
 const api = new OdontoApi();
 
  export default function Login(){
+    const ref = useRef(null); 
 
     const [mostrarSenha, setMostrarSenha] = useState("password");
 
@@ -51,21 +53,26 @@ const api = new OdontoApi();
     }
 
     const IrParaTelaDeCadastrar = () => {
-        history.push({
+            history.push({
             pathname:"/Cadastrar"
-        }); }
+        });
+    }
 
     return(
-        <>
+        <div>
+            
+        <LoadingBar color='#45aaf2' ref={ref} height={4} />
+
          {mostrarLoading === true &&
-         <div>
-             <Loading/>
-         </div>
+            <div>
+                <Loading/>
+            </div>
          }
+
          <div className="logo">
                 <Link to= "/"><h1>Odonto</h1> </Link>
             </div>
-        <div className= "bodyLogin">
+        <div className= "bodyLogin back">
            
            
                 <div className = "card-top">
@@ -85,7 +92,7 @@ const api = new OdontoApi();
                         <input className="form-control" onChange={e => setSenha(e.target.value)} type={mostrarSenha}  placeholder =" Digite sua senha" required ></input>
                                 </div>
                                 <div className="div_icon">
-                        <i title="Mostrar Senha"  onClick={mudarMostrarSenha} class="senha_icon far fa-eye-slash"></i>
+                        <i title="Mostrar Senha"  onClick={mudarMostrarSenha}  class="senha_icon far fa-eye-slash"></i>
                                 </div>
                                
                             </div>
@@ -110,7 +117,7 @@ const api = new OdontoApi();
           <ToastContainer/>
         </div>
         <Rodape/>
-        </>
+        </div>
     )
  }
 
