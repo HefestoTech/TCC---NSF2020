@@ -10,7 +10,7 @@ import Menu from "./Pages/OneMenu"
 import NotFound from "./Pages/NotFound"
 import Feedback from "./Pages/Feedback"
 import ConsultarCliente from './Pages/ConsultaCliente'
-
+import TermoDeUsoPrivacidade from './Pages/Term/index.js'
 export default function Routes() {
     return(
         <BrowserRouter>
@@ -24,7 +24,7 @@ export default function Routes() {
               <Route path="/feedback/:id" component = {Feedback}/>
               <Route path="/consultacliente/:id" component={ConsultarCliente} />
               <Route path="*" component={NotFound}/>
-              
+              <Route path="/Term" exact component={TermoDeUsoPrivacidade} />
           </Switch>
         </BrowserRouter>
     )
