@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route, Router} from 'react-router-dom'
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Home from './Pages/Home'
 import Login from './Pages/Login/login.js'
 import Remarcar from './Pages/Remarcar'
@@ -10,7 +9,8 @@ import Menu from "./Pages/OneMenu"
 import NotFound from "./Pages/NotFound"
 import Feedback from "./Pages/Feedback"
 import ConsultarCliente from './Pages/ConsultaCliente'
-import TermoDeUsoPrivacidade from './Pages/Term/index.js'
+import Privacidade from './Pages/Term/index.js'
+
 export default function Routes() {
     return(
         <BrowserRouter>
@@ -23,8 +23,8 @@ export default function Routes() {
               <Route path="/menu/:id" exact component={Menu}/>
               <Route path="/feedback/:id" component = {Feedback}/>
               <Route path="/consultacliente/:id" component={ConsultarCliente} />
+              <Route path="/Term" exact component={Privacidade} />
               <Route path="*" component={NotFound}/>
-              <Route path="/Term" exact component={TermoDeUsoPrivacidade} />
           </Switch>
         </BrowserRouter>
     )
