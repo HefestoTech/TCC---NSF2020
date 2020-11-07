@@ -235,7 +235,7 @@
     margin-top: 80px;
     margin-left: 100px;
     margin-right: 100px;
-    margin-bottom: 60px;
+
     height: 100vh;  
 }
 
@@ -369,6 +369,8 @@ p{
     display: flex;
     justify-content: flex-end;
   color: rgb(255, 255, 255);
+  width: 300px;
+  margin-left: -60px;
     
 }
 
