@@ -94,6 +94,26 @@ namespace BackEnd.Utils
 
                 return relatorioTopServicos.Take(10).ToList();
         }
+
+        public List<Models.Response.MediaFuncionarioResponse> ParaMediaFuncionarioResponsse (List<Models.TbFuncionario> funcionarios)
+        {
+            List<Models.Response.MediaFuncionarioResponse> relatorioMediaFuncionario = new List<Models.Response.MediaFuncionarioResponse>();
+
+            foreach(Models.TbFuncionario item in funcionarios)
+            {
+                Models.Response.MediaFuncionarioResponse mediaFuncionario = new Models.Response.MediaFuncionarioResponse();
+
+                List<Models.TbConsulta> consultas = ctx.TbConsulta.Where(x => x.IdFuncionario == item.IdFuncionario && x.DsSituacao == "Concluido").ToList();
+
+                mediaFuncionario.Nome = item.NmFuncionario;
+                mediaFuncionario.QtdConsultas = consultas.Count;
+                mediaFuncionario.NotaMedia = consultas.Average(x => x.NrNota);
+
+                relatorioMediaFuncionario.Add(mediaFuncionario);
+            }
+
+            return relatorioMediaFuncionario.OrderByDescending(x => x.NotaMedia).ToList();  
+        }
         
     }
 }

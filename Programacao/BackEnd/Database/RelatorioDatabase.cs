@@ -43,6 +43,12 @@ namespace BackEnd.Database
             List<Models.TbServico> servico = ctx.TbServico.ToList();
             return servico;
         }
+
+        public List<Models.TbFuncionario> PegarNotaMedia()
+        {
+            List<Models.TbFuncionario> funcionarios = ctx.TbFuncionario.ToList();
+            return funcionarios;
+        }
         
     }
 }

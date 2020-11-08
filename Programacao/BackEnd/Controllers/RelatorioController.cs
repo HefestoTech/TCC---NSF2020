@@ -84,6 +84,22 @@ namespace BackEnd.Controllers
             }
         }
 
+        [HttpGet("MediaFuncionarios")]
+        public ActionResult<List<Models.Response.MediaFuncionarioResponse>> PegarNotaMedia () 
+        {
+            try
+            {
+                List<Models.TbFuncionario> funcionarios = relatorioBusiness.PegarNotaMedia();
+                return conversor.ParaMediaFuncionarioResponsse(funcionarios);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest (new Models.Response.ErroResponse(
+                    ex.Message, 400
+                ));
+            }
+        }
+
 
     
     

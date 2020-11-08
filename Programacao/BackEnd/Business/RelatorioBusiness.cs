@@ -52,6 +52,12 @@ namespace BackEnd.Business
             List<Models.TbServico> servicos = dbRelatorio.PegarTopServicos();
             return servicos;
         }
+
+        public List<Models.TbFuncionario> PegarNotaMedia()
+        {
+           List<Models.TbFuncionario> funcionarios = dbRelatorio.PegarNotaMedia();
+           return funcionarios;
+        }
         
     }
 
