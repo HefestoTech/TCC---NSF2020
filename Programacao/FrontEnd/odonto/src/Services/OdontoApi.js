@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://52.20.185.38:5000'
+  baseURL: "http://52.20.185.38:5000",
 });
 
 export default class OdontoApi {
@@ -76,6 +76,20 @@ export default class OdontoApi {
         const resp = await api.put(`/agendamento/situacao/${idConsulta}?novaSituacao=${novaSituacao}`);
         return resp.data;
     }
+
+    //Relatórios
+
+    PegarPorDia = async (data) => {
+        const resp = await api.get(`/Relatorio/pegarPorDia?dia=${data}`);
+        return resp.data;
+    }
+
+    PegarPorMeses = async (mesInicio, mesFinal) => {
+        const resp = await api.get(`/Relatorio/pegarPorMes?mesInicio=${mesInicio}&mesFinal=${mesFinal}`)
+        return resp.data;
+    }
+
+
 
 
 

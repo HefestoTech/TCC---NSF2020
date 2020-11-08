@@ -1,0 +1,53 @@
+.fundoMil{
+    
+    display: flex;
+    background-color: #93bfd3;
+    color: white;
+    flex-direction: column;
+    height: 100vh;
+
+
+}
+
+.divTwoMil{
+    background-color:  rgb(18, 46, 124);
+    display: flex;
+    
+    padding-left:20vh ;
+    align-items: center;
+}
+
+.fa-tooth{
+    color: rgb(255, 255, 255);
+    
+}
+
+.theerMil{
+background-color: white;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    text-align: center;
+    margin-top: 5vh;
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    -webkit-box-shadow: 9px 7px 5px rgba(90, 90, 90, 0.274);
+	-moz-box-shadow: 9px 7px 5px rgba(90, 90, 90, 0.274);
+	box-shadow: 9px 7px 5px rgba(90, 90, 90, 0.274);
+
+}
+
+.titulosobre{
+
+    color: rgb(18, 46, 124) ;
+}
+
+.ttt{
+    color: white;
+}
+
+.ttt:hover{
+
+    color: white;
+
+}

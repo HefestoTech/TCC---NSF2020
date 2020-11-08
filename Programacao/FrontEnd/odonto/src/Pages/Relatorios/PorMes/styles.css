@@ -1,0 +1,30 @@
+.InputsRelatoriosPorMes{
+    width: 500px;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.fa-search{
+    font-size: 35px;
+    color: black;
+    margin-bottom: -20px;
+    cursor: pointer;
+}
+
+.relatorioPorMestb{
+    width: 50%;
+    text-align: center;
+}
+
+.voltarRelatorio{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    font-size: 19px;
+}
+
+
+

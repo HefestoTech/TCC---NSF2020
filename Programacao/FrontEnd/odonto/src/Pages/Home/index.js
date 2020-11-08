@@ -5,7 +5,9 @@ import Odonto   from '../../Assets/Fotos/odonto.png'
 import Menu     from '../../Components/Menu'
 import './Home.css';
 import Instagram from '../../Assets/Fotos/Instagram.svg'
-
+import TT from '../../Assets//Fotos/ttlogo.svg'
+import Facebook from '../../Assets/Fotos/facelogo.svg'
+import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
 
 
 export default function App() {
@@ -107,42 +109,43 @@ export default function App() {
       </div>
    </div>
         
+  
+  
+
+
    <div class="cont3">
         <div class="Box">
             <div class="Nav">
                 <div class="logo2">
-                    <img></img>
+                    <Link class="linkOneOne" to = '/'><h1>Odonto</h1></Link>
                 </div>
                 <div class="g1">
                     <div class="l1">Empresa</div>
-                    <div class="l">Sobre</div>
-                    <div class="l">Empregos</div>
-                    <div class="l">For the Record</div>
+                    <div class="l"> <Link class="linkOneOne" to = '/sobrenos'>Sobre</Link></div>
+                    <div class="l">Investidores</div>
+                    <div class="l">Fornecedores</div>
+                    
                 </div>
 
                 <div class="g2">
                     <div class="l1">Comunidade</div>
-                    <div class="l">Para Artistas</div>
                     <div class="l">Desenvolvedores</div>
-                    <div class="l">Marcas</div>
-                    <div class="l">Investidores</div>
-                    <div class="l">Fornecedores</div>
+                    <div class="l">Marcas</div> 
                 </div>
 
                 <div class="g3">
                     <div class="l1">Links Úteis</div>
                     <div class="l">Ajuda</div>
-                    <div class="l">Player da Web</div>
-                    <div class="l">Aplicativo móvel grátis</div>
+                    <div class="l">Aplicativo móvel em desenvolvimento</div>
                 </div>
 
                 <div class="Redes">
                     
-                    <div class="r">
-                        <img></img>
+                    <div class="face">
+                        <img src = {Facebook}/>
                     </div>
-                    <div class="r">
-                        <img></img>
+                    <div class="tt">
+                        <img src ={TT}/>
                     </div>
                     <div class="r">
                         <img src = {Instagram}/>
@@ -151,21 +154,25 @@ export default function App() {
             </div>
             <div class="Rod">
                 <div class="in">    
-                    <div class="p">Legal</div>
-                    <div class="p">Centro de Privacidade</div>
-                    <div class="p">Politica de Privacidade</div>
-                    <div class="p">Cookies</div>
-                    <div class="p">Sobre Anúncios</div>
+                    
+                    <div class="p"><Link class="linkOne" to = '/Priv'>Centro de Privacidade</Link></div>
+                    <div class="p"> <Link class="linkOne" to = '/Priv'>Politica de Privacidade</Link></div>
+                    <div class="p"> <Link class="linkOne" to = '/Priv'>Cookies</Link></div>
+                    <div class="p"> <Link class="linkOne" to ='/Term'>Termos de Uso</Link></div>
+                    
                 </div>
 
                 <div class="in2">
                     <div class="br">
-                        <p>Brasil</p>
-                        <img></img>              
-                    <div class="sla">© 2020 Spotify AB</div>
+                        <p class="brr">Brasil</p>
+                        <img src = {Brasil} />        
+                    </div>
+                    <div class="sla">© Hefesto Tech, 2020 All rights reserved</div>       
                 </div>
-            </div>
-        </div>    
+
+            
+            
+        </div>   
     </div>
 
 </div>
