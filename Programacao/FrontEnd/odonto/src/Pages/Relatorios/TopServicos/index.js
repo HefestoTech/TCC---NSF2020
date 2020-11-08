@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Menu from "../../../Components/Menu"
 import Footer from "../../../Components/Footer"
 import "./styles.css";
@@ -19,7 +19,7 @@ export default function TopServicos () {
 
          setTopServicos(resp);
        } catch (e) {
-           
+
          setTopServicos([]);
        }
      };
