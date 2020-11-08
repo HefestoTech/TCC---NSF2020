@@ -1,3 +1,20 @@
 .fundodev{
-    background-color: red;
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+    
+}
+.devOne{
+ padding-left: 10vh;
+ display: flex;
+}
+
+
+.fa-hire-a-helper{
+    color: whitesmoke;
+    margin-top:5px;
+    
+}
+
+.hOne{
+    font-size:30px; 
 }
