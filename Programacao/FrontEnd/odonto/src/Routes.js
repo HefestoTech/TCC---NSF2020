@@ -16,6 +16,8 @@ import RelatorioPorDia from './Pages/Relatorios/PorDia';
 import HomeRelatorio from './Pages/Relatorios/HomeRelatorio';
 import PorMes from './Pages/Relatorios/PorMes';
 import SobreDev from './Pages/SobreDev/index.js'
+import TopClientes from './Pages/Relatorios/TopClientes';
+import TopServicos from './Pages/Relatorios/TopServicos';
 
 export default function Routes() {
     return(
@@ -34,6 +36,8 @@ export default function Routes() {
               <Route path="/sobrenos" exact component={SobreNos} />
               <Route path="/Relatorio/PorDia" exact component={RelatorioPorDia} />
               <Route path="/Relatorio/PorMes" exact component={PorMes} />
+              <Route path="/Relatorio/TopClientes" exact component={TopClientes} />
+              <Route path="/Relatorio/TopServicos" exact component={TopServicos} />
               <Route path="/Relatorio/" exact component={HomeRelatorio} />
               <Route path="/Sobredev" exact component={SobreDev} />
               <Route path="*" component={NotFound}/>

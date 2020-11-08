@@ -89,6 +89,16 @@ export default class OdontoApi {
         return resp.data;
     }
 
+    TopClientes = async () => {
+        const resp = await api.get(`/Relatorio/TopClientes`)
+        return resp.data;
+    }
+
+    TopServicos = async () => {
+        const resp = await api.get(`/Relatori/TopServicos`)
+        return resp.data;
+    }
+
 
 
 

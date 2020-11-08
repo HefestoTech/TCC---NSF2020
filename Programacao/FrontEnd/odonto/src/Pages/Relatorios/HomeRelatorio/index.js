@@ -34,16 +34,17 @@ export default function HomeRelatorio (props) {
               <Link to="Relatorio/PorMes">Consultar Saldo por Mês</Link>
             </li>
             <li>
-              <Link to="emObras">Consultar Top 10 Clientes</Link>
+              <Link to="Relatorio/TopClientes">Consultar Top 10 Clientes</Link>
             </li>
             <li>
-              <Link to="emObras">Consultar Top 10 Serviços</Link>
+              <Link to="Relatorio/TopServicos">Consultar Top 10 Serviços</Link>
             </li>
             <li>
               <Link to="emObras">Ainda vamos pensar</Link>
             </li>
           </ul>
         </div>
+       
         <Footer />
       </>
     );
