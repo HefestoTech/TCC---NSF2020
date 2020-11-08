@@ -117,11 +117,11 @@ export default function App() {
         <div class="Box">
             <div class="Nav">
                 <div class="logo2">
-                    <h1>Odonto</h1>
+                    <Link class="linkOneOne" to = '/'><h1>Odonto</h1></Link>
                 </div>
                 <div class="g1">
                     <div class="l1">Empresa</div>
-                    <div class="l">Sobre</div>
+                    <div class="l"> <Link class="linkOneOne" to = '/sobrenos'>Sobre</Link></div>
                     <div class="l">Investidores</div>
                     <div class="l">Fornecedores</div>
                     
@@ -155,10 +155,10 @@ export default function App() {
             <div class="Rod">
                 <div class="in">    
                     
-                    <div class="p">Centro de Privacidade</div>
-                    <div class="p">Politica de Privacidade</div>
-                    <div class="p">Cookies</div>
-                    <div class ="p">Termos de Uso</div>
+                    <div class="p"><Link class="linkOne" to = '/Priv'>Centro de Privacidade</Link></div>
+                    <div class="p"> <Link class="linkOne" to = '/Priv'>Politica de Privacidade</Link></div>
+                    <div class="p"> <Link class="linkOne" to = '/Priv'>Cookies</Link></div>
+                    <div class="p"> <Link class="linkOne" to ='/Term'>Termos de Uso</Link></div>
                     
                 </div>
 

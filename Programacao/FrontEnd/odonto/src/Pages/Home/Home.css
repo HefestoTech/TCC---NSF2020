@@ -397,3 +397,22 @@ p{
 .brr{
   color: white;
 }
+
+.linkOne{
+
+  color:rgb(0, 255, 213);
+}
+
+.linkOne:hover{
+
+  color: rgb(209, 209, 209);
+}
+
+.linkOneOne{
+  color: white;
+
+}
+
+.linkOneOne:hover{
+  color:rgb(46, 143, 223);
+}

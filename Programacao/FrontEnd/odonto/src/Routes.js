@@ -11,6 +11,7 @@ import Feedback from "./Pages/Feedback"
 import ConsultarCliente from './Pages/ConsultaCliente'
 import Privacidade from './Pages/Priv/index.js'
 import TermoDeUso from './Pages/Term/index.js'
+import SobreNos from './Pages/SobreNós/index.js'
 
 export default function Routes() {
     return(
@@ -26,6 +27,7 @@ export default function Routes() {
               <Route path="/consultacliente/:id" component={ConsultarCliente} />
               <Route path="/Priv" exact component={Privacidade} />
               <Route path="/term" exact component={TermoDeUso} />
+              <Route path="/sobrenos" exact component={SobreNos} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
