@@ -164,7 +164,7 @@ export default function App() {
 
                 <div class="in2">
                     <div class="br">
-                        <p>Brasil</p>
+                        <p class="brr">Brasil</p>
                         <img src = {Brasil} />        
                     </div>
                     <div class="sla">© Hefesto Tech, 2020 All rights reserved</div>       
