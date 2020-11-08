@@ -15,7 +15,8 @@ export default function SobreNos() {
             <div class="theerMil">
 
                 <h2 class="titulosobre">Sobre Nós</h2>
-                <p> Oi essa é nossa empresa :) </p>
+                <p> Oi essa é nossa empresa :)  </p>
+
 
             </div>
         </div>

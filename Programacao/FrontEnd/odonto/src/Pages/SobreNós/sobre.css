@@ -12,8 +12,7 @@
 .divTwoMil{
     background-color:  rgb(58, 58, 58);
     display: flex;
-    
-    padding-left:20vh ;
+    justify-content: center;
     align-items: center;
 }
 
@@ -23,7 +22,8 @@
 }
 
 .theerMil{
-background-color: white;
+   
+    background-color: white;
     margin-left: 20vh;
     margin-right: 20vh;
     text-align: center;

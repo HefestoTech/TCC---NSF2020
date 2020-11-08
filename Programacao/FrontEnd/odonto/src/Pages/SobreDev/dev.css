@@ -2,19 +2,34 @@
     background-color: rgb(0, 0, 0);
     color: whitesmoke;
     
+    
 }
 .devOne{
  padding-left: 10vh;
  display: flex;
+ 
 }
 
 
 .fa-hire-a-helper{
     color: whitesmoke;
-    margin-top:5px;
-    
+    margin-top: 4px;
+
+
+
 }
 
 .hOne{
+    display: flex;
+    align-items: center;
     font-size:30px; 
+    margin-top: 15px;
+    color: white;
+
+}
+
+.hOne:hover{
+
+    color: white;
+
 }
