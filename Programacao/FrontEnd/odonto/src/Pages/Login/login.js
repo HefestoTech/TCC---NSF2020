@@ -61,7 +61,7 @@ const api = new OdontoApi();
     return(
         <div>
             
-        <LoadingBar color='#45aaf2' ref={ref} height={4} />
+        
 
          {mostrarLoading === true &&
             <div>
