@@ -15,6 +15,7 @@ import SobreNos from './Pages/SobreNós/index.js'
 import RelatorioPorDia from './Pages/Relatorios/PorDia';
 import HomeRelatorio from './Pages/Relatorios/HomeRelatorio';
 import PorMes from './Pages/Relatorios/PorMes';
+import SobreDev from './Pages/SobreDev/index.js'
 
 export default function Routes() {
     return(
@@ -34,6 +35,7 @@ export default function Routes() {
               <Route path="/Relatorio/PorDia" exact component={RelatorioPorDia} />
               <Route path="/Relatorio/PorMes" exact component={PorMes} />
               <Route path="/Relatorio/" exact component={HomeRelatorio} />
+              <Route path="/Sobredev" exact component={SobreDev} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
