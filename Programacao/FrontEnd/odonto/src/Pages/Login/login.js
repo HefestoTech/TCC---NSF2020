@@ -70,7 +70,7 @@ const api = new OdontoApi();
          }
 
          <div className="logo">
-                <Link to= "/"><h1>Odonto</h1> </Link>
+                <Link to= "/"><h1>ODONTO</h1> </Link>
             </div>
         <div className= "bodyLogin back">
            
@@ -82,13 +82,13 @@ const api = new OdontoApi();
                
                     <div className= "card">
                     <div className = "cardlogin">
-                        <label >Digite seu e-mail</label>
+                        <label >Digite seu e-mail:</label>
                         <input className="form-control" onChange={e => setEmail(e.target.value)} type="email"   placeholder =" odonto@exemplo "  required ></input>
 
                         <div className = "cardlogin">
                         <div className="div_senhaLogin">
                                 <div className="div1_login">
-                        <label >Senha</label>
+                        <label >Senha:</label>
                         <input className="form-control" onChange={e => setSenha(e.target.value)} type={mostrarSenha}  placeholder =" Digite sua senha" required ></input>
                                 </div>
                                 <div className="div_icon">
@@ -115,9 +115,13 @@ const api = new OdontoApi();
                 
 
           <ToastContainer/>
+            </div>      
+            <div className="roda">
+
+            </div>
         </div>
-        <Rodape/>
-        </div>
+        
+
     )
  }
 

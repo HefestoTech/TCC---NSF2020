@@ -14,7 +14,7 @@
 
 
   .bodyLogin{
-    height: 80vh;
+    height: 79.6vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -40,6 +40,7 @@
      display: flex;
      flex-direction: column;
      height: 55vh;
+     width: 40vw;
      justify-content: space-around;
     }
 
@@ -48,9 +49,9 @@
          color: whitesmoke;
          text-align: center;
          background: #f73131;
-         width:500px;
-         margin-left: 300px;
-         margin-top: 5px;
+         width:40vw;
+         margin-left: 350px;
+         margin-top: 50px;
         border-radius: 5px;
         box-shadow:2px 2px 2px #3FA6D3; 
     }
@@ -172,3 +173,8 @@
     
     
 
+    .roda{
+        width: 100w;
+        height: 10vh;
+        background-color: #45aaf2;
+    }

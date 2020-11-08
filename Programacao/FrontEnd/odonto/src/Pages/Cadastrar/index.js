@@ -1,11 +1,12 @@
 import React, { useState }    from 'react';
-import SetaDir  from '../../Assets/Fotos/arrowr.png' 
 import { Link, useHistory } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import './cadastrar.css';
+import SetaDir  from '../../Assets/Fotos/arrowr.png' 
 import CepApi from "../../Services/CepApi";
 import OdontoApi from "../../Services/OdontoApi"
-import { ToastContainer, toast } from 'react-toastify';
 import Loading from "../../Components/Loading";
+import DenteWorld from "../../Assets/Fotos/denteworld.png"
 
 const cepApi = new CepApi();
 const odontoApi = new OdontoApi();
@@ -115,13 +116,19 @@ const odontoApi = new OdontoApi();
             </div>
             }
 
-        <div className="ContCad">
+        <div className="ContCad bck">
             <ToastContainer/>
 
            
             <Link to="/" ><h1 className="logohome">ODONTO</h1></Link>
-            <div className="bodyCad">
-                <div className="Tt1cad"><h1>Crie seu perfil</h1></div>
+            <div className="bodyCad shadow-lg p-3 mb-5 bg-white rounded">
+
+                <div className="lineTt1">
+                    <div className="Tt1cad">
+                        <h1>Crie seu perfil</h1><img src={DenteWorld} className="imgteeth" />
+                    </div>
+                </div>
+
                 <div className="FormPers">
 
                     

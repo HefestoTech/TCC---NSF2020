@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Menu from '../../Components/Menu'
 import Footer from '../../Components/Footer'
 import OdontoApi from "../../Services/OdontoApi"
@@ -8,6 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from "../../Components/Loading"
+import LoadingBar from 'react-top-loading-bar'
 
 const api = new OdontoApi();
 
@@ -29,6 +30,8 @@ export default function ConsultarCliente(props) {
 
     const history = useHistory();
 
+    const loadingBar = useRef(null);
+
     const IrParaTelaDeRemarcar = (idAgendamento) => {
         history.push({
             pathname:"/remarcar/"+ responseCompleto.idUsuario,
@@ -45,6 +48,7 @@ export default function ConsultarCliente(props) {
 
    const pegarConsultasClienteClick = async () => {
         try {
+            
             setMostrarLoading(true)
            
             const response = await api.PegarConsultasCliente(responseCompleto.idUsuario);
@@ -59,8 +63,10 @@ export default function ConsultarCliente(props) {
             setConcluidos(response.concluidos);
            
             setMostrarLoading(false);
+
             
         } catch (e) {
+            
             toast.error(e.response.data.erro)
             
             setMostrarLoading(false);
@@ -87,12 +93,20 @@ export default function ConsultarCliente(props) {
         }
     }
 
+
+
    useEffect(() => {
     pegarConsultasClienteClick();
   }, [])
 
     return(
         <>
+        <LoadingBar 
+            height={4}
+            color='#f11946'
+			onRef={ref => (LoadingBar = ref)}
+        />
+
         {mostrarLoading == true && 
         <div>
           <Loading/>
@@ -105,15 +119,19 @@ export default function ConsultarCliente(props) {
 
             
                 <div className="Tt1Cons">
-                    <h3 className="display-23">Meus Agendamentos</h3>
-                    <span className="spanTitleConsulta">
-                        <span onClick={() => qualSituacaoMostrarClick("Agendados")} >Agendados</span> | <span onClick={() => qualSituacaoMostrarClick("Concluidos")}>Concluidos</span> | <span onClick={() => qualSituacaoMostrarClick("Cancelados")}>Cancelados</span> | <span onClick={() => qualSituacaoMostrarClick("Não Compareceu")}>Não Compareceu</span>
-                    </span>   
-                </div>
+                    <h3 className="display-23">Todos Agendamentos</h3>
+                    <div className="ButtTitleConsulta btn-group" role="group">
+                        <button type="button" onClick={() => qualSituacaoMostrarClick("Agendados")} className="btn btn-secondary" >Agendados</button>
+                        <button type="button" onClick={() => qualSituacaoMostrarClick("Concluidos")} className="btn btn-secondary" >Concluidos</button>
+                        <button type="button" onClick={() => qualSituacaoMostrarClick("Cancelados")} className="btn btn-secondary">Cancelados</button>
+                        <button type="button" onClick={() => qualSituacaoMostrarClick("Não Compareceu")} className="btn btn-secondary" >Não Compareceu</button>
+                    </div>   
+               </div>
+
 
             <div className="BodyCons">
 
-
+                
                 {situacaoMostrar === "Agendados" && agendados !== undefined &&
                 <div>
                 {agendados.map (x => 

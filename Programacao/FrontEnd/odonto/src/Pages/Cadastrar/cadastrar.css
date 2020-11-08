@@ -14,12 +14,16 @@ body{
     align-items: center;
     width: 100%;
     height: 200vh;
-    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(238, 243, 248));
+}
+
+.bck{
+    background-image: url("../../Assets/Wallpapers/dental.jpg");
 }
 
 .logohome{
     margin-bottom: 15px;
-    color: white;
+    color: rgb(32, 71, 107);
+    font-weight: bolder;
 }
 
 .bodyCad{
@@ -30,16 +34,39 @@ body{
     width: 80vw;
     height: 180vh;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #09425a;
 }
 
 
-        .Tt1cad{
+        .lineTt1{
             display: flex;
+            flex-direction: row;
+            align-items: center;
             justify-content: center;
-            margin-top: 35px;
-            font-weight: bold;
+            width: 70vw;
+            height: 20vh;
+            margin-top: 15px;
         }
+
+                .Tt1cad{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25vw;
+                    height: 10vh;
+                    font-weight: bold;
+                    margin-left: 30px;
+                }
+
+
+                        .imgteeth{
+                            width: 6vw;
+                            height: 12vh;
+                            margin-left: 5px;
+                        }
 
 
         .FormPers{
@@ -131,13 +158,13 @@ body{
                         }
 
                         .formLograd{
-                            margin-left: 45px;
-
+                            width: 15vw;
+                            margin-left: 45px;                
                         }
 
                         .formNum{
                             width: 6vw;
-                            margin-left: 10px;
+                            margin-left: 30px;
 
                         }
 
@@ -229,7 +256,7 @@ body{
                     align-items: center;
                     width: 13vw;
                     padding-top: 13px;
-                  
+                    margin-right: 10px;
                 }
 
                 .imgconf{
