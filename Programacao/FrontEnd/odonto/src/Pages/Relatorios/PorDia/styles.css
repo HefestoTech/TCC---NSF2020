@@ -1,0 +1,27 @@
+.boryCompletoRelatorio{
+    display: flex;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.tituloRelatoriVerPorDia{
+    text-align: center;
+    height: 8%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+}
+
+.labelRelatorio{
+    color: black;
+}
+
+.tabelaRelatorio{
+    background-color : rgb(46, 143, 223);
+    width: 90%;
+    margin-top: 10px;
+}

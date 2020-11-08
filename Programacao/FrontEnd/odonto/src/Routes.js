@@ -12,6 +12,8 @@ import ConsultarCliente from './Pages/ConsultaCliente'
 import Privacidade from './Pages/Priv/index.js'
 import TermoDeUso from './Pages/Term/index.js'
 import SobreNos from './Pages/SobreNós/index.js'
+import RelatorioPorDia from './Pages/Relatorios/PorDia';
+import HomeRelatorio from './Pages/Relatorios/HomeRelatorio';
 
 export default function Routes() {
     return(
@@ -28,6 +30,8 @@ export default function Routes() {
               <Route path="/Priv" exact component={Privacidade} />
               <Route path="/term" exact component={TermoDeUso} />
               <Route path="/sobrenos" exact component={SobreNos} />
+              <Route path="/Relatorio/PorDia" exact component={RelatorioPorDia} />
+              <Route path="/Relatorio/" exact component={HomeRelatorio} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
