@@ -45,7 +45,7 @@ export default function TopServicos () {
           </div>
 
           {topServicos.length !== 0 && (
-            <table class="table tabelaRelatorio ">
+            <table class="table tabelaRelatorio servicosTable">
               <thead>
                 <tr>
                   <th scope="col">Servico</th>

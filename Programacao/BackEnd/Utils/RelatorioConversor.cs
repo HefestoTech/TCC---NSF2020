@@ -90,7 +90,7 @@ namespace BackEnd.Utils
                 relatorioTopServicos.Add(topServicos);
             }
 
-                relatorioTopServicos = relatorioTopServicos.OrderByDescending(x => x.TotalGasto).ToList();
+                relatorioTopServicos = relatorioTopServicos.OrderByDescending(x => x.QtdConsultas).ToList();
 
                 return relatorioTopServicos.Take(10).ToList();
         }
