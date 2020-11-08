@@ -59,8 +59,7 @@ export default function TopServicos () {
                   <tr>
                     <th scope="row">{x.nome}</th>
                     <td>{x.qtdConsultas}</td>
-                    <td>{x.telefone}</td>
-                    <td>{"R$" + x.totalGastos}</td>
+                    <td>{"R$" + x.totalGasto}</td>
                   </tr>
                 ))}
               </tbody>
