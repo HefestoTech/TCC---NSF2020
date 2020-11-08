@@ -1,18 +1,19 @@
 import React from 'react'
 import './term.css'
 import Menu from '../../Components/Menu'
+import { Link } from 'react-router-dom'
 
 export default function TermoDeUso() {
     return(
        
         <div>
             <Menu></Menu>
-            <div className="btnprivacidade"><button type="button" class="btn btn-outline-info">Politica de Privacidade</button>
+            <div className="btnprivacidade"> <Link to= '/Priv'><button type="button" class="btn btn-outline-info">Politica de Privacidade</button></Link>
         </div>
             <div className="slA">
 
                 <h2 class="titulopriv">1. Termos</h2>
-                <p>Ao acessar ao site <a href='http://52.20.185.38:3000/'>Odonto</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p>
+                <p>Ao acessar ao site <Link to ='/'>Odonto</Link>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p>
                 <h2 class="titulopriv">2. Uso de Licença</h2>
                 <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site Odonto , apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode: </p>
                 <ol> 

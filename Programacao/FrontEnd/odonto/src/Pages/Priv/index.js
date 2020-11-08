@@ -13,7 +13,7 @@ export default function Privacidade() {
         
         <div className ="fontetotal">
         <Menu></Menu>
-          <div className="btntermodeuso"><button type="button" class="btn btn-outline-info">Termos de Uso</button></div>
+          <div className="btntermodeuso"> <Link to = 'Term'><button type="button" class="btn btn-outline-info">Termos de Uso</button></Link></div>
           <div className="fundoTwo">
           <h2 className="titulopriv">Política Privacidade da Odonto</h2>
           <p className="pzin">A sua privacidade é importante para nós. É política do Odonto respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <Link to = "/">Odonto</Link>, e outros sites que possuímos e operamos.</p> 
