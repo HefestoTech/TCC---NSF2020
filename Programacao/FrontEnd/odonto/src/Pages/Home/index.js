@@ -129,7 +129,7 @@ export default function App() {
 
                 <div class="g2">
                     <div class="l1">Comunidade</div>
-                    <div class="l">Desenvolvedores</div>
+                    <div class="l"> <Link class="linkOneOne" to = '/sobredev'>Desenvolvedores</Link></div>
                     <div class="l">Marcas</div> 
                 </div>
 

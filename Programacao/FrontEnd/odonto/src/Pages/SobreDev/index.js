@@ -4,7 +4,7 @@ import './dev.css'
 export default function SobreDev() {
     return(
         <div class="fundodev">
-            oiiiii
+            
         </div>
     )
 }

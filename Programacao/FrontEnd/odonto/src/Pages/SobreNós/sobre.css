@@ -1,7 +1,7 @@
 .fundoMil{
     
     display: flex;
-    background-color: #93bfd3;
+    background-color: #ffffff;
     color: white;
     flex-direction: column;
     height: 100vh;
@@ -10,7 +10,7 @@
 }
 
 .divTwoMil{
-    background-color:  rgb(18, 46, 124);
+    background-color:  rgb(58, 58, 58);
     display: flex;
     
     padding-left:20vh ;
@@ -30,10 +30,7 @@ background-color: white;
     margin-top: 5vh;
     width: 80%;
     height: 80vh;
-    border-radius: 10px;
-    -webkit-box-shadow: 9px 7px 5px rgba(90, 90, 90, 0.274);
-	-moz-box-shadow: 9px 7px 5px rgba(90, 90, 90, 0.274);
-	box-shadow: 9px 7px 5px rgba(90, 90, 90, 0.274);
+   
 
 }
 
