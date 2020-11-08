@@ -86,6 +86,7 @@ export default class OdontoApi {
 
     PegarPorMeses = async (mesInicio, mesFinal) => {
         const resp = await api.get(`/Relatorio/pegarPorMes?mesInicio=${mesInicio}&mesFinal=${mesFinal}`)
+        return resp.data;
     }
 
 

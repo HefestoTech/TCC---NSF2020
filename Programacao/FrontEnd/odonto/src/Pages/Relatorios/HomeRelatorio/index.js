@@ -12,6 +12,14 @@ export default function HomeRelatorio (props) {
       <>
         <Menu />
         <div className="containerHomeRelatorio">
+          
+          
+          <div className="voltarRelatorio homeRelatarioVoltar">
+            <p>
+              <Link to="/Menu/5"> Voltar </Link>
+            </p>
+          </div>
+
           <h2>
             Olá, nome. Bem vindo a tela de relatórios.
             <br />
@@ -20,19 +28,19 @@ export default function HomeRelatorio (props) {
 
           <ul className="listaDeRelatorios">
             <li>
-              <Link to="PorDia">Consultar Consultas por Dia</Link>
+              <Link to="Relatorio/PorDia">Consultar Consultas por Dia</Link>
             </li>
             <li>
-                <Link to="emObras">Consultar Consultas por Mês</Link>
+              <Link to="Relatorio/PorMes">Consultar Saldo por Mês</Link>
             </li>
             <li>
-                <Link to="emObras">Consultar Top 10 Clientes</Link>
+              <Link to="emObras">Consultar Top 10 Clientes</Link>
             </li>
             <li>
-                <Link to="emObras">Consultar Top 10 Serviços</Link>
+              <Link to="emObras">Consultar Top 10 Serviços</Link>
             </li>
             <li>
-                <Link to="emObras">Ainda vamos pensar</Link>
+              <Link to="emObras">Ainda vamos pensar</Link>
             </li>
           </ul>
         </div>
