@@ -160,6 +160,7 @@ export default function AgendarConsultaCliente (props) {
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
                                 <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
+                                    <option value="0"></option>
                                     {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}                 
                                 </select>
                             </div>
