@@ -2,6 +2,7 @@ import './agendafunc.css'
 import OdontoApi from '../../Services/OdontoApi'
 import Calendar from '../../Assets/Fotos/calendar.svg'
 import Dentes from '../../Assets/Fotos/dentes.png'
+import ArrowLeft from '../../Assets/Fotos/left-arrow.svg'
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 
@@ -119,8 +120,7 @@ export default function AgendarConsultaCliente (props) {
             <Link to="/" ><h1 className="TtLogoF">ODONTO</h1></Link>
             <div className="BodyAgendF shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgendF">
-                    <h1>Agende sua Consulta<i class="fas fa-tooth colodent"></i><img src={Dentes} /></h1>
-                    <h4></h4>
+                    <img src={ArrowLeft} className="arrleft" /><h1>Agende sua Consulta<i class="fas fa-tooth colodent"></i><img src={Dentes} className="teethicon" /></h1>
                 </div>
 
                 <div className="BoxAgenFd">

@@ -43,22 +43,28 @@ a:link{
 
         .TtAgendF{
             display: flex;
-            flex-direction: column;    
+            flex-direction: row;    
             align-items: center;
             justify-content: center;
             width: 85vw;
             height: 20vh;
             margin-top: 30px;            
+            background-color: violet;
         }
                 .TtAgendF h1{
                     margin-left: 15px;
                     margin-top: 10px;
                 }
 
-                .TtAgendF img{
+                .teethicon{
                     width: 9.5vw;
                     height: 11.5vh;
                     margin-left: -50px;
+                }
+
+                .arrleft{
+                    width: 5vw;
+                    height: 5vh;
                 }
 
 
