@@ -18,9 +18,9 @@ import { Link, useHistory } from 'react-router-dom';
         const irParaTelaDeVerAgendamentos = () => {
             if(responseCompleto.perfil === "Funcionário")
                history.push({
-                   pathname:"/consultafuncionario/" + responseCompleto.idUsuario,
-                   state:responseCompleto
-            });
+                 pathname: "/VerAgendaFunc/" + responseCompleto.idUsuario,
+                 state: responseCompleto,
+               });
             else {
                history.push({
                    pathname:"/consultacliente/" + responseCompleto.idUsuario,

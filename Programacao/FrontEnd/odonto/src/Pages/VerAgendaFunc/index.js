@@ -1,84 +1,338 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './verfunci.css'
 import Menu from '../../Components/Menu';
 import Rodape from '../../Components/Footer';
+import OdontoApi from "../../Services/OdontoApi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../Components/Loading";
+import { useHistory } from 'react-router-dom';
 
-export default function VerAgendaFunc(){
-    return(
-        <div className="fundoAgen">
+const api = new OdontoApi();
+
+export default function VerAgendaFunc(props){
+
+    const [mostraLoading, setMostrarLoading] = useState(false);
+    const [servicos, setServicos] = useState([]);
+    const [servicoFiltro, setServicoFiltro] = useState("");
+    const [nomeProfissional, setNomeProfissonal] = useState("");
+    const [nomeCliente, setNomeCliente] = useState("");
+    const [data, setData] = useState("01-01-0001")
+    const [hora, setHora] = useState("00:00");
+    const [situacao, setSituacao] = useState("");
+    const [filtrado, setFiltrado] = useState([]);
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state)
+
+    const history = useHistory();
+    
+    const IrParaTelaDeRemarcar = (idAgendamento) => {
+      history.push({
+        pathname: "/remarcar/" + responseCompleto.idUsuario,
+        state: { responseCompleto, idAgendamento: idAgendamento },
+      });
+    };
+
+     const cancelarConsultaClick = async (idConsulta) => {
+       try {
+         setMostrarLoading(true)
+
+         api.CancelarConsulta(idConsulta);
+
+         setMostrarLoading(false);
+
+         toast.success("A consulta foi cancelada com sucesso");
+       } catch (e) {
+         setMostrarLoading(false);
+
+         toast.error(e.response.data.erro);
+       }
+     };
+
+    const carregarServicos = async() => {
+        try {
+            const resp = await api.PegarServicos();
+
+            setServicos(resp);
             
-                <Menu></Menu>
+        } catch (error) {
+            
+        }
+    }
+
+    const chamarFuncoes = () => {
+        carregarServicos();
+        filtrar();
+    }
+
+        const transformarEmDataComMinutos = () => {
+
+          const horarioEDataDaConsulta = `${data} ${hora}`;
+          return horarioEDataDaConsulta;
+       
+        };
+
+    const filtrar = async() => {
+        try {
+            
+            setMostrarLoading(true);
+            
+            const horarioCompleto = transformarEmDataComMinutos();
+            
+            const resp = await api.PegarConsultasFuncionario(nomeCliente, servicoFiltro, nomeProfissional, horarioCompleto, situacao)
+            setFiltrado(resp);
            
-                
+            setMostrarLoading(false)
+        } catch (e) {
 
-                <div className="AgenOne">
-                    <h1 className="hOndeAgen">Informarções da Consulta</h1>
-                    <h3 className="hTwoAgen">Todos os Agendamentos</h3>
-                </div>
+            setMostrarLoading(false);
 
-            <div className="h3star">
-                    <h3>Selecione um filtro:</h3>
-                </div>
-                
-            
-                <div className="starDiv">
+            toast.error(e.response.data.erro);
+        }
+    }
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 btnnTwo" type="search" placeholder="Nome do Cliente" aria-label="Pesquisar"></input>
-                    
-                </form>
-                
-                <select className="form-control espec">
-                    <option>
-                        Profissional
-                    </option>
-                </select>
-                
-                
-                <select className="form-control espec">
-                    <option> 
-                        Especialização
-                    </option>
-                    <option>
-                        Clareamento 
-                    </option>
-                </select>
-                <input type="date" className=" form-control espec"></input>
-                <input type="time" className="form-control espec"></input>
+    useEffect(() => {
+      chamarFuncoes();
+    }, []);
+
+      
 
 
-                <select className="form-control espec" >
-                    <option>
-                        Situação
-                    </option>
-
-                    <option>
-                        Concluido
-                    </option>
-
-                    <option>
-                        Não Compareceu
-                    </option>
-
-                    <option>
-                        Agendado
-                    </option>
-
-                    <option>
-                        Cancelado
-                    </option>
-
-
-
-                </select>
-
-                <button type="button" class="btn btn-outline-info"><i className="fas fa-search iconSearch"/></button>
-
+    return (
+      <div className="fundoAgen">
+        {mostraLoading == true && 
+            <div>
+              <Loading/>
             </div>
-            
-            <Rodape></Rodape>
+        }
+        <ToastContainer />
+        <Menu></Menu>
+
+        <div className="bodyVerAgendadosFunc">
+          <div className="AgenOne">
+            <h1 className="hOndeAgen">Informarções da Consulta</h1>
+            <h3 className="hTwoAgen">Todos os Agendamentos</h3>
+          </div>
+
+          <div className="h3star">
+            <h3>Selecione um filtro:</h3>
+          </div>
+
+          <div className="starDiv">
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                onChange={(e) => setNomeCliente(e.target.value)}
+                class="form-control mr-sm-2 btnnTwo"
+                type="search"
+                placeholder="Nome do Cliente"
+                aria-label="Pesquisar"
+              ></input>
+            </form>
+
+            <input
+              onChange={(e) => setNomeProfissonal(e.target.value)}
+              class="form-control mr-sm-2 btnnTwo"
+              type="search"
+              placeholder="Nome do Doutor(a)"
+              aria-label="Pesquisar"
+            ></input>
+
+            <select
+              onChange={(e) => setServicoFiltro(e.target.value)}
+              className="form-control espec"
+            >
+              <option value="">Especialização</option>
+              {servicos.map((x) => (
+                <option value={x.nomeServico}>{x.nomeServico}</option>
+              ))}
+            </select>
+
+            <input
+              onChange={(e) => setData(e.target.value)}
+              type="date"
+              className=" form-control espec"
+            ></input>
+
+            <input
+              onChange={(e) => setHora(e.target.value)}
+              type="time"
+              className="form-control espec"
+            ></input>
+
+            <select
+              onChange={(e) => setSituacao(e.target.value)}
+              className="form-control espec"
+            >
+              <option value="">Situação</option>
+
+              <option value="Concluido">Concluido</option>
+
+              <option value="Não Compareceu">Não Compareceu</option>
+
+              <option value="Agendado">Agendado</option>
+
+              <option value="Cancelado">Cancelado</option>
+            </select>
+
+            <button
+              onClick={filtrar}
+              type="button"
+              class="btn btn-outline-info btn_agendadosFunc"
+            >
+              <i className="fas fa-search iconSearch" />
+            </button>
+          </div>
+
+          {filtrado.map((x) => (
+            <div className="boxCons">
+              <div className="TtsCons">
+                <h3>Dados da consulta</h3>
+                <h3>Pagamento da consulta</h3>
+              </div>
+
+              <div className="BoxForms">
+                <div className="geralCons">
+                  <div className="lineForm1">
+                    <div className="nameCons">
+                      <h5>Nome: </h5>
+                      <input
+                        value={x.nomeCliente}
+                        type="text"
+                        readOnly
+                        className="nam form-control"
+                      />
+                    </div>
+
+                    <div className="dateCons">
+                      <h5>Data:</h5>
+                      <input
+                        value={new Date(x.data).toLocaleString()}
+                        type="text"
+                        readOnly
+                        className="date form-control"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="lineForm2">
+                    <div className="servCons">
+                      <h5>Serviço:</h5>
+                      <input
+                        value={x.servico}
+                        type="text"
+                        readOnly
+                        className="serv form-control"
+                      />
+                    </div>
+
+                    <div className="drCons">
+                      <h5>Doutor:</h5>
+                      <input
+                        value={x.doutor}
+                        type="text"
+                        readOnly
+                        className="dr form-control"
+                      />
+                    </div>
+
+                    <div className="sitCons">
+                      <h5>Situação:</h5>
+                      <select className="form-control">
+                          <option>{x.situacao}</option>
+                          <option>Cancelado</option>
+                          <option>Não Compareceu</option>
+                          <option>Concluido</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="lineForm4">
+                    {x.situacao == "Agendado" && (
+                      <button
+                        onClick={() => IrParaTelaDeRemarcar(x.idConsulta)}
+                        className="btn btn-primary"
+                      >
+                        Remarcar
+                      </button>
+                    )}
+                  </div>
+                </div>
+                <div className="pagmCons">
+                  <div className="linePag1">
+                    <div className="formPag">
+                      <h5>Forma de Pagamento:</h5>
+                      <div className="radios custom-control-inline">
+                        <input
+                          readOnly
+                          value={x.formaPagamento}
+                          className="desc form-control"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="formSub">
+                      <h5>Subtotal:</h5>
+                      <input
+                        type="text"
+                        readOnly
+                        className="subTot form-control"
+                        value={"R$" + x.subtotal}
+                      />
+                    </div>
+
+                    <p className="totalPorMesAgendar totMesColor">
+                      ( {x.parcelas}X de R${x.totalPorMes} )
+                    </p>
+                  </div>
+
+                  <div className="linePag2">
+                    <div className="formDescont">
+                      <h5>Desconto:</h5>
+                      <input
+                        value={"R$" + x.desconto}
+                        type="text"
+                        readOnly
+                        className="desc form-control"
+                      />
+                    </div>
+
+                    <div className="formTotal">
+                      <h5>Valor Total:</h5>
+                      <input
+                        value={"R$" + x.valorTotal}
+                        type="text"
+                        className="tota form-control"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="linePag3">
+                    <div className="buttsPag">
+                      {x.situacao == "Agendado" && (
+                        <button
+                          onClick={() => cancelarConsultaClick(x.idConsulta)}
+                          className="btn btn-danger"
+                        >
+                          Cancelar consulta
+                        </button>
+                      )}
+
+                      {x.situacao == "Agendado" && (
+                        <button
+                          onClick={() => cancelarConsultaClick(x.idConsulta)}
+                          className="btn btn-success"
+                        >
+                          Salvar
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        
-        
-    )
+
+        <Rodape></Rodape>
+      </div>
+    );
 }

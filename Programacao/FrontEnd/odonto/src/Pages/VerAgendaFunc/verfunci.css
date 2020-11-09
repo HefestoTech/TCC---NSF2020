@@ -2,16 +2,29 @@
     background-color:white;
 }
 
-.starDiv{
-
+.bodyVerAgendadosFunc{
+    min-height: 80vh;
     display: flex;
-    justify-content: space-around;
-   
+    flex-direction: column;
+    align-items: center;
+}
+
+.starDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    margin-left: 1%;
+}
+
+.starDiv > input {
+    width: 150px;
 }
 
 .h3star{
-
-    padding-left:2vh ;
+    text-align: left;
+    width: 99%;
+    margin-left: 1%;
 }
 
 .hOndeAgen{
@@ -37,16 +50,25 @@
 
 .espec{
 
-    width: 20vh;
+    width: 200px;
 }
 
 
 .iconSearch{
     color: slategrey;
+    margin-top: -16px;
 }
 
 .iconSearch:hover{
 
     color: white;
 
+}
+
+.btn_agendadosFunc{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
 }
