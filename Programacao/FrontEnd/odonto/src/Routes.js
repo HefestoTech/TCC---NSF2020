@@ -41,7 +41,7 @@ export default function Routes() {
               <Route path="/Relatorio/TopServicos" exact component={TopServicos} />
               <Route path="/Relatorio/" exact component={HomeRelatorio} />
               <Route path="/Sobredev" exact component={SobreDev} />
-              <Route path="/VerAgendaFunc" exact component={VerAgendaFunc} />
+              <Route path="/VerAgendaFunc/:id" exact component={VerAgendaFunc} />
               <Route path="/agendafunc/:id" exact component={AgendaFunc} />
               <Route path="*" component={NotFound}/>
              

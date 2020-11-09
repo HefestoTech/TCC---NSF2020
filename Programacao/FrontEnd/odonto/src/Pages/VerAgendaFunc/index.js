@@ -21,6 +21,7 @@ export default function VerAgendaFunc(props){
     const [hora, setHora] = useState("00:00");
     const [situacao, setSituacao] = useState("");
     const [filtrado, setFiltrado] = useState([]);
+    const [novaSituacao, setNovaSituacao] = useState("");
     const [responseCompleto, setResponseCompleto] = useState(props.location.state)
 
     const history = useHistory();
@@ -54,8 +55,8 @@ export default function VerAgendaFunc(props){
 
             setServicos(resp);
             
-        } catch (error) {
-            
+        } catch (e) {
+            toast.error("Houve um erro ao carregar os serviço. Tente novamente mais tarde.")
         }
     }
 
@@ -64,29 +65,49 @@ export default function VerAgendaFunc(props){
         filtrar();
     }
 
-        const transformarEmDataComMinutos = () => {
+    const transformarEmDataComMinutos = () => {
 
-          const horarioEDataDaConsulta = `${data} ${hora}`;
-          return horarioEDataDaConsulta;
+        const horarioEDataDaConsulta = `${data} ${hora}`;
+        return horarioEDataDaConsulta;
        
-        };
+    };
 
     const filtrar = async() => {
         try {
             
-            setMostrarLoading(true);
+        setMostrarLoading(true);
             
-            const horarioCompleto = transformarEmDataComMinutos();
+        const horarioCompleto = transformarEmDataComMinutos();
             
-            const resp = await api.PegarConsultasFuncionario(nomeCliente, servicoFiltro, nomeProfissional, horarioCompleto, situacao)
-            setFiltrado(resp);
+        const resp = await api.PegarConsultasFuncionario(nomeCliente, servicoFiltro, nomeProfissional, horarioCompleto, situacao)
+        setFiltrado(resp);
            
-            setMostrarLoading(false)
+        setMostrarLoading(false)
         } catch (e) {
 
-            setMostrarLoading(false);
+        setMostrarLoading(false);
 
+        toast.error(e.response.data.erro);
+        }
+    }
+
+    const alterarSituacao = async(idConsulta) => {
+        try {
+            setMostrarLoading(true);
+
+            const resp = await api.AlterarSituacao(idConsulta, novaSituacao);
+
+            console.log(resp);
+
+            filtrar();
+
+            toast.success("Situação alterada com sucesso.");
+
+        } catch (e) {
+
+            setMostrarLoading(false)
             toast.error(e.response.data.erro);
+            
         }
     }
 
@@ -236,7 +257,7 @@ export default function VerAgendaFunc(props){
 
                     <div className="sitCons">
                       <h5>Situação:</h5>
-                      <select className="form-control">
+                      <select onChange={e => setNovaSituacao(e.target.value)} className="form-control">
                           <option>{x.situacao}</option>
                           <option>Cancelado</option>
                           <option>Não Compareceu</option>
@@ -316,14 +337,14 @@ export default function VerAgendaFunc(props){
                         </button>
                       )}
 
-                      {x.situacao == "Agendado" && (
+                      
                         <button
-                          onClick={() => cancelarConsultaClick(x.idConsulta)}
-                          className="btn btn-success"
+                          onClick={() => alterarSituacao(x.idConsulta, novaSituacao === "" ?x.situacao :situacao )}
+                          className="btn btn-primary"
                         >
-                          Salvar
+                          Alterar Situacao
                         </button>
-                      )}
+                    
                     </div>
                   </div>
                 </div>

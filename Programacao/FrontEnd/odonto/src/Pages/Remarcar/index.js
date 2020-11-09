@@ -61,8 +61,20 @@ export default function Remarcar(props){
             setMostrarSpin(false)
 
             toast.success("Consulta remarcada com sucesso!");
+
+              if(responseCompleto.perfil == "Cliente"){
+               history.push({
+               pathname:"/consultacliente/" + responseCompleto.idUsuario,
+               state: responseCompleto
+               });
+
+            }else{
+              history.push({
+              pathname: "/VerAgendaFunc/" + responseCompleto.idUsuario,
+              state: responseCompleto,
+              });
             
-        } catch (e) {
+        }} catch (e) {
             setMostrarSpin(false);
             toast.error(e.response.data.erro);
 
@@ -82,9 +94,9 @@ export default function Remarcar(props){
 
         else{
          history.push({
-            pathname:"/consultafuncionario/" + responseCompleto.idUsuario,
-            state: responseCompleto
-        });
+           pathname: "/VerAgendaFunc/" + responseCompleto.idUsuario,
+           state: responseCompleto,
+         });
     }
 
     }

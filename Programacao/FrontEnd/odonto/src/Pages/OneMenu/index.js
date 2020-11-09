@@ -32,8 +32,8 @@ import { Link, useHistory } from 'react-router-dom';
         const irParaTelaDeAgendarNovaConsulta = () => {
             if(responseCompleto.perfil === "Funcionário")
               history.push({
-                  pathname:"/agendarconsultafuncionario/" + responseCompleto.idUsuario,
-                  state:responseCompleto
+                pathname: "/agendafunc/" + responseCompleto.idUsuario,
+                state: responseCompleto,
               });
 
             else {

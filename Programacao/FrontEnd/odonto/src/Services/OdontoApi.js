@@ -73,7 +73,7 @@ export default class OdontoApi {
     }
 
     AlterarSituacao = async (idConsulta, novaSituacao) => {
-        const resp = await api.put(`/agendamento/situacao/${idConsulta}?novaSituacao=${novaSituacao}`);
+        const resp = await api.put(`/agendamento/alterar/situacao/${idConsulta}?novaSituacao=${novaSituacao}`);
         return resp.data;
     }
 
