@@ -2,6 +2,8 @@
     background-color:white;
 }
 
+
+
 .bodyVerAgendadosFunc{
     min-height: 80vh;
     display: flex;
@@ -15,6 +17,7 @@
     align-items: center;
     width: 99%;
     margin-left: 1%;
+    margin-bottom: 4vh;
 }
 
 .starDiv > input {
@@ -25,6 +28,8 @@
     text-align: left;
     width: 99%;
     margin-left: 1%;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
 }
 
 .hOndeAgen{
@@ -43,6 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 2vh;
   
     
     
