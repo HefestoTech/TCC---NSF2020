@@ -15,7 +15,7 @@ export default function Privacidade() {
         <Menu></Menu>
           <div className="btntermodeuso"> <Link to = 'Term'><button type="button" class="btn btn-outline-info">Termos de Uso</button></Link></div>
           <div className="fundoTwo">
-          <h2 className="titulopriv">Política Privacidade da Odonto</h2>
+          <h2 id="#test" className="titulopriv">Política Privacidade da Odonto</h2>
           <p className="pzin">A sua privacidade é importante para nós. É política do Odonto respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <Link to = "/">Odonto</Link>, e outros sites que possuímos e operamos.</p> 
           <p className="pzin">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado. </p>
           <p className="pzin">Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p> <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p> 

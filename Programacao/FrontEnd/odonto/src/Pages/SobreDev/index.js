@@ -15,6 +15,10 @@ export default function SobreDev() {
                 <p></p>
 
             </div>
+
+            <div className="redesS">
+
+            </div>
         </div>
     )
 }

@@ -24,19 +24,24 @@
 .theerMil{
    
     background-color: white;
-    margin-left: 20vh;
-    margin-right: 20vh;
-    text-align: center;
     margin-top: 5vh;
-    width: 80%;
-    height: 80vh;
+
    
 
 }
 
+.pCenter{
+
+margin-left: 20vh;
+}
+
+
 .titulosobre{
 
+    display: flex;
+    justify-content: center;
     color: rgb(18, 46, 124) ;
+    
 }
 
 .ttt{
