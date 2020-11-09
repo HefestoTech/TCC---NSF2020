@@ -1,3 +1,230 @@
-.colodent{
-    color:rgb(0, 110, 255);
+
+.ContAgendarF{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 145vh;
 }
+
+.backgr{
+    background-image: url('../../Assets/Wallpapers/dental4.jpg');
+    background-size: 40vw;
+}
+
+.TtLogoF{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    color: #42aaf4;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 5px;
+
+}
+
+a:link{
+    text-decoration: none;
+}
+
+
+.BodyAgendF{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    height: 125vh;
+    background-color: white;
+    border-radius: 10px;
+}
+
+    
+
+
+        .TtAgendF{
+            display: flex;
+            flex-direction: column;    
+            align-items: center;
+            justify-content: center;
+            width: 85vw;
+            height: 20vh;
+            margin-top: 30px;            
+        }
+                .TtAgendF h1{
+                    margin-left: 15px;
+                    margin-top: 10px;
+                }
+
+                .TtAgendF img{
+                    width: 9.5vw;
+                    height: 11.5vh;
+                    margin-left: -50px;
+                }
+
+
+        .BoxAgendF{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 50px;
+            margin-top: 10px;
+        }
+
+                .BodyAgendF h2{
+                    color: rgb(86, 194, 131);
+                }
+
+
+                .lineAgend1F{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 45vw;
+                    height: 15vh;
+                    margin-left: 145px;
+                }
+
+                        
+
+
+
+
+                        .formHourF{
+                            margin-right: 85px;
+                        }
+
+
+                .lineAgend2F{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60vw;
+                    height: 15vh;
+                }
+
+
+                        .formServF{
+                            width: 17vw;
+                            margin-left: 50px;
+                        }
+
+                        .formProfF{
+                            margin-left: 90px;
+                        }
+
+
+                .lineAgend3F{
+                    display: flex;
+                    justify-content: center;
+                }
+
+        .BoxPagmtF{
+            display: flex;
+            flex-direction: column;
+            width: 40vw;
+            height: 55vh;
+            margin-left: 10px;
+            margin-top: 30px;
+        }
+
+                .linePag1F{
+                    display: flex;
+                    height: 10vh;
+                    margin-bottom: 10px;
+                }
+
+                        .formPagmF{
+                            display: flex;
+                            flex-direction: column;
+                            width: 30vw;
+                            margin-top: 15px;
+                        }
+
+
+                                .selectPagF{
+                                    width: 15vw;
+                                }
+
+                
+                .linePag2F{
+                    display: flex;
+                    width: 50vw;
+                    height: 12vh;
+                    margin-top: 40px;
+                }
+
+                        .formParcF{
+                            width: 20vw;
+                        }
+
+                                .qtdParcF{
+                                    width: 10vw;
+                                }
+
+                        .formSubF{
+                            width: 10vw;
+                            margin-left: 10px;
+                        }
+
+
+                .linePagm3F{
+                    display: flex;
+                    width: 55vw;
+                    height: 12vh;
+                    margin-top: 15px;
+                }
+
+                        .formDescF{
+                            width: 10vw;
+                        }
+
+                        .formTotF{
+                            width: 12vw;
+                            margin-left: 145px;
+                        }
+
+
+                        .ButtPagF{
+                            display: flex;
+                            align-items: center;
+                            width: 20vw;
+                            height: 12vh;
+                            margin-left: 50px;
+                            margin-top: 15px;
+                        }
+
+                        .btnCadF{
+                            display: flex;
+                            align-items: center;
+                            width: 15vw;
+                            height: 8vh;
+
+                        }
+
+                        .btnCadF h4{
+                            margin-left: 5px;
+                        }
+
+
+
+                            .btnCadF img{
+                                width: 10vw;
+                                height: 6vh;
+                                color: white;
+                                margin-left: -25px;
+                            }
+
+
+
+.totalPorMesAgendarF    {
+    margin-top: 36px;
+    margin-left: 10px;
+    color: black;
+}
+
+
+
+
+                        

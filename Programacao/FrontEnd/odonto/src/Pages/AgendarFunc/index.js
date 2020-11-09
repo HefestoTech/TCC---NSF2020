@@ -1,6 +1,7 @@
 import './agendafunc.css'
 import OdontoApi from '../../Services/OdontoApi'
-
+import Calendar from '../../Assets/Fotos/calendar.svg'
+import Dentes from '../../Assets/Fotos/dentes.png'
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 
@@ -114,34 +115,34 @@ export default function AgendarConsultaCliente (props) {
     }
 
     return(
-        <div className="ContAgendar backg">
-            <Link to="/" ><h1 className="TtLogo">ODONTO</h1></Link>
-            <div className="BodyAgend shadow-lg p-3 mb-5 bg-white rounded">
-                <div className="TtAgend">
-                    <h1>Agende sua Consulta <i class="fas fa-tooth colodent"></i></h1>
-                    
+        <div className="ContAgendarF backgr">
+            <Link to="/" ><h1 className="TtLogoF">ODONTO</h1></Link>
+            <div className="BodyAgendF shadow-lg p-3 mb-5 bg-white rounded">
+                <div className="TtAgendF">
+                    <h1>Agende sua Consulta<i class="fas fa-tooth colodent"></i><img src={Dentes} /></h1>
+                    <h4></h4>
                 </div>
 
-                <div className="BoxAgend">
-                        <div className="lineAgend1">
-                            <div className="formDate">
-                            <h5>Selecione uma data:</h5>
-                            <input type="date" className="form-control" 
-                            onChange={(e) => pegarProfissional(setDate(e.target.value))}
-                            />
+                <div className="BoxAgenFd">
+                        <div className="lineAgend1F">
+                            <div className="formDateF">
+                                <h5>Selecione uma data:</h5>
+                                <input type="date" className="form-control" 
+                                onChange={(e) => pegarProfissional(setDate(e.target.value))}
+                                />
                             </div>
 
-                            <div className="formHour">
-                            <h5>Selecione uma hora:</h5>
-                            <input value={hora} type="time" className="form-control" 
-                            onChange={e => setHora(e.target.value)}
-                            />
+                            <div className="formHourF">
+                                <h5>Selecione uma hora:</h5>
+                                <input value={hora} type="time" className="form-control" 
+                                onChange={e => setHora(e.target.value)}
+                                />
                             </div>
 
                         </div>
 
-                        <div className="lineAgend2">
-                            <div className="formServ">
+                        <div className="lineAgend2F">
+                            <div className="formServF">
                                 <h5>Selecione um serviço:</h5>
                                 <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
                                     {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}
@@ -149,28 +150,28 @@ export default function AgendarConsultaCliente (props) {
                                 </select>
                             </div>
 
-                            <div className="formProf">
+                            <div className="formProfF">
                                 <h5>Escolha um profissional:</h5>
                                 <select className="form-control" >
                                     <option>Mauricio</option>
                                 </select>
                             </div>
                         </div>
-                        <div className="formeE-mail">
-
-                        <input class="form-control mr-sm-2 btnnTwo" type="search" placeholder="E-mail do Cliente" aria-label="Pesquisar"></input>
-                    
-
+                        <div className="lineAgend3F">
+                            <div className="formeE-mailF">
+                                <h5>Digite o e-mail do cliente:</h5>
+                                <input class="form-control mr-sm-2 btnnTwo" type="search" placeholder="Fulano@example.com" aria-label="Pesquisar" />
+                            </div>
                         </div>
                 </div>
 
-                <div className="BoxPagmt">
+                <div className="BoxPagmtF">
                     <h2>Pagamento da consulta</h2>
 
-                    <div className="linePag1">
-                        <div className="formPagm">
+                    <div className="linePag1F">
+                        <div className="formPagmF">
                         <h5>Selecione a forma de Pagamento:</h5>
-                            <div className="radPag  custom-radio custom-control-inline">
+                            <div className="selectPagF  custom-radio custom-control-inline">
                                 
                                 <select onChange={(e) => pegarValorDaConsulta(idServico, e.target.value)} className="form-control">
                                     <option value="Dinheiro">Dinheiro</option>
@@ -181,42 +182,43 @@ export default function AgendarConsultaCliente (props) {
                         </div>
                     </div>
 
-                    <div className="linePag2">
-                        <div className="formParc">
+                    <div className="linePag2F">
+                        <div className="formParcF">
                             <h5>Quantidade de parcelas:</h5>
-                            <input value={parcelas} type="number" className="qtdParc form-control" min="1" max="8" 
+                            <input value={parcelas} type="number" className="qtdParcF form-control" min="1" max="8" 
                             onChange={e => setParcelas(e.target.value)}
                             />
                         </div>
 
-                        <div className="formSub">
+                        <div className="formSubF">
                             <h5>SubTotal:</h5>
-                            <input type="text" readOnly className="Subt form-control" placeholder="R$ 0,00" 
+                            <input type="text" readOnly className="SubtF form-control" placeholder="R$ 0,00" 
                             value={"R$" + subtotal}
                             />
                             
                         </div>
 
-                        <p className="totalPorMesAgendar">( {parcelas}X de R${valorParcelado} )</p>
+                        <p className="totalPorMesAgendarF">( {parcelas}X de R${valorParcelado} )</p>
                     </div>
 
-                    <div className="linePagm3">
-                        <div className="formDesc">
+                    <div className="linePagm3F">
+                        <div className="formDescF">
                             <h5>Desconto:</h5>
-                            <input type="text" readOnly className="Desc form-control" placeholder="R$ 0,00" 
+                            <input type="text" readOnly className="DescF form-control" placeholder="R$ 0,00" 
                             value={"R$" + desconto}
                             />
                         </div>
 
-                        <div className="formTot">
+                        <div className="formTotF">
                             <h5>Total:</h5>
-                            <input type="text" readOnly className="Total form-control" placeholder="R$ 0,00"
+                            <input type="text" readOnly className="TotalF form-control" placeholder="R$ 0,00"
                             value={"R$" + total}
                             />
                         </div>
 
-                        <div className="ButtPag">
-                            <button onClick={agendarClick} className="btnCad btn btn-primary"><h4>Agendar</h4></button>
+                        <div className="ButtPagF">
+                            <button onClick={agendarClick} className="btnCadF btn btn-primary">
+                                <h4>Agendar</h4><img src={Calendar}/></button>
                         </div>
                     </div>
 
