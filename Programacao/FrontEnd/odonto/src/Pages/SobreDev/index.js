@@ -11,7 +11,7 @@ export default function SobreDev() {
             
             <div class="devTheer">
                 
-                <h2> Sobre os Devs</h2>
+                <h2 className="htwodev"> Sobre </h2>
                 <p></p>
 
             </div>
