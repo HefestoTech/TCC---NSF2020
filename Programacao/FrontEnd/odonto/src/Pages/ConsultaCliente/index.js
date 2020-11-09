@@ -517,7 +517,7 @@ export default function ConsultarCliente(props) {
                 </div>}
                  {situacaoMostrar === "Não Compareceu" && naoCompareceu.length === 0 &&
                 <div className="semConsultasAgendadas"> 
-                    <h3>Não há consultas em que voce não compareceu.
+                    <h3>Não há consultas em que você não compareceu.
                         <br/>
                        <Link to={{
                            pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
