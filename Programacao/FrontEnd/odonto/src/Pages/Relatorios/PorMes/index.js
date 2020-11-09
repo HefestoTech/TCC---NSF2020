@@ -9,11 +9,12 @@ import { Link } from "react-router-dom";
 
 const api = new OdontoApi();
 
-export default function PorMes() {
+export default function PorMes(props) {
 
     const [mesInicio, setMesInicio] = useState(1);
     const [mesFinal, setMesFinal] = useState(1)
     const [consultaDosMeses, setConsultaDosMeses] = useState([]);
+     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
 
     const pegarConsultasPorMeses = async () => {
       try {
@@ -41,7 +42,10 @@ export default function PorMes() {
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
-            <p><Link to="/Relatorio"> Voltar </Link></p>
+            <p><Link to={{
+                  pathname:"/relatorio",
+                  state: responseCompleto
+                  }}> Voltar </Link></p>
           </div>
           <div className="tituloRelatoriVerPorDia">
             <h1>Relatório</h1>

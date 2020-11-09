@@ -11,19 +11,21 @@ const api = new OdontoApi()
 
 export default function RelatorioPorDia (props) {
 
-    const [responseCompleto, setResponseCompleto] = useState(props);
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state);
     const [data, setData] = useState();
     const [consultasDoDia, setConsultasDoDia] = useState([]);
 
+    console.log(responseCompleto);
+
     const pegarConsultasPorDia = async (novaData) => {
             try {
-                  console.log(novaData)
+                  
                   const resp = await api.PegarPorDia(novaData);
-                  console.log(resp);
+            
                   setConsultasDoDia(resp);
 
             } catch (e) {
-                console.log(e.response.data)
+                
                 toast.error(e.response.data.erro)
                 setConsultasDoDia([]);
                 
@@ -36,7 +38,10 @@ export default function RelatorioPorDia (props) {
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
-            <p><Link to="/Relatorio"> Voltar </Link></p>
+            <p><Link to={{
+                  pathname:"/relatorio",
+                  state: responseCompleto
+                  }} > Voltar </Link></p>
           </div>
           <div className="tituloRelatoriVerPorDia">
             <h1>Relatório</h1>

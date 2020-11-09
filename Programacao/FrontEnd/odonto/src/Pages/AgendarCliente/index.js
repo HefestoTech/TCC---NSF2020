@@ -11,10 +11,10 @@ const odontoApi = new OdontoApi();
 export default function AgendarConsultaCliente (props) {
     
     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
-    const [idfuncionario, setIdfuncionario] = useState(null);
+    const [idfuncionario, setIdfuncionario] = useState(0);
     const [date, setDate] = useState(null);
     const [hora, setHora] = useState(null);
-    const [idServico, setIdServico] = useState(null);
+    const [idServico, setIdServico] = useState(0);
     const [servico, setServico] = useState([]);
     const [profissional, setProfissional] = useState([]);
     const [formpagm, setFormpagm] = useState("Dinheiro");
@@ -62,23 +62,14 @@ export default function AgendarConsultaCliente (props) {
                 "Desconto": desconto,
                 "ValorTotal": total
             });
-    
-        console.log(resp);
 
         toast.success("Consulta agendada com sucesso");
         }
        
     } catch (e) {
             toast.error(e.response.data.erro);
-            
-            console.log(e.response.data)
         }
     }
-
-    
-    useEffect(() => {
-    pegarServicos();
-    }, [])
 
     const transformarEmDataComMinutos = (data, horario) => {
          
@@ -115,7 +106,6 @@ export default function AgendarConsultaCliente (props) {
                 
             setFormpagm(formaDePagamento)
 
-
             const resp = await odontoApi.PegarValorDaConsulta(id, formaDePagamento, parcelas); 
 
             setSubtotal(resp.subtotal);
@@ -123,14 +113,16 @@ export default function AgendarConsultaCliente (props) {
             setTotal(resp.total);
             setValorParcelado(resp.total / parcelas);
             
-            
         } catch (e) {
 
-            console.log(e.response.data);
-           
-            
+            toast.erro(e.response.data.erro);
+
         }
     }
+
+     useEffect(() => {
+       pegarServicos();
+     }, []);
 
     return(
         <div className="ContAgendar backg">

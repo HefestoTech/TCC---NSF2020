@@ -5,7 +5,7 @@ import Login from './Pages/Login/login.js'
 import Remarcar from './Pages/Remarcar'
 import Cadastrar from './Pages/Cadastrar'
 import agendarconsultacliente from './Pages/AgendarCliente'
-import Menu from "./Pages/OneMenu"
+import MenuCliente from "./Pages/MenuCliente"
 import NotFound from "./Pages/NotFound"
 import Feedback from "./Pages/Feedback"
 import ConsultarCliente from './Pages/ConsultaCliente'
@@ -20,6 +20,7 @@ import TopClientes from './Pages/Relatorios/TopClientes';
 import TopServicos from './Pages/Relatorios/TopServicos';
 import VerAgendaFunc from './Pages/VerAgendaFunc/index.js';
 import AgendaFunc from './Pages/AgendarFunc/index.js';
+import MenuFuncionario from './Pages/MenuFuncionario';
 export default function Routes() {
     return(
         <BrowserRouter>
@@ -29,17 +30,18 @@ export default function Routes() {
               <Route path="/remarcar/:id" exact component={Remarcar} />
               <Route path="/cadastrar" exact component={Cadastrar} />
               <Route path="/agendarconsultacliente/:id" exact component={agendarconsultacliente}/>
-              <Route path="/menu/:id" exact component={Menu}/>
+              <Route path="/menu/cliente/:id" exact component={MenuCliente}/>
+              <Route path="/menu/funcionario/:id" exact component={MenuFuncionario} />
               <Route path="/feedback/:id" component = {Feedback}/>
               <Route path="/consultacliente/:id" component={ConsultarCliente} />
               <Route path="/Priv/" exact component={Privacidade} />
               <Route path="/term" exact component={TermoDeUso} />
               <Route path="/sobrenos" exact component={SobreNos} />
-              <Route path="/Relatorio/PorDia" exact component={RelatorioPorDia} />
-              <Route path="/Relatorio/PorMes" exact component={PorMes} />
-              <Route path="/Relatorio/TopClientes" exact component={TopClientes} />
-              <Route path="/Relatorio/TopServicos" exact component={TopServicos} />
-              <Route path="/Relatorio/" exact component={HomeRelatorio} />
+              <Route path="/PorDia" exact component={RelatorioPorDia} />
+              <Route path="/PorMes" exact component={PorMes} />
+              <Route path="/TopClientes" exact component={TopClientes} />
+              <Route path="/TopServicos" exact component={TopServicos} />
+              <Route path="/Relatorio" exact component={HomeRelatorio} />
               <Route path="/Sobredev" exact component={SobreDev} />
               <Route path="/VerAgendaFunc/:id" exact component={VerAgendaFunc} />
               <Route path="/agendafunc/:id" exact component={AgendaFunc} />

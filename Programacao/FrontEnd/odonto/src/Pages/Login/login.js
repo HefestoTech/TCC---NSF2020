@@ -40,10 +40,18 @@ const api = new OdontoApi();
         const response = await api.Logar(modeloLogin);
 
         setMostrarLoading(false);
-
-        history.push({  
-            pathname:"/menu/" + response.idUsuario,
-            state: response})
+        if(response.perfil == "Cliente"){
+          history.push({  
+            pathname:"/menu/cliente/" + response.idUsuario,
+            state: response
+          })
+        }
+        if(response.perfil == "Funcionário"){
+          history.push({
+            pathname:"/menu/funcionario/" + response.idUsuario,
+             state:response
+          })
+        }
 
             
         } catch (e) {

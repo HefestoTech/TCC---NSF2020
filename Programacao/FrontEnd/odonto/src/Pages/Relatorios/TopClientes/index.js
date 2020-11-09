@@ -9,9 +9,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 const api = new OdontoApi();
 
-export default function TopClientes () {
+export default function TopClientes (props) {
 
     const [topClientes, setTopClientes] = useState([]);
+     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
 
      const pegarTopClientes = async () => {
        try {
@@ -39,7 +40,10 @@ export default function TopClientes () {
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
             <p>
-              <Link to="/Relatorio"> Voltar </Link>
+              <Link to={{
+                  pathname:"/relatorio",
+                  state: responseCompleto
+                  }}> Voltar </Link>
             </p>
           </div>
 

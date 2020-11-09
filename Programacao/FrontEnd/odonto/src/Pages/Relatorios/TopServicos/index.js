@@ -7,9 +7,10 @@ import OdontoApi from "../../../Services/OdontoApi";
 
 const api = new OdontoApi();
 
-export default function TopServicos () {
+export default function TopServicos (props) {
 
     const [topServicos, setTopServicos] = useState([]);
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state);
 
      const pegarTopServicos = async () => {
        try {
@@ -34,7 +35,10 @@ export default function TopServicos () {
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
             <p>
-              <Link to="/Relatorio"> Voltar </Link>
+              <Link to={{
+                  pathname:"/relatorio",
+                  state: responseCompleto
+                  }}> Voltar </Link>
             </p>
           </div>
 
