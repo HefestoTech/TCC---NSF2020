@@ -6,12 +6,12 @@ export default function SobreDev() {
     return(
         <div class="fundodev">
             <div class="devOne"> 
-            <i class="fab fa-hire-a-helper"></i><Link to= '/' ><h1 class="hOne">efesto Tech Developers</h1></Link>
+            <Link to= '/' ><h1 class="hOne"> <i class="fab fa-hire-a-helper"></i>efesto Tech Developers </h1></Link>
             </div>
             
             <div class="devTheer">
                 
-                <h2></h2>
+                <h2> Sobre os Devs</h2>
                 <p></p>
 
             </div>

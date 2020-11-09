@@ -142,13 +142,13 @@ export default function App() {
                 <div class="Redes">
                     
                     <div class="face">
-                        <img src = {Facebook}/>
+                        <a href= "https://www.facebook.com/Odonto-108520777734904"><img src = {Facebook}/></a>
                     </div>
                     <div class="tt">
-                        <img src ={TT}/>
+                    <a href= "https://twitter.com/Odonto44228638"><img src ={TT}/></a>
                     </div>
                     <div class="r">
-                        <img src = {Instagram}/>
+                    <a href= "https://www.instagram.com/Odonto.gg/"><img src = {Instagram}/></a>
                     </div>
                 </div>
             </div>
