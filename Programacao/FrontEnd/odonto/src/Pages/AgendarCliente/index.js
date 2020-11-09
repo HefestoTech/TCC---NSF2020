@@ -1,4 +1,3 @@
-
 import './agenda.css'
 import OdontoApi from '../../Services/OdontoApi'
 import Dente from '../../Assets/Fotos/dente.png'
@@ -12,9 +11,9 @@ const odontoApi = new OdontoApi();
 export default function AgendarConsultaCliente (props) {
     
     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
-    const [idfuncionario, setIdfuncionario] = useState();
-    const [date, setDate] = useState("");
-    const [hora, setHora] = useState();
+    const [idfuncionario, setIdfuncionario] = useState(null);
+    const [date, setDate] = useState(null);
+    const [hora, setHora] = useState(null);
     const [idServico, setIdServico] = useState(null);
     const [servico, setServico] = useState([]);
     const [profissional, setProfissional] = useState([]);
@@ -35,11 +34,23 @@ export default function AgendarConsultaCliente (props) {
 
     const valorParceladoClick = (parcela) => {
         setParcelas(parcela);
-        setValorParcelado(total / parcela);
+        const x = total / parcela;
+        setValorParcelado(x.toFixed(2));
     } 
 
+   
     const agendarClick = async() => {
         try {
+
+            if(date === null){
+                toast.error("A data é obrigatória");
+                return false;
+            }
+            else if(hora === null){
+                toast.error("A hora é obrigatória");
+                return false;
+            }
+            else{
              const resp = await odontoApi.AgendarConsultaPorCliente({       
                 "IdCliente": responseCompleto.idUsuario,
                 "IdFuncionario": idfuncionario,
@@ -55,7 +66,9 @@ export default function AgendarConsultaCliente (props) {
         console.log(resp);
 
         toast.success("Consulta agendada com sucesso");
-        } catch (e) {
+        }
+       
+    } catch (e) {
             toast.error(e.response.data.erro);
             
             console.log(e.response.data)
@@ -151,7 +164,7 @@ export default function AgendarConsultaCliente (props) {
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
                                 <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
-                                    <option value=""></option>
+                                    <option value="0"></option>
                                     {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}
                                 
                                 </select>
@@ -159,8 +172,8 @@ export default function AgendarConsultaCliente (props) {
 
                             <div className="formProf">
                                 <h5>Escolha um profissional:</h5>
-                                <select onChange={e => setIdfuncionario(e.target.value)} className="form-control" >
-                                <option value=""></option>
+                                <select onChange={e => setIdfuncionario(Number(e.target.value))} className="form-control" >
+                                <option value="0"></option>
                                 {profissional.map (x => 
                                   <option value={x.id}>{x.nome}</option>
                                 )}

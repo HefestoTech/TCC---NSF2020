@@ -65,10 +65,10 @@ namespace BackEnd.Business
         
         public Models.TbConsulta AgendarNovaConsulta(Models.TbConsulta request, string email)
         {
-            if(request.IdServico.ToString() == null)
+            if(request.IdServico == 0)
                throw new ArgumentException("Obrigatório a escolha de um serviço");
 
-            if(request.IdFuncionario.ToString() == null)
+            if(request.IdFuncionario == 0)
                 throw new ArgumentException("Obrigatório a escolha de um profissional");   
 
             validador.ValidarSeOFuncionarioEstaDisponivel(request.DtConsulta, request.IdFuncionario);
