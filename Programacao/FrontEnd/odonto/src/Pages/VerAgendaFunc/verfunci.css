@@ -1,3 +1,52 @@
 .fundoAgen{
     background-color:white;
 }
+
+.starDiv{
+
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.h3star{
+
+    padding-left:2vh ;
+}
+
+.hOndeAgen{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.hTwoAgen{
+    
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+.AgenOne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    
+    
+}
+
+.espec{
+
+    width: 20vh;
+}
+
+
+.iconSearch{
+    color: slategrey;
+}
+
+.iconSearch:hover{
+
+    color: white;
+
+}

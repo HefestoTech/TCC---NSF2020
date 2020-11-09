@@ -6,33 +6,76 @@ import Rodape from '../../Components/Footer';
 export default function VerAgendaFunc(){
     return(
         <div className="fundoAgen">
-            <div>
+            
                 <Menu></Menu>
-            </div>
+           
                 
 
                 <div className="AgenOne">
-                    <h1>Informarções da Consulta</h1>
-                    <h3>Todos os Agendamentos</h3>
+                    <h1 className="hOndeAgen">Informarções da Consulta</h1>
+                    <h3 className="hTwoAgen">Todos os Agendamentos</h3>
                 </div>
 
-                <div>
-                    <h3>Selecione um filtro</h3>
+            <div className="h3star">
+                    <h3>Selecione um filtro:</h3>
                 </div>
-                <div>
+                
+            
+                <div className="starDiv">
 
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"></input>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                    <input class="form-control mr-sm-2 btnnTwo" type="search" placeholder="Nome do Cliente" aria-label="Pesquisar"></input>
+                    
                 </form>
-                <select>
-                    <option> 
-                        Clareamneto
+                
+                <select className="form-control espec">
+                    <option>
+                        Profissional
                     </option>
                 </select>
-                </div>
+                
+                
+                <select className="form-control espec">
+                    <option> 
+                        Especialização
+                    </option>
+                    <option>
+                        Clareamento 
+                    </option>
+                </select>
+                <input type="date" className=" form-control espec"></input>
+                <input type="time" className="form-control espec"></input>
 
 
+                <select className="form-control espec" >
+                    <option>
+                        Situação
+                    </option>
+
+                    <option>
+                        Concluido
+                    </option>
+
+                    <option>
+                        Não Compareceu
+                    </option>
+
+                    <option>
+                        Agendado
+                    </option>
+
+                    <option>
+                        Cancelado
+                    </option>
+
+
+
+                </select>
+
+                <button type="button" class="btn btn-outline-info"><i className="fas fa-search iconSearch"/></button>
+
+            </div>
+            
             <Rodape></Rodape>
         </div>
         
