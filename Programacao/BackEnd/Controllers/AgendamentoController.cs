@@ -36,9 +36,9 @@ namespace BackEnd.Controllers
         }
         
         [HttpGet("Dentista/Disponivel")]
-        public ActionResult<List<Models.Response.DentistaResponse>> ListarDentistasDisponiveis (Models.Request.HorarioRequest horario)
+        public ActionResult<List<Models.Response.DentistaResponse>> ListarDentistasDisponiveis (DateTime horario)
         {
-             List<Models.TbFuncionario> funcionarios = business.ListarDentistasDisponiveis(horario.Horario);
+             List<Models.TbFuncionario> funcionarios = business.ListarDentistasDisponiveis(horario);
              return conversor.ParaListaDentistasResponse(funcionarios);
         }
 

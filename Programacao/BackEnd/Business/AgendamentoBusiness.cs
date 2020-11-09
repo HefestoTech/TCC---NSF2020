@@ -22,6 +22,7 @@ namespace BackEnd.Business
         
         public List<Models.TbFuncionario> ListarDentistasDisponiveis(DateTime data)
         {
+         
             List<Models.TbFuncionario> funcionarios = dbAgendamento.ListarDentistasDisponiveis(data);
             
             if(funcionarios.Count == 0 || funcionarios == null)
