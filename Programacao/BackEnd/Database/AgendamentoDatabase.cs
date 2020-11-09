@@ -123,7 +123,7 @@ namespace BackEnd.Database
             Models.TbLogin tbLogin = ctx.TbLogin.FirstOrDefault(x => x.DsEmail == email);
             
             if(tbLogin == null)
-               throw new ArgumentException($"Nenhum cliente com o email {email} econtrado");
+               throw new ArgumentException($"Nenhum cliente com o email {email} encontrado");
             
             Models.TbCliente cliente = ctx.TbCliente.FirstOrDefault( x => x.IdLogin == tbLogin.IdLogin);
             return cliente.IdCliente;

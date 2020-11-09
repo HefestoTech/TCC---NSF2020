@@ -68,6 +68,9 @@ export default function AgendarConsultaCliente (props) {
        
     } catch (e) {
             toast.error(e.response.data.erro);
+            console.log("Meu errooooo.")
+            console.log(e.response)
+
         }
     }
 
@@ -94,7 +97,8 @@ export default function AgendarConsultaCliente (props) {
                 
         } catch (e) {
 
-                toast.error(e.response.data.erro);
+            setProfissional([])    
+            toast.error(e.response.data.erro);
         }
     }
 
@@ -156,9 +160,7 @@ export default function AgendarConsultaCliente (props) {
                             <div className="formServ">
                                 <h5>Selecione um serviço:</h5>
                                 <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
-                                    <option value="0"></option>
-                                    {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}
-                                
+                                    {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}                 
                                 </select>
                             </div>
 

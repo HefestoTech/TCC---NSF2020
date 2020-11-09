@@ -79,7 +79,7 @@ namespace BackEnd.Business
 
             validador.ValidarPagamento(request.TpFormaPagamento, request.NrParcelas);
 
-            if(email == null)
+            if(String.IsNullOrEmpty(email))
                 return dbAgendamento.AgendarNovaConsulta(request); 
             else
             {

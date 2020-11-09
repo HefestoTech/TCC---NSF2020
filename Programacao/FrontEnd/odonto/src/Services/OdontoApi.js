@@ -38,6 +38,7 @@ export default class OdontoApi {
 
     //Agendar novo - funcionário
     AgendarConsultaPorFuncionario = async (dadosDaConsulta) => {
+        console.log(dadosDaConsulta)
         const resp = await api.post("/agendamento/cadastrar/funcionario", dadosDaConsulta);
         return resp.data;
     }

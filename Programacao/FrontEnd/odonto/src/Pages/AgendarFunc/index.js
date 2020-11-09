@@ -5,118 +5,128 @@ import Dentes from '../../Assets/Fotos/dentes.png'
 import ArrowLeft from '../../Assets/Fotos/left-arrow.svg'
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const odontoApi = new OdontoApi();
 
 export default function AgendarConsultaCliente (props) {
     
-    const [responsecompleto, setResponsecompleto] = useState(props.location.state);
-    const [idfuncionario, setIdfuncionario] = useState();
-    const [date, setDate] = useState("2020-09-07");
-    const [hora, setHora] = useState("09:00");
-    const [idServico, setIdServico] = useState(1);
+    const [responseCompleto, setResponseCompleto] = useState(
+      props.location.state
+    );
+
+    const [idFuncionario, setIdFuncionario] = useState(0);
+    const [date, setDate] = useState(null);
+    const [hora, setHora] = useState(null);
+    const [idServico, setIdServico] = useState(0);
     const [servico, setServico] = useState([]);
-    const [profissional, setProfissional] = useState();
+    const [profissional, setProfissional] = useState([]);
     const [formpagm, setFormpagm] = useState("Dinheiro");
     const [parcelas, setParcelas] = useState(1);
     const [subtotal, setSubtotal] = useState(0);
     const [desconto, setDesconto] = useState(0);
     const [total, setTotal] = useState(0);
     const [valorParcelado, setValorParcelado] = useState(0);
+    const [novoHorario, setNovoHorario] = useState(null);
+    const [emailCliente, setEmailCliente] = useState("");
+    
+    const pegarServicos = async () => {
+      const resp = await odontoApi.PegarServicos();
 
-    const pegarServicos = async () => {  
-        const resp = await odontoApi.PegarServicos(); 
-        
-        setServico(resp) 
+      setServico(resp);
     };
 
-    const agendarClick = async() => {
-        try {
+    const valorParceladoClick = (parcela) => {
+      setParcelas(parcela);
+      const x = total / parcela;
+      setValorParcelado(x.toFixed(2));
+    };
 
-           
-             const resp = await odontoApi.AgendarConsultaPorCliente({       
-                "IdCliente": 1,
-                "IdFuncionario": 2,
-                "IdServico": 2,
-                "Data": "2020-11-11 16:00",
-                "FormaDePagamento": "1",
-                "QtdParcelas": 1,
-                "SubTotal": 400,
-                "Desconto": 0,
-                "ValorTotal": 400
-            })
-    
-        console.log(resp);
-        } catch (e) {
-            console.log(e.response.data.erro)
+    const agendarClick = async () => {
+      try {
+        if (date === null) {
+          toast.error("A data é obrigatória");
+          return false;
+        } else if (hora === null) {
+          toast.error("A hora é obrigatória");
+          return false;
+        } else {
+          const resp = await odontoApi.AgendarConsultaPorFuncionario({
+            "IdFuncionario": idFuncionario,
+            "IdServico": idServico,
+            "EmailCliente": emailCliente,
+            "Data": novoHorario,
+            "FormaDePagamento": formpagm,
+            "QtdParcelas": parcelas,
+            "SubTotal": subtotal,
+            "Desconto": desconto,
+            "ValorTotal": total,
+          });
+
+          toast.success("Consulta agendada com sucesso");
         }
-    }
-
-    
-    useEffect(() => {
-    pegarServicos();
-    }, [])
-
-    const transformarEmDataComMinutos = () => {
-         
-         const horarioEDataDaConsulta = `${date} ${hora}`;
-         return horarioEDataDaConsulta;
+      } catch (e) {
+        toast.error(e.response.data.erro);
+        
+        console.log(e.response.data)
+        console.log("Meu errooooo")
       }
+    };
 
-    const pegarProfissional = async() =>{
-        try {
-            const horario = transformarEmDataComMinutos();
-        
-            const horarioRequest = ({"Horario": "2020-10-26 16:00" })
+    const transformarEmDataComMinutos = (data, horario) => {
+      const horarioEDataDaConsulta = `${data} ${horario}`;
 
-            /*const request = {
-                "IdAgendamento":idAgendamento,
-                "NovoHorario": dataFinal
-            };
-            */
-            
-            const resp = await odontoApi.SomenteDentistasDisponiveis({
-                "Horario": "2020-11-10 16:00" 
-            })
-        
-            
-                
-        } catch (e) {
+      setDate(data);
+      setHora(horario);
 
-            
-        }
-    }
+      setNovoHorario(horarioEDataDaConsulta);
 
+      return horarioEDataDaConsulta;
+    };
 
-    const pegarValorDaConsulta  = async (id, formaDePagamento) => {
-        try {
+    const pegarProfissional = async (data, hora) => {
+      try {
+        const novoHorario = transformarEmDataComMinutos(data, hora);
 
-            setIdServico(id);
-            console.log(formaDePagamento)
-                
-            setFormpagm(formaDePagamento)
+        const resp = await odontoApi.SomenteDentistasDisponiveis(novoHorario);
 
+        setProfissional(resp);
+      } catch (e) {
+        setProfissional([]);
+        toast.error(e.response.data.erro);
+      }
+    };
 
-            const resp = await odontoApi.PegarValorDaConsulta({
-                "IdServico": id,
-                "FormaDePagamento": formaDePagamento,
-                "QuantidadeParcelas": 8
-            }); 
+    const pegarValorDaConsulta = async (id, formaDePagamento) => {
+      try {
+        setIdServico(id);
 
-            setSubtotal(resp.subtotal);
-            setDesconto(resp.desconto);
-            setTotal(resp.total);
-            setValorParcelado(resp.valorParcelado);
-            
-            
-        } catch (e) {
-           
-            
-        }
-    }
+        setFormpagm(formaDePagamento);
+
+        const resp = await odontoApi.PegarValorDaConsulta(
+          id,
+          formaDePagamento,
+          parcelas
+        );
+
+        setSubtotal(resp.subtotal);
+        setDesconto(resp.desconto);
+        setTotal(resp.total);
+        setValorParcelado(resp.total / parcelas);
+      } catch (e) {
+        toast.error(e.response.data.erro);
+      }
+    };
+
+    useEffect(() => {
+      pegarServicos();
+    }, []);
+
 
     return(
         <div className="ContAgendarF backgr">
+            <ToastContainer/>
             <Link to="/" ><h1 className="TtLogoF">ODONTO</h1></Link>
             <div className="BodyAgendF shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgendF">
@@ -128,14 +138,14 @@ export default function AgendarConsultaCliente (props) {
                             <div className="formDateF">
                                 <h5>Selecione uma data:</h5>
                                 <input type="date" className="form-control" 
-                                onChange={(e) => pegarProfissional(setDate(e.target.value))}
+                                onChange={(e) => pegarProfissional(e.target.value, hora)}
                                 />
                             </div>
 
                             <div className="formHourF">
                                 <h5>Selecione uma hora:</h5>
-                                <input value={hora} type="time" className="form-control" 
-                                onChange={e => setHora(e.target.value)}
+                                <input type="time" className="form-control" 
+                                onChange={e => pegarProfissional(date, e.target.value)}
                                 />
                             </div>
 
@@ -145,22 +155,26 @@ export default function AgendarConsultaCliente (props) {
                             <div className="formServF">
                                 <h5>Selecione um serviço:</h5>
                                 <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
+                                    <option value="0"></option>
                                     {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}
-                                
                                 </select>
                             </div>
 
                             <div className="formProfF">
                                 <h5>Escolha um profissional:</h5>
-                                <select className="form-control" >
-                                    <option>Mauricio</option>
+                                <select onChange={e => setIdFuncionario(Number(e.target.value))} className="form-control" >
+                                    <option value="0"></option>
+                                    {profissional.map (x => 
+                                     <option value={x.id}>{x.nome}</option>
+                                    )}
                                 </select>
                             </div>
                         </div>
+
                         <div className="lineAgend3F">
                             <div className="formeE-mailF">
                                 <h5>Digite o e-mail do cliente:</h5>
-                                <input class="form-control mr-sm-2 btnnTwo" type="search" placeholder="Fulano@example.com" aria-label="Pesquisar" />
+                                <input onChange={e => setEmailCliente(e.target.value)} class="form-control mr-sm-2 btnnTwo" type="search" placeholder="Fulano@example.com" aria-label="Pesquisar" />
                             </div>
                         </div>
                 </div>
@@ -186,7 +200,7 @@ export default function AgendarConsultaCliente (props) {
                         <div className="formParcF">
                             <h5>Quantidade de parcelas:</h5>
                             <input value={parcelas} type="number" className="qtdParcF form-control" min="1" max="8" 
-                            onChange={e => setParcelas(e.target.value)}
+                            onChange={e => valorParceladoClick(e.target.value)}
                             />
                         </div>
 
