@@ -20,7 +20,7 @@ export default class OdontoApi {
     //Agendar novo - ambos
     SomenteDentistasDisponiveis = async (horarioRequest) => {
         console.log(horarioRequest);
-        const resp = await api.get("/agendamento/dentista/disponivel", horarioRequest)
+        const resp = await api.get("/agendamento/dentista/disponivel")
         return resp.data;
     }
 
