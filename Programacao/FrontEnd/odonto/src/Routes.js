@@ -19,7 +19,7 @@ import SobreDev from './Pages/SobreDev/index.js'
 import TopClientes from './Pages/Relatorios/TopClientes';
 import TopServicos from './Pages/Relatorios/TopServicos';
 import VerAgendaFunc from './Pages/VerAgendaFunc/index.js';
-import ConsultaFunci from './Pages/ConsultaFunc/index.js';
+import AgendaFunc from './Pages/AgendarFunc/index.js';
 export default function Routes() {
     return(
         <BrowserRouter>
@@ -42,7 +42,7 @@ export default function Routes() {
               <Route path="/Relatorio/" exact component={HomeRelatorio} />
               <Route path="/Sobredev" exact component={SobreDev} />
               <Route path="/VerAgendaFunc" exact component={VerAgendaFunc} />
-              <Route path="/consultafun" exact component={ConsultaFunci} />
+              <Route path="/agendafunc/:id" exact component={AgendaFunc} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
