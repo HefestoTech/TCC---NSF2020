@@ -53,12 +53,12 @@ namespace BackEnd.Controllers
 
         
         [HttpGet("ValorDaConsulta")]
-        public ActionResult<Models.Response.ValoresDaConsulta> PegarValorDaConsulta (Models.Request.ValoresDaConsultaRequest request)
+        public ActionResult<Models.Response.ValoresDaConsulta> PegarValorDaConsulta (int idServico, string formaDePagamento, int quantidadeParcelas)
         {
             try
             {
-                Models.TbServico servico = business.PegarValorDaConsulta(request);
-                return business.TransformarParaValoresDaConsulta(servico, request);
+                Models.TbServico servico = business.PegarValorDaConsulta(idServico, formaDePagamento, quantidadeParcelas);
+                return business.TransformarParaValoresDaConsulta(servico, formaDePagamento, quantidadeParcelas);
             }
             catch (System.Exception ex)
             {

@@ -32,22 +32,22 @@ namespace BackEnd.Business
         }
 
         
-        public Models.TbServico PegarValorDaConsulta(Models.Request.ValoresDaConsultaRequest request)
+        public Models.TbServico PegarValorDaConsulta(int idServico, string formaDePagamento, int quantidadeParcelas)
         {   
-            validador.ValidarId(request.IdServico);
+            validador.ValidarId(idServico);
 
-            validador.ValidarPagamento(request.FormaDePagamento, request.QuantidadeParcelas);
+            validador.ValidarPagamento(formaDePagamento, quantidadeParcelas);
             
-            return dbAgendamento.PegarInformacoesServico(request);
+            return dbAgendamento.PegarInformacoesServico(idServico, formaDePagamento, quantidadeParcelas);
         }
 
-        public Models.Response.ValoresDaConsulta TransformarParaValoresDaConsulta(Models.TbServico servico, Models.Request.ValoresDaConsultaRequest request)
+        public Models.Response.ValoresDaConsulta TransformarParaValoresDaConsulta(Models.TbServico servico, string formaDePagamento, int quantidadeParcelas)
         {
             Models.Response.ValoresDaConsulta valores = new Models.Response.ValoresDaConsulta();
 
             valores.Subtotal = servico.VlPrecoServico;
 
-            if (request.FormaDePagamento == "Dinheiro")
+            if (formaDePagamento == "Dinheiro")
             {
                 valores.Desconto = 10 * servico.VlPrecoServico / 100;
                 valores.ValorParcelado = 0;
@@ -57,7 +57,7 @@ namespace BackEnd.Business
             {
                 valores.Desconto = 0;
                 valores.Total = servico.VlPrecoServico - valores.Desconto;
-                valores.ValorParcelado = valores.Total / request.QuantidadeParcelas;
+                valores.ValorParcelado = valores.Total / quantidadeParcelas;
             }
 
             return valores;

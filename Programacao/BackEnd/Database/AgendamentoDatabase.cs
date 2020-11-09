@@ -87,9 +87,9 @@ namespace BackEnd.Database
         }
 
     
-        public Models.TbServico PegarInformacoesServico(Models.Request.ValoresDaConsultaRequest request)
+        public Models.TbServico PegarInformacoesServico(int idServico, string formaDePagamento, int quantidadeParcelas)
         {
-           Models.TbServico servico = ctx.TbServico.FirstOrDefault( x => x.IdServico == request.IdServico);
+           Models.TbServico servico = ctx.TbServico.FirstOrDefault( x => x.IdServico == idServico);
            return servico;
         }
         
