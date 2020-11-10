@@ -155,7 +155,7 @@ export default function App() {
             <div class="Rod">
                 <div class="in">    
                     
-                    <div class="p"><Link id="#test" class="linkOne" to = '/Priv/'>Centro de Privacidade</Link></div>
+                    <div class="p"><Link class="linkOne" to = '/Priv/'>Centro de Privacidade</Link></div>
                     <div class="p"> <Link class="linkOne" to = '/Priv'>Politica de Privacidade</Link></div>
                     <div class="p"> <Link class="linkOne" to = '/Priv'>Cookies</Link></div>
                     <div class="p"> <Link class="linkOne" to ='/Term'>Termos de Uso</Link></div>
