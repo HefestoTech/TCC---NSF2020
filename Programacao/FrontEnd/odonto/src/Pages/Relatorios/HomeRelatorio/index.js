@@ -19,7 +19,7 @@ export default function HomeRelatorio (props) {
           <div className="voltarRelatorio homeRelatarioVoltar">
             <p>
               <Link to={{
-                  pathname:"/menu/funcionario/" + responseCompleto.idUsuario,
+                  pathname:"/menu/funcionario",
                   state: responseCompleto
                   }} >
                 Voltar

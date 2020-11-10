@@ -10,7 +10,7 @@ import TelaMenu from "../../Components/TelaMenuOne";
     
         const irParaTelaDeVerAgendamentos = () => {
               history.push({
-                   pathname:"/consultacliente/" + responseCompleto.idUsuario,
+                   pathname:"/consultacliente",
                    state:responseCompleto
             });
            
@@ -18,7 +18,7 @@ import TelaMenu from "../../Components/TelaMenuOne";
 
         const irParaTelaDeAgendarNovaConsulta = () => {
               history.push({
-                    pathname:"/agendarconsultacliente/" + responseCompleto.idUsuario,
+                    pathname:"/agendarconsultacliente",
                     state:responseCompleto
               });
         }

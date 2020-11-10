@@ -42,13 +42,13 @@ const api = new OdontoApi();
         setMostrarLoading(false);
         if(response.perfil == "Cliente"){
           history.push({  
-            pathname:"/menu/cliente/" + response.idUsuario,
+            pathname:"/menu/cliente",
             state: response
           })
         }
         if(response.perfil == "Funcionário"){
           history.push({
-            pathname:"/menu/funcionario/" + response.idUsuario,
+            pathname:"/menu/funcionario",
              state:response
           })
         }

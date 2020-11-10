@@ -11,14 +11,14 @@ export default function MenuFuncionario(props) {
 
   const irParaTelaDeVerAgendamentos = () => {
       history.push({
-        pathname: "/VerAgendaFunc/" + responseCompleto.idUsuario,
+        pathname: "/VerAgendaFunc",
         state: responseCompleto,
       });
   };
 
   const irParaTelaDeAgendarNovaConsulta = () => {
       history.push({
-        pathname: "/agendafunc/" + responseCompleto.idUsuario,
+        pathname: "/agendafunc",
         state: responseCompleto,
       });
   };

@@ -27,13 +27,13 @@ export default function Routes() {
           <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/login" exact component={Login} />
-              <Route path="/remarcar/:id" exact component={Remarcar} />
+              <Route path="/remarcar" exact component={Remarcar} />
               <Route path="/cadastrar" exact component={Cadastrar} />
-              <Route path="/agendarconsultacliente/:id" exact component={agendarconsultacliente}/>
-              <Route path="/menu/cliente/:id" exact component={MenuCliente}/>
-              <Route path="/menu/funcionario/:id" exact component={MenuFuncionario} />
-              <Route path="/feedback/:id" component = {Feedback}/>
-              <Route path="/consultacliente/:id" component={ConsultarCliente} />
+              <Route path="/agendarconsultacliente" exact component={agendarconsultacliente}/>
+              <Route path="/menu/cliente" exact component={MenuCliente}/>
+              <Route path="/menu/funcionario" exact component={MenuFuncionario} />
+              <Route path="/feedback" component = {Feedback}/>
+              <Route path="/consultacliente" component={ConsultarCliente} />
               <Route path="/Priv/" exact component={Privacidade} />
               <Route path="/term" exact component={TermoDeUso} />
               <Route path="/sobrenos" exact component={SobreNos} />
@@ -43,8 +43,8 @@ export default function Routes() {
               <Route path="/TopServicos" exact component={TopServicos} />
               <Route path="/Relatorio" exact component={HomeRelatorio} />
               <Route path="/Sobredev" exact component={SobreDev} />
-              <Route path="/VerAgendaFunc/:id" exact component={VerAgendaFunc} />
-              <Route path="/agendafunc/:id" exact component={AgendaFunc} />
+              <Route path="/VerAgendaFunc" exact component={VerAgendaFunc} />
+              <Route path="/agendafunc" exact component={AgendaFunc} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
