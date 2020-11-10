@@ -64,13 +64,13 @@ export default function Remarcar(props){
 
               if(responseCompleto.perfil == "Cliente"){
                history.push({
-               pathname:"/consultacliente/" + responseCompleto.idUsuario,
+               pathname:"/consultacliente",
                state: responseCompleto
                });
 
             }else{
               history.push({
-              pathname: "/VerAgendaFunc/" + responseCompleto.idUsuario,
+              pathname: "/VerAgendaFunc",
               state: responseCompleto,
               });
             
@@ -87,14 +87,14 @@ export default function Remarcar(props){
         
         if(responseCompleto.perfil == "Cliente"){
         history.push({
-            pathname:"/consultacliente/" + responseCompleto.idUsuario,
+            pathname:"/consultacliente",
             state: responseCompleto
         });
     }
 
         else{
          history.push({
-           pathname: "/VerAgendaFunc/" + responseCompleto.idUsuario,
+           pathname: "/VerAgendaFunc",
            state: responseCompleto,
          });
     }

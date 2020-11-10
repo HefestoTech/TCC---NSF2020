@@ -26,10 +26,10 @@ const odontoApi = new OdontoApi();
     const [numeroResidencial, setNumeroResidencial] = useState(0);
     const [nome, setNome] = useState(null);
     const [sexo, setSexo] = useState(null);
-    const [dataNascimento, setDataNascimento] = useState();
+    const [dataNascimento, setDataNascimento] = useState(null);
     const [Cpf, setCpf] = useState(null);
     const [telefone, setTelefone] = useState(null);
-    const [email, setEmail] = useState(null);
+    const [email, setEmail] = useState("");
     const [senha1, setSenha1] = useState(null);
     const [senha2, setSenha2] = useState(null);
 
@@ -61,9 +61,13 @@ const odontoApi = new OdontoApi();
 
         const x = verSeSenhasSãoIguais();
 
-        if(x == false){
+        if(x === false){
             setMostrarLoading(false);
             toast.error("A senhas são diferentes.");
+        }
+        else if(dataNascimento === null){
+            setMostrarLoading(false);
+            toast.error("A data de nascimento é obrigatória");
         }
         else{   
             const request = { 
@@ -88,7 +92,7 @@ const odontoApi = new OdontoApi();
             setMostrarLoading(false);
 
             history.push({
-                pathname: `/menu/${response.idUsuario}`,
+                pathname: `/menu/cliente`,
                 state: response
 
         });

@@ -62,7 +62,7 @@ namespace BackEnd.Business.Validador
         public void ValidarStrings (string dado, string campo)
         {
             if(string.IsNullOrEmpty(dado))
-               throw new ArgumentException($"O {campo} não pode ser nulo.");
+               throw new ArgumentException($"O {campo} é obrigatório.");
         }
 
         public void ValidarId (int? id)
@@ -82,6 +82,9 @@ namespace BackEnd.Business.Validador
 
             if (QuantidadeParcelas > 8)
                 throw new ArgumentException("A quantidade de parcelas é de no maximo 8.");
+
+            if (QuantidadeParcelas < 1)
+                throw new ArgumentException("A quantidade de parcelas deve ser no minímo 1.");    
         }
 
         public void ValidarHorarios (DateTime horario)
@@ -107,8 +110,8 @@ namespace BackEnd.Business.Validador
 
         public void ValidarData (DateTime data)
         {
-            if (data < DateTime.Now)
-                throw new ArgumentException("A data de nascimento não pode ser menor que a data atual.");
+            if (data > DateTime.Now)
+                throw new ArgumentException("A data de nascimento não pode ser maior que a data atual.");
         }
 
         public void ValidarSeOFuncionarioEstaDisponivel (DateTime DtConsulta, int IdFuncionario)
@@ -158,7 +161,6 @@ namespace BackEnd.Business.Validador
                throw new ArgumentException("O CEP está incorreto");
    
         }
-
 
     }
 }

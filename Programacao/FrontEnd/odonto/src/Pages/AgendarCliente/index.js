@@ -69,9 +69,6 @@ export default function AgendarConsultaCliente (props) {
        
     } catch (e) {
             toast.error(e.response.data.erro);
-            console.log("Meu errooooo.")
-            console.log(e.response)
-
         }
     }
 
@@ -120,7 +117,7 @@ export default function AgendarConsultaCliente (props) {
             
         } catch (e) {
 
-            toast.erro(e.response.data.erro);
+            toast.error(e.response.data.erro);
 
         }
     }

@@ -24,15 +24,23 @@ namespace BackEnd.Business
         {
             if(nome == null)
                 nome = "";
+            else 
+                nome = nome.ToLower();    
 
             if(servico == null)
                 servico = "";
+            else
+                servico = servico.ToLower();     
 
             if(doutor == null)
                 doutor = "";
-
+            else
+                doutor = doutor.ToLower();
+                
             if(situacao == null)
                 situacao = "";
+            else
+                situacao = situacao.ToLower();    
 
             List<Models.TbConsulta> consultas = dbConsulta.AgendadosPorFiltro(nome, servico, doutor, data, situacao);
 

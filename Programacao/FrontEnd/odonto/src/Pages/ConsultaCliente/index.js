@@ -33,17 +33,17 @@ export default function ConsultarCliente(props) {
     const loadingBar = useRef(null);
 
     const IrParaTelaDeRemarcar = (idAgendamento) => {
-        loadingBar.current.continuousStart();
+
         history.push({
-            pathname:"/remarcar/"+ responseCompleto.idUsuario,
+            pathname:"/remarcar",
             state: {responseCompleto, "idAgendamento": idAgendamento}
         });
-        loadingBar.current.complete();
+  
     }
 
     const avaliarConsultaClick = (idAgendamento) => {
         history.push({
-            pathname:"/feedback/" + responseCompleto.idUsuario,
+            pathname:"/feedback",
             state: {responseCompleto, "idAgendamento": idAgendamento}
         })
     }
@@ -234,7 +234,7 @@ export default function ConsultarCliente(props) {
                     <h3>Você não tem consultas agendadas.
                         <br/>
                        <Link to={{
-                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           pathname: "/agendarconsultacliente",
                            state: responseCompleto
                        }}> Agendar Consulta</Link>
                     </h3>
@@ -326,7 +326,7 @@ export default function ConsultarCliente(props) {
                     <h3>Você não tem consultas canceladas.
                         <br/>
                        <Link to={{
-                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           pathname: "/agendarconsultacliente",
                            state: responseCompleto
                        }}> Agendar Consulta</Link>
                     </h3>
@@ -427,7 +427,7 @@ export default function ConsultarCliente(props) {
                     <h3>Você não tem consultas concluidas.
                         <br/>
                        <Link to={{
-                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           pathname: "/agendarconsultacliente",
                            state: responseCompleto
                        }}> Agendar Consulta</Link>
                     </h3>
@@ -522,7 +522,7 @@ export default function ConsultarCliente(props) {
                     <h3>Não há consultas em que você não compareceu.
                         <br/>
                        <Link to={{
-                           pathname: "/agendarconsultacliente/" + responseCompleto.idUsuario,
+                           pathname: "/agendarconsultacliente",
                            state: responseCompleto
                        }}> Agendar Consulta</Link>
                     </h3>

@@ -59,7 +59,7 @@ export default function Feedback(props) {
             setMostrarLoading(false);
 
             history.push({
-                pathname:"/consultacliente/:id",
+                pathname:"/consultacliente",
                 state:responseCompleto
             })
             
@@ -71,17 +71,10 @@ export default function Feedback(props) {
     }
 
          const irParaTelaDeVerAgendamentos = () => {
-            if(responseCompleto.perfil === "Funcionário")
                history.push({
-                   pathname:"/consultafuncionario/" + responseCompleto.idUsuario,
+                   pathname:"/consultacliente",
                    state:responseCompleto
             });
-            else {
-               history.push({
-                   pathname:"/consultacliente/" + responseCompleto.idUsuario,
-                   state:responseCompleto
-            });
-            }
         }
 
 

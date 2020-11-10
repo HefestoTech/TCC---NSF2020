@@ -35,14 +35,15 @@ namespace BackEnd.Database
         {
             List<Models.TbConsulta> listaDeConsultas = this.PegarTodasAsConsultas();
            
-            listaDeConsultas = listaDeConsultas.Where(x => x.DsSituacao.Contains(situacao) 
-                               && x.IdClienteNavigation.NmCliente.Contains(nome) 
-                               && x.IdServicoNavigation.NmServico.Contains(servico)
-                               && x.IdFuncionarioNavigation.NmFuncionario.Contains(doutor)).ToList();
+            listaDeConsultas = listaDeConsultas.Where(x => x.DsSituacao.ToLower().Contains(situacao) 
+                               && x.IdClienteNavigation.NmCliente.ToLower().Contains(nome) 
+                               && x.IdServicoNavigation.NmServico.ToLower().Contains(servico)
+                               && x.IdFuncionarioNavigation.NmFuncionario.ToLower().Contains(doutor)).ToList();
            
             //Pega pelo horário + data
             if(data.Hour != 0 && data.Year != 0001)
                listaDeConsultas = listaDeConsultas.Where(x => x.DtConsulta == data).ToList();
+            
             //Pega somente pela data(porque o usuario pode passar só a data, sem horário)
             else if(data.Year != 0001)
                listaDeConsultas = listaDeConsultas.Where( x => x.DtConsulta.Date == data.Date).ToList();           

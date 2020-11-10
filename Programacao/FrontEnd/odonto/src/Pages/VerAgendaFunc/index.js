@@ -28,7 +28,7 @@ export default function VerAgendaFunc(props){
     
     const IrParaTelaDeRemarcar = (idAgendamento) => {
       history.push({
-        pathname: "/remarcar/" + responseCompleto.idUsuario,
+        pathname: "/remarcar",
         state: { responseCompleto, idAgendamento: idAgendamento },
       });
     };
