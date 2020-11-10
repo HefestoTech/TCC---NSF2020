@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-import User from '../../Assets/user.png'
 import { Link } from 'react-router-dom'
 
 export default function Menu(props){

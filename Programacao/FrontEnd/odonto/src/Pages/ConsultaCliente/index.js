@@ -33,10 +33,12 @@ export default function ConsultarCliente(props) {
     const loadingBar = useRef(null);
 
     const IrParaTelaDeRemarcar = (idAgendamento) => {
+        loadingBar.current.continuousStart();
         history.push({
             pathname:"/remarcar/"+ responseCompleto.idUsuario,
             state: {responseCompleto, "idAgendamento": idAgendamento}
         });
+        loadingBar.current.complete();
     }
 
     const avaliarConsultaClick = (idAgendamento) => {

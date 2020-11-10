@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Calendar from '../../Assets/Fotos/calendar.svg'
 
 const odontoApi = new OdontoApi();
 
@@ -229,7 +230,7 @@ export default function AgendarConsultaCliente (props) {
                         </div>
 
                         <div className="ButtPag">
-                            <button onClick={agendarClick} className="btnCad btn btn-primary"><h4>Agendar</h4></button>
+                            <button onClick={agendarClick} className="btnCad btn btn-primary"><h4>Agendar</h4><img src={Calendar}/></button>
                         </div>
                     </div>
 

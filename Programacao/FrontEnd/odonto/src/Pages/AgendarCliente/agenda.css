@@ -9,7 +9,7 @@
 
 .backg{
     background-image: url('../../Assets/Wallpapers/dental2.jpg');
-    background-size: 20vw;
+    background-size: 30vw;
 }
 
 .TtLogo{
@@ -121,8 +121,9 @@ a:link{
 
                 .linePag1{
                     display: flex;
+                    width: 25vw;
                     height: 10vh;
-                    margin-bottom: 10px;
+                    margin-bottom: 30px;
                 }
 
                         .formPagm{
@@ -131,31 +132,22 @@ a:link{
                             width: 30vw;
                         }
 
-                                .radPag{
-                                    display: flex;
-                                }
+                        .formPagm select{
+                            width: 15vw;
+                        }
 
-                                        .radPag h5{
-                                            margin-left: 5px;
-                                        }
-
-                                        .cart{
-                                            margin-left: 15px;
-                                        }
-
-                                        .radPag input{
-                                            margin-top: 7px; 
-                                        }
 
                 
                 .linePag2{
                     display: flex;
+                    width: 50vw;
                     height: 12vh;
-                    margin-top: 40px;
+                    margin-bottom: 30px;
                 }
 
                         .formParc{
                             width: 20vw;
+                            margin-right: 30px;
                         }
 
                                 .qtdParc{
@@ -164,7 +156,8 @@ a:link{
 
                         .formSub{
                             width: 10vw;
-                            margin-left: 30px;
+                            height: 10vh;
+                            margin-left: 50px;
                         }
 
 
@@ -172,7 +165,6 @@ a:link{
                     display: flex;
                     width: 55vw;
                     height: 12vh;
-                    margin-top: 15px;
                 }
 
                         .formDesc{
@@ -181,7 +173,7 @@ a:link{
 
                         .formTot{
                             width: 12vw;
-                            margin-left: 138px;
+                            margin-left: 165px;
                         }
 
 
@@ -196,7 +188,23 @@ a:link{
                         }
 
                         .btnCad{
+                            display: flex;
+                            align-items: center;
+                            width: 15vw;
                             height: 8vh;
+                            margin-top: 10px;
+                        }
+
+                        .btnCad h4{
+                            margin-left: 10px;
+                        }
+
+
+                        .btnCad img{
+                            width: 10vw;
+                            height: 6vh;
+                            color: white;
+                            margin-left: -1ba5px;
                         }
 .totalPorMesAgendar{
     margin-top: 36px;
