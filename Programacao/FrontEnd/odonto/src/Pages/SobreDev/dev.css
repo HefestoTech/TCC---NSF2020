@@ -3,8 +3,11 @@
 
 
 .fundodev{
-    
-    
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;    
 }
 .devOne{
     
@@ -14,6 +17,7 @@
     display: flex;
     height: 9vh;
     justify-content: space-between;
+    
  
 }
 
@@ -21,15 +25,22 @@
 
 display: flex;
 flex-direction: column;
-padding-left: 30vh;
-padding-top: 5vh;
-font-weight: 900;
+justify-content: space-between;
+padding-left: 25vh;
+padding-right: 25vh;
+
+
 
 
 }
 
+.pzao{
+    font-size: 17px;
+}
+
 
 .fa-hire-a-helper{
+
     color: whitesmoke;
     margin-top: 2px;
 
@@ -103,3 +114,11 @@ font-weight: 900;
    
  }
 
+ .rodapésobre{
+    background-color:rgb(58, 58, 58) ;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+
+ }
