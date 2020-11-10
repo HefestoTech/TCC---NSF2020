@@ -127,10 +127,10 @@ export default function AgendarConsultaCliente (props) {
     return(
         <div className="ContAgendarF backgr">
             <ToastContainer/>
-            <Link to="/" ><h1 className="TtLogoF">ODONTO</h1></Link>
+            
             <div className="BodyAgendF shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgendF">
-                    <img src={ArrowLeft} className="arrleft" /><h1>Agende sua Consulta<i class="fas fa-tooth colodent"></i><img src={Dentes} className="teethicon" /></h1>
+                <Link to={{ pathname: "/menu/funcionario/" + responseCompleto.idUsuario, state: responseCompleto}} ><img src={ArrowLeft} className="arrleft" /></Link><h1>Agende sua Consulta<i class="fas fa-tooth colodent"></i><img src={Dentes} className="teethicon" /></h1>
                 </div>
 
                 <div className="BoxAgenFd">
