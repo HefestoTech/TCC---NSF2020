@@ -7,6 +7,8 @@ import CepApi from "../../Services/CepApi";
 import OdontoApi from "../../Services/OdontoApi"
 import Loading from "../../Components/Loading";
 import DenteWorld from "../../Assets/Fotos/denteworld.png"
+import InputMask from "react-input-mask";
+
 
 const cepApi = new CepApi();
 const odontoApi = new OdontoApi();
@@ -181,7 +183,7 @@ const odontoApi = new OdontoApi();
                     <div className="line2">
                         <div className="formCPF">
                             <h5>CPF*</h5>
-                            <input type="text" className=" form-control" placeholder="000.000.000-0" 
+                            <InputMask mask="999.999.999-99" type="text" className=" form-control" placeholder="000.000.000-0" 
                             value={Cpf}
                             onChange={e => setCpf(e.target.value)}
                             />
@@ -190,7 +192,7 @@ const odontoApi = new OdontoApi();
 
                         <div className="formCEP">
                             <h5>CEP*</h5>
-                            <input onChange={(e) => pegarInformacoesApartirDoCep(e.target.value)} type="text" className="form-control"  placeholder="12345-678" />
+                            <InputMask mask="99999-999" onChange={(e) => pegarInformacoesApartirDoCep(e.target.value)} type="text" className="form-control"  placeholder="12345-678" />
                         </div>
 
                         <div className="formLograd">
@@ -235,7 +237,7 @@ const odontoApi = new OdontoApi();
                     <div className="line4">
                         <div className="formPhone">
                             <h5>Telefone para contato*</h5>
-                            <input type="text" className="form-control" placeholder="(xx) 99999-5555" 
+                            <InputMask mask="(99) 99999-9999" type="text" className="form-control" placeholder="(xx) 99999-5555" 
                             value={telefone}
                             onChange={e => setTelefone(e.target.value)}
                             />
