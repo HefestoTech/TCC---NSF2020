@@ -142,9 +142,6 @@ namespace BackEnd.Business.Validador
         {
             if(cpf.Length < 11)
                throw new ArgumentException("O CPF deve conter 11 digitos.");
-            
-            if(cpf.Length > 14)
-                throw new ArgumentException("O CPF deve conter no máximo 14 digitos.");   
         }
 
         public void ValidarNome (string nome)
@@ -157,9 +154,8 @@ namespace BackEnd.Business.Validador
 
         public void ValidarCep (string cep)
         {
-            if(cep.Length < 8 || cep.Length > 9)
+            if(cep.Length < 8)
                throw new ArgumentException("O CEP está incorreto");
-   
         }
 
     }

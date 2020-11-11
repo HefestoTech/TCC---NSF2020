@@ -48,7 +48,7 @@ namespace BackEnd.Business
             if (tbCliente.NrResidenical == 0)
                 throw new ArgumentException("O número residencial é obrigatório.");
 
-            if(tbCliente.DsTelefone.Length > 15 || tbCliente.DsTelefone.Length < 11)
+            if(tbCliente.DsTelefone.Length < 11)
                 throw new ArgumentException("O número telefônico está incorreto.");         
            
             return dbCadastro.ReceberModelos(tbLogin, tbCliente);
