@@ -15,13 +15,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 99%;
-    margin-left: 1%;
+    width: 104%;
+    padding-left: 4vh;
     margin-bottom: 4vh;
 }
 
 .starDiv > input {
-    width: 150px;
+    width: 23vh;
 }
 
 .h3star{
@@ -55,7 +55,7 @@
 
 .espec{
 
-    width: 200px;
+    width: 250px;
 }
 
 

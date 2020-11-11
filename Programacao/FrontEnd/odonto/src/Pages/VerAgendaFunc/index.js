@@ -270,7 +270,7 @@ export default function VerAgendaFunc(props){
                     {x.situacao == "Agendado" && (
                       <button
                         onClick={() => IrParaTelaDeRemarcar(x.idConsulta)}
-                        className="btn btn-primary"
+                        className="buttonnn btn btn-primary"
                       >
                         Remarcar
                       </button>
@@ -331,7 +331,7 @@ export default function VerAgendaFunc(props){
                       {x.situacao == "Agendado" && (
                         <button
                           onClick={() => cancelarConsultaClick(x.idConsulta)}
-                          className="btn btn-danger"
+                          className=" bt1 btn btn-danger"
                         >
                           Cancelar consulta
                         </button>
@@ -340,7 +340,7 @@ export default function VerAgendaFunc(props){
                       
                         <button
                           onClick={() => alterarSituacao(x.idConsulta, novaSituacao === "" ?x.situacao :situacao )}
-                          className="btn btn-primary"
+                          className="buttonnn btn btn-primary"
                         >
                           Alterar Situacao
                         </button>

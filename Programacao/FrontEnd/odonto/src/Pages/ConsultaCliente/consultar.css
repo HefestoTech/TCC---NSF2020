@@ -77,12 +77,15 @@
                         .dateCons{
                             width: 12vw;
                             margin-left: 20px;
+                           
                         }
 
                         .date{
                             
                             width: 200px;
+                            border-radius: 5px;
                         }
+
                 
 
                 .lineForm2{
