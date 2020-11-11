@@ -21,12 +21,11 @@
 
 
 }.foto {
-
-    width : 68%;
+    width : 28%;
     margin-right : 120px;
+}
 
-
-}.botaolindo {
+.botaolindo {
     display : flex;
     width : 70%;
     justify-content : space-between;
