@@ -75,6 +75,7 @@ export default function VerAgendaFunc(props){
     const filtrar = async() => {
         try {
             
+       
         setMostrarLoading(true);
             
         const horarioCompleto = transformarEmDataComMinutos();
@@ -83,7 +84,10 @@ export default function VerAgendaFunc(props){
         setFiltrado(resp);
            
         setMostrarLoading(false)
-        } catch (e) {
+       
+      
+       
+      } catch (e) {
 
         setMostrarLoading(false);
 
@@ -93,7 +97,14 @@ export default function VerAgendaFunc(props){
 
     const alterarSituacao = async(idConsulta) => {
         try {
-            setMostrarLoading(true);
+             setMostrarLoading(true);
+            
+            if(novaSituacao == ""){
+               toast.error("Você não alterou a situação");
+               setMostrarLoading(false);
+            }
+        
+           else{
 
             const resp = await api.AlterarSituacao(idConsulta, novaSituacao);
 
@@ -102,6 +113,7 @@ export default function VerAgendaFunc(props){
             filtrar();
 
             toast.success("Situação alterada com sucesso.");
+           }
 
         } catch (e) {
 
@@ -258,10 +270,10 @@ export default function VerAgendaFunc(props){
                     <div className="sitCons">
                       <h5>Situação:</h5>
                       <select onChange={e => setNovaSituacao(e.target.value)} className="form-control">
-                          <option>{x.situacao}</option>
-                          <option>Cancelado</option>
-                          <option>Não Compareceu</option>
-                          <option>Concluido</option>
+                          <option selected value={x.situacao}>{x.situacao}</option>
+                          <option value="Cancelado" >Cancelado</option>
+                          <option value="Não Compareceu">Não Compareceu</option>
+                          <option Value="Concluido">Concluído</option>
                       </select>
                     </div>
                   </div>
@@ -339,7 +351,7 @@ export default function VerAgendaFunc(props){
 
                       
                         <button
-                          onClick={() => alterarSituacao(x.idConsulta, novaSituacao === "" ?x.situacao :situacao )}
+                          onClick={() => alterarSituacao(x.idConsulta)}
                           className="buttonnn btn btn-primary"
                         >
                           Alterar Situacao
