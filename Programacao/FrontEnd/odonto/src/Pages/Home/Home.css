@@ -52,13 +52,16 @@
       .bt1{
         width: 20vw;
         font-style: normal;
-        background: #ec0000;
+        background: #ff0000;
+        box-shadow: 2px 2px 2px #5e1818
       }
 
 
       .bt2{
         width: 15vw;
-        background: #ec0000;
+        background: #ff0000;
+        font-style: normal;
+        box-shadow: 2px 2px 2px #5e1818;
       }
 
   .body{

@@ -21,7 +21,7 @@ export default function App() {
         </div>
 
         <div className="buttns">
-        <Link to="/login"><button className="bt1 btn btn-danger" > Logar</button></Link> 
+        <Link to="/login"> <button className="bt1 btn btn-danger " > Logar</button></Link> 
         <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
         </div>
       </Menu>

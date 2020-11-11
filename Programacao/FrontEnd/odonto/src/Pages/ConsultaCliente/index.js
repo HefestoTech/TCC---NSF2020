@@ -179,7 +179,7 @@ export default function ConsultarCliente(props) {
 
                             
                             <div className="lineForm4">
-                                    <button onClick={() => IrParaTelaDeRemarcar(x.idConsulta)} className="btn btn-primary">Remarcar</button>
+                                    <button onClick={() => IrParaTelaDeRemarcar(x.idConsulta)} className="buttonnn btn btn-outline-primary">Remarcar</button>
                             </div>
 
 
@@ -220,7 +220,7 @@ export default function ConsultarCliente(props) {
 
                                 <div className="linePag3">
                                     <div className="buttsPag">
-                                        <button onClick={() => cancelarConsultaClick(x.idConsulta)} className="btn btn-danger">Cancelar consulta</button>
+                                        <button onClick={() => cancelarConsultaClick(x.idConsulta)} className="bt1 btn btn-danger">Cancelar consulta</button>
                                     </div>
                                 </div>
                             </div>

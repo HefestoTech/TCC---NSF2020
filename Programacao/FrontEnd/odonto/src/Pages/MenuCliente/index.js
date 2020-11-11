@@ -28,15 +28,18 @@ import TelaMenu from "../../Components/TelaMenuOne";
 
        return (
          <TelaMenu>
-           <button onClick={irParaTelaDeVerAgendamentos} type="button" class="btn_1 btn btn-outline-danger">
+           <button onClick={irParaTelaDeVerAgendamentos} type="button" className="bt1 btn btn-danger ">
              Meus Agendamentos
            </button>
 
-           <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" class="btn_1 btn btn-outline-danger">
+           <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" className="bt1 btn btn-danger ">
              Agendar Consulta
            </button>
 
          </TelaMenu>
        );
  }
+
+
+
 
