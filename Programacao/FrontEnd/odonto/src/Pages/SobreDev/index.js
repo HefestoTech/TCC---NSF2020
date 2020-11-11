@@ -18,11 +18,11 @@ export default function SobreDev() {
                 </div>
                 
                 <div class="ttOne">
-                    <a href="https://www.instagram.com/hefesto.tec/"><img src ={TT}/> </a>
+                    <a href=""><img src ={TT}/> </a>
                 </div>
                 
                 <div class="rOne">
-                   <a href=""><img src = {Instagram}/></a>
+                   <a href="vhttps://www.instagram.com/hefesto.tec/"><img src = {Instagram}/></a>
                 </div>
 
                 <div class="GbOne">
