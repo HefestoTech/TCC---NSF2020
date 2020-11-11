@@ -37,11 +37,10 @@ import './menucli.css'
          <div className="ContCli">
 
           <div className="HeadMC">
+
             <div className="LogoMC"><h1>Odonto</h1></div>
-
             <div className="User"> <img src={User} /> <h5>Seja bem-vindo</h5> </div>
-
-            <Link to="/"><div className="Logout"><img src={Logout} /></div></Link>
+            <div className="Logout"><Link to="/"><img src={Logout} /></Link></div>
 
 
           </div>
