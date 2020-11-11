@@ -97,7 +97,7 @@ const api = new OdontoApi();
                         <div className="div_senhaLogin">
                                 <div className="div1_login">
                         <label >Senha:</label>
-                        <input className="form-control" onChange={e => setSenha(e.target.value)} type={mostrarSenha}  placeholder =" Digite sua senha" required ></input>
+                        <input className=" form-control" onChange={e => setSenha(e.target.value)} type={mostrarSenha}  placeholder =" Digite sua senha" required ></input>
                                 </div>
                                 <div className="div_icon">
                         <i title="Mostrar Senha"  onClick={mudarMostrarSenha}  class="senha_icon far fa-eye-slash"></i>

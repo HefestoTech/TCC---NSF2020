@@ -266,10 +266,10 @@ const odontoApi = new OdontoApi();
 
                         <div className="formConfiPassw">
                             <h5>Confirme sua senha</h5>
-                            <input onChange={e => setSenha2(e.target.value)}  type={mostrarSenha} className="form-control" placeholder="******" />
+                            <input onChange={e => setSenha2(e.target.value)}  type={mostrarSenha} className=" form-control" placeholder="******" />
                         </div>
 
-                       <i onClick={mudarMostrarSenha} class="far fa-eye-slash"></i>
+                       <i onClick={mudarMostrarSenha} class="olho1 far fa-eye-slash"></i>
                     </div>
 
                     <div className="line7"> 
