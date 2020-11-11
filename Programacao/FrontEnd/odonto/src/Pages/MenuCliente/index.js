@@ -4,7 +4,9 @@ import TelaMenu from "../../Components/TelaMenuOne";
 import User from "../../Assets/Fotos/user.svg"
 import Logout from "../../Assets/Fotos/logout.svg"
 import Brush from "../../Assets/Fotos/brushing-teeth.svg"
+import TeethShield from "../../Assets/Fotos/insurance.png"
 import DentistW from "../../Assets/Fotos/dentist2.svg"
+import Rodape from "../../Components/Footer"
 import './menucli.css'
 
  export default function MenuCliente(props)
@@ -58,6 +60,7 @@ import './menucli.css'
                 <div className="lay2MC">
                   <div className="Box1MC">
                     <div className="MyAgend">
+                    <div className="Teethimg"><img src={TeethShield} /></div>
                       <h4>Clique aqui para ver seus agendamentos de cada consulta!</h4>
                       <button onClick={irParaTelaDeVerAgendamentos} type="button" className="bt1MC btn btn-danger ">
                         Meus Agendamentos
@@ -77,6 +80,7 @@ import './menucli.css'
                   
                   <div className="Box3MC">
                     <div className="MyQuery">
+                    <div className="Teethimg"><img src={TeethShield} /></div>
                     <h4>Caso não tenha um agendamento CLIQUE AQUI!!</h4>
                     <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" className="bt2MC btn btn-danger ">
                       Agendar Consulta
@@ -87,6 +91,8 @@ import './menucli.css'
                 </div>
                 
           </div>
+
+          <Rodape></Rodape>
 
          </div>
 
