@@ -10,6 +10,7 @@ namespace BackEnd.Database
     public class RelatorioDatabase
     {
         Models.db_odontoContext ctx = new Models.db_odontoContext();
+        Database.AgendamentoDatabase dbAgendamento = new AgendamentoDatabase();
         public List<Models.TbConsulta> RelatorioPorDia(DateTime dia)
         {
 
@@ -46,17 +47,19 @@ namespace BackEnd.Database
 
         public List<Models.TbFuncionario> PegarNotaMedia()
         {
-            List<Models.TbPerfilAcesso> perfilAcessos = ctx.TbPerfilAcesso.Where(x => x.DsCargo == "Dentista").ToList();
-
             List<Models.TbFuncionario> funcionarios = ctx.TbFuncionario.ToList();
 
-            foreach(Models.TbPerfilAcesso item in perfilAcessos)
+            List<Models.TbFuncionario> soDenstista = new List<Models.TbFuncionario>();
+
+            foreach(Models.TbFuncionario item in funcionarios)
             {
-                Models.TbFuncionario func = ctx.TbFuncionario.FirstOrDefault(x => x.IdFuncionario == item.IdFuncionario);
-                funcionarios.Add(func);
+                if(dbAgendamento.SomenteDentista(item))
+                   soDenstista.Add(item);
+                else
+                   continue;   
             }
-    
-            return funcionarios;
+           
+            return soDenstista;
         }
         
     }
