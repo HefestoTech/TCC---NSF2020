@@ -46,7 +46,16 @@ namespace BackEnd.Database
 
         public List<Models.TbFuncionario> PegarNotaMedia()
         {
-            List<Models.TbFuncionario> funcionarios = ctx.TbFuncionario.Include(x => x.TbPerfilAcesso.Where( x => x.DsCargo == "Dentista")).ToList();
+            List<Models.TbPerfilAcesso> perfilAcessos = ctx.TbPerfilAcesso.Where(x => x.DsCargo == "Dentista").ToList();
+
+            List<Models.TbFuncionario> funcionarios = ctx.TbFuncionario.ToList();
+
+            foreach(Models.TbPerfilAcesso item in perfilAcessos)
+            {
+                Models.TbFuncionario func = ctx.TbFuncionario.FirstOrDefault(x => x.IdFuncionario == item.IdFuncionario);
+                funcionarios.Add(func);
+            }
+    
             return funcionarios;
         }
         
