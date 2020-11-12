@@ -14,15 +14,44 @@
 .starDiv{
     display: flex;
     justify-content: space-between;
+    width: 97%;
     align-items: center;
-    width: 104%;
-    padding-left: 4vh;
     margin-bottom: 4vh;
+    margin-left: 3vw;
 }
 
-.starDiv > input {
-    width: 23vh;
+/*form's */
+
+ .formONeee {
+    width: 25vw;
+    
 }
+
+.formTwo{
+    width: 15vw;
+}
+
+.espec{
+
+    width: 10vw;
+    
+}
+
+.formTheerDate{
+    
+    width:12vw;
+}
+
+.formFourTime{
+
+    width: 10vw;
+}
+
+.situcionForm{
+    width: 11vw;
+}
+
+/* */
 
 .h3star{
     text-align: left;
@@ -51,11 +80,6 @@
   
     
     
-}
-
-.espec{
-
-    width: 250px;
 }
 
 

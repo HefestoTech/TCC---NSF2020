@@ -151,7 +151,7 @@ export default function VerAgendaFunc(props){
           </div>
 
           <div className="starDiv">
-            <form class="form-inline my-2 my-lg-0">
+            <form class="formOneee form-inline my-2 my-lg-0">
               <input
                 onChange={(e) => setNomeCliente(e.target.value)}
                 class="form-control mr-sm-2 btnnTwo"
@@ -163,7 +163,7 @@ export default function VerAgendaFunc(props){
 
             <input
               onChange={(e) => setNomeProfissonal(e.target.value)}
-              class="form-control mr-sm-2 btnnTwo"
+              class="formTwo  form-control mr-sm-2 btnnTwo"
               type="search"
               placeholder="Nome do Doutor(a)"
               aria-label="Pesquisar"
@@ -182,18 +182,18 @@ export default function VerAgendaFunc(props){
             <input
               onChange={(e) => setData(e.target.value)}
               type="date"
-              className=" form-control espec"
+              className=" form-control formTheerDate "
             ></input>
 
             <input
               onChange={(e) => setHora(e.target.value)}
               type="time"
-              className="form-control espec"
+              className="form-control formFourTime"
             ></input>
 
             <select
               onChange={(e) => setSituacao(e.target.value)}
-              className="form-control espec"
+              className="form-control situcionForm"
             >
               <option value="">Situação</option>
 
@@ -214,6 +214,12 @@ export default function VerAgendaFunc(props){
               <i className="fas fa-search iconSearch" />
             </button>
           </div>
+
+
+
+
+
+
 
           {filtrado.map((x) => (
             <div className="boxCons">
