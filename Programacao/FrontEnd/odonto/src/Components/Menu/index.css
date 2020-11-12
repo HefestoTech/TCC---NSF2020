@@ -1,16 +1,47 @@
-.headre{
+
+.HeadMC{
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: row;
         align-items: center;
-        height: 10vh;
         width: 100%;
+        height: 8vh;
         background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
-        padding-left : 20px;
-
-}
-
-        .logonamei{
-            margin-right: 10px;
-        }
-
+    }
+    
+            .LogoMC{
+                color: white;
+                margin-left: 20px;
+            }
+    
+            .User{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 25vw;
+                height: 8vh;
+                margin-left: 650px;
+                color: white;
+            }
+    
+    
+            .User img{
+                width: 7vw;
+                height: 7vh;
+            }
+    
+            .Logout{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 6vw;
+                height: 8vh;
+                margin-left: 50px;
+                cursor: pointer;
+            }
+    
+            .Logout img{
+                width: 5vw;
+                height: 5vh;
+                margin-left: 5px;
+            }
         

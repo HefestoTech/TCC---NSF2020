@@ -15,28 +15,33 @@
   max-width: 100vw;
 }
 
-
-    
-
-
-
-      .logoname{
-      justify-content: center;
-      width: 10vw;  
-      height: 7vh;
-      color: white;
-      margin-left: 5px;
-    }
-
-    
-    .Tt1Home{
+    .header{
       display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      height: 10vh;
+      background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
+    }
+    
+
+    .Tt1Logo{
+      display: flex;
+      align-items: center;
       width: 35vw;
       height: 7vh;
       color: white;
-      margin-right: 20px;
-      margin-left: 200px;
       text-align: center;
+      margin-left: 20px;
+    }
+
+    .Tt2Home{
+      display: flex;
+      align-items: center;
+      width: 80vw;
+      height: 8vh;
+      text-align: center;
+      color: white;
     }
 
 

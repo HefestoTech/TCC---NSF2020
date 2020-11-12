@@ -15,16 +15,20 @@ export default function App() {
     <>
     <div className="Cont">
       
-      <Menu className="header">
-        <div className="Tt1Home">
-          <h5>O seu sorriso fica muito mais Lindo perto de nós, Dentistas, cuidando dele.</h5>
-        </div>
+      <div className="header">
+          <div className="Tt1Logo">
+            <h1>Odonto</h1>
+          </div>
 
-        <div className="buttns">
-        <Link to="/login"> <button className="bt1 btn btn-danger " > Logar</button></Link> 
-        <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
-        </div>
-      </Menu>
+          <div className="Tt2Home">
+            <h5>O seu sorriso fica muito mais Lindo perto de nós, Dentistas, cuidando dele.</h5>
+          </div>
+
+          <div className="buttns">
+          <Link to="/login"> <button className="bt1 btn btn-danger " > Logar</button></Link> 
+          <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
+          </div>
+      </div>
 
       <div className="body">
         <div className="msgs">

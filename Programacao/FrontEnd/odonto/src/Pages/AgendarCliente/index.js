@@ -134,7 +134,7 @@ export default function AgendarConsultaCliente (props) {
     return(
         <div className="ContAgendar backg">
         <ToastContainer/>
-            <Link to="/" ><h1 className="TtLogo">ODONTO</h1></Link>
+            <Link to={{pathname: "/menu/cliente" , state: responseCompleto}} ><h1 className="TtLogo">ODONTO</h1></Link>
             <div className="BodyAgend shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgend">
                     <h1>Agende sua Consulta<img src={Dente} /></h1>
