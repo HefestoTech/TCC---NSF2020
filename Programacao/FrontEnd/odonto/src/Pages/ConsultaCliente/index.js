@@ -8,7 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from "../../Components/Loading"
-import LoadingBar from 'react-top-loading-bar'
+
 
 const api = new OdontoApi();
 
@@ -30,7 +30,6 @@ export default function ConsultarCliente(props) {
 
     const history = useHistory();
 
-    const loadingBar = useRef(null);
 
     const IrParaTelaDeRemarcar = (idAgendamento) => {
 
@@ -103,22 +102,17 @@ export default function ConsultarCliente(props) {
 
     return(
         <>
-        <LoadingBar 
-            height={4}
-            color='#f11946'
-			onRef={ref => (LoadingBar = ref)}
-        />
-
         {mostrarLoading == true && 
         <div>
           <Loading/>
         </div>}
        
-        <div className="ContCons" >
+        <div className="ContCons">
             <ToastContainer/>
 
-            <Menu/>
-
+            
+            <Menu>
+            </Menu>
             
                 <div className="Tt1Cons">
                     <h3 className="display-23">Todos Agendamentos</h3>

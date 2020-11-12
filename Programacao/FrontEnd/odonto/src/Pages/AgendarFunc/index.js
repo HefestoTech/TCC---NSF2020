@@ -130,10 +130,11 @@ export default function AgendarConsultaCliente (props) {
             
             <div className="BodyAgendF shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgendF">
-                <Link to={{ pathname: "/menu/funcionario", state: responseCompleto}} ><img src={ArrowLeft} className="arrleft" /></Link><h1>Agende sua Consulta<i class="fas fa-tooth colodent"></i><img src={Dentes} className="teethicon" /></h1>
+                <Link to={{ pathname: "/menu/funcionario", state: responseCompleto}} ></Link><h1>Agende sua Consulta</h1>
                 </div>
 
                 <div className="BoxAgenFd">
+                  
                         <div className="lineAgend1F">
                             <div className="formDateF">
                                 <h5>Selecione uma data:</h5>

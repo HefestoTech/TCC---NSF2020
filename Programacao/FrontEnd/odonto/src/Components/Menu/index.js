@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css'
 import { Link } from 'react-router-dom'
 import User from "../../Assets/Fotos/user.svg"
 import Logout from "../../Assets/Fotos/logout.svg"
 
+
 export default function Menu(props){
+    
 
     return(
         <div>

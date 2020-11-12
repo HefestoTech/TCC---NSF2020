@@ -17,7 +17,7 @@ export default function App() {
       
       <div className="header">
           <div className="Tt1Logo">
-            <h1>Odonto</h1>
+            <Link to="/"><h1>Odonto</h1></Link>
           </div>
 
           <div className="Tt2Home">

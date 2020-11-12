@@ -21,7 +21,7 @@ a:link{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70vw;
+    width: 90vw;
     height: 135vh;
     background-color: white;
     margin-top: 30px;
@@ -110,8 +110,8 @@ a:link{
 
                 .lineAgend3F{
                     display: flex;
-                    justify-content: center;
                     margin-top: 15px;
+                    margin-left: 160px;
                 }
 
         .BoxPagmtF{
