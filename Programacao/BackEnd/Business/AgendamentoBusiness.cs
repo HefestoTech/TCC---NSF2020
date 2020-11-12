@@ -34,6 +34,9 @@ namespace BackEnd.Business
         
         public Models.TbServico PegarValorDaConsulta(int idServico, string formaDePagamento, int quantidadeParcelas)
         {   
+            if(idServico == 0)
+               throw new ArgumentException("Escolha um serviço para calcularmos o total.");
+
             validador.ValidarPagamento(formaDePagamento, quantidadeParcelas);
             
             return dbAgendamento.PegarInformacoesServico(idServico, formaDePagamento, quantidadeParcelas);
