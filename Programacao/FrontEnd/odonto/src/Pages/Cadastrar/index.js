@@ -21,19 +21,19 @@ const odontoApi = new OdontoApi();
     const [mostrarLoading, setMostrarLoading] = useState(false);
     const [mostrarSenha, setMostrarSenha] = useState("password");
     const [cep, setCep] = useState(0);
-    const [logradouro, setLogradouro] = useState(null);
-    const [cidade, setCidade] = useState(null);
-    const [estado, setEstado] = useState(null);
-    const [complemento, setComplemento] = useState(null);
+    const [logradouro, setLogradouro] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [estado, setEstado] = useState("");
+    const [complemento, setComplemento] = useState("");
     const [numeroResidencial, setNumeroResidencial] = useState(0);
-    const [nome, setNome] = useState(null);
+    const [nome, setNome] = useState("");
     const [sexo, setSexo] = useState(null);
     const [dataNascimento, setDataNascimento] = useState(null);
-    const [Cpf, setCpf] = useState(null);
-    const [telefone, setTelefone] = useState(null);
+    const [Cpf, setCpf] = useState("");
+    const [telefone, setTelefone] = useState("");
     const [email, setEmail] = useState("");
-    const [senha1, setSenha1] = useState(null);
-    const [senha2, setSenha2] = useState(null);
+    const [senha1, setSenha1] = useState("");
+    const [senha2, setSenha2] = useState("");
 
     
     const pegarInformacoesApartirDoCep = async  (cepEnviadoPeloUsuario) => {
