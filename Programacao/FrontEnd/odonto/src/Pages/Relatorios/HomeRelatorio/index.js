@@ -47,7 +47,7 @@ export default function HomeRelatorio (props) {
               <Link to={{pathname:"/TopServicos", state: responseCompleto}}>Consultar Top 10 Serviços</Link>
             </li>
             <li>
-              <Link to={{pathname:"emObras", state: responseCompleto}}>Qtd de Consultas e Nota Media de Cada Dentista.</Link>
+              <Link to={{pathname:"/NotaMedia", state: responseCompleto}}>Qtd de Consultas e Nota Media de Cada Dentista.</Link>
             </li>
           </ul>
         </div>

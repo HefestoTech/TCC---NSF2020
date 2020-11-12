@@ -279,7 +279,6 @@ export default function VerAgendaFunc(props){
                       <h5>Situação:</h5>
                       <select onChange={e => setNovaSituacao(e.target.value)} className="form-control">
                           <option selected value={x.situacao}>{x.situacao}</option>
-                          <option value="Cancelado" >Cancelado</option>
                           <option value="Não Compareceu">Não Compareceu</option>
                           <option Value="Concluido">Concluído</option>
                       </select>

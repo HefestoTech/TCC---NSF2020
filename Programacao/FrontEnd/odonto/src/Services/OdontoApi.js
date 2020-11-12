@@ -102,6 +102,11 @@ export default class OdontoApi {
         return resp.data;
     }
 
+    NotaMedia = async () => {
+        const resp = await api.get(`/Relatorio/MediaFuncionarios`);
+        return resp.data;
+    }
+
 
 
 

@@ -21,6 +21,8 @@ import TopServicos from './Pages/Relatorios/TopServicos';
 import VerAgendaFunc from './Pages/VerAgendaFunc/index.js';
 import AgendaFunc from './Pages/AgendarFunc/index.js';
 import MenuFuncionario from './Pages/MenuFuncionario';
+import NotaMedia from './Pages/Relatorios/NotaMediaProfissionais';
+
 export default function Routes() {
     return(
         <BrowserRouter>
@@ -42,6 +44,7 @@ export default function Routes() {
               <Route path="/TopClientes" exact component={TopClientes} />
               <Route path="/TopServicos" exact component={TopServicos} />
               <Route path="/Relatorio" exact component={HomeRelatorio} />
+              <Route path="/NotaMedia" exact component={NotaMedia} />
               <Route path="/Sobredev" exact component={SobreDev} />
               <Route path="/VerAgendaFunc" exact component={VerAgendaFunc} />
               <Route path="/agendafunc" exact component={AgendaFunc} />
