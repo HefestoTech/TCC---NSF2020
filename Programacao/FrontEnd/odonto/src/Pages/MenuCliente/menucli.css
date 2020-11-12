@@ -95,13 +95,14 @@
                     border-bottom: 200px solid transparent;
                     border-left: 600px solid rgb(90, 159, 216);
                     border-radius: 30px;
+                    
                 }
 
                  .imgBru{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 25vw;
+                    width: 24vw;
                     height: 32vh;
                     position: relative;
                     right: 680px;
@@ -123,6 +124,7 @@
                     right: 550px;
                     background-color: #55879D;
                     border-radius: 15px;
+                    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.20);
                 }
 
                 .Tt2MC h2{

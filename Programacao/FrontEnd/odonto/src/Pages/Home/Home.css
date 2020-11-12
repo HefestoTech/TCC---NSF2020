@@ -24,13 +24,16 @@
       background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
     }
     
+    .oogg{
+      color: white;
+    }
 
     .Tt1Logo{
       display: flex;
       align-items: center;
       width: 35vw;
       height: 7vh;
-      color: white;
+      
       text-align: center;
       margin-left: 20px;
     }
