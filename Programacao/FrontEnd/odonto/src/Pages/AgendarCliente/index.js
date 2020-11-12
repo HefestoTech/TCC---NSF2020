@@ -34,8 +34,13 @@ export default function AgendarConsultaCliente (props) {
     };
 
     const valorParceladoClick = (parcela) => {
+      
         setParcelas(parcela);
+      
+        pegarValorDaConsulta(idServico, formpagm);
+      
         const x = total / parcela;
+      
         setValorParcelado(x.toFixed(2));
     } 
 
@@ -52,7 +57,7 @@ export default function AgendarConsultaCliente (props) {
                 return false;
             }
             else{
-             const resp = await odontoApi.AgendarConsultaPorCliente({       
+              await odontoApi.AgendarConsultaPorCliente({       
                 "IdCliente": responseCompleto.idUsuario,
                 "IdFuncionario": idfuncionario,
                 "IdServico": idServico,

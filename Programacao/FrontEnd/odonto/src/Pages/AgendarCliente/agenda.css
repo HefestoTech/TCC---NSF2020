@@ -204,12 +204,13 @@ a:link{
                             width: 10vw;
                             height: 6vh;
                             color: white;
-                            margin-left: -1ba5px;
+                            margin-left: -1px;
                         }
 .totalPorMesAgendar{
     margin-top: 36px;
-    margin-left: -5px;
     color: black;
+    width: 160px;
+    margin-right: -50px;
  
 }
 

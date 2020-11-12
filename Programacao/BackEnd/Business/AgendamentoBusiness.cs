@@ -34,8 +34,6 @@ namespace BackEnd.Business
         
         public Models.TbServico PegarValorDaConsulta(int idServico, string formaDePagamento, int quantidadeParcelas)
         {   
-            validador.ValidarId(idServico);
-
             validador.ValidarPagamento(formaDePagamento, quantidadeParcelas);
             
             return dbAgendamento.PegarInformacoesServico(idServico, formaDePagamento, quantidadeParcelas);
