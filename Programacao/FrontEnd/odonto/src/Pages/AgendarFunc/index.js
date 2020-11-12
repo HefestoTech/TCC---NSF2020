@@ -37,11 +37,15 @@ export default function AgendarConsultaCliente (props) {
       setServico(resp);
     };
 
-    const valorParceladoClick = (parcela) => {
-      setParcelas(parcela);
-      const x = total / parcela;
-      setValorParcelado(x.toFixed(2));
-    };
+     const valorParceladoClick = (parcela) => {
+       setParcelas(parcela);
+
+       pegarValorDaConsulta(idServico, formpagm);
+
+       const x = total / parcela;
+
+       setValorParcelado(x.toFixed(2));
+     }; 
 
     const agendarClick = async () => {
       try {
