@@ -39,6 +39,8 @@ export default function VerAgendaFunc(props){
 
          api.CancelarConsulta(idConsulta);
 
+         filtrar();
+
          setMostrarLoading(false);
 
          toast.success("A consulta foi cancelada com sucesso");

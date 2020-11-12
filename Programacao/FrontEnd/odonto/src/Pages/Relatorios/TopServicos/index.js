@@ -4,6 +4,7 @@ import Footer from "../../../Components/Footer"
 import "./styles.css";
 import { Link } from "react-router-dom";
 import OdontoApi from "../../../Services/OdontoApi";
+import Chart from "react-google-charts";
 
 const api = new OdontoApi();
 
@@ -35,10 +36,14 @@ export default function TopServicos (props) {
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
             <p>
-              <Link to={{
-                  pathname:"/relatorio",
-                  state: responseCompleto
-                  }}> Voltar </Link>
+              <Link
+                to={{
+                  pathname: "/relatorio",
+                  state: responseCompleto,
+                }}
+              >
+                Voltar
+              </Link>
             </p>
           </div>
 

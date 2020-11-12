@@ -6,6 +6,7 @@ import OdontoApi from "../../../Services/OdontoApi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import Chart from "react-google-charts";
 
 const api = new OdontoApi();
 
@@ -42,10 +43,17 @@ export default function PorMes(props) {
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
-            <p><Link to={{
-                  pathname:"/relatorio",
-                  state: responseCompleto
-                  }}> Voltar </Link></p>
+            <p>
+              <Link
+                to={{
+                  pathname: "/relatorio",
+                  state: responseCompleto,
+                }}
+              >
+             
+                Voltar
+              </Link>
+            </p>
           </div>
           <div className="tituloRelatoriVerPorDia">
             <h1>Relatório</h1>
@@ -97,32 +105,39 @@ export default function PorMes(props) {
               </select>
             </label>
 
-           
-            <i onClick={pegarConsultasPorMeses} className="fas fa-search"/>
-        
+            <i onClick={pegarConsultasPorMeses} className="fas fa-search" />
           </div>
 
-          {consultaDosMeses.length !== 0  && (
-            <table class="table tabelaRelatorio relatorioPorMestb">
-              <thead>
-                <tr>
-                  <th scope="col">Mês</th>
-                  <th scope="col">Qtd.Consultas</th>
-                  <th scope="col">Total Ganho</th>
-                </tr>
-              </thead>
+          
+          {consultaDosMeses.length !== 0 && 
+          <div className="graficoPorMeses">
+          <Chart
+            width={"700px"}
+            height={"400px"}
+            chartType="Bar"
+            loader={<div>Loading Chart</div>}
+            rows={consultaDosMeses.map((x) => (
+              [String(x.mes), x.qtdVendas, x.totalVenda]
+            ))}
 
-              <tbody>
-                {consultaDosMeses.map((x) => (
-                  <tr>
-                    <th scope="row">{x.mes}</th>
-                    <td>{x.qtdVendas}</td>
-                    <td>{"R$" + x.totalVenda}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+            columns={["Mês", "Qtd.Consultas", "Total Ganho"]}
+           
+            options={{
+              // Material design options
+              chart: {
+                title: "Desempenho Mensal",
+                subtitle: "Consultas em 2020",
+              },
+            }}
+            // For tests
+            rootProps={{ "data-testid": "2" }}
+          />
+          </div>
+          }
+
+          
+
+         
         </div>
 
         <Footer />

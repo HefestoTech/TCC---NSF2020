@@ -118,7 +118,7 @@ export default function ConsultarCliente(props) {
                     <h3 className="display-23">Todos Agendamentos</h3>
                     <div className="ButtTitleConsulta btn-group" role="group">
                         <button type="button" onClick={() => qualSituacaoMostrarClick("Agendados")} className="btn btn-secondary" >Agendados</button>
-                        <button type="button" onClick={() => qualSituacaoMostrarClick("Concluídos")} className="btn btn-secondary" >Concluidos</button>
+                        <button type="button" onClick={() => qualSituacaoMostrarClick("Concluidos")} className="btn btn-secondary" >Concluídos</button>
                         <button type="button" onClick={() => qualSituacaoMostrarClick("Cancelados")} className="btn btn-secondary">Cancelados</button>
                         <button type="button" onClick={() => qualSituacaoMostrarClick("Não Compareceu")} className="btn btn-secondary" >Não Compareceu</button>
                     </div>   

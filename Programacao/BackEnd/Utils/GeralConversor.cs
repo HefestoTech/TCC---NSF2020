@@ -177,12 +177,14 @@ namespace BackEnd.Utils
                 response.ValorTotal = item.VlTotal;
                 response.TotalPorMes = item.VlTotalPorMes;
                 response.Parcelas = item.NrParcelas;
+                response.Nota = item.NrNota;
                 
                 agendadosResponse.Add(response);
             }
 
             return agendadosResponse.OrderByDescending( x => x.Data).ToList();
         }
+
 
      
         public Models.Response.AgendadosSeparadosPorSituacao AgendadosSeparadosPorSituacao(List<Models.Response.AgendadosResponse> agendadosResponse)
