@@ -16,7 +16,7 @@ export default function HomeRelatorio (props) {
         <Menu />
         <div className="containerHomeRelatorio">
     
-          <div className="voltarRelatorio homeRelatarioVoltar">
+          <div className="homeRelatarioVoltar voltarRelatorio">
             <p>
               <Link to={{
                   pathname:"/menu/funcionario",
