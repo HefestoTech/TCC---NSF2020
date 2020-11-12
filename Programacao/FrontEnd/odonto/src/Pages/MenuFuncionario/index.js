@@ -34,15 +34,15 @@ export default function MenuFuncionario(props) {
  
   return (
     <TelaMenu>
-      <button onClick={irParaTelaDeVerAgendamentos} type="button" class="btn_1 btn btn-outline-danger">
+      <button onClick={irParaTelaDeVerAgendamentos} type="button" class=" btnss btn btn-danger">
         Ver Agendamentos
       </button>
 
-      <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" class="btn_1 btn btn-outline-danger">
+      <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" class="btnss btn btn-danger">
         Agendar Consulta
       </button>
 
-       <button onClick={irParaTelaDeVerRelatorios} type="button" class="btn_1 btn btn-outline-danger">
+       <button onClick={irParaTelaDeVerRelatorios} type="button" class=" btnss btn btn-danger">
         Ver Relatórios
       </button>
     </TelaMenu>

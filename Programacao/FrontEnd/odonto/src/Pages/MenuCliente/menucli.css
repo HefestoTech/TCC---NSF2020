@@ -60,7 +60,11 @@
     margin-top: 25px;
 }
 
-
+.nadaaa{
+    
+    font-size:35px;
+    font-weight: 700;
+}
         .Tt1MC{
             display: flex;
             justify-content: center;
@@ -74,7 +78,7 @@
             width: 100%;
             height: 70vh;
             margin-top: 20px;
-            background-color: rgb(238, 107, 107);
+           
         }
                 
 
@@ -89,7 +93,7 @@
                     margin-left: 150px;
                     border-top: 200px solid transparent;
                     border-bottom: 200px solid transparent;
-                    border-left: 600px solid #9BC5D8;
+                    border-left: 600px solid rgb(90, 159, 216);
                     border-radius: 30px;
                 }
 
@@ -165,9 +169,13 @@
                         }
 
                         .MyAgend button{
-                            width: 20vw;
+                            
                             margin-bottom: 100px;
                             margin-left: 20px;
+                            background-color: #ff0000;
+                            width: 70%;
+                            box-shadow: 2px 2px 2px #5e1818;
+                            outline: 0;
                         }
 
                         
@@ -255,7 +263,11 @@
                         }
 
                         .MyQuery button{
-                            width: 20vw;
+                            
                             margin-bottom: 100px;
                             margin-left: 20px;
+                            background-color: #ff0000;
+                            width: 70%;
+                            box-shadow: 2px 2px 2px #5e1818;
+                            outline: 0;
                         }
