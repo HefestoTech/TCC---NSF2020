@@ -37,24 +37,27 @@
 
 }
 
+.back22:hover{
+    color: rgb(63, 63, 63);
+}
+
 
 .botãoPorMes{
-    display: flex;
-    justify-content: space-between;
+   
     margin-top: 40px;
     margin-left: 1vh;
 
 }
 .btn_PorMes{
+    display: flex;
+    justify-content:space-around;
     height: 38px;
     width: 150px;
+    padding-bottom: 20px;
     
 }
 
-.pegarConsulta{
-    padding-bottom: 20vh;
-    color: rgb(63, 63, 63);
-    background-color: yellowgreen;
+.pegarConsulta:hover{
+    color: white;
 }
-
 

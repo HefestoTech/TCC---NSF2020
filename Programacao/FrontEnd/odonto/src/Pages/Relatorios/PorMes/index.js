@@ -107,8 +107,8 @@ export default function PorMes(props) {
             </label>
             
               <div className="botãoPorMes">
-                  <button type="button" className="btn btn-outline-info btn_PorMes">
-                    <i onClick={pegarConsultasPorMeses} className="pegarConsulta fas fa-search" />
+                  <button type="button" className="btn btn-outline-info btn_agendadosFunc">
+                    <i onClick={pegarConsultasPorMeses} className="iconSearch fas fa-search" />
                   </button>
               </div>
             

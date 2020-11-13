@@ -22,12 +22,12 @@ export default function HomeRelatorio (props) {
                   pathname:"/menu/funcionario",
                   state: responseCompleto
                   }} >
-                Voltar
+                 <i class=" back22 fas fa-chevron-circle-left"></i>
              </Link>
             </p>
           </div>
 
-          <h2>
+          <h2 className="h2HomeRela">
             Olá, {responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}. Bem vindo a tela de relatórios.
             <br />
             Abaixo você pode escolher qual relatório deseja fazer:
@@ -35,19 +35,19 @@ export default function HomeRelatorio (props) {
 
           <ul className="listaDeRelatorios">
             <li>
-              <Link to={{pathname: "/PorDia", state: responseCompleto}}>Consultar Consultas por Dia</Link>
+            <Link to={{pathname: "/PorDia", state: responseCompleto}}> <button type="button" class="btn btn-outline-dark  tamanhoBTN">Consultar Consultas por Dia</button></Link>
             </li>
             <li>
-              <Link to={{pathname:"/PorMes", state:responseCompleto}}>Consultar Saldo por Mês</Link>
+            <Link to={{pathname:"/PorMes", state:responseCompleto}}> <button type="button" class="btn btn-outline-dark  tamanhoBTN">Consultar Saldo por Mês</button></Link>
             </li>
             <li>
-              <Link to={{pathname:"/TopClientes", state:responseCompleto}}>Consultar Top 10 Clientes</Link>
+            <Link to={{pathname:"/TopClientes", state:responseCompleto}}> <button type="button" class="btn btn-outline-dark  tamanhoBTN">Consultar Top 10 Clientes</button></Link>
             </li>
             <li>
-              <Link to={{pathname:"/TopServicos", state: responseCompleto}}>Consultar Top 10 Serviços</Link>
+            <Link to={{pathname:"/TopServicos", state: responseCompleto}}>  <button type="button" class="btn btn-outline-dark  tamanhoBTN">Consultar Top 10 Serviços</button></Link>
             </li>
             <li>
-              <Link to={{pathname:"/NotaMedia", state: responseCompleto}}>Qtd de Consultas e Nota Media de Cada Dentista.</Link>
+            <Link to={{pathname:"/NotaMedia", state: responseCompleto}}>   <button type="button" class="btn btn-outline-dark  tamanhoBTNone">Qtd de Consultas e Nota Media de Cada Dentista. </button></Link>
             </li>
           </ul>
         </div>

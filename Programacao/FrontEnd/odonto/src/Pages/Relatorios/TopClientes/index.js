@@ -43,7 +43,7 @@ export default function TopClientes (props) {
               <Link to={{
                   pathname:"/relatorio",
                   state: responseCompleto
-                  }}> Voltar </Link>
+                  }}> <i class=" back22 fas fa-chevron-circle-left"></i></Link>
             </p>
           </div>
 

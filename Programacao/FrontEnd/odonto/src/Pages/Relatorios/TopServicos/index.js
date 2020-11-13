@@ -42,7 +42,7 @@ export default function TopServicos (props) {
                   state: responseCompleto,
                 }}
               >
-                Voltar
+                 <i class=" back22 fas fa-chevron-circle-left"></i>
               </Link>
             </p>
           </div>

@@ -43,7 +43,7 @@ export default function NotaMedia (props) {
             <p><Link to={{
                   pathname:"/relatorio",
                   state: responseCompleto
-                  }} > Voltar </Link></p>
+                  }} >  <i class=" back22 fas fa-chevron-circle-left"></i> </Link></p>
           </div>
           <div className="tituloRelatoriVerPorDia">
             <h1>Relatório</h1>
