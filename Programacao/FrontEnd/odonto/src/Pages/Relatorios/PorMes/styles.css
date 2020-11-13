@@ -1,9 +1,10 @@
 .InputsRelatoriosPorMes{
-    width: 500px;
+    width:40%;
     justify-content: space-around;
     display: flex;
     align-items: center;
     margin-left: 30px;
+    
 }
 
 .fa-search{
@@ -28,6 +29,32 @@
 .graficoPorMeses{
     height: 70vh;
     margin-top: 5vh;
+}
+
+.back22{
+
+  color: rgb(46, 143, 223);
+
+}
+
+
+.botãoPorMes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 1vh;
+
+}
+.btn_PorMes{
+    height: 38px;
+    width: 150px;
+    
+}
+
+.pegarConsulta{
+    padding-bottom: 20vh;
+    color: rgb(63, 63, 63);
+    background-color: yellowgreen;
 }
 
 

@@ -51,7 +51,7 @@ export default function PorMes(props) {
                 }}
               >
              
-                Voltar
+             <i class=" back22 fas fa-chevron-circle-left"></i>
               </Link>
             </p>
           </div>
@@ -83,6 +83,7 @@ export default function PorMes(props) {
               </select>
             </label>
 
+            
             <label className="labelRelatorio">
               Escolha um mês final
               <select
@@ -104,8 +105,14 @@ export default function PorMes(props) {
                 <option value="12">Dezembro</option>
               </select>
             </label>
-
-            <i onClick={pegarConsultasPorMeses} className="fas fa-search" />
+            
+              <div className="botãoPorMes">
+                  <button type="button" className="btn btn-outline-info btn_PorMes">
+                    <i onClick={pegarConsultasPorMeses} className="pegarConsulta fas fa-search" />
+                  </button>
+              </div>
+            
+            
           </div>
 
           
