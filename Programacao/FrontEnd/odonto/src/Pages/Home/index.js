@@ -140,7 +140,7 @@ export default function App() {
                 <div class="g3">
                     <div class="l1">Links Úteis</div>
                     <div class="l">Ajuda</div>
-                    <div class="l">Aplicativo móvel em desenvolvimento</div>
+                    <div class="l"><Link class="linkOneOne"to='/Devapp' >Aplicativo móvel em desenvolvimento</Link></div>
                 </div>
 
                 <div class="Redes">

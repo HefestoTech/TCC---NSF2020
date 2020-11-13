@@ -22,6 +22,7 @@ import VerAgendaFunc from './Pages/VerAgendaFunc/index.js';
 import AgendaFunc from './Pages/AgendarFunc/index.js';
 import MenuFuncionario from './Pages/MenuFuncionario';
 import NotaMedia from './Pages/Relatorios/NotaMediaProfissionais';
+import DevApp from './Pages/DevApp/index.js'
 
 export default function Routes() {
     return(
@@ -48,6 +49,7 @@ export default function Routes() {
               <Route path="/Sobredev" exact component={SobreDev} />
               <Route path="/VerAgendaFunc" exact component={VerAgendaFunc} />
               <Route path="/agendafunc" exact component={AgendaFunc} />
+              <Route path="/Devapp" exact component={DevApp} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
