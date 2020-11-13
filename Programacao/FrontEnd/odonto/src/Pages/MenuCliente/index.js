@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import TelaMenu from "../../Components/TelaMenuOne";
 import User from "../../Assets/Fotos/user.svg"
 import Logout from "../../Assets/Fotos/logout.svg"
 import Brush from "../../Assets/Fotos/brushing-teeth.svg"
