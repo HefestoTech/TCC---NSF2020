@@ -32,14 +32,32 @@ a:link{
 
         .TtAgendF{
             display: flex;
-            flex-direction: row;  
-            justify-content: center;  
-            align-items: center;
+            flex-direction: row;              
             width: 92vw;
-            height: 15vh;       
+            height: 15vh;
         }
                 .TtAgendF h1{
-                    margin-left: 120px;
+                    margin-top: 15px;
+                    margin-left: 350px;
+                }
+
+                .iconBack{      
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 5.5vw;
+                    height: 11.7vh;
+                    color: white;
+                    background-color: #007bff;
+                    margin-left: 20px;
+                    border-radius: 35px;
+                    border-width: 10px;
+                }
+
+
+                .iconBack:hover{
+                    color: #007bff;
+                    background-color: white;
                 }
 
 
@@ -62,6 +80,7 @@ a:link{
                         .lineAgend1F{
                             display: flex;
                             color: #9e2f2f;
+                            margin-top: 15px;
                         }
 
                         
@@ -107,8 +126,20 @@ a:link{
                     flex-direction: column;
                     width: 50vw;
                     height: 55vh;
-                    margin-left: 10px;
+                    margin-left: 5px;
+                    background-color: rgb(78, 192, 129);
+                    border-radius: 10px;
+                    color: rgb(28, 51, 38);                                        
+                    box-shadow: 1px 3px 25px 1px #888888;
                 }
+
+                        .BoxPagmtF h2{
+                            width: 30vw;
+                            height: 6vh;
+                            margin-left: 40px;
+                            margin-top: 15px;                            
+                        }
+
                                 
                         
                         .linePag1F{
@@ -124,7 +155,8 @@ a:link{
                                 .formPagmF{
                                     display: flex;
                                     flex-direction: column;
-                                    width: 30vw;
+                                    width: 28vw;
+                                    margin-left: 40px;
                                 }
 
 
@@ -132,13 +164,9 @@ a:link{
                                             width: 20vw;
                                         }
 
-                                                .selectPagF select{
-                                                    margin-left: 30px;
-                                                }
 
                                         .formParcF{
                                             width: 25vw;
-                                            margin-left: 10px;
                                         }
 
                                                 .formParcF input{
@@ -152,7 +180,7 @@ a:link{
                             justify-content: space-evenly;
                             width: 49.8vw;
                             height: 12vh;
-                            margin-top: 30px;
+                            margin-top: 10px;
                         }
 
                                 .formDescF{
@@ -201,12 +229,12 @@ a:link{
                             display: flex;
                             align-items: center;
                             width: 15vw;
-                            height: 8vh;
-
+                            height: 8vh;                            
                         }
 
+
                         .btnCadF h4{
-                            margin-left: 5px;
+                            margin-left: 15px;
                         }
 
 
@@ -215,7 +243,7 @@ a:link{
                                 width: 10vw;
                                 height: 6vh;
                                 color: white;
-                                margin-left: -15px;
+                                margin-left: -25px;
                             }
 
 

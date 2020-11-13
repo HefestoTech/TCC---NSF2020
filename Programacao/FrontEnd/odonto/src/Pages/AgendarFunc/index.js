@@ -134,7 +134,7 @@ export default function AgendarConsultaCliente (props) {
             
             <div className="BodyF shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgendF">
-                <Link to={{ pathname: "/menu/funcionario", state: responseCompleto}} ></Link><h1>Agende sua Consulta</h1>
+                  <Link to={{ pathname: "/menu/funcionario", state: responseCompleto}} ><i class="iconBack fas fa-chevron-circle-left" /></Link><h1>Agende sua Consulta</h1>
                 </div>
 
                 <div className="BodyAgendF">
@@ -190,7 +190,7 @@ export default function AgendarConsultaCliente (props) {
                             </div>
                     </div>
 
-                    <div className="BoxPagmtF">
+                    <div className="BoxPagmtF ">
                         <h2>Pagamento da consulta</h2>
 
                         <div className="linePag1F">
