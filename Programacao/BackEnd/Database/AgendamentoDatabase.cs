@@ -63,10 +63,9 @@ namespace BackEnd.Database
         public bool ValidarSeOFuncionarioEstaDisponivel (DateTime data, int id)
         {
             List<Models.TbConsulta> consultas = ctx.TbConsulta.Where( x => x.DtConsulta.Date == data.Date).ToList();
-
             foreach(Models.TbConsulta item in consultas)
             {
-                if(item.IdFuncionario == id && item.DtConsulta.Hour == data.Hour && item.DsSituacao == "Agendado")
+                if(item.IdFuncionario == id && item.DtConsulta.AddMinutes(30) > data && item.DsSituacao == "Agendado")
                    return true;
             }
 
@@ -79,7 +78,7 @@ namespace BackEnd.Database
 
             foreach (Models.TbConsulta item in consultas)
             {
-                if (item.IdCliente == id && item.DtConsulta.Hour == data.Hour && item.DsSituacao == "Agendado")
+                if (item.IdCliente == id && item.DtConsulta.AddMinutes(30) > data && item.DsSituacao == "Agendado")
                     return true;
             }
 
