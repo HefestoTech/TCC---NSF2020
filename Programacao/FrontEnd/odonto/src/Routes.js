@@ -23,6 +23,8 @@ import AgendaFunc from './Pages/AgendarFunc/index.js';
 import MenuFuncionario from './Pages/MenuFuncionario';
 import NotaMedia from './Pages/Relatorios/NotaMediaProfissionais';
 import DevApp from './Pages/DevApp/index.js'
+import TelaVerFeed from './Components/TelaVerFeed/index.js';
+
 
 export default function Routes() {
     return(
@@ -50,6 +52,7 @@ export default function Routes() {
               <Route path="/VerAgendaFunc" exact component={VerAgendaFunc} />
               <Route path="/agendafunc" exact component={AgendaFunc} />
               <Route path="/Devapp" exact component={DevApp} />
+              <Route path="/VerFeed" exact component={TelaVerFeed} />
               <Route path="*" component={NotFound}/>
              
           </Switch>

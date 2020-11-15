@@ -1,0 +1,55 @@
+.VerFeedOne{
+ 
+
+}
+
+.Back999{
+margin-left: 10vw;
+margin-top: 5vh;
+margin-bottom: 5vh;
+}
+
+
+.VerFeedTwo{
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 50vh;
+    margin-left: 20vw;
+}
+.VerFeedTheer{
+    background-color: springgreen;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    
+}
+
+.Aval{
+    color:rgb(199, 169, 0) ;
+    font-size: 55px;
+    padding-top:4vh;
+}
+
+.Aval:hover{
+    color:#ffd900 ;
+    cursor: pointer;
+
+}
+.starzinnn{
+    color: rgb(199, 169, 0);
+    font-size: 65px;
+    cursor: pointer;
+
+}
+
+.starzinnn:hover{
+color: #ffd900;
+}
+
+.inputVer{
+    width: 70%;
+}
