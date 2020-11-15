@@ -52,7 +52,7 @@ export default function MenuFuncionario(props) {
                     <div className="Teethimg"><img src={TeethShield} /></div>
                       <h4>Clique aqui para ver todos os agendamentos de cada cliente!</h4>
                       <button onClick={irParaTelaDeVerAgendamentos} type="button" className="bt1MF btn btn-danger ">
-                        Meus Agendamentos
+                        Ver Agendamentos
                       </button>
 
                     </div>
@@ -71,7 +71,7 @@ export default function MenuFuncionario(props) {
                   <div className="Box3MF">
                     <div className="MyQueryF">
                       <div className="Teethimg"><img src={TeethShield} /></div>
-                        <h4>Caso o cliente não tenha um agendamento CLIQUE AQUI!!</h4>
+                        <h4>Clique aqui para agendar uma nova consulta!</h4>
                         <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" className="bt3MF btn btn-danger ">
                           Agendar Consulta
                         </button>

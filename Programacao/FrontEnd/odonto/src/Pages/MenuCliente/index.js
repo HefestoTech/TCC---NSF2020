@@ -59,7 +59,7 @@ import './menucli.css'
                   <div className="Box1MC">
                     <div className="MyAgend">
                     <div className="Teethimg"><img src={TeethShield} /></div>
-                      <h4>Clique aqui para ver seus agendamentos de cada consulta!</h4>
+                      <h4>Clique aqui para ver seus agendamentos!</h4>
                       <button onClick={irParaTelaDeVerAgendamentos} type="button" className="bt1MC btn btn-danger ">
                         Meus Agendamentos
                       </button>
@@ -79,7 +79,7 @@ import './menucli.css'
                   <div className="Box3MC">
                     <div className="MyQuery">
                     <div className="Teethimg"><img src={TeethShield} /></div>
-                    <h4>Caso não tenha um agendamento CLIQUE AQUI!!</h4>
+                    <h4>Clique aqui para fazer um novo agendamento!</h4>
                     <button onClick={irParaTelaDeAgendarNovaConsulta} type="button" className="bt2MC btn btn-danger ">
                       Agendar Consulta
                     </button>

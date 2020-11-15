@@ -1,4 +1,12 @@
 .divStarApp{
-    background-color: royalblue;
     height: 100vh;
+}
+
+.divStarApp img{
+    height:90%;
+    width: 50%;
+}
+
+.htwoApp{
+    padding-top: 50vh;
 }
