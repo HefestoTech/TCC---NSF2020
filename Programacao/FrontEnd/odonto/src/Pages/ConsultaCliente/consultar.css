@@ -16,6 +16,18 @@
     justify-content: space-evenly;
 }
 
+.backVoltar{
+  
+    height: 10vh;
+    display: flex;
+    margin-left:5%;
+    width: 95%;
+}
+
+.display-23{
+    padding-bottom: 5vh;
+}
+
 .Tt1Cons{
     display: flex;
     margin-top: 15px;

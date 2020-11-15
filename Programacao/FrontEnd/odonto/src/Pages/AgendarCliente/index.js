@@ -136,6 +136,14 @@ export default function AgendarConsultaCliente (props) {
         <ToastContainer/>
             <Link to={{pathname: "/menu/cliente" , state: responseCompleto}} ><h1 className="TtLogo">ODONTO</h1></Link>
             <div className="BodyAgend shadow-lg p-3 mb-5 bg-white rounded">
+            <div className="backVoltar">
+            <Link to={{
+                  pathname:"/menu/cliente",
+                  state: responseCompleto
+                  }} >
+                 <i class=" back22 fas fa-chevron-circle-left"></i>
+             </Link>
+             </div>
                 <div className="TtAgend">
                     <h1>Agende sua Consulta<img src={Dente} /></h1>
                     <h4>Os campos com(*) são obrigratórios</h4>
