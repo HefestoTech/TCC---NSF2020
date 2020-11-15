@@ -6,7 +6,7 @@ import OdontoApi from "../../Services/OdontoApi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../Components/Loading";
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const api = new OdontoApi();
 
@@ -294,6 +294,9 @@ export default function VerAgendaFunc(props){
                         Remarcar
                       </button>
                     )}
+                   <button className="bt1 btn btn-danger" >
+                        Avaliação da Consulta
+                    </button>
                   </div>
                 </div>
                 <div className="pagmCons">
