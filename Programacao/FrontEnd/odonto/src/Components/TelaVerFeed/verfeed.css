@@ -3,6 +3,13 @@
 
 }
 
+.h2VerFeed{
+    display: flex;
+    justify-content: center;
+    color: #009FE5;
+    margin-right: 8vw;
+}
+
 .Back999{
 margin-left: 10vw;
 margin-top: 5vh;
@@ -11,21 +18,24 @@ margin-bottom: 5vh;
 
 
 .VerFeedTwo{
-    background-color: royalblue;
+    background-color: #9BC5D8;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 60%;
-    height: 50vh;
-    margin-left: 20vw;
+    height: 60vh;
+    margin-left: 21vw;
+    border-radius: 10px;
 }
 .VerFeedTheer{
-    background-color: springgreen;
+    background-color: #009FE5;
     display: flex;
     justify-content: center;
     align-items:center ;
-    
+    margin-bottom: 10vh;
+    width: 50%;
+    border-radius: 10px;
 }
 
 .Aval{
@@ -52,4 +62,13 @@ color: #ffd900;
 
 .inputVer{
     width: 70%;
+}
+
+
+.back100{
+    color:#009FE5 ;
+}
+
+.back100:hover{
+    color: #ffd900;
 }

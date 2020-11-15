@@ -6,7 +6,8 @@ export default function VerFeedback(){
     return(
         <div className="VerFeedOne">
                  <div className="Back999">
-                     <i class=" back22 fas fa-chevron-circle-left"></i>
+                     <h2 className="h2VerFeed"> Avaliação da Consulta</h2>
+                     <i class=" back100 fas fa-chevron-circle-left"></i>
                  </div>
                  <div className="VerFeedTwo">
                      <div className="VerFeedTheer">
