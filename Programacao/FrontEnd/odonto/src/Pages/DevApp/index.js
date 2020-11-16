@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export default function DevApp(){
     return(
-        
+        <>
         <div className="divStarApp">
             <div class="divTwoMil"> 
                  <Link class="ttt" to = '/'><h1>Odonto</h1></Link>
@@ -33,12 +33,14 @@ O App permite que você faça agendamentos e conferir os horários de suas consu
             <p className="aapp">
                 Para mais informações entre em contato pelo e-mail : hefestotech@gmail.com
             </p>
-            <div class="rodapésobre">
-                <p className="rodapezinnn">
-                © Hefesto Tech, 2020 All rights reserved
-                </p>
-                </div>
+          
                 
         </div>
+          <div class="rodapésobre">
+          <p className="rodapezinnn">
+          © Hefesto Tech, 2020 All rights reserved
+          </p>
+          </div>
+          </>
     )
 }
