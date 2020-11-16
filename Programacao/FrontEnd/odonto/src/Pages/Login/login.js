@@ -127,6 +127,7 @@ const api = new OdontoApi();
             <div className="roda">
 
             </div>
+            <Rodape/>
         </div>
         
 
