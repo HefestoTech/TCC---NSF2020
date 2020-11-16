@@ -1,10 +1,11 @@
 .divStarApp{
     height: 100vh;
+    background-color: turquoise;
 }
 
 .divStarApp img{
-    height:90%;
-    width: 50%;
+    height:80%;
+    width: 45%;
 }
 
 .htwoApp{
