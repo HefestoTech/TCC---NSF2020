@@ -330,7 +330,7 @@ export default function VerAgendaFunc(props){
                   </div>
 
                   <div className="lineForm4">
-                    {x.situacao == "Agendado" && (
+                    {x.situacao == "Agendado" && x.situacao == "Não Compareceu" && (
                       <button
                         onClick={() => IrParaTelaDeRemarcar(x.idConsulta)}
                         className="buttonnn btn btn-primary"
