@@ -67,7 +67,7 @@ export default function NotaMedia (props) {
                   <tr>
                     <th scope="row">{x.nome}</th>
                     <td>{x.qtdConsultas}</td>
-                    <td>{x.notaMedia}</td>
+                    <td>{x.notaMedia.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
