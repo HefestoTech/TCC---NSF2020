@@ -144,6 +144,10 @@ export default function VerAgendaFunc(props){
 
     return (
       <div className="fundoAgen">
+        {mostrarFeedbackCliente === true && (
+          <MostrarFeedback nota={nota} comentario={comentario} />
+        )}
+        
         {mostraLoading == true && (
           <div>
             <Loading />
@@ -151,10 +155,6 @@ export default function VerAgendaFunc(props){
         )}
         <ToastContainer />
         <Menu></Menu>
-
-        {mostrarFeedbackCliente === true && (
-          <MostrarFeedback nota={nota} comentario={comentario} />
-        )}
 
         <div className="bodyVerAgendadosFunc">
           <div className="AgenOne">
