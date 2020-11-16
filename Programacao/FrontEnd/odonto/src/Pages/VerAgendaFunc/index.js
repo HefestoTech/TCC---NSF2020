@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../Components/Loading";
 import { Link, useHistory } from 'react-router-dom';
+import MostrarFeedback from "../../Components/TelaVerFeed"
 
 const api = new OdontoApi();
 
@@ -22,8 +23,10 @@ export default function VerAgendaFunc(props){
     const [situacao, setSituacao] = useState("");
     const [filtrado, setFiltrado] = useState([]);
     const [novaSituacao, setNovaSituacao] = useState("");
-    const [responseCompleto, setResponseCompleto] = useState(props.location.state)
-
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state);
+    const [mostrarFeedbackCliente, setMostrarFeedbackCliente] = useState(false);
+    const [nota, setNota] = useState();
+    const [comentario, setComentario] = useState();
     const history = useHistory();
     
     const IrParaTelaDeRemarcar = (idAgendamento) => {
@@ -125,6 +128,13 @@ export default function VerAgendaFunc(props){
         }
     }
 
+    const mostrarFeedback = (notaDaConsulta, comentarioDaConsulta) => {   
+         setMostrarFeedbackCliente(true);
+         setNota(notaDaConsulta);
+         setComentario(comentarioDaConsulta);
+    }
+    
+
     useEffect(() => {
       chamarFuncoes();
     }, []);
@@ -134,13 +144,17 @@ export default function VerAgendaFunc(props){
 
     return (
       <div className="fundoAgen">
-        {mostraLoading == true && 
-            <div>
-              <Loading/>
-            </div>
-        }
+        {mostraLoading == true && (
+          <div>
+            <Loading />
+          </div>
+        )}
         <ToastContainer />
         <Menu></Menu>
+
+        {mostrarFeedbackCliente === true && (
+          <MostrarFeedback nota={nota} comentario={comentario} />
+        )}
 
         <div className="bodyVerAgendadosFunc">
           <div className="AgenOne">
@@ -217,12 +231,6 @@ export default function VerAgendaFunc(props){
             </button>
           </div>
 
-
-
-
-
-
-
           {filtrado.map((x) => (
             <div className="boxCons">
               <div className="TtsCons">
@@ -277,10 +285,15 @@ export default function VerAgendaFunc(props){
 
                     <div className="sitCons">
                       <h5>Situação:</h5>
-                      <select onChange={e => setNovaSituacao(e.target.value)} className="form-control">
-                          <option selected value={x.situacao}>{x.situacao}</option>
-                          <option value="Não Compareceu">Não Compareceu</option>
-                          <option Value="Concluido">Concluído</option>
+                      <select
+                        onChange={(e) => setNovaSituacao(e.target.value)}
+                        className="form-control"
+                      >
+                        <option selected value={x.situacao}>
+                          {x.situacao}
+                        </option>
+                        <option value="Não Compareceu">Não Compareceu</option>
+                        <option Value="Concluido">Concluído</option>
                       </select>
                     </div>
                   </div>
@@ -294,9 +307,17 @@ export default function VerAgendaFunc(props){
                         Remarcar
                       </button>
                     )}
-                   <button className="bt1 btn btn-danger" >
-                        Avaliação da Consulta
-                    </button>
+
+                    {x.nota != null && (
+                      <button
+                        onClick={() =>
+                          mostrarFeedback(x.nota, "ainda vou fazer")
+                        }
+                        className="bt1 btn btn-danger"
+                      >
+                        Ver Feedback do Cliente
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div className="pagmCons">
@@ -359,14 +380,12 @@ export default function VerAgendaFunc(props){
                         </button>
                       )}
 
-                      
-                        <button
-                          onClick={() => alterarSituacao(x.idConsulta)}
-                          className="buttonnn btn btn-primary"
-                        >
-                          Alterar Situacao
-                        </button>
-                    
+                      <button
+                        onClick={() => alterarSituacao(x.idConsulta)}
+                        className="buttonnn btn btn-primary"
+                      >
+                        Alterar Situacao
+                      </button>
                     </div>
                   </div>
                 </div>

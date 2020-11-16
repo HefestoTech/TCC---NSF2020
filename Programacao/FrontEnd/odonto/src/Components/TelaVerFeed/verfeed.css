@@ -1,5 +1,10 @@
 .VerFeedOne{
- 
+height: 100%;
+background-color: cadetblue;
+display: flex;
+flex-direction: column;
+width: 70vw;
+align-items: center;
 
 }
 
@@ -8,11 +13,11 @@
     justify-content: center;
     color: #009FE5;
     margin-right: 8vw;
+    margin-top: 10px;
 }
 
 .Back999{
 margin-left: 10vw;
-margin-top: 5vh;
 margin-bottom: 5vh;
 }
 
@@ -24,8 +29,8 @@ margin-bottom: 5vh;
     justify-content: center;
     align-items: center;
     width: 60%;
-    height: 60vh;
-    margin-left: 21vw;
+    height: 50vh;
+ 
     border-radius: 10px;
 }
 .VerFeedTheer{
@@ -42,6 +47,7 @@ margin-bottom: 5vh;
     color:rgb(199, 169, 0) ;
     font-size: 55px;
     padding-top:4vh;
+
 }
 
 .Aval:hover{
@@ -67,8 +73,19 @@ color: #ffd900;
 
 .back100{
     color:#009FE5 ;
+    cursor: pointer;
+    margin-right: 70vw;
 }
 
 .back100:hover{
     color: #ffd900;
+}
+
+.completoVerFeed{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 82vh;
+    position: fixed;
 }
