@@ -349,6 +349,10 @@ export default function VerAgendaFunc(props){
                         Ver Feedback do Cliente
                       </button>
                     )}
+
+                    {x.nota == null && x.situacao == "Concluido" && (
+                      <div><h4>O Cliente ainda não avaliou a consulta.</h4></div>
+                    )}
                   </div>
                 </div>
                 <div className="pagmCons">
