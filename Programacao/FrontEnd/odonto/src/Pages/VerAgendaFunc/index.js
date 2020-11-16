@@ -131,7 +131,10 @@ export default function VerAgendaFunc(props){
     const mostrarFeedback = (notaDaConsulta, comentarioDaConsulta) => {   
          setMostrarFeedbackCliente(true);
          setNota(notaDaConsulta);
-         setComentario(comentarioDaConsulta);
+          if(comentarioDaConsulta == null || comentarioDaConsulta == "")
+            setComentario("O cliente não comentou a consulta");
+          else  
+            setComentario(comentarioDaConsulta);
     }
 
     const naoMostrarFeedback = () => {
@@ -339,7 +342,7 @@ export default function VerAgendaFunc(props){
                     {x.nota != null && (
                       <button
                         onClick={() =>
-                          mostrarFeedback(x.nota, "ainda vou fazer")
+                          mostrarFeedback(x.nota, x.comentario)
                         }
                         className="bt1 btn btn-danger"
                       >
