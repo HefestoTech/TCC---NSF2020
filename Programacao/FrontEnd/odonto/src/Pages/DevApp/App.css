@@ -1,13 +1,45 @@
 .divStarApp{
     height: 100vh;
-    background-color: turquoise;
+    
+}
+.textApp{
+
+    margin-left: 10vw;
+    margin-top: 10vh;
+    margin-right: 10vw;
 }
 
-.divStarApp img{
-    height:80%;
-    width: 45%;
+.textH2app{
+
+    color: rgb(0, 38, 143);
+    font-weight: 700;
+    
+}
+
+.pApp{
+
+    font-size: 17px;
+    text-align: center;
+
+}
+
+.aapp{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+}
+
+
+.iphone{
+    height:40%;
+    width: 30%;
 }
 
 .htwoApp{
     padding-top: 50vh;
+}
+
+.Iphonneee{
+    display: flex;
+    justify-content: center;
 }
