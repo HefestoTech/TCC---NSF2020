@@ -20,6 +20,7 @@ namespace BackEnd.Models.Response
         public int? Parcelas {get; set;}
         public decimal? TotalPorMes {get; set;}
         public int? Nota {get; set;}
+        public string Comentario {get; set;}
     }
 
     public class AgendadosSeparadosPorSituacao

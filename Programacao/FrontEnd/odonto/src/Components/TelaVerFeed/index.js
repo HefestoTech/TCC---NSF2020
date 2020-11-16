@@ -4,7 +4,6 @@ import './verfeed.css'
 
 
 export default function VerFeedback(props){
-
  
     return(
         <div className="completoVerFeed">
@@ -12,7 +11,7 @@ export default function VerFeedback(props){
         <div className="VerFeedOne">
                  <div className="Back999">
                      <h2 className="h2VerFeed"> Avaliação da Consulta</h2> 
-                     <i  class=" back100 fas fa-chevron-circle-left"></i>
+                     <i onClick="olaaaaa"  class=" back100 fas fa-chevron-circle-left"></i>
                  </div>
                  <div className="VerFeedTwo">
                      <div className="VerFeedTheer">

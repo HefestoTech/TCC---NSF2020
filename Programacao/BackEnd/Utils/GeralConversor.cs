@@ -178,6 +178,7 @@ namespace BackEnd.Utils
                 response.TotalPorMes = item.VlTotalPorMes;
                 response.Parcelas = item.NrParcelas;
                 response.Nota = item.NrNota;
+                response.Comentario = item.DsComentarioFeedback;
                 
                 agendadosResponse.Add(response);
             }
