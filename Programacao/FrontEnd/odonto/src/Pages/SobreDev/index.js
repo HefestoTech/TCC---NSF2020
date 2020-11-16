@@ -38,7 +38,7 @@ export default function SobreDev() {
                 
                 <h2 className="htwodev"> Sobre nós </h2>
                 <p className="pzao"> A HefestoTech foi criada  por um grupo de 4 amigos em 2020. Eles se conheceram e conheceram a programação a partir do Instituto Nossa Senhora de Fátima, uma organização social situada em São Paulo. Logo na primeira vez que se viram logo de cara houve uma identificação muito rápida. A partir do TCC eles se juntaram e perceberam que podiam fazer muito mais e tiveram a ideia de criar um sistema para uma clinica odontologica, visando facilitar a vida de quem trabalha nessa área, economizando tempo e muito papel. Tornando tanto os processos comuns quanto os mais complicados,  e assim tornado a ação de  agendar uma nova consulta de forma muito mais fácil e rápida.</p>
-                <p className="pzão">Esses quatro amigos tem o proposito de levar os seus conhecimentos gerais na área de programação para criação e desenvolvimento de aplicativos e sites trazendo a eficiência e qualidade para seus projetos. A HefestoTech tem pouco tempo de vida e seus integrantes ainda não tem muita experiência, mas com muito esforço e dedicação, logo serão reconhecidos no mercado.</p>
+                <p className="pzao">Esses quatro amigos tem o proposito de levar os seus conhecimentos gerais na área de programação para criação e desenvolvimento de aplicativos e sites trazendo a eficiência e qualidade para seus projetos. A HefestoTech tem pouco tempo de vida e seus integrantes ainda não tem muita experiência, mas com muito esforço e dedicação, logo serão reconhecidos no mercado.</p>
 
         </div>
         

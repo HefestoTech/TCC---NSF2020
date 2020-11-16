@@ -150,7 +150,7 @@ export default function App() {
                         <a href= "https://www.facebook.com/Odonto-108520777734904"><img src = {Facebook}/></a>
                     </div>
                     <div class="tt">
-                    <a href= "https://twitter.com/Odonto44228638"><img src ={TT}/></a>
+                    <a href= "https://twitter.com/Odonto42371651"><img src ={TT}/></a>
                     </div>
                     <div class="r">
                     <a href= "https://www.instagram.com/Odonto.gg/"><img src = {Instagram}/></a>
