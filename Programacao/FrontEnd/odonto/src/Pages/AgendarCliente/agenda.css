@@ -4,23 +4,12 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 145vh;
+    height: 100vh;
 }
 
 .backg{
     background-image: url('../../Assets/Wallpapers/dental2.jpg');
-    background-size: 30vw;
-}
-
-.TtLogo{
-    display: flex;
-    align-items: center;
-    height: 10vh;
-    color: rgb(255, 255, 255);
-    font-weight: bolder;
-    margin-top: 10px;
-    margin-bottom: 5px;
-
+    background-size: 40vw;
 }
 
 a:link{
@@ -28,163 +17,196 @@ a:link{
 }
 
 
-.BodyAgend{
+.BodyC{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70vw;
-    height: 125vh;
-    background-color: white;
+    width: 95vw;
+    height: 90vh;
+    margin-top: 60px;
     border-radius: 10px;
 }
 
     
-
-
         .TtAgend{
             display: flex;
-            flex-direction: column;    
-            align-items: center;
-            justify-content: center;
-            width: 85vw;
-            height: 20vh;
-            margin-top: 30px;            
+            flex-direction: row;
+            width: 92vw;
+            height: 15vh;         
         }
                 .TtAgend h1{
                     margin-left: 15px;
+                    margin-left: 350px;
                 }
 
-                .TtAgend img{
-                    width: 6vw;
-                    height: 13vh;
+                .IconBackC{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 5.5vw;
+                    height: 11.7vh;
+                    color: white;
+                    background-color: #007bff;
                     margin-left: 20px;
-                    transform: rotate(-12deg);
+                    border-radius: 50%;
+                    border-width: 10px;
                 }
 
-                .TtAgend h4{                    
-                    height: 30vh;
-                    color: rgb(167, 59, 59);
-                    margin-right: 140px;
-                    margin-top: 20px;
+                .IconBackC:hover{
+                    color: #007bff;
+                    background-color: white;
                 }
+
+    
+    .BodyAgend{
+        display: flex;
+        flex-direction: row;
+        width: 92vw;
+        height: 60vh;
+    }
 
 
         .BoxAgend{
             display: flex;
             flex-direction: column;
-            align-items: center;
-            margin-right: 50px;
-            margin-top: 10px;
+            width: 40vw;
+            height: 55vh;
+            margin-left: 20px;
         }
 
 
                 .lineAgend1{
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 35vw;
-                    height: 15vh;
+                    color: #9e2f2f;
+                    margin-top: 15px;
                 }
-
-
-
-
 
                 .lineAgend2{
                     display: flex;
                     flex-direction: row;
-                    justify-content: center;
                     align-items: center;
-                    width: 60vw;
+                    width: 45vw;
                     height: 15vh;
                 }
 
+                                .formHour{
+                                    margin-left: 98px;
+                                }
 
-                        .formServ{
-                            width: 15vw;
-                            margin-left: 30px;
+                        .lineAgend3{
+                            display: flex;
+                            flex-direction: row;
+                            width: 60vw;
+                            height: 15vh;
                         }
 
-                        .formProf{
-                            margin-left: 90px;
-                        }
+
+                                .formServ{
+                                    width: 17.5vw;
+                                }
+
+                                .formProf{
+                                    margin-left: 50px;
+                                }
+
 
         .BoxPagmt{
             display: flex;
             flex-direction: column;
-            width: 40vw;
+            width: 50vw;
             height: 55vh;
-            margin-left: 10px;
-            margin-top: 30px;
+            margin-left: 5px;
+            background-color: rgb(113, 165, 224);
+            border-radius: 10px;
+            color: rgb(28, 51, 38);                                        
+            box-shadow: 1px 3px 25px 1px #888888;
         }
 
-                .linePag1{
+                .BoxPagmt h2{
+                    width: 30vw;
+                    height: 6vh;
+                    margin-left: 40px;
+                    margin-top: 15px;
+                }
+
+                .linePagm1{
                     display: flex;
-                    width: 25vw;
-                    height: 10vh;
-                    margin-bottom: 30px;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 49.8vw;
+                    height: 12vh;
                 }
 
                         .formPagm{
                             display: flex;
                             flex-direction: column;
-                            width: 30vw;
+                            width: 28vw;
+                            margin-left: 40px;
                         }
 
-                        .formPagm select{
-                            width: 15vw;
-                        }
+                                .radPag{
+                                    width: 20vw;
+                                }
 
+                                .formParc{
+                                    width: 25vw;
+                                }
 
+                                        .formParc input{
+                                            margin-left: 20px;
+                                        }
                 
-                .linePag2{
-                    display: flex;
-                    width: 50vw;
+                .linePagm2{
+                    display: flex;                    
+                    justify-content: space-evenly;
+                    width: 49.8vw;
                     height: 12vh;
-                    margin-bottom: 30px;
+                    margin-top: 10px;
                 }
 
-                        .formParc{
-                            width: 20vw;
-                            margin-right: 30px;
+                        .formDesc{
+                            width: 10vw;
+                            margin-right: 45px;
                         }
+
+                                .totalPorMesAgendar{
+                                    width: 12vw;
+                                    color: black;
+                                }
 
                                 .qtdParc{
                                     width: 10vw;
                                 }
 
                         .formSub{
-                            width: 10vw;
-                            height: 10vh;
-                            margin-left: 50px;
-                        }
-
-
-                .linePagm3{
-                    display: flex;
-                    width: 55vw;
-                    height: 12vh;
-                }
-
-                        .formDesc{
-                            width: 10vw;
+                            width: 12vw;
+                            margin-left: 40px;
                         }
 
                         .formTot{
                             width: 12vw;
-                            margin-left: 165px;
+                            margin-left: 30px;
                         }
+                    
+
+                .linePagm3{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 49.8vw;
+                    height: 13vh;
+                    margin-top: 30px;
+                }
+
 
 
                         .ButtPag{
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            width: 15vw;
+                            width: 20vw;
                             height: 12vh;
-                            margin-left: 50px;
-                            margin-top: 15px;
                         }
 
                         .btnCad{
@@ -192,27 +214,21 @@ a:link{
                             align-items: center;
                             width: 15vw;
                             height: 8vh;
-                            margin-top: 10px;
                         }
 
                         .btnCad h4{
-                            margin-left: 10px;
+                            margin-left: 15px;
                         }
 
 
                         .btnCad img{
                             width: 10vw;
                             height: 6vh;
-                            color: white;
-                            margin-left: -1px;
+                            margin-left: -25px;
                         }
-.totalPorMesAgendar{
-    margin-top: 36px;
-    color: black;
-    width: 160px;
-    margin-right: -50px;
- 
-}
+
+
+
 
 
 
