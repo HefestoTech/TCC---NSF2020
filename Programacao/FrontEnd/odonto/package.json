@@ -12,6 +12,7 @@
     "react-google-charts": "^3.0.15",
     "react-input-mask": "^2.0.4",
     "react-loading": "^2.0.3",
+    "react-multi-carousel": "^2.5.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-toastify": "^6.0.9",

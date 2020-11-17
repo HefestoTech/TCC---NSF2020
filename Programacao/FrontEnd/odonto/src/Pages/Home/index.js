@@ -1,14 +1,32 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
-import Dentista from '../../Assets/Fotos/dentista.jpg'
-import Odonto   from '../../Assets/Fotos/odonto.png'
-import Menu     from '../../Components/Menu'
 import './Home.css';
 import Instagram from '../../Assets/Fotos/Instagram.svg'
 import TT from '../../Assets//Fotos/ttlogo.svg'
 import Facebook from '../../Assets/Fotos/facelogo.svg'
 import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 1,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 export default function App() {
   return (
@@ -29,88 +47,15 @@ export default function App() {
           <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
           </div>
       </div>
-
-      <div className="body">
-        <div className="msgs">
-            <div className="inf">
-
-              <div className="local">
-                <h2> Onde estamos.</h2> 
-                <h3>R. Sorrisão, 123</h3>
-                <h3>Jd. Bucal,SP</h3>
-              </div>
-
-              <div className="phone">
-                <h2>Fale conosco!</h2>
-                <h3>(xx) 5555-6666</h3>
-              </div>
-              
-            </div>
-            <div className="ft"> 
-                <img src={Dentista}/>
-            </div>
-
-        </div>
-
-        <div className="tab">
-            <div className="tabinto">
-            <h4 className="h4_tabelaHome">Tabela de preços das especializações em destaque!</h4>
-              <table className="table table-borderless">
-
-                <thead>
-                  <tr>
-                    <td>Clareamento</td>
-                    <td >R$215,00</td>
-                  </tr>
-
-                  <tr>
-                    <td>Manutenção de Aparelho fixo</td>
-                    <td >R$75,00</td>
-                  </tr>
-
-                  <tr>
-                    <td>Limpeza</td>
-                    <td >R$140,00</td>
-                  </tr>
-
-                  <tr>
-                    <td>Reconstrução c/ Resina</td>
-                    <td >R$120,00</td>
-                  </tr>
-
-                  <tr>
-                    <td>Canal</td>
-                    <td >R$279,00</td>
-                  </tr>
-                  
-                  <tr>
-                    <td>Limpeza de Tártaro</td>
-                    <td >R$160,00</td>
-                  </tr>
-                  
-                  <tr>
-                    <td>Tratamento de Cáries</td>
-                    <td >R$230,00</td>
-                  </tr>
-
-                </thead>
-
-
-              </table>
-            </div>
-
-            <div className="box">
-              <div className="icon1">
-                <img src={Odonto} />
-              </div>
-
-              <div className="text2">
-                <h3>Um dia sem um Sorriso, é um dia Perdido.</h3>
-              </div>
-            </div>
-
-        </div>
-      </div>
+      <div>
+   <Carousel  responsive={responsive}>
+                <div className="starHome">Não </div>
+                <div  className="starHome">home</div>
+                <div  className="starHome">Item 3</div>
+               
+                
+            </Carousel>;
+   </div>
    </div>
         
   
