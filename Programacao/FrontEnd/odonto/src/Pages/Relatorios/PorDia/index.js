@@ -6,6 +6,7 @@ import OdontoApi from "../../../Services/OdontoApi"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom"
+import Loading from "../../../Components/Loading";
 
 const api = new OdontoApi()
 
@@ -14,27 +15,38 @@ export default function RelatorioPorDia (props) {
     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
     const [data, setData] = useState();
     const [consultasDoDia, setConsultasDoDia] = useState([]);
+    const [mostrarLoading, setMostrarLoading] = useState(false);
 
     console.log(responseCompleto);
 
     const pegarConsultasPorDia = async (novaData) => {
-            try {
-                  
-                  const resp = await api.PegarPorDia(novaData);
-            
-                  setConsultasDoDia(resp);
+      try {
+          setMostrarLoading(true);
+          
+          const resp = await api.PegarPorDia(novaData);
+    
+          setConsultasDoDia(resp);
 
-            } catch (e) {
-                
-                toast.error(e.response.data.erro)
-                setConsultasDoDia([]);
-                
-            }
+          setMostrarLoading(false)
+
+      } catch (e) {
+          
+        setMostrarLoading(false);
+      
+        toast.error(e.response.data.erro)
+        setConsultasDoDia([]);
+          
+      }
     }
 
     return (
       <>
         <ToastContainer />
+        {mostrarLoading === true && 
+        <div>
+          <Loading/>
+        </div>
+        }
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">

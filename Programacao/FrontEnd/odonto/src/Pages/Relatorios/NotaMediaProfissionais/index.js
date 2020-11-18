@@ -5,6 +5,7 @@ import OdontoApi from "../../../Services/OdontoApi"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import Loading from "../../../Components/Loading"
 
 const api = new OdontoApi();
 
@@ -12,20 +13,27 @@ export default function NotaMedia (props) {
 
     const [notaMedia, setNotaMedia] = useState([]);
     const [responseCompleto, setResponseCompleto] = useState(props.location.state)
+    const [mostrarLoading, setMostrarLoading] = useState(false);
 
     const notaMediaDosFuncionario = async () => 
     {
         try {
 
-            const resp = await api.NotaMedia();
+           setMostrarLoading(true); 
+          
+           const resp = await api.NotaMedia();
 
             console.log(resp)
 
             setNotaMedia(resp);
+
+            setMostrarLoading(false);
             
         } catch (e) {
 
-            toast.error(e.response.data.erro);
+          setMostrarLoading(false)
+           
+          toast.error(e.response.data.erro);
             
         }
     }
@@ -37,6 +45,12 @@ export default function NotaMedia (props) {
     return(
         <>
         <ToastContainer/>
+
+        {mostrarLoading === true &&
+        <div>
+          <Loading/>
+        </div>
+        }
         <Menu/>
          <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">

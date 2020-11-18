@@ -4,7 +4,7 @@ import Footer from "../../../Components/Footer"
 import "./styles.css";
 import { Link } from "react-router-dom";
 import OdontoApi from "../../../Services/OdontoApi";
-import Chart from "react-google-charts";
+import Loading from "../../../Components/Loading";
 
 const api = new OdontoApi();
 
@@ -12,17 +12,28 @@ export default function TopServicos (props) {
 
     const [topServicos, setTopServicos] = useState([]);
     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
+    const [mostrarLoading, setMostrarLoading] = useState(false);
+
 
      const pegarTopServicos = async () => {
        try {
+
+         setMostrarLoading(true);
+
          const resp = await api.TopServicos();
 
          console.log(resp);
 
          setTopServicos(resp);
+
+         setMostrarLoading(false);
+
+
        } catch (e) {
 
-         setTopServicos([]);
+        setMostrarLoading(false)
+
+        setTopServicos([]);
        }
      };
 
@@ -32,6 +43,11 @@ export default function TopServicos (props) {
 
     return (
       <>
+      {mostrarLoading === true && 
+      <div>
+        <Loading/>
+      </div>
+      }
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">

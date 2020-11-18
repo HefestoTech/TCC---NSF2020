@@ -6,26 +6,34 @@ import { Link } from "react-router-dom";
 import OdontoApi from "../../../Services/OdontoApi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../../Components/Loading";
 
 const api = new OdontoApi();
 
 export default function TopClientes (props) {
 
     const [topClientes, setTopClientes] = useState([]);
-     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state);
+    const [mostrarLoading, setMostrarLoading] = useState(false);
 
      const pegarTopClientes = async () => {
        try {
 
+         setMostrarLoading(true);
+        
          const resp = await api.TopClientes();
 
-         console.log(resp);
-
          setTopClientes(resp);
+
+         setMostrarLoading(false);
+
        } catch (e) {
-         setTopClientes([]);
-         console.log(e);
-         toast.error(e);
+
+        setMostrarLoading(false);
+        
+        setTopClientes([]);
+        
+        toast.error(e);
        }
      };
 
@@ -36,6 +44,11 @@ export default function TopClientes (props) {
     return (
       <>
         <ToastContainer/>
+        {mostrarLoading === true && 
+        <div>
+          <Loading/>
+        </div>
+        }
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">

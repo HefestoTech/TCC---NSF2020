@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import Chart from "react-google-charts"
+import Loading from "../../../Components/Loading"
 
 const api = new OdontoApi();
 
@@ -15,31 +16,38 @@ export default function PorMes(props) {
     const [mesInicio, setMesInicio] = useState(1);
     const [mesFinal, setMesFinal] = useState(1)
     const [consultaDosMeses, setConsultaDosMeses] = useState([]);
-     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
+    const [responseCompleto, setResponseCompleto] = useState(props.location.state);
+    const [mostrarLoading, setMostrarLoading] = useState(false);
 
     const pegarConsultasPorMeses = async () => {
       try {
-        console.log(mesInicio)
 
-        console.log(mesFinal)
+        setMostrarLoading(true);
+      
         const resp = await api.PegarPorMeses(mesInicio,mesFinal);
-       
-        console.log(resp);
         
         setConsultaDosMeses(resp);
 
+        setMostrarLoading(false)
+
       } catch (e) {
+
+        setMostrarLoading(false);
+
         setConsultaDosMeses([]);
 
-        console.log(e);
-        
-        toast.error(e);
+        toast.error(e.response.data.erro);
       }
     };
 
     return (
       <>
         <ToastContainer />
+        {mostrarLoading === true &&
+        <div>
+          <Loading/>
+        </div>
+        }
         <Menu />
         <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
@@ -107,8 +115,8 @@ export default function PorMes(props) {
             </label>
             
               <div className="botãoPorMes">
-                  <button type="button" className="btn btn-outline-info btn_agendadosFunc">
-                    <i onClick={pegarConsultasPorMeses} className="iconSearch fas fa-search" />
+                  <button onClick={pegarConsultasPorMeses} type="button" className="btn btn-outline-info btn_agendadosFunc">
+                    <i className="iconSearch fas fa-search" />
                   </button>
               </div>
             
@@ -122,7 +130,7 @@ export default function PorMes(props) {
             width={"700px"}
             height={"400px"}
             chartType="Bar"
-            loader={<div>Loading Chart</div>}
+            loader={<div>Carregando Grafico</div>}
             rows={consultaDosMeses.map((x) => (
               [String(x.mes), x.qtdVendas, x.totalVenda]
             ))}

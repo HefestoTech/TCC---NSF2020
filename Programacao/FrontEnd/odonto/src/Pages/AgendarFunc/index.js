@@ -37,14 +37,23 @@ export default function AgendarConsultaCliente (props) {
       setServico(resp);
     };
 
-     const valorParceladoClick = (parcela) => {
-       setParcelas(parcela);
+     const valorParceladoClick = async (parcela) => {
+       
+        console.log(parcela);
+      
+        const tot = await pegarValorDaConsulta(idServico, formpagm);
 
-       pegarValorDaConsulta(idServico, formpagm);
+        console.log(tot);
 
-       const x = total / parcela;
+        console.log(total);
+      
+        let x = (tot / parcela).toFixed(2);
+        
+        console.log(x);
+        
+        setValorParcelado(x);
 
-       setValorParcelado(x.toFixed(2));
+        setParcelas(parcela);
      }; 
 
     const agendarClick = async () => {
@@ -118,6 +127,9 @@ export default function AgendarConsultaCliente (props) {
         setDesconto(resp.desconto);
         setTotal(resp.total);
         setValorParcelado(resp.total / parcelas);
+
+
+        return resp.total;
       } catch (e) {
         toast.error(e.response.data.erro);
       }
