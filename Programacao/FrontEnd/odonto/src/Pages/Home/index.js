@@ -70,7 +70,7 @@ export default function App() {
     </div>
     
       <div>
-      <a class=" proteses btn btn-info" role="button"></a>
+        <a class=" proteses btn btn-info" role="button"></a>
         <div className="onclink">Texto sobre a img</div>
     </div>
     
@@ -80,9 +80,34 @@ export default function App() {
     </div>
   </div>
 
+     
     <div class="Anucios">
-      oiii
-    </div>
+        <div class="quadradoRight">
+            Preecher com conteudo 
+      </div>
+        <div class="rightMini">
+          Preecher com conteudo 
+      </div>   
+  </div>
+       <div class="AnuciosTwo">
+          <div class="quadradoLeft">
+            Preecher com conteudo 
+        </div>
+          <div class="LeftMini">
+          Preecher com conteudo 
+      </div>   
+ </div>
+         
+      <div class="Nossocontato">
+        <div class="NossocontatoTwo">
+          <div class="armazenar">
+              <p>Telefone</p>
+              <p>e-mail</p>
+              <p> mais alguma</p>
+          </div>
+        </div>
+      </div>
+
 </div>
   
 
