@@ -55,16 +55,27 @@ export default function App() {
           <div  className="starHome">home</div>
           <div  className="starHome">Item 3</div>
         </Carousel>
-  </div>
-  
+  </div> 
+
+
     <div className="divimg">
-        <a class="clinica btn btn-info" role="button"></a>
-    <div className="onclink">minha pika in small</div>
+        <div>
+          <a class="clinica btn btn-info" role="button"></a>
+          <div className="onclink">minha pika in small</div>
+    </div>
+  
+      <div>
+        <a class=" clareamento btn btn-info" role="button"></a>
+        <div className="onclink">minha pika in small</div>
+    </div>
+    
+      <div>
+      <a class=" clareamento btn btn-info" role="button"></a>
+        <div className="onclink">minha pika in small</div>
+    </div>
   </div>
-  <a class=" clareamento btn btn-info" role="button"></a>
-    <div className="onclink">minha pika in small</div>
 </div>
-        
+  
   
   
 
@@ -79,7 +90,7 @@ export default function App() {
                     <div class="l1">Empresa</div>
                     <div class="l"> <Link class="linkOneOne" to = '/sobrenos'>Sobre</Link></div>
                     <div class="l">Investidores</div>
-                    <div class="l">Fornecedores</div>
+                    <div class="l"> <a class="linkOneOne" href="https://domedica.com.br/"> Fornecedores </a></div>
                     
                 </div>
 

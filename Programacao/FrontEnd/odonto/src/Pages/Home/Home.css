@@ -76,6 +76,7 @@
 .divimg{
   display: flex;
   justify-content: space-around;
+  margin-top: 10vh;
 }
 .clinica{
   background-image: url(../../Assets/Fotos/1one.png);
@@ -99,6 +100,7 @@
   background-image: url(../../Assets/Fotos/2two.png);
   height: 25vh;
   background-repeat: no-repeat;
+  
 }
 
 .clareamento:active + .onclink{
