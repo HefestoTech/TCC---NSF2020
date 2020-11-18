@@ -61,24 +61,30 @@ export default function App() {
     <div className="divimg">
         <div>
           <a class="clinica btn btn-info" role="button"></a>
-          <div className="onclink">minha pika in small</div>
+          <div className="onclink">Texto sobre a img</div>
     </div>
   
       <div>
         <a class=" clareamento btn btn-info" role="button"></a>
-        <div className="onclink">minha pika in small</div>
+        <div className="onclink">Texto sobre a img</div>
     </div>
     
       <div>
-      <a class=" clareamento btn btn-info" role="button"></a>
-        <div className="onclink">minha pika in small</div>
+      <a class=" proteses btn btn-info" role="button"></a>
+        <div className="onclink">Texto sobre a img</div>
+    </div>
+    
+      <div>
+        <a class=" implante btn btn-info" role="button"></a>
+        <div className="onclink">Texto sobre a img</div>
     </div>
   </div>
+
+    <div class="Anucios">
+      oiii
+    </div>
 </div>
   
-  
-  
-
 
    <div class="cont3">
         <div class="Box">
