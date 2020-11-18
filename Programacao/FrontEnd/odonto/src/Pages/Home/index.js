@@ -55,19 +55,61 @@ export default function App() {
           <div  className="starHome">home</div>
           <div  className="starHome">Item 3</div>
         </Carousel>
-  </div>
-  
-    <div className="divimg">
-        <a class="clinica btn btn-info" role="button"></a>
-    <div className="onclink">minha pika in small</div>
-  </div>
-  <a class=" clareamento btn btn-info" role="button"></a>
-    <div className="onclink">minha pika in small</div>
-</div>
-        
-  
-  
+  </div> 
 
+
+    <div className="divimg">
+        <div>
+          <a class="clinica btn btn-info" role="button"></a>
+          <div className="onclink">Texto sobre a img</div>
+    </div>
+  
+      <div>
+        <a class=" clareamento btn btn-info" role="button"></a>
+        <div className="onclink">Texto sobre a img</div>
+    </div>
+    
+      <div>
+        <a class=" proteses btn btn-info" role="button"></a>
+        <div className="onclink">Texto sobre a img</div>
+    </div>
+    
+      <div>
+        <a class=" implante btn btn-info" role="button"></a>
+        <div className="onclink">Texto sobre a img</div>
+    </div>
+  </div>
+
+     
+    <div class="Anucios">
+        <div class="quadradoRight">
+            Preecher com conteudo 
+      </div>
+        <div class="rightMini">
+          Preecher com conteudo 
+      </div>   
+  </div>
+       <div class="AnuciosTwo">
+          <div class="quadradoLeft">
+            Preecher com conteudo 
+        </div>
+          <div class="LeftMini">
+          Preecher com conteudo 
+      </div>   
+ </div>
+         
+      <div class="Nossocontato">
+        <div class="NossocontatoTwo">
+          <div class="armazenar">
+              <p>Telefone</p>
+              <p>e-mail</p>
+              <p> mais alguma</p>
+          </div>
+        </div>
+      </div>
+
+</div>
+  
 
    <div class="cont3">
         <div class="Box">
@@ -79,7 +121,7 @@ export default function App() {
                     <div class="l1">Empresa</div>
                     <div class="l"> <Link class="linkOneOne" to = '/sobrenos'>Sobre</Link></div>
                     <div class="l">Investidores</div>
-                    <div class="l">Fornecedores</div>
+                    <div class="l"> <a class="linkOneOne" href="https://domedica.com.br/"> Fornecedores </a></div>
                     
                 </div>
 

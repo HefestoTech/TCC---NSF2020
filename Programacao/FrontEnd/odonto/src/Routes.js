@@ -24,7 +24,6 @@ import MenuFuncionario from './Pages/MenuFuncionario';
 import NotaMedia from './Pages/Relatorios/NotaMediaProfissionais';
 import DevApp from './Pages/DevApp/index.js'
 import TelaVerFeed from './Components/TelaVerFeed/index.js';
-import NewHome from './Pages/newHome/index.js'
 
 
 export default function Routes() {
@@ -54,7 +53,6 @@ export default function Routes() {
               <Route path="/agendafunc" exact component={AgendaFunc} />
               <Route path="/Devapp" exact component={DevApp} />
               <Route path="/VerFeed" exact component={TelaVerFeed} />
-              <Route path="/newHome" exact component={NewHome} />
               <Route path="*" component={NotFound}/>
              
           </Switch>
