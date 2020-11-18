@@ -7,6 +7,8 @@ import Facebook from '../../Assets/Fotos/facelogo.svg'
 import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import OneImg from '../../Assets/Fotos/1one.png'
+
 
 const responsive = {
   superLargeDesktop: {
@@ -48,15 +50,20 @@ export default function App() {
           </div>
       </div>
       <div>
-   <Carousel  responsive={responsive}>
-                <div className="starHome">Não </div>
-                <div  className="starHome">home</div>
-                <div  className="starHome">Item 3</div>
-               
-                
-            </Carousel>;
-   </div>
-   </div>
+        <Carousel  responsive={responsive}>
+          <div className="starHome">Não </div>
+          <div  className="starHome">home</div>
+          <div  className="starHome">Item 3</div>
+        </Carousel>
+  </div>
+  
+    <div className="divimg">
+        <a class="clinica btn btn-info" role="button"></a>
+    <div className="onclink">minha pika in small</div>
+  </div>
+  <a class=" clareamento btn btn-info" role="button"></a>
+    <div className="onclink">minha pika in small</div>
+</div>
         
   
   

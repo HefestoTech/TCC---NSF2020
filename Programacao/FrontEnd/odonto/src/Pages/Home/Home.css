@@ -72,151 +72,43 @@
         box-shadow: 2px 2px 2px #5e1818;
       }
 
-  .body{
-    display: flex;
-    flex-direction: column;
-    width: 87vw;
-    height: 150vh;
-    background-color: rgb(85, 154, 211);
-    border-radius: 15px;
-    margin: 45px;
-    margin-left: 85px;
-  }
+/*Imgs na div central*/
+.divimg{
+  display: flex;
+  justify-content: space-around;
+}
+.clinica{
+  background-image: url(../../Assets/Fotos/1one.png);
+  height:25vh;
+  background-repeat: no-repeat;
+ 
+}
 
-    .msgs{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 81vw;
-      height: 80vh;
-      background-color: white;
-      border-radius: 20px;
-      margin: 35px;
-    }
+.onclink {
+	height: 0px;
+	overflow: hidden;
+	transition: height 2.0s;
+}
 
-      .inf{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 32vw;
-        height: 65vh;
-        margin-left: 10px;
-      }
+.clinica:active + .onclink {
+  height: 10vh;
+  width: 20vh;
+}
 
-        .local{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items:center;
-          width: 30vw;
-          height: 30vh;
-        }
+.clareamento{
+  background-image: url(../../Assets/Fotos/2two.png);
+  height: 25vh;
+  background-repeat: no-repeat;
+}
 
-        .phone{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 30vw;
-          height: 30vh;
-        }
+.clareamento:active + .onclink{
+  height: 10vh;
+  width: 20vh;
+  
+}
 
 
-      .ft{
-        width: 50vw;
-        height: 43vh;
-        border-radius: 20px;
-        margin-right: 50px;
-        margin-bottom: 50px;
-      }
 
-      img{
-        width: 35vw;
-        height: 50vh;
-        border-radius: 10px;
-        margin-left: 80px;
-      }
-
-    .tab{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 90vw;
-      height: 70vh;
-      margin-bottom: 30px;
-    }
-
-    .tabinto{
-      width: 40vw;
-      height: 75vh;
-      margin-top: 40px;
-      margin-left: 40px;
-    }
-
-    .table{
-      color: white;
-      background-color: rgb(62, 73, 82) ;
-      border-radius: 5px;
-    }
-
-.h4_tabelaHome{
-
-        align-items: center;
-        height: 10vh;
-        text-align: center;
-        background-color: rgb(62, 73, 82);
-        color: white;
-        margin-top: 2px;
-        border-radius: 5px;
-      }
-
-
-      .box{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 68vh;
-        width: 41vw;
-        margin-left: 70px;
-      }
-
-        .icon1{
-          display: flex;
-          width: 30vw;
-          height: 50vh;
-          justify-content: center;
-          align-items: center;
-          background-color: white;
-          border-radius: 10px;
-        }
-
-
-          .icon1 img{
-            width: 24vw;
-            height: 42vh;
-            margin-left: 0px;
-          }
-
-
-          .text2{
-            height: 11vh;
-            width: 30vw;
-            background-color: white;
-            margin-top: 27px;
-            border-radius:5px;
-            text-align: center;
-          }
-
-  .foot{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
-    width: 98.7vw;
-    background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(238, 243, 248));
-    color: white;
-  }
 
   /*Rodapé*/
   .logo2{
