@@ -79,6 +79,7 @@
   width: 1000vw;
 
 }
+
 /*Imgs na div central*/
 .divimg{
   display: flex;
@@ -206,6 +207,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  
 
 
 }
