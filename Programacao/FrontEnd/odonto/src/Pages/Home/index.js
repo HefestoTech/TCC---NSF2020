@@ -8,6 +8,7 @@ import Brasil from '../../Assets/Fotos/bandeirabrasil.png'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import OneImg from '../../Assets/Fotos/1one.png'
+import Dentista from '../../Assets/Fotos/dentistaONE.jpg'
 
 
 const responsive = {
@@ -50,8 +51,8 @@ export default function App() {
           </div>
       </div>
       <div>
-        <Carousel  responsive={responsive}>
-          <div className="starHome">Não </div>
+        <Carousel  responsive={responsive} class="carrosselll">
+          <div className="starHomeONEE"><img src={Dentista} /></div>
           <div  className="starHome">home</div>
           <div  className="starHome">Item 3</div>
         </Carousel>

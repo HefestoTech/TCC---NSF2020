@@ -72,11 +72,21 @@
         box-shadow: 2px 2px 2px #5e1818;
       }
 /*Carrossel*/
+
 .starHome{
 
-  background-color: rgb(104, 104, 104);
+  background-color: rgb(46, 143, 223);
   height: 60vh;
-  width: 1000vw;
+  width: 100%;
+
+}
+
+.starHomeONEE{
+  background-color:#2e8fdf;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 
 }
 
@@ -157,7 +167,7 @@
   height: 50vh;
   display: flex;
   color: white;
-  background-color: blue;
+  
 }
 
     .quadradoRight{
@@ -183,7 +193,7 @@
   display: flex;
   flex-direction:row-reverse;
   color: white;
-  background-color: blueviolet;
+  
 }
 
    .quadradoLeft{
