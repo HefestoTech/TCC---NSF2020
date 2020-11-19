@@ -83,18 +83,19 @@ export default function App() {
      
     <div class="Anucios">
         <div class="quadradoRight">
-            Preecher com conteudo 
+            <div className></div>
+            <div></div>
       </div>
         <div class="rightMini">
-          Preecher com conteudo 
+          
       </div>   
   </div>
        <div class="AnuciosTwo">
           <div class="quadradoLeft">
-            Preecher com conteudo 
+            
         </div>
           <div class="LeftMini">
-          Preecher com conteudo 
+          
       </div>   
  </div>
          
