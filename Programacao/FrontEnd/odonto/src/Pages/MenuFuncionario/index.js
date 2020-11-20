@@ -36,6 +36,15 @@ export default function MenuFuncionario(props) {
 
   }
 
+  const verSeLogouNoSistema = () => {
+    if (responseCompleto === undefined) 
+        history.push({ pathname: "/login" });
+  };
+
+   useEffect(() => {
+     verSeLogouNoSistema();
+   }, []);
+
  
   return (
     <div className="ContFunc">

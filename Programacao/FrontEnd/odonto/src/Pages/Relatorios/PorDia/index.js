@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Menu from "../../../Components/Menu"
 import Footer from "../../../Components/Footer"
 import "./styles.css"
 import OdontoApi from "../../../Services/OdontoApi"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import Loading from "../../../Components/Loading";
 
 const api = new OdontoApi()
@@ -38,6 +38,17 @@ export default function RelatorioPorDia (props) {
           
       }
     }
+
+const history = useHistory();
+       
+    const verSeLogouNoSistema = () => {
+          if (responseCompleto === undefined)
+            history.push({ pathname: "/login" });
+        };
+
+        useEffect(() => {
+          verSeLogouNoSistema();
+        }, []);
 
     return (
       <>

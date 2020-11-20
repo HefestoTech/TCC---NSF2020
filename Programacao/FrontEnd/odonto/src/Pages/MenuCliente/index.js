@@ -13,6 +13,11 @@ import './menucli.css'
         const [responseCompleto, setResponseCompleto] = useState(props.location.state)
         
         const history = useHistory();
+
+        const verSeLogouNoSistema = () => {
+          if(responseCompleto === undefined)
+             history.push({pathname:"/login"})
+        }
     
         const irParaTelaDeVerAgendamentos = () => {
               history.push({
@@ -30,7 +35,9 @@ import './menucli.css'
         }
 
        
-
+        useEffect(() => {
+          verSeLogouNoSistema();
+        }, []);
 
        return (
          <div className="ContCli">

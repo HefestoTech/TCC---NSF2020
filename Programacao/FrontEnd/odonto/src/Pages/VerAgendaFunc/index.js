@@ -66,6 +66,7 @@ export default function VerAgendaFunc(props){
     }
 
     const chamarFuncoes = () => {
+        verSeLogouNoSistema();
         carregarServicos();
         filtrar();
     }
@@ -142,7 +143,11 @@ export default function VerAgendaFunc(props){
         setNota(null);
         setComentario(null);
     }
-    
+
+    const verSeLogouNoSistema = () => {
+      if (responseCompleto === undefined)
+        history.push({ pathname: "/login" });
+    };
 
     useEffect(() => {
       chamarFuncoes();

@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Menu from '../../../Components/Menu'
 import Footer from '../../../Components/Footer'
 import './styles.css'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function HomeRelatorio (props) {
 
     const [responseCompleto, setResponseCompleto] = useState(props.location.state);
     
-    console.log(responseCompleto)
+    
+     const verSeLogouNoSistema = () => {
+        if (responseCompleto === undefined) 
+           history.push({ pathname: "/login" });
+      };
+
+    const history = useHistory();  
+
+    useEffect(() => {
+      verSeLogouNoSistema();
+    }, []);
     
     
     return (

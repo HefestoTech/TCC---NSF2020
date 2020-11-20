@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import './remarcar.css'
 import Menu from '../../Components/Menu'
 import Rodape from '../../Components/Footer'
@@ -100,6 +100,15 @@ export default function Remarcar(props){
     }
 
     }
+
+         const verSeLogouNoSistema = () => {
+           if (responseCompleto === undefined)
+             history.push({ pathname: "/login" });
+         };
+
+         useEffect(() => {
+           verSeLogouNoSistema();
+         }, []);
 
 
 

@@ -3,7 +3,7 @@ import OdontoApi from '../../Services/OdontoApi'
 import Calendar from '../../Assets/Fotos/calendar.svg'
 import Dentes from '../../Assets/Fotos/dentes.png'
 import ArrowLeft from '../../Assets/Fotos/left-arrow.svg'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -135,8 +135,20 @@ export default function AgendarConsultaCliente (props) {
       }
     };
 
+    const history = useHistory();  
+    
+    const verSeLogouNoSistema = () => {
+        if (responseCompleto === undefined)
+          history.push({ pathname: "/login" });
+      };
+
+      const chamarFuncoes = () => {
+        verSeLogouNoSistema();
+        pegarServicos();
+      }
+
     useEffect(() => {
-      pegarServicos();
+      chamarFuncoes();
     }, []);
 
 

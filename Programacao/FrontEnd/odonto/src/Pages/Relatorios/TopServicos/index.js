@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Menu from "../../../Components/Menu"
 import Footer from "../../../Components/Footer"
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import OdontoApi from "../../../Services/OdontoApi";
 import Loading from "../../../Components/Loading";
 
@@ -37,8 +37,20 @@ export default function TopServicos (props) {
        }
      };
 
+      const verSeLogouNoSistema = () => {
+        if (responseCompleto === undefined) 
+            history.push({ pathname: "/login" });
+    };
+
+
+    const chamarFuncoes = () => {
+        verSeLogouNoSistema();
+        pegarTopServicos();
+    }
+        
+    const history = useHistory();
      useEffect(() => {
-       pegarTopServicos();
+       chamarFuncoes();
      }, []);
 
     return (

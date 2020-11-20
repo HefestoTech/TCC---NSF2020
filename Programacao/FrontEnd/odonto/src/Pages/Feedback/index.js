@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Menu from '../../Components/Menu';
 import Rodape from '../../Components/Footer'
 import './feed.css';
@@ -70,12 +70,24 @@ export default function Feedback(props) {
             
     }
 
-         const irParaTelaDeVerAgendamentos = () => {
+     
+    
+    const irParaTelaDeVerAgendamentos = () => {
                history.push({
                    pathname:"/consultacliente",
                    state:responseCompleto
             });
         }
+
+         const verSeLogouNoSistema = () => {
+           if (responseCompleto === undefined)
+             history.push({ pathname: "/login" });
+         };
+        
+
+         useEffect(() => {
+           verSeLogouNoSistema();
+         }, []);
 
 
     

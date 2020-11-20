@@ -4,7 +4,7 @@ import Footer from "../../../Components/Footer"
 import OdontoApi from "../../../Services/OdontoApi"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Loading from "../../../Components/Loading"
 
 const api = new OdontoApi();
@@ -38,8 +38,21 @@ export default function NotaMedia (props) {
         }
     }
 
-     useEffect(() => {
-       notaMediaDosFuncionario();
+      const verSeLogouNoSistema = () => {
+        if (responseCompleto === undefined)
+          history.push({ pathname: "/login" });
+      };
+
+      const chamarFuncoes = () => {
+        notaMediaDosFuncionario();
+        verSeLogouNoSistema();
+      }
+
+    const history = useHistory();
+
+
+      useEffect(() => {
+       chamarFuncoes();
      }, []);
 
     return(

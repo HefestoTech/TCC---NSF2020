@@ -95,10 +95,21 @@ export default function ConsultarCliente(props) {
         }
     }
 
+     const verSeLogouNoSistema = () => {
+        if (responseCompleto === undefined)
+          history.push({ pathname: "/login" });
+      };
+
+      const pegarFuncoes = () => {
+        verSeLogouNoSistema();
+        pegarConsultasClienteClick();
+      }
+
+
 
 
    useEffect(() => {
-    pegarConsultasClienteClick();
+    pegarFuncoes();
   }, [])
 
     return (
@@ -158,7 +169,7 @@ export default function ConsultarCliente(props) {
           </div>
 
           <div className="btAgend">
-                  <Link to="/agendarconsultacliente"><button className="btnCadr form-control"><h5>Cadastrar nova Consulta</h5></button></Link>
+                  <Link to={{pathname:"/agendarconsultacliente", state:responseCompleto}}><button className="btnCadr form-control"><h5>Cadastrar nova Consulta</h5></button></Link>
           </div>
 
           <div className="BodyCons">
