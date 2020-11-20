@@ -121,8 +121,9 @@
 }
 .clinica{
   background-image: url(../../Assets/Fotos/1one.png);
-  height:100%;
+  height:25vh;
   background-repeat: no-repeat;
+  background-size: 31vh;
  
 }
 
@@ -139,8 +140,10 @@
 
 .clareamento{
   background-image: url(../../Assets/Fotos/2two.jpg);
-  height: 100%;
-  background-repeat: no-repeat;
+height: 25vh;
+background-repeat: no-repeat;
+background-size: 31vh;
+
   
 }
 
@@ -152,8 +155,10 @@
 
 .proteses{
   background-image: url(../../Assets/Fotos/4four.png);
-  height: 25vh;
-  background-repeat: no-repeat;
+height: 25vh;
+background-repeat: no-repeat;
+background-size: 31vh;
+
 
 }
 
@@ -164,8 +169,10 @@
 
 .implante{
   background-image: url(../../Assets/Fotos/5five.png);
-  height: 100%;
-  background-repeat: no-repeat;
+height: 25vh;
+background-repeat: no-repeat;
+background-size: 31vh;
+
 }
 
 .implante:active + .onclink{
