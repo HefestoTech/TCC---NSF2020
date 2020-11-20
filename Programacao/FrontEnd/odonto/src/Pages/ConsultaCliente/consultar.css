@@ -13,7 +13,7 @@
     align-items: center;
     max-width: 100vw;
     min-height: calc(68vh - 15px);
-    justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 .backVoltar{
@@ -56,11 +56,43 @@
     height: 4vh;
     margin-left: 150px;
     margin-top: 6px;
-    margin-bottom: 4px;
+    margin-bottom: 4px;    
 }
 
-.BoxForms{
+.btAgend{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    margin-top: 20px;
+}
+
+            .btnCadr{
+                display: flex;
+                justify-content: center;
+                width: 25vw;
+                height: 9vh;
+                font-weight: bold;
+                color: #4a9df7;
+                border-color: #61a4ec;
+                border-width: 3px;
+                border-radius: 10px;
+            }
+
+            .btnCadr:hover{
+                background-color: #61a4ec;
+                color: white;
+                border-color: white;
+                border-radius: 10px;
+            }
+
+            .btnCadr h5{
+                margin-top: 5px;
+            }
+
+.BoxForms{
+    display: flex;    
 }
 
         .geralCons{

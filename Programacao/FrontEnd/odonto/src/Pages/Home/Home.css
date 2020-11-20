@@ -181,7 +181,6 @@
   display: flex;
   align-items: center;
   margin-top: 15vh;
-  
   width: 100%;
   height: 50vh;
   display: flex;
@@ -189,30 +188,69 @@
   
 }
 
-    .quadradoRight{
+.quadradoRight{
+  display: flex;
+  flex-direction: column;
   background-color:  rgb(62, 73, 82);
   height: 40vh;
   width: 20vw;
   margin-left: 10vh;
   border-radius: 5px;
 }
-    .rightMini{
+
+      .Tt1An{
+        width: 20vw;
+        height: 10vh;
+        background-color: rgb(36, 198, 219);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      
+      .Tt2An{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20vw;
+        height: 20vh;
+      }
+
+            .price1{
+              width: 15vw;
+              height: 15vh;
+              background-color: chartreuse;
+            }
+
+
+
+.rightMini{
+  display: flex;
+  align-items: center;
   background-color:rgb(31, 175, 194);
+  width: 50vh;
   height: 30vh;
-  width:20vh ;
-  border-radius: 5px;
-  margin-top: 0px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
+
+      
+      .Tt3An{
+        width: 20vw;
+        height: 20vh;
+        background-color: rgb(133, 213, 216);
+        margin-left: 20px;
+      }
+
 
 .AnuciosTwo{
   display: flex;
+  flex-direction: column;
   align-items: center;
   height: 50vh;
   width: 100%;
   display: flex;
   flex-direction:row-reverse;
-  color: white;
-  
+  color: white; 
 }
 
    .quadradoLeft{
@@ -221,15 +259,46 @@
      width: 20vw;
      border-radius: 5px;
      margin-right:10vh ;
-
    }
+
+        .Tt4An{
+          width: 20vw;
+          height: 10vh;
+          background-color: rgb(36, 198, 219);
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+
+        .Tt5An{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20vw;
+          height: 20vh;
+        }
+
+            .price2{                
+              width: 15vw;
+              height: 15vh;
+              background-color: chartreuse;
+              }
 
    .LeftMini{
-     background-color:rgb(31, 175, 194) ;
+     display: flex;
+     align-items: center;
+     background-color:rgb(31, 175, 194);
+     width: 50vh;
      height: 30vh;
-     width:20vh ;
-     border-radius: 5px;
+     border-bottom-left-radius: 5px;
+     border-top-left-radius: 5px;
    }
+
+        .Tt6An{
+          width: 20vw;
+          height: 20vh;
+          background-color: rgb(133, 213, 216);
+          margin-left: 20px;
+        }
 
 /*Nosso contato*/
 .Nossocontato{

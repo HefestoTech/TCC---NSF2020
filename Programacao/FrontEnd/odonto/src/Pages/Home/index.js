@@ -94,21 +94,29 @@ export default function App() {
      
     <div class="Anucios">
         <div class="quadradoRight">
-            <div className></div>
-            <div></div>
-      </div>
-        <div class="rightMini">
-          
-      </div>   
-  </div>
-       <div class="AnuciosTwo">
-          <div class="quadradoLeft">
-            
+            <div className="Tt1An"></div>
+            <div className="Tt2An">
+              <div className="price1"></div>
+            </div>
         </div>
-          <div class="LeftMini">
-          
-      </div>   
- </div>
+
+        <div class="rightMini">
+            <div className="Tt3An"></div>
+        </div>   
+    </div>
+
+    <div class="AnuciosTwo">
+        <div class="quadradoLeft">
+            <div className="Tt4An"></div>
+            <div className="Tt5An">
+              <div className="price2"></div>
+            </div>
+        </div>
+
+        <div class="LeftMini">
+            <div className="Tt6An"></div>
+        </div>   
+    </div>
          
       <div class="Nossocontato">
         <div class="NossocontatoTwo">

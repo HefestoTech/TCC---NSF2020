@@ -157,6 +157,10 @@ export default function ConsultarCliente(props) {
             </div>
           </div>
 
+          <div className="btAgend">
+                  <Link to="/agendarconsultacliente"><button className="btnCadr form-control"><h5>Cadastrar nova Consulta</h5></button></Link>
+          </div>
+
           <div className="BodyCons">
             {situacaoMostrar === "Agendados" && agendados !== undefined && (
               <div>
