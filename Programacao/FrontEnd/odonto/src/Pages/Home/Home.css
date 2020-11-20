@@ -73,23 +73,41 @@
       }
 /*Carrossel*/
 
-.starHome{
-
-  background-color: rgb(46, 143, 223);
-  height: 60vh;
-  width: 100%;
-
-}
-
 .starHomeONEE{
-  background-color:#2e8fdf;
-  height: 60vh;
-  width: 100%;
+  background-color:#ffff;
+  height: 55vh;
   display: flex;
-  flex-direction: row-reverse;
-
+  background-repeat: no-repeat;
+  justify-content: space-between;
 }
 
+.imgdentista{
+  width: 60%;
+ 
+}
+
+
+
+.pDoCarrossel{
+  color:rgb(46, 143, 223) ;
+  font-weight: 500;
+  font-size: 25px;
+  padding-left: 20vh;
+  padding-top: 5vh;
+}
+
+.starHomeTWOO{
+  display: flex;
+  justify-content: space-between;
+  height: 55vh;
+  background-color: white;
+  background-repeat: no-repeat;
+  flex-direction: row-reverse;
+}
+
+.imgdenteee{
+  width: 50%;
+}
 /*Imgs na div central*/
 .divimg{
   display: flex;
@@ -99,10 +117,11 @@
   font-weight: 400;
   color: rgb(68, 68, 68);
   margin-left: 5vh;
+  height: 25vh;
 }
 .clinica{
   background-image: url(../../Assets/Fotos/1one.png);
-  height:25vh;
+  height:100%;
   background-repeat: no-repeat;
  
 }
@@ -119,8 +138,8 @@
 }
 
 .clareamento{
-  background-image: url(../../Assets/Fotos/2two.png);
-  height: 25vh;
+  background-image: url(../../Assets/Fotos/2two.jpg);
+  height: 100%;
   background-repeat: no-repeat;
   
 }
@@ -145,7 +164,7 @@
 
 .implante{
   background-image: url(../../Assets/Fotos/5five.png);
-  height: 25vh;
+  height: 100%;
   background-repeat: no-repeat;
 }
 

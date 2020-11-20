@@ -9,6 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import OneImg from '../../Assets/Fotos/1one.png'
 import Dentista from '../../Assets/Fotos/dentistaONE.jpg'
+import Dentee from '../../Assets/Fotos/denteONE.jpg'
 
 
 const responsive = {
@@ -51,10 +52,19 @@ export default function App() {
           </div>
       </div>
       <div>
-        <Carousel  responsive={responsive} class="carrosselll">
-          <div className="starHomeONEE"><img src={Dentista} /></div>
-          <div  className="starHome">home</div>
-          <div  className="starHome">Item 3</div>
+        <Carousel  responsive={responsive}> 
+          <div className="starHomeONEE">
+            <p class="pDoCarrossel">Texto a ser colocado</p>
+            <img src={Dentista} class="imgdentista" />
+          </div>
+          
+          <div  className="starHomeTWOO"> 
+            <img src={Dentee} class="imgdenteee"/>
+            <p class="pDoCarrossel">Texto a ser colocado</p>
+        </div>
+          
+          <div  className="starHome"> <p class="pDoCarrossel">Preenchimento de conteúdo</p>
+        </div>
         </Carousel>
   </div> 
 
@@ -136,7 +146,7 @@ export default function App() {
                 <div class="g3">
                     <div class="l1">Links Úteis</div>
                     <div class="l"><Link class="linkOneOne"to='/Devapp' >Aplicativo móvel em desenvolvimento</Link></div>
-                    <div class="l">Ajuda</div>
+                    <div class="l"><Link class="linkOneOne"to='/'>Referências</Link></div>
                     
                 </div>
 
