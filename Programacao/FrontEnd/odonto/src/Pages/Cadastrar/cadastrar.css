@@ -13,31 +13,21 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 200vh;
+    height: 185vh;
 }
 
 .bck{
     background-image: url("../../Assets/Wallpapers/dental.jpg");
 }
 
-.logohome{
-    margin-bottom: 15px;
-    color: rgb(32, 71, 107);
-    font-weight: bolder;
-}
 
 .bodyCad{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    height: 180vh;
+    width: 85vw;
+    height: 170vh;
     background-color: white;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 15px;
-    border-color: #09425a;
+    border-radius: 30px;
 }
 
 
@@ -45,10 +35,27 @@ body{
             display: flex;
             flex-direction: row;
             align-items: center;
+            width: 75vw;
+            height: 15vh;
+            margin-left: 35px;
+        }
+
+        .IconBackCad{
+            display: flex;
+            align-items: center;
             justify-content: center;
-            width: 70vw;
-            height: 20vh;
-            margin-top: 15px;
+            width: 5.5vw;
+            height: 11.7vh;
+            color: white;
+            background-color: #007bff;
+            margin-left: 20px;
+            border-radius: 50%;
+            border-width: 10px;
+        }
+
+        .IconBackCad:hover{
+            color: #007bff;
+            background-color: white;
         }
 
                 .Tt1cad{
@@ -58,7 +65,7 @@ body{
                     width: 25vw;
                     height: 10vh;
                     font-weight: bold;
-                    margin-left: 30px;
+                    margin-left: 240px;
                 }
 
 
@@ -72,18 +79,23 @@ body{
         .FormPers{
             display: flex;
             flex-direction: column;
-            width: 70vw;
-            height: 140vh;
+            width: 75vw;
+            height: 90vh;
+            background-color: rgb(103, 182, 170);
+            border-radius: 10px;
+            margin-left: 35px;
+            margin-top: 10px;
         }
 
                 .Tt2Cad{
                     display: flex;
                     flex-direction: column;
                     margin-top: 40px;
+                    margin-left: 25px;
                 }
 
                 .obr{
-                    color: rgb(167, 59, 59);
+                    color: rgb(151, 35, 35);
                 }
 
 
@@ -92,6 +104,7 @@ body{
                     width: 70vw;
                     height: 12vh;
                     margin-top: 50px;
+                    margin-left: 25px;
                 }
 
                         .formName{
@@ -142,19 +155,42 @@ body{
                     display: flex;
                     width: 70vw;
                     height: 12vh;
-                    margin-top: 50px;
-
+                    margin-top: 50px;        
+                    margin-left: 25px;            
                 }
-
-
-                        .formCPF{
+                
+                
+                        .formPhone input{
                             width: 12vw;
                         }
 
+                        .formCPF{
+                            width: 12vw;
+                            margin-left: 40px;
+                        }
+                        
+                        .formCity{
+                            width: 12vw;
+                            margin-left: 55px;
+                        }
+
+                        .formState{
+                            width: 10vw;
+                            margin-left: 45px;
+                        }
+
+                        
+
+                .line3{
+                    display: flex;
+                    width: 70vw;
+                    height: 12vh;
+                    margin-top: 50px;
+                    margin-left: 25px;
+                }
+
                         .formCEP{
                             width: 10vw;
-                            margin-left: 40px;
-
                         }
 
                         .formLograd{
@@ -164,54 +200,41 @@ body{
 
                         .formNum{
                             width: 6vw;
-                            margin-left: 30px;
+                            margin-left: 70px;
 
                         }
-
-                .line3{
-                    display: flex;
-                    width: 70vw;
-                    height: 12vh;
-                    margin-top: 50px;
-                }
 
                         .formComple{
                             width: 10vw;
-                        }
-
-                        .formCity{
-                            margin-left: 70px;
-                        }
-
-                        .formState{
-                            width: 10vw;
-                            margin-left: 25px;
+                            margin-left: 40px;
                         }
 
 
 
-                .line4{
-                    display: flex;
-                    width: 70vw;
-                    height: 12vh;
-                    margin-top: 50px;
-                }
-
-                    .formPhone input{
-                        width: 12vw;
-                    }
+                    
+.BoxReg{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 75vw;
+    margin-left: 35px;
+}
 
         .FormRegist{
             display: flex;
             flex-direction: column;
-            width: 70vw;
-            height: 70vh;
+            width: 50vw;
+            height: 50vh;            
+            background-color: rgb(103, 182, 170);
+            margin-top: 20px;
+            border-radius: 10px;
         }
 
 
         .TtReg1{
-            color: rgb(46, 143, 223);
-
+            color: rgb(0, 0, 0);
+            margin-left: 25px;
+            margin-top: 15px;
         }
 
 
@@ -221,6 +244,7 @@ body{
                     width: 70vw;
                     height: 12vh;
                     margin-top: 20px;
+                    margin-left: 25px;
                 }
 
         
@@ -236,6 +260,7 @@ body{
                     width: 70vw;
                     height: 12vh;
                     margin-top: 50px;
+                    margin-left: 25px;
                 }
 
 
@@ -244,26 +269,32 @@ body{
                         }
 
 
-                .line7{
+                .linebt{
                     display: flex;
-                    justify-content: flex-end;
-                }
-
-                .line7 .btn{
-                    display: inline;
-                    flex-direction: row;
-                    justify-content: center;
                     align-items: center;
-                    width: 13vw;
-                    padding-top: 13px;
-                    margin-right: 10px;
+                    justify-content: flex-end;
+                    width: 25vw;
+                    height: 10vh;
                 }
 
-                .imgconf{
-                    width: 30px;
-                    height: 25px;
-                    margin: 2px;
-                }
+                        .ButConf{
+                            margin-right: 0px;
+                        }
+
+                        .linebt .btn{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            width: 15vw;
+                            padding-top: 13px;
+                            margin-right: 0px;
+                        }
+
+                        .imgconf{
+                            width: 30px;
+                            height: 25px;
+                        }
 
 .fa-eye-slash{
     font-size: 24px;

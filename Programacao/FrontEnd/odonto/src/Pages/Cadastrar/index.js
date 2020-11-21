@@ -125,12 +125,13 @@ const odontoApi = new OdontoApi();
         <div className="ContCad bck">
             <ToastContainer/>
 
-           
-            <Link to="/" ><h1 className="logohome">ODONTO</h1></Link>
             <div className="bodyCad shadow-lg p-3 mb-5 bg-white rounded">
 
                 <div className="lineTt1">
+                    <Link to="/" >
+                        <i class=" IconBackCad fas fa-chevron-circle-left"/></Link>
                     <div className="Tt1cad">
+
                         <h1>Crie seu perfil</h1><img src={DenteWorld} className="imgteeth" />
                     </div>
                 </div>
@@ -143,145 +144,143 @@ const odontoApi = new OdontoApi();
                         <h5 className="obr">Os campos com(*)são obrigatórios</h5>
                     </div>
 
-                    <div className="line1">
-                        <div className="formName">
-                            <h5>Nome Completo*</h5>
-                            <input type="text" class="form-control"  placeholder="Fulano de Tal" 
-                            value={nome}
-                            onChange={e => setNome(e.target.value)}
-                            />
-                        </div>
+                        <div className="line1">
+                                <div className="formName">
+                                    <h5>Nome Completo*</h5>
+                                    <input type="text" class="form-control"  placeholder="Fulano de Tal" 
+                                    value={nome}
+                                    onChange={e => setNome(e.target.value)}
+                                    />
+                                </div>
 
-                        <div className="formSexo">
-                            <h5>Selecione seu Sexo*</h5>
-                            <div className="radios custom-control custom-radio custom-control-inline">
-                                
-                                <input type="radio" name="sexo"
-                                value={sexo}
-                                onChange={e => setSexo(e.target.checked ?"M":null)}
-                                /> <h5>Masculino</h5>
+                                <div className="formSexo">
+                                    <h5>Selecione seu Sexo*</h5>
+                                    <div className="radios custom-control custom-radio custom-control-inline">
+                                        
+                                        <input type="radio" name="sexo"
+                                        value={sexo}
+                                        onChange={e => setSexo(e.target.checked ?"M":null)}
+                                        /> <h5>Masculino</h5>
 
 
-                                <input type="radio" name="sexo"  className="fem" 
-                                value={sexo}
-                                onChange={e => setSexo(e.target.checked ?"F":null)}
-                                /> <h5>Feminino</h5>
-                                
-                            </div>
-                        </div>
+                                        <input type="radio" name="sexo"  className="fem" 
+                                        value={sexo}
+                                        onChange={e => setSexo(e.target.checked ?"F":null)}
+                                        /> <h5>Feminino</h5>
+                                        
+                                    </div>
+                                </div>
 
-                        <div className="formNasc">
-                            <h5>Data de Nascimento*</h5>
-                            <input type="date" className="form-control" 
-                            value={dataNascimento}
-                            onChange={e => setDataNascimento(e.target.value)}
-                            />
-                        </div>
+                                <div className="formNasc">
+                                    <h5>Data de Nascimento*</h5>
+                                    <input type="date" className="form-control" 
+                                    value={dataNascimento}
+                                    onChange={e => setDataNascimento(e.target.value)}
+                                    />
+                                </div>
 
                     </div>
 
                     <div className="line2">
-                        <div className="formCPF">
-                            <h5>CPF*</h5>
-                            <InputMask mask="999.999.999-99" type="text" className=" form-control" placeholder="000.000.000-0" 
-                            value={Cpf}
-                            onChange={e => setCpf(e.target.value)}
-                            />
-                        </div>
-                        
+                            <div className="formPhone">
+                                <h5>Telefone para contato*</h5>
+                                <InputMask mask="(99) 99999-9999" type="text" className="form-control" placeholder="(xx) 99999-5555" 
+                                value={telefone}
+                                onChange={e => setTelefone(e.target.value)}
+                                />
+                            </div>
 
-                        <div className="formCEP">
-                            <h5>CEP*</h5>
-                            <InputMask mask="99999-999" onChange={(e) => pegarInformacoesApartirDoCep(e.target.value)} type="text" className="form-control"  placeholder="12345-678" />
-                        </div>
+                            <div className="formCPF">
+                                <h5>CPF*</h5>
+                                <InputMask mask="999.999.999-99" type="text" className=" form-control" placeholder="000.000.000-0" 
+                                value={Cpf}
+                                onChange={e => setCpf(e.target.value)}
+                                />
+                            </div>
+                                                
 
-                        <div className="formLograd">
-                            <h5>Logradouro*</h5>
-                            <input value={logradouro} readOnly type="text" className="form-control" placeholder="R. Fulandia das Águas"/>
-                        </div>
+                            <div className="formState">
+                                <h5>Estado*</h5>
+                                <input value={estado} readOnly type="text" className="form-control" placeholder="São Paulo" />
+                                
+                            </div>
 
-                       
-
-                        
-
-                        <div className="formNum">
-                            <h5>Nº*</h5>
-                            <input value={numeroResidencial} type="number" className="form-control" placeholder="Ex:12" 
-                            onChange={e => setNumeroResidencial(e.target.value)}
-                            />
-                        </div>
+                            <div className="formCity">
+                                <h5>Cidade*</h5>
+                                <input value={cidade} readOnly type="text" className="form-control" placeholder="São Paulo" />
+                            </div>
                     </div>
 
                     <div className="line3">
-                        <div className="formComple">
-                            <h5>Complemento</h5>
-                            <input value={complemento} type="text" className="form-control" placeholder="Apt.30" 
-                            value={complemento}
-                            onChange={e => setComplemento(e.target.value)}
-                            />
-                        </div>
-
-                        <div className="formCity">
-                            <h5>Cidade*</h5>
-                            <input value={cidade} readOnly type="text" className="form-control" placeholder="São Paulo" />
-                        </div>
-
-                        <div className="formState">
-                            <h5>Estado*</h5>
-                            <input value={estado} readOnly type="text" className="form-control" placeholder="São Paulo" />
+                            <div className="formCEP">
+                                <h5>CEP*</h5>
+                                <InputMask mask="99999-999" onChange={(e) => pegarInformacoesApartirDoCep(e.target.value)} type="text" className="form-control"  placeholder="12345-678" />
+                            </div>
                             
-                        </div>
+                            <div className="formLograd">
+                                <h5>Logradouro*</h5>
+                                <input value={logradouro} readOnly type="text" className="form-control" placeholder="R. Fulandia das Águas"/>
+                            </div>
 
-                    </div>
+                            <div className="formNum">
+                                <h5>Nº*</h5>
+                                <input value={numeroResidencial} type="number" className="form-control" placeholder="Ex:12" 
+                                onChange={e => setNumeroResidencial(e.target.value)}
+                                />
+                            </div>
 
-                    <div className="line4">
-                        <div className="formPhone">
-                            <h5>Telefone para contato*</h5>
-                            <InputMask mask="(99) 99999-9999" type="text" className="form-control" placeholder="(xx) 99999-5555" 
-                            value={telefone}
-                            onChange={e => setTelefone(e.target.value)}
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="FormRegist">
-                    <div className="TtReg1">
-                        <h3>Crie uma conta</h3>
-                    </div>
-
-                    <div className="line5">
-                       <div className="formEmail">
-                            <h5>Crie um e-mail</h5>
-                            <input type="text" className="form-control" placeholder="Fulano123@example.com" 
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            />
-                       </div>
-                    </div>
-
-                    <div className="line6">
-                        <div className="formPassw">
-                            <h5>Crie uma senha</h5>
-                            <input onChange={e => setSenha1(e.target.value)} type={mostrarSenha} className="form-control" placeholder="******" />
-                        </div>
-
-                        <div className="formConfiPassw">
-                            <h5>Confirme sua senha</h5>
-                            <input onChange={e => setSenha2(e.target.value)}  type={mostrarSenha} className=" form-control" placeholder="******" />
-                        </div>
-
-                       <i onClick={mudarMostrarSenha} class="olho1 far fa-eye-slash"></i>
-                    </div>
-
-                    <div className="line7"> 
-                        <div className="ButConf ">
-                            <button onClick={cadastrarClick} className="btn btn-primary"> 
-                                <h5>Confirmar <img src={SetaDir} className="imgconf"/></h5>
-                            </button>
-                        </div>
+                            <div className="formComple">
+                                <h5>Complemento</h5>
+                                <input value={complemento} type="text" className="form-control" placeholder="Apt.30" 
+                                value={complemento}
+                                onChange={e => setComplemento(e.target.value)}
+                                />
+                            </div>
+                            
                     </div>
                 </div>
+
+                <div className="BoxReg">
+                    <div className="FormRegist">
+                        <div className="TtReg1">
+                            <h3>Crie uma conta</h3>
+                        </div>
+
+                        <div className="line5">
+                        <div className="formEmail">
+                                <h5>Crie um e-mail</h5>
+                                <input type="text" className="form-control" placeholder="Fulano123@example.com" 
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                />
+                        </div>
+                        </div>
+
+                        <div className="line6">
+                            <div className="formPassw">
+                                <h5>Crie uma senha</h5>
+                                <input onChange={e => setSenha1(e.target.value)} type={mostrarSenha} className="form-control" placeholder="******" />
+                            </div>
+
+                            <div className="formConfiPassw">
+                                <h5>Confirme sua senha</h5>
+                                <input onChange={e => setSenha2(e.target.value)}  type={mostrarSenha} className=" form-control" placeholder="******" />
+                            </div>
+
+                        <i onClick={mudarMostrarSenha} class="olho1 far fa-eye-slash"></i>
+                        </div>                    
+                    </div>
+
+                    
+                        <div className="linebt"> 
+                                <div className="ButConf ">
+                                    <button onClick={cadastrarClick} className="btn btn-primary"> 
+                                        <h5>Confirmar <img src={SetaDir} className="imgconf"/></h5>
+                                    </button>
+                                </div>
+                        </div>
+                </div>
+
 
             </div>
              

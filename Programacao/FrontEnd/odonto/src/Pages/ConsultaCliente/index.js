@@ -128,13 +128,14 @@ export default function ConsultarCliente(props) {
           <div className="Tt1Cons">
             
             <div className="backVoltar">
-            <Link to={{
-                  pathname:"/menu/cliente",
-                  state: responseCompleto
-                  }} >
-                 <i class=" back22 fas fa-chevron-circle-left"></i>
-             </Link>
+                <Link to={{
+                      pathname:"/menu/cliente",
+                      state: responseCompleto
+                      }} >
+                    <i class=" back22 fas fa-chevron-circle-left"></i>
+                </Link>
              </div>
+
              <h3 className="display-23">Todos Agendamentos</h3>
             <div className="ButtTitleConsulta btn-group" role="group">
               <button
