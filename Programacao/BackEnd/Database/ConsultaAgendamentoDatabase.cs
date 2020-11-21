@@ -46,7 +46,7 @@ namespace BackEnd.Database
             
             //Pega somente pelo horário (porque o usuario pode passar só o horário, sem uma data)
             else if(data.Hour != 0)
-                listaDeConsultas = listaDeConsultas.Where(x => x.DtInclusao.Value.Hour == data.Hour && x.DtInclusao.Value.Minute == data.Minute).ToList();
+                listaDeConsultas = listaDeConsultas.Where(x => x.DtConsulta.Hour == data.Hour && x.DtConsulta.Minute == data.Minute).ToList();
             
             //Pega somente pela data(porque o usuario pode passar só a data, sem horário)
             else if(data.Year != 0001)
