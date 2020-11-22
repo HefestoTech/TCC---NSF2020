@@ -11,6 +11,11 @@ ackground-color:white;
     align-items: center;
 }
 
+.backVoltarTwo{
+   
+    width:80vw;
+}
+
 .starDiv{
     display: flex;
     justify-content: space-between;
