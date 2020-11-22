@@ -200,6 +200,14 @@ export default function VerAgendaFunc(props){
 
         <div className="bodyVerAgendadosFunc">
           <div className="AgenOne">
+            <div className="backVoltarTwo">
+              <Link to={{
+                  pathname:"/menu/funcionario",
+                  state: responseCompleto
+                  }} >
+                 <i class=" back22 fas fa-chevron-circle-left"></i>
+             </Link>
+            </div>
             <h1 className="hOndeAgen">Informarções da Consulta</h1>
             <h3 className="hTwoAgen">Todos os Agendamentos</h3>
           </div>

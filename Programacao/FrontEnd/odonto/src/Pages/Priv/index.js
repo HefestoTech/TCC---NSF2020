@@ -12,7 +12,9 @@ export default function Privacidade() {
         
         
         <div className ="fontetotal">
-        <Menu></Menu>
+         <div className="logo">
+                <Link to= "/"><h1>ODONTO</h1> </Link>
+            </div>
           <div className="btntermodeuso"> <Link to = '/Term'><button type="button" class="btn btn-outline-info">Termos de Uso</button></Link></div>
           <div className="fundoTwo">
           <h2 className="titulopriv">Política Privacidade da Odonto</h2>

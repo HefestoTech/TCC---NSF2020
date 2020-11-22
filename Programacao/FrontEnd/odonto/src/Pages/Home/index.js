@@ -53,6 +53,8 @@ export default function App() {
       </div>
       <div>
         <Carousel  responsive={responsive}> 
+          <div className="starHome"> <p class="pDoCarrossel">Preenchimento de conteúdo</p>
+        </div>
           <div className="starHomeONEE">
             <p class="pDoCarrossel">Texto a ser colocado</p>
             <img src={Dentista} class="imgdentista" />
@@ -62,9 +64,7 @@ export default function App() {
             <img src={Dentee} class="imgdenteee"/>
             <p class="pDoCarrossel">Texto a ser colocado</p>
         </div>
-          
-          <div  className="starHome"> <p class="pDoCarrossel">Preenchimento de conteúdo</p>
-        </div>
+
         </Carousel>
   </div> 
 
