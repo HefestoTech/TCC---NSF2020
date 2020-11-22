@@ -90,7 +90,9 @@ export default function ConsultarCliente(props) {
              
         }catch (e) {
        
-            toast.error(e.response.data.erro);
+          setMostrarLoading(false);
+            
+          toast.error(e.response.data.erro);
 
         }
     }
@@ -422,7 +424,7 @@ export default function ConsultarCliente(props) {
                           </div>
 
                           <p className="totalPorMesAgendar totMesColor">
-                            ( {x.parcelas}X de R${x.totalPorMes} )
+                            {x.parcelas}X de R${x.totalPorMes} 
                           </p>
                         </div>
 
@@ -559,7 +561,7 @@ export default function ConsultarCliente(props) {
                           </div>
 
                           <p className="totalPorMesAgendar totMesColor">
-                            ( {x.parcelas}X de R${x.totalPorMes} )
+                            {x.parcelas}X de R${x.totalPorMes}
                           </p>
                         </div>
 
@@ -602,7 +604,7 @@ export default function ConsultarCliente(props) {
                         {x.nota !== null && (
                           <div className="linePag3">
                             <h6>
-                              Você ja avaliou está consulta.{" "}
+                              Você ja avaliou essa consulta.{" "}
                               <i class="fas fa-check"></i>
                             </h6>
                           </div>
@@ -721,7 +723,7 @@ export default function ConsultarCliente(props) {
                             </div>
 
                             <p className="totalPorMesAgendar totMesColor">
-                              ( {x.parcelas}X de R${x.totalPorMes} )
+                              {x.parcelas}X de R${x.totalPorMes}
                             </p>
                           </div>
 

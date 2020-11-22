@@ -18,7 +18,7 @@ export default function Remarcar(props){
     
     const [responseCompleto, setResponseCompleto] = useState(props.location.state.responseCompleto);
     const [horario, setHorario] = useState("08:00");
-    const [data, setData] = useState("01/01/0001");
+    const [data, setData] = useState(null);
     const [idAgendamento, setIdAgendamento] = useState(props.location.state.idAgendamento);
     const [mostrarSpin, setMostrarSpin] = useState(false);
 
@@ -42,9 +42,17 @@ export default function Remarcar(props){
     const remarcarClick = async () => {  
         try {
 
+        setMostrarSpin(true);
 
-            setMostrarSpin(true)
-            
+        if(data === null){
+            setMostrarSpin(false);
+            toast.error("A data é obrigatória");
+        }
+        else if(horario === null){
+            setMostrarSpin(false);
+            toast.error("A hora é obrigatória");   
+        }
+        else{
             const dataFinal = transformarEmDataComMinutos();
 
             const request = {
@@ -73,6 +81,8 @@ export default function Remarcar(props){
               pathname: "/VerAgendaFunc",
               state: responseCompleto,
               });
+
+        }
             
         }} catch (e) {
             setMostrarSpin(false);

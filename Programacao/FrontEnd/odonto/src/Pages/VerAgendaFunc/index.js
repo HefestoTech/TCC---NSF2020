@@ -38,16 +38,14 @@ export default function VerAgendaFunc(props){
 
      const cancelarConsultaClick = async (idConsulta) => {
        try {
-         setMostrarLoading(true)
-
+  
          api.CancelarConsulta(idConsulta);
 
          filtrar();
 
-         setMostrarLoading(false);
-
-         toast.success("A consulta foi cancelada com sucesso");
+         toast.success("A consulta foi cancelada com sucesso.");
        } catch (e) {
+         
          setMostrarLoading(false);
 
          toast.error(e.response.data.erro);
@@ -87,6 +85,7 @@ export default function VerAgendaFunc(props){
         const horarioCompleto = transformarEmDataComMinutos();
             
         const resp = await api.PegarConsultasFuncionario(nomeCliente, servicoFiltro, nomeProfissional, horarioCompleto, situacao)
+        
         setFiltrado(resp);
            
         setMostrarLoading(false)
