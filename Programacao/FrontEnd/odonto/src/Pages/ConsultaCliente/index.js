@@ -272,7 +272,7 @@ export default function ConsultarCliente(props) {
                           </div>
 
                           <p className="totalPorMesAgendar totMesColor">
-                            ( {x.parcelas}X de R${x.totalPorMes} )
+                            {x.parcelas}X de R${x.totalPorMes}
                           </p>
                         </div>
 

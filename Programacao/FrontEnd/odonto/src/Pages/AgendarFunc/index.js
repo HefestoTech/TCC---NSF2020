@@ -7,6 +7,7 @@ import { Link, useHistory } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loading from "../../Components/Loading"
 
 const odontoApi = new OdontoApi();
 
@@ -15,6 +16,8 @@ export default function AgendarConsultaCliente (props) {
     const [responseCompleto, setResponseCompleto] = useState(
       props.location.state
     );
+
+    const [mostrarLoading, setMostrarLoading] = useState(false);
 
     const [idFuncionario, setIdFuncionario] = useState(0);
     const [date, setDate] = useState(null);
@@ -38,7 +41,11 @@ export default function AgendarConsultaCliente (props) {
     };
 
      const valorParceladoClick = async (parcela) => {
-       
+          
+          if(parcela == 0) 
+             toast.error("A parcela não pode ser 0");
+          
+          else{
           setParcelas(parcela);
 
           const tot = await pegarValorDaConsulta(idServico, formpagm, parcela);
@@ -48,6 +55,8 @@ export default function AgendarConsultaCliente (props) {
           if (isNaN(x)) x = "Erro";
 
           setValorParcelado(x);
+
+          }
      }; 
 
     const agendarClick = async () => {
@@ -59,6 +68,9 @@ export default function AgendarConsultaCliente (props) {
           toast.error("A hora é obrigatória");
           return false;
         } else {
+
+          setMostrarLoading(true);
+
           const resp = await odontoApi.AgendarConsultaPorFuncionario({
             "IdFuncionario": idFuncionario,
             "IdServico": idServico,
@@ -71,13 +83,15 @@ export default function AgendarConsultaCliente (props) {
             "ValorTotal": total,
           });
 
+          setMostrarLoading(false);
+
           toast.success("Consulta agendada com sucesso");
         }
       } catch (e) {
+
+        setMostrarLoading(false);
         toast.error(e.response.data.erro);
         
-        console.log(e.response.data)
-        console.log("Meu errooooo")
       }
     };
 
@@ -149,6 +163,10 @@ export default function AgendarConsultaCliente (props) {
     return(
         <div className="ContAgendarF backgr">
             <ToastContainer/>
+
+            {mostrarLoading === true && 
+              <Loading/>
+            }
             
             <div className="BodyF shadow-lg p-3 mb-5 bg-white rounded">
                 <div className="TtAgendF">
@@ -245,7 +263,7 @@ export default function AgendarConsultaCliente (props) {
                                    value={"R$" + desconto}
                                    />
 
-                                  <p className="totalPorMesAgendarF">( {parcelas}X de R${valorParcelado} )</p>
+                                  <p className="totalPorMesAgendarF"> {parcelas}X de R${valorParcelado} </p>
                                 </div>
 
                                 <div className="formSubF">
