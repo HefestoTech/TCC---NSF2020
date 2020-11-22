@@ -1,5 +1,5 @@
 .fundoAgen{
-ackground-color:white;
+    background-color:white;
 }
 
 
@@ -11,9 +11,9 @@ ackground-color:white;
     align-items: center;
 }
 
-.backVoltarTwo{
-   
-    width:80vw;
+.backVoltarTwo {
+
+    width: 80vw;
 }
 
 .starDiv{
