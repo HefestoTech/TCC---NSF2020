@@ -100,7 +100,8 @@ export default function Feedback(props) {
                 <Loading/>
             </div>
             }
-        <Menu></Menu>
+        
+         <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}/>
            
             <div class= "divmon">
             <div class = "margOne">

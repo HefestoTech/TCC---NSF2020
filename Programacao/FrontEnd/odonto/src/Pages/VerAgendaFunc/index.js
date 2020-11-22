@@ -133,7 +133,7 @@ export default function VerAgendaFunc(props){
          setMostrarFeedbackCliente(true);
          setNota(notaDaConsulta);
           if(comentarioDaConsulta == null || comentarioDaConsulta == "")
-            setComentario("O cliente não comentou a consulta");
+            setComentario("*(O cliente não comentou sobre a consulta)");
           else  
             setComentario(comentarioDaConsulta);
     }
@@ -190,7 +190,13 @@ export default function VerAgendaFunc(props){
           </div>
         )}
         <ToastContainer />
-        <Menu></Menu>
+
+        <Menu
+          nome={responseCompleto.nome.substr(
+            0,
+            responseCompleto.nome.indexOf(" ")
+          )}
+        />
 
         <div className="bodyVerAgendadosFunc">
           <div className="AgenOne">
@@ -335,7 +341,16 @@ export default function VerAgendaFunc(props){
                   </div>
 
                   <div className="lineForm4">
-                    {x.situacao == "Agendado" && x.situacao == "Não Compareceu" && (
+                    {x.situacao == "Agendado" && (
+                      <button
+                        onClick={() => IrParaTelaDeRemarcar(x.idConsulta)}
+                        className="buttonnn btn btn-primary"
+                      >
+                        Remarcar
+                      </button>
+                    )}
+
+                    {x.situacao == "Não Compareceu" && (
                       <button
                         onClick={() => IrParaTelaDeRemarcar(x.idConsulta)}
                         className="buttonnn btn btn-primary"
@@ -346,9 +361,7 @@ export default function VerAgendaFunc(props){
 
                     {x.nota != null && (
                       <button
-                        onClick={() =>
-                          mostrarFeedback(x.nota, x.comentario)
-                        }
+                        onClick={() => mostrarFeedback(x.nota, x.comentario)}
                         className="bt1 btn btn-danger"
                       >
                         Ver Feedback do Cliente
@@ -356,7 +369,9 @@ export default function VerAgendaFunc(props){
                     )}
 
                     {x.nota == null && x.situacao == "Concluido" && (
-                      <div><h4>O Cliente ainda não avaliou a consulta.</h4></div>
+                      <div>
+                        <h4>O Cliente ainda não avaliou a consulta.</h4>
+                      </div>
                     )}
                   </div>
                 </div>

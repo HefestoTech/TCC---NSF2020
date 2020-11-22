@@ -12,7 +12,7 @@ export default function Menu(props){
         <div>
             <div className="HeadMC">
                 <div className="LogoMC"><h1>Odonto</h1></div>
-                <div className="User"> <img src={User} /> <h5>Seja bem-vindo</h5> </div>
+                <div className="User"> <img src={User} /> <h5>Olá {props.nome}</h5> </div>
                 <div className="Logout"><Link to="/"><img src={Logout} /></Link></div>
                 {props.children}
             </div>

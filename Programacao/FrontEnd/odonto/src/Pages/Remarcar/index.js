@@ -120,9 +120,7 @@ export default function Remarcar(props){
                           </div>    
             }
 
-            <Menu>
-               
-            </Menu>
+            <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}/>
            
             <div className="bodyre">
                 <div className="boxre">

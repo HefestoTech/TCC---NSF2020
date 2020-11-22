@@ -123,7 +123,7 @@ export default function ConsultarCliente(props) {
         <div className="ContCons">
           <ToastContainer />
 
-          <Menu></Menu>
+          <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}/>
 
           <div className="Tt1Cons">
             

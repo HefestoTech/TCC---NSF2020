@@ -64,7 +64,8 @@ export default function NotaMedia (props) {
           <Loading/>
         </div>
         }
-        <Menu/>
+         <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}/>
+         
          <div className="boryCompletoRelatorio">
           <div className="voltarRelatorio">
             <p><Link to={{

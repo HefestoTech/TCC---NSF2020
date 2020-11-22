@@ -45,7 +45,7 @@ import './menucli.css'
           <div className="HeadMC">
 
             <div className="LogoMC"><h1>Odonto</h1></div>
-            <div className="User"> <img src={User} /> <h5>Seja bem-vindo</h5> </div>
+            <div className="User"> <img src={User} /> <h5>Seja bem-vindo {responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}</h5> </div>
             <div className="Logout"><Link to="/"><img src={Logout} /></Link></div>
 
 

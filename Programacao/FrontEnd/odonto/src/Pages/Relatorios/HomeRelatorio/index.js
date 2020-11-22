@@ -23,7 +23,8 @@ export default function HomeRelatorio (props) {
     
     return (
       <>
-        <Menu />
+        <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}/>
+        
         <div className="containerHomeRelatorio">
     
           <div className="homeRelatarioVoltar voltarRelatorio">

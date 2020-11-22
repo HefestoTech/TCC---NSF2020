@@ -48,7 +48,7 @@ export default function MenuFuncionario(props) {
  
   return (
     <div className="ContFunc">
-      <Menu></Menu>
+       <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}/>
 
           <div className="BodyMF">
                 <div className="Tt1MF">
