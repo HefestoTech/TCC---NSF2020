@@ -34,23 +34,21 @@ export default function AgendarConsultaCliente (props) {
     };
 
     const valorParceladoClick = async (parcela) => {
-      
-        console.log(parcela);
-      
-        const tot = await pegarValorDaConsulta(idServico, formpagm);
-
-        console.log(tot);
-
-        console.log(total);
-      
-        let x = (tot / parcela).toFixed(2);
-        
-        console.log(x);
-        
-        setValorParcelado(x);
 
         setParcelas(parcela);
+      
+        const tot = await pegarValorDaConsulta(idServico, formpagm, parcela);
+
+        let x = (tot / parcela).toFixed(2);
+
+        if(isNaN(x))
+           x = "Erro";  
+        
+        setValorParcelado(x);
     } 
+
+
+    
 
    
     const agendarClick = async() => {
@@ -114,14 +112,14 @@ export default function AgendarConsultaCliente (props) {
     }
 
 
-    const pegarValorDaConsulta  = async (id, formaDePagamento) => {
+    const pegarValorDaConsulta  = async (id, formaDePagamento, parcela) => {
         try {
 
             setIdServico(id);
                 
             setFormpagm(formaDePagamento)
 
-            const resp = await odontoApi.PegarValorDaConsulta(id, formaDePagamento, parcelas); 
+            const resp = await odontoApi.PegarValorDaConsulta(id, formaDePagamento, parcela); 
 
             setSubtotal(resp.subtotal);
             setDesconto(resp.desconto);
@@ -201,7 +199,7 @@ export default function AgendarConsultaCliente (props) {
                                         <div className="lineAgend3">
                                             <div className="formServ">
                                                 <h5>Selecione um serviço:</h5>
-                                                <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm)} className="form-control" >
+                                                <select onChange={(e) => pegarValorDaConsulta(Number(e.target.value), formpagm, parcelas)} className="form-control" >
                                                     <option value="0"></option>
                                                     {servico.map(x => <option value={x.idServico}>{x.nomeServico}</option> )}                 
                                                 </select>
@@ -227,7 +225,7 @@ export default function AgendarConsultaCliente (props) {
                                             <h5>Selecione a forma de Pagamento:</h5>
                                             <div className="radPag  custom-radio custom-control-inline">
                                                 
-                                                <select onChange={(e) => pegarValorDaConsulta(idServico, e.target.value)} className="form-control">
+                                                <select onChange={(e) => pegarValorDaConsulta(idServico, e.target.value, parcelas)} className="form-control">
                                                     <option value="Dinheiro">Dinheiro</option>
                                                     <option value="Cartão">Cartão</option>
                                                 </select>
