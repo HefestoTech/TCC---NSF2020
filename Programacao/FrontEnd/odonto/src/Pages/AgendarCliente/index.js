@@ -37,6 +37,10 @@ export default function AgendarConsultaCliente (props) {
 
     const valorParceladoClick = async (parcela) => {
 
+      if(parcela == 0) 
+       toast.error("A parcela não pode ser 0");
+      
+      else{
         setParcelas(parcela);
       
         const tot = await pegarValorDaConsulta(idServico, formpagm, parcela);
@@ -47,6 +51,7 @@ export default function AgendarConsultaCliente (props) {
            x = "Erro";  
         
         setValorParcelado(x);
+      }
     } 
 
 
