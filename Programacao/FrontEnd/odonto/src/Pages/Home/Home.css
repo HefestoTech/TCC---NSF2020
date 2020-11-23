@@ -317,7 +317,7 @@ background-size: 31vh;
           width: 25vw;
           height: 10vh;
           margin-top: 4vh;
-          background-color: red;
+          background-color:  rgb(62, 73, 82);
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
           align-items: center;
@@ -378,7 +378,7 @@ background-size: 31vh;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    background-color:red;
+    background-color:rgb(31, 148, 194);
     width: 80vh;
     height: 30vh;
     border-bottom-left-radius: 5px;
@@ -391,8 +391,7 @@ background-size: 31vh;
         width: 70vh;
         height: 80%;
         margin-right: 20px;
-        background-color: rgb(0, 255, 213);
-        
+
         }
 
 /*Nosso contato*/
