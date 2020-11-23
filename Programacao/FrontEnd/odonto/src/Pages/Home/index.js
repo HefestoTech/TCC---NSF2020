@@ -95,15 +95,20 @@ export default function App() {
      
     <div class="Anucios">
         <div class="quadradoRight">
-            <div className="Tt1An"><p>Titulo</p></div>
+            <div className="Tt1An">
+            <p class="pHomee22">Limpeza</p>
+            </div>
             <div className="Tt2An">
-              <div className="price1">Preço</div>
-
+            <p className ="precoHome1">R$</p>
+            <p className ="precoHome2">140,00</p>
             </div>
         </div>
 
         <div class="rightMini">
-            <div className="Tt3An">Texto</div>
+            <div className="Tt3An">
+            <p className="pHome3">O que é a limpeza dentária?</p>
+            <p class="pHome4">Na limpeza da superfície dentária, o que inclui toda a região exposta dos dentes. Assim, há a remoção efetiva da potencial placa bacteriana, que quando não é eliminada, pode evoluir para problemas mais sérios como o tártaro, a gengivite.</p>
+            </div>
         </div>   
     </div>
 

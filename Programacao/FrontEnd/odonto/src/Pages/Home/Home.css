@@ -223,7 +223,7 @@ background-size: 31vh;
   display: flex;
   flex-direction: column;
   background-color:  rgb(62, 73, 82);
-  height: 45vh;
+  height: 40vh;
   width: 25vw;
   margin-left: 10vh;
   border-radius: 5px;
@@ -232,14 +232,17 @@ background-size: 31vh;
       .Tt1An{
         width: 25vw;
         height: 10vh;
+        margin-top: 4vh;
         background-color: rgb(62, 73, 82);
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         padding-left: 3vh;
-        padding-top: 2vh;
+        
       }
-      .imglogozin{
-        padding-left: 3vh;
+      .pHomee22{
+        color: whitesmoke;
+        font-size: 30px;
+        font-weight: 500;
       }
 
       
@@ -249,37 +252,31 @@ background-size: 31vh;
         align-items: center;
         width: 20vw;
         height: 20vh;
-        padding-left: 5vw;
-        margin-top: 1vh;
+        margin-left:35px;
+        
       }
 
-            .price1{
-              
-              padding-left: 5vw;
-              width: 20vw;
-              height: 20vh;
-              background-color: rgb(62, 73, 82);
-            }
-
+    
 
  
 .rightMini{
   display: flex;
-  align-items: center;
-  margin-top: 3vh;
-  background-color:rgb(31, 148, 194);
-  width: 70vh;
-  height: 20vh;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color:rgb(31, 148, 194);
+    width: 80vh;
+    height: 30vh;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
       
       .Tt3An{
-        width: 60vh;
-        height: 15vh;
-        background-color: rgb(133, 213, 216);
-        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 70vh;
+        height: 80%;
+        margin-right: 20px;
       }
 
       .imglogozin{
