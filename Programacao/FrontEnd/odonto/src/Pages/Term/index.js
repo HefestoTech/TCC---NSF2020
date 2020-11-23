@@ -7,7 +7,9 @@ export default function TermoDeUso() {
     return(
        
         <div>
-            <Menu></Menu>
+            <div className="logo">
+                <Link to= "/"><h1>ODONTO</h1> </Link>
+            </div>
             <div className="btnprivacidade"> <Link to= '/Priv'><button type="button" class="btn btn-outline-info">Politica de Privacidade</button></Link>
         </div>
             <div className="slA">

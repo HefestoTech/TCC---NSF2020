@@ -16,11 +16,6 @@ export default function SobreDev() {
             <div class="faceOne">
             <a href=" https://www.facebook.com/Hefesto-Tech-103795028212808"> <img src = {Facebook}/></a>
                 </div>
-                
-                <div class="ttOne">
-                    <a href=""><img src ={TT}/> </a>
-                </div>
-                
                 <div class="rOne">
                    <a href="https://www.instagram.com/hefesto.tec/"><img src = {Instagram}/></a>
                 </div>
