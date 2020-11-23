@@ -73,22 +73,22 @@ export default function App() {
     <div className="divimg">
         <div>
           <a class="clinica btn btn-info" role="button"></a>
-          <div className="onclink"><p class="pCLinica">A odonto clínicas tras a melhor qualidade e melhor atendimento para que o seu sorriso brilhe muito mais!</p></div>
+          <div className="onclink">A odonto clínicas tras a melhor qualidade e melhor atendimento para que o seu sorriso brilhe muito mais!</div>
     </div>
   
       <div>
         <a class=" clareamento btn btn-info" role="button"></a>
-        <div className="onclink">Texto sobre a img</div>
+        <div className="onclink">Clareamento dental é um tratamento utilizado para tornar os dentes mais brancos.</div>
     </div>
     
       <div>
         <a class=" proteses btn btn-info" role="button"></a>
-        <div className="onclink">Texto sobre a img</div>
+        <div className="onclink">A prótese dentária é a arte dental, ciência que lida com a reposição de tecidos bucais e dentes perdidos, visando restaurar e manter a forma, função, aparência e saúde bucal.</div>
     </div>
     
       <div>
         <a class=" implante btn btn-info" role="button"></a>
-        <div className="onclink">Texto sobre a img</div>
+        <div className="onclink">Implante é um ramo da Odontologia que se destina ao tratamento do edentulismo com reabilitações protéticas suportadas ou retidas por implantes dentários. Com a Implantodontia são feitas desde reabilitações unitárias ate grandes reabilitações totais fixas ou removíveis.</div>
     </div>
   </div>
 
@@ -138,9 +138,9 @@ export default function App() {
       <div class="Nossocontato">
         <div class="NossocontatoTwo">
           <div class="armazenar">
-              <p>Telefone</p>
-              <p>e-mail</p>
-              <p> mais alguma</p>
+              <p class="teleHome">Telefone: <h6 className="h2Homeeee">(11) 8744-3312 - (11) 99933-2459</h6></p>
+              <p class="teleHome">Endereço: <h6 className="h2Homeeee">Rua Prudente Correia - 1410 / Jd.Europa</h6></p>
+              <p class="teleHome">E-mail:<h6 className="h2Homeeee">odontoclinicasp@gmail.com/odonto2020@gmail.com</h6></p>
           </div>
         </div>
       </div>

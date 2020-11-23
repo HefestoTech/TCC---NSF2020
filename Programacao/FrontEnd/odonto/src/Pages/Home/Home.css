@@ -116,7 +116,6 @@
 /*Imgs na div central*/
 .divimg{
   display: flex;
-  
   justify-content: space-around;
   margin-top: 10vh;
   font-size: 17px;
@@ -124,7 +123,7 @@
   color: rgb(68, 68, 68);
   margin-left: 5vh;
   height: 35vh;
-  
+  font-weight: 400;
 }
 .clinica{
   background-image: url(../../Assets/Fotos/1one.png);
@@ -171,8 +170,8 @@ background-size: 31vh;
 }
 
 .clareamento:active + .onclink{
-  height: 10vh;
-  width: 20vh;
+  height: 30vh;
+  width: 15vw;
   
 }
 
@@ -186,8 +185,9 @@ background-size: 31vh;
 }
 
 .proteses:active + .onclink{
-  height:10vh;
-  width: 20vh;
+  height: 30vh;
+  width: 15vw;
+  
 }
 
 .implante{
@@ -200,8 +200,9 @@ background-size: 31vh;
 
 .implante:active + .onclink{
 
-  height: 10vh;
-  width: 20vh;
+  height: 40vh;
+  width: 15vw;
+  
 }
 
 
@@ -403,15 +404,15 @@ background-size: 31vh;
   width: 100%;
   display: flex;
   justify-content: center;
-  
-
-
+  margin-top: 10vh;
+ 
 }
   
    .NossocontatoTwo{
+     
      background-color: rgb(6, 190, 175);
      height: 40vh;
-     width: 60%;
+     width: 50%;
      display: flex;
      border-radius: 5px;
      justify-content: center;
@@ -419,14 +420,29 @@ background-size: 31vh;
    }
    
   .armazenar{
-    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2vw;
+    flex-direction: column;
+    margin-top: 18px;
     background-color: white;
-    width: 97%;
+    width: 93%;
+    height: 35vh;
     margin-bottom: 2vh;
     border-radius: 5px;
   }
 
-
+  .teleHome{
+    
+    color: rgb(6, 190, 175);
+    font-weight: 500;
+    font-size: 22px;
+  }
+.h2Homeeee{
+  color:rgb(31, 148, 194) ;
+  font-size: 17px;
+  font-weight: 500;
+}
   /*Rodapé*/
   .logo2{
     color: rgb(214, 214, 214);
