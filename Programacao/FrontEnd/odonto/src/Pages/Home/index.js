@@ -107,7 +107,7 @@ export default function App() {
         <div class="rightMini">
             <div className="Tt3An">
             <p className="pHome3">O que é a limpeza dentária?</p>
-            <p class="pHome4">Na limpeza da superfície dentária, o que inclui toda a região exposta dos dentes. Assim, há a remoção efetiva da potencial placa bacteriana, que quando não é eliminada, pode evoluir para problemas mais sérios como o tártaro, a gengivite.</p>
+            <p class="pHome5">Na limpeza da superfície dentária, o que inclui toda a região exposta dos dentes. Assim, há a remoção efetiva da potencial placa bacteriana, que quando não é eliminada, pode evoluir para problemas mais sérios como o tártaro, a gengivite.</p>
             </div>
         </div>   
     </div>
