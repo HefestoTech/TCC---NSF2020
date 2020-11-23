@@ -48,13 +48,13 @@ export default function App() {
           </div>
 
           <div className="buttns">
-          <Link to="/login"> <button className="bt1Login btn btn-danger" > Logar</button></Link> 
-          <Link to="/cadastrar"> <button className="bt2login btn btn-danger">Cadastrar</button></Link>
+          <Link to="/login"> <button className="bt2Login btn btn-danger" > Logar</button></Link> 
+          <Link to="/cadastrar"> <button className="bt2Login btn btn-danger">Cadastrar</button></Link>
           </div>
       </div>
       <div>
         <Carousel  responsive={responsive}> 
-          <div className="starHome"> <p class="pDoCarrossel">Preenchimento de conteúdo</p>
+          <div className="starHome"> <p class="pDoCarrossel1">Preenchimento de conteúdo</p>
         </div>
           <div className="starHomeONEE">
             <p class="pDoCarrossel">Texto a ser colocado</p>
@@ -88,7 +88,7 @@ export default function App() {
     
       <div>
         <a class=" implante btn btn-info" role="button"></a>
-        <div className="onclink">Implante é um ramo da Odontologia que se destina ao tratamento do edentulismo com reabilitações protéticas suportadas ou retidas por implantes dentários. Com a Implantodontia são feitas desde reabilitações unitárias ate grandes reabilitações totais fixas ou removíveis.</div>
+        <div className="onclink">Implante é um ramo da Odontologia que se destina ao tratamento do edentulismo com reabilitações protéticas suportadas ou retidas por implantes dentários. Com o implante são feitas desde reabilitações unitárias ate reparações totais fixas ou removíveis.</div>
     </div>
   </div>
 

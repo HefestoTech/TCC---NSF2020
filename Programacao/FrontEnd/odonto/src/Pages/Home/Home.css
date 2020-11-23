@@ -13,7 +13,7 @@
 .Cont{
   display: flex;
   flex-direction: column;
-  min-height:250vh;
+  min-height:290vh;
   max-width: 100vw;
 }
 
@@ -61,7 +61,7 @@
       
     }             
 
-      .bt1Login{
+      .bt2Login{
         
         font-style: normal;
         background: rgb(235, 42, 42);
@@ -70,12 +70,7 @@
       }
 
 
-      .bt2{
-        
-        background: rgb(235, 42, 42);
-        font-style: normal;
-       
-      }
+      
 /*Carrossel*/
 
 .starHomeONEE{
@@ -84,6 +79,18 @@
   display: flex;
   background-repeat: no-repeat;
   justify-content: space-between;
+}
+.starHome{
+  background-image: linear-gradient(to right,rgb(46, 143, 223),rgb(224, 234, 243));
+  height:100%;
+}
+
+.pDoCarrossel1{
+  color:white;
+  font-weight: 500;
+  font-size: 25px;
+  padding-left: 20vh;
+  padding-top: 5vh;
 }
 
 .imgdentista{
@@ -94,7 +101,7 @@
 
 
 .pDoCarrossel{
-  color:rgb(46, 143, 223) ;
+  color:rgb(46, 143, 223);
   font-weight: 500;
   font-size: 25px;
   padding-left: 20vh;
@@ -200,7 +207,7 @@ background-size: 31vh;
 
 .implante:active + .onclink{
 
-  height: 40vh;
+  height: 50vh;
   width: 15vw;
   
 }
@@ -411,11 +418,12 @@ background-size: 31vh;
    .NossocontatoTwo{
      
      background-color: rgb(6, 190, 175);
-     height: 40vh;
+     height: 50vh;
      width: 50%;
      display: flex;
      border-radius: 5px;
      justify-content: center;
+     
      
    }
    
@@ -427,7 +435,7 @@ background-size: 31vh;
     margin-top: 18px;
     background-color: white;
     width: 93%;
-    height: 35vh;
+    height: 45vh;
     margin-bottom: 2vh;
     border-radius: 5px;
   }
