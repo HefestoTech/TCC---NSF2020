@@ -57,13 +57,25 @@ export default function App() {
           <div className="starHome"> <p class="pDoCarrossel1">Preenchimento de conteúdo</p>
         </div>
           <div className="starHomeONEE">
-            <p class="pDoCarrossel">Texto a ser colocado</p>
+            <p class="pDoCarrossel">O importante na área da saúde, além de saber se cuidar 
+            é cuidar do outro, e para isto estamos aqui, para solucionar 
+            seus problemas e ajudá-lo a resolve-los com confiança e 
+            determinação.</p>
             <img src={Dentista} class="imgdentista" />
           </div>
           
           <div  className="starHomeTWOO"> 
             <img src={Dentee} class="imgdenteee"/>
-            <p class="pDoCarrossel">Texto a ser colocado</p>
+            <p class="pDoCarrossel3">A saúde bucal é essêncial pois transmite uma boa higiene, e de tal 
+            forma evita o desenvolvimento de problemas bucais 
+            Confira algumas dicas:
+            <br/>- Eliminar a placa bacteriana por meio de escovação e do uso do fio dental diariamente;
+            <br/>- Limpeza da língua, utilizando um raspador;
+            <br/>- Evitar o consumo excessivo de doces;
+            <br/>- Evitar o uso de dentaduras ou próteses mal ajustadas;
+            <br/>- Evitar o fumo e o consumo de bebidas alcoólicas;
+            <br/>- Ir ao dentista regularmente.
+            </p>
         </div>
 
         </Carousel>
