@@ -13,6 +13,10 @@ import Dentee from '../../Assets/Fotos/denteONE.jpg'
 import Logozin from '../../Assets/Fotos/odonto5.png'
 import LogoD from '../../Assets/Fotos/logod.png'
 import Ribbon from '../../Assets/Fotos/ribbon.svg'
+import Phone from '../../Assets/Fotos/telephone.svg'
+import Zap from '../../Assets/Fotos/whatsapp.svg'
+import Email from '../../Assets/Fotos/mail-inbox-app.svg'
+import Local from '../../Assets/Fotos/pointer.svg'
 
 const responsive = {
   superLargeDesktop: {
@@ -40,7 +44,7 @@ export default function App() {
     <div className="Cont">
       
       <div className="header">
-          <div className="Tt1Logo">
+          <div id="logo" className="Tt1Logo">
             <Link to="/"><h1 className="oogg">Odonto</h1></Link>
           </div>
 
@@ -154,9 +158,35 @@ export default function App() {
       <div class="Nossocontato">
         <div class="NossocontatoTwo">
           <div class="armazenar">
-              <p class="teleHome">Telefone: <h6 className="h2Homeeee">(11) 8744-3312 - (11) 99933-2459</h6></p>
-              <p class="teleHome">Endereço: <h6 className="h2Homeeee">Rua Prudente Correia - 1410 / Jd.Europa</h6></p>
-              <p class="teleHome">E-mail:<h6 className="h2Homeeee">odontoclinicasp@gmail.com/odonto2020@gmail.com</h6></p>
+              <div className="linetele1">
+                <img src={Phone} />
+                <div class="teleHome">Telefone Comercial: 
+                  <h4 className="h2Homeeee">(11) 8744-3312</h4>
+                </div>
+              </div>
+
+              <div className="linetele1">
+                <img src={Zap} />
+                <div className="teleHome">WhatsApp:
+                  <h4 className="h2Homeeee">(11) 99933-2459</h4>
+                </div>
+              </div>
+
+              <div className="linetele1">
+                <img src={Local} />
+                <div class="teleHome">Endereço: 
+                  <h4 className="h2Homeeee">Rua Prudente Correia - 1410 / Jd.Europa</h4>
+                </div>
+              </div>
+
+              <div className="linetele1">
+                <img src={Email} />
+                <div class="teleHome">E-mail:
+                  <h4 className="h2Homeeee">odontoclinicasp@gmail.com/odonto2020@gmail.com</h4>
+                </div>
+              </div>
+
+
           </div>
         </div>
       </div>
@@ -168,7 +198,7 @@ export default function App() {
         <div class="Box">
             <div class="Nav">
                 <div class="logo2">
-                    <Link class="linkOneOne" to = '/'><h1>Odonto</h1></Link>
+                    <a class="linkOneOne"  href='/#logo'><h1>Odonto</h1></a>
                 </div>
                 <div class="g1">
                     <div class="l1">Empresa</div>
@@ -207,10 +237,10 @@ export default function App() {
             <div class="Rod">
                 <div class="in">    
                     
-                    <div class="p"><Link class="linkOne" to = '/Priv/'>Centro de Privacidade</Link></div>
-                    <div class="p"> <Link class="linkOne" to = '/Priv'>Politica de Privacidade</Link></div>
-                    <div class="p"> <Link class="linkOne" to = '/Priv'>Cookies</Link></div>
-                    <div class="p"> <Link class="linkOne" to ='/Term'>Termos de Uso</Link></div>
+                    <div class="p"><a className="linkOne" href= "/Priv#btntermodeuso">Centro de Privacidade</a></div>
+                    <div class="p"> <a className="linkOne" href= "/Priv#btntermodeuso">Politica de Privacidade</a></div>
+                    <div class="p"> <a className="linkOne" href= "/Priv#cookies">Cookies</a></div>
+                    <div class="p"> <a className="linkOne" href='/Term'>Termos de Uso</a></div>
                     
                 </div>
 
