@@ -3,6 +3,8 @@
     padding: 0px;
   }
 
+
+
   *{
     box-sizing: border-box;
   }
@@ -26,6 +28,7 @@
     
     .oogg{
       color: white;
+      margin-left: 7vw;
     }
 
     .Tt1Logo{
@@ -55,21 +58,23 @@
       justify-content: space-evenly;
       height: 15vh;
       margin-left: 50px;
+      
     }             
 
-      .bt1{
-        width: 20vw;
+      .bt1Login{
+        
         font-style: normal;
-        background: #ff0000;
-        box-shadow: 2px 2px 2px #5e1818
+        background: rgb(235, 42, 42);
+        
+        
       }
 
 
       .bt2{
-        width: 15vw;
-        background: #ff0000;
+        
+        background: rgb(235, 42, 42);
         font-style: normal;
-        box-shadow: 2px 2px 2px #5e1818;
+       
       }
 /*Carrossel*/
 
@@ -195,22 +200,28 @@ background-size: 31vh;
   
 }
 
+/*esqueda em cima*/
 .quadradoRight{
   display: flex;
   flex-direction: column;
   background-color:  rgb(62, 73, 82);
-  height: 40vh;
-  width: 20vw;
+  height: 45vh;
+  width: 25vw;
   margin-left: 10vh;
   border-radius: 5px;
 }
 
       .Tt1An{
-        width: 20vw;
+        width: 25vw;
         height: 10vh;
-        background-color: rgb(36, 198, 219);
+        background-color: rgb(62, 73, 82);
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        padding-left: 3vh;
+        padding-top: 2vh;
+      }
+      .imglogozin{
+        padding-left: 3vh;
       }
 
       
@@ -220,32 +231,44 @@ background-size: 31vh;
         align-items: center;
         width: 20vw;
         height: 20vh;
+        padding-left: 5vw;
+        margin-top: 1vh;
       }
 
             .price1{
-              width: 15vw;
-              height: 15vh;
-              background-color: chartreuse;
+              
+              padding-left: 5vw;
+              width: 20vw;
+              height: 20vh;
+              background-color: rgb(62, 73, 82);
             }
 
 
-
+ 
 .rightMini{
   display: flex;
   align-items: center;
-  background-color:rgb(31, 175, 194);
-  width: 50vh;
-  height: 30vh;
+  margin-top: 3vh;
+  background-color:rgb(31, 148, 194);
+  width: 70vh;
+  height: 20vh;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
 
       
       .Tt3An{
-        width: 20vw;
-        height: 20vh;
+        width: 60vh;
+        height: 15vh;
         background-color: rgb(133, 213, 216);
         margin-left: 20px;
+      }
+
+      .imglogozin{
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 3vh;
+        
       }
 
 
@@ -258,53 +281,98 @@ background-size: 31vh;
   display: flex;
   flex-direction:row-reverse;
   color: white; 
+  
 }
-
+/*Direita em baixo*/
    .quadradoLeft{
-     background-color:rgb(62, 73, 82) ;
-     height: 40vh;
-     width: 20vw;
-     border-radius: 5px;
-     margin-right:10vh ;
+    display: flex;
+    flex-direction: column;
+    background-color:  rgb(62, 73, 82);
+    height: 45vh;
+    width: 25vw;
+    margin-right: 10vh;
+    border-radius: 5px;
    }
 
         .Tt4An{
-          width: 20vw;
+          display: flex;
+          justify-content: space-between;
+          
+          width: 25vw;
           height: 10vh;
-          background-color: rgb(36, 198, 219);
+          margin-top: 3vh;
+          background-color: rgb(62, 73, 82);
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
+          align-items: center;
+          
+        }
+
+        .pHomee{
+         padding-left: 2vw;
+         padding-top: 4vh;
+         color: rgb(223, 223, 223);
+         font-size: 25px;
+         font-weight: 600;
+        }
+        
+
+        .imglogozin{
+          padding-left: 2vw;
         }
 
         .Tt5An{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 20vw;
-          height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20vw;
+        height: 20vh;
+        margin-left:35px;
+        margin-top: 4vh;
+        
         }
 
-            .price2{                
-              width: 15vw;
-              height: 15vh;
-              background-color: chartreuse;
-              }
+        .precoHome1{
+          font-size: 23px;
+          color:rgb(29, 167, 221) ;
+        }
+        .precoHome2{
+          font-size: 60px;
+          color:rgb(12, 180, 247) ;
+          font-weight: 600;
+        }
 
+        .pHome3{
+          color: white;
+          font-size: 25px;
+          font-weight: 500;
+
+        }
+
+        .pHome4{
+          color: white;
+          font-size: 17px;
+          font-weight: 450;
+        }
+
+              
    .LeftMini{
-     display: flex;
-     align-items: center;
-     background-color:rgb(31, 175, 194);
-     width: 50vh;
-     height: 30vh;
-     border-bottom-left-radius: 5px;
-     border-top-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 1vh;
+    background-color:rgb(31, 148, 194);
+    width: 80vh;
+    height: 30vh;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
    }
 
         .Tt6An{
-          width: 20vw;
-          height: 20vh;
-          background-color: rgb(133, 213, 216);
-          margin-left: 20px;
+        margin-bottom: 10vh;
+        width: 70vh;
+        height: 15vh;
+        margin-right: 20px;
         }
 
 /*Nosso contato*/

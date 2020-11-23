@@ -10,6 +10,7 @@ import "react-multi-carousel/lib/styles.css";
 import OneImg from '../../Assets/Fotos/1one.png'
 import Dentista from '../../Assets/Fotos/dentistaONE.jpg'
 import Dentee from '../../Assets/Fotos/denteONE.jpg'
+import Logozin from '../../Assets/Fotos/odonto5.png'
 
 
 const responsive = {
@@ -47,8 +48,8 @@ export default function App() {
           </div>
 
           <div className="buttns">
-          <Link to="/login"> <button className="bt1 btn btn-danger " > Logar</button></Link> 
-          <Link to="/cadastrar"> <button className="bt2 btn btn-danger">Cadastrar</button></Link>
+          <Link to="/login"> <button className="bt1Login btn btn-danger" > Logar</button></Link> 
+          <Link to="/cadastrar"> <button className="bt2login btn btn-danger">Cadastrar</button></Link>
           </div>
       </div>
       <div>
@@ -94,27 +95,38 @@ export default function App() {
      
     <div class="Anucios">
         <div class="quadradoRight">
-            <div className="Tt1An"></div>
+            <div className="Tt1An"><p>Titulo</p></div>
             <div className="Tt2An">
-              <div className="price1"></div>
+              <div className="price1">Preço</div>
+
             </div>
         </div>
 
         <div class="rightMini">
-            <div className="Tt3An"></div>
+            <div className="Tt3An">Texto</div>
         </div>   
     </div>
 
     <div class="AnuciosTwo">
         <div class="quadradoLeft">
-            <div className="Tt4An"></div>
-            <div className="Tt5An">
-              <div className="price2"></div>
+            <div className="Tt4An">
+            <p class="pHomee">Em Breve Odonto 
+            Advanced
+            </p>
+              <img src={Logozin} class="imglogozin" />
             </div>
+            <div className="Tt5An">
+              <p className ="precoHome1">R$</p>
+              <p className ="precoHome2">59,90</p>
+              <p className ="precoHome1">/mês</p>
+              </div>
         </div>
 
         <div class="LeftMini">
-            <div className="Tt6An"></div>
+            <div className="Tt6An"> 
+            <p className="pHome3">Plano Advanced</p>
+            <p class="pHome4">O plano odontológico de alta qualidade para você e sua família. Pelo preço de um único tratamento você pode ter um plano odontológico sem limites de utilização nas especialidades cobertas.</p>
+            </div>
         </div>   
     </div>
          
