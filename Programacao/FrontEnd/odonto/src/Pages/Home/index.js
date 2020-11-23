@@ -11,7 +11,8 @@ import OneImg from '../../Assets/Fotos/1one.png'
 import Dentista from '../../Assets/Fotos/dentistaONE.jpg'
 import Dentee from '../../Assets/Fotos/denteONE.jpg'
 import Logozin from '../../Assets/Fotos/odonto5.png'
-
+import LogoD from '../../Assets/Fotos/logod.png'
+import Ribbon from '../../Assets/Fotos/ribbon.svg'
 
 const responsive = {
   superLargeDesktop: {
@@ -43,8 +44,7 @@ export default function App() {
             <Link to="/"><h1 className="oogg">Odonto</h1></Link>
           </div>
 
-          <div className="Tt2Home">
-            <h5>O seu sorriso fica muito mais Lindo perto de nós, Dentistas, cuidando dele.</h5>
+          <div className="Tt2Home">            
           </div>
 
           <div className="buttns">
@@ -54,8 +54,9 @@ export default function App() {
       </div>
       <div>
         <Carousel  responsive={responsive}> 
-          <div className="starHome"> <p class="pDoCarrossel1">Preenchimento de conteúdo</p>
-        </div>
+          <div className="starHome"> <div class="pDoCarrossel1"><h2>O seu sorriso fica muito mais lindo perto de nós, Dentistas, cuidando dele.</h2> <img src={LogoD}/></div>
+          </div>
+
           <div className="starHomeONEE">
             <p class="pDoCarrossel">O importante na área da saúde, além de saber se cuidar 
             é cuidar do outro, e para isto estamos aqui, para solucionar 
@@ -81,6 +82,9 @@ export default function App() {
         </Carousel>
   </div> 
 
+    <div className="ribbon">
+      <h3>Principais serviços prestados pela clínica.</h3> <img src={Ribbon} />
+    </div>
 
     <div className="divimg">
         <div>
