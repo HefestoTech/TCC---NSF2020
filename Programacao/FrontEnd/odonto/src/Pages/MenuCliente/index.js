@@ -7,6 +7,7 @@ import TeethShield from "../../Assets/Fotos/insurance.png"
 import DentistW from "../../Assets/Fotos/dentist2.svg"
 import Rodape from "../../Components/Footer"
 import './menucli.css'
+import Menu from '../../Components/Menu';
 
  export default function MenuCliente(props)
  { 
@@ -42,14 +43,7 @@ import './menucli.css'
        return (
          <div className="ContCli">
 
-          <div className="HeadMC">
-
-            <div className="LogoMC"><h1>Odonto</h1></div>
-            <div className="User"> <img src={User} /> <h5>Seja bem-vindo {responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}</h5> </div>
-            <div className="Logout"><Link to="/"><img src={Logout} /></Link></div>
-
-
-          </div>
+         <Menu nome={responseCompleto.nome.substr(0, responseCompleto.nome.indexOf(" "))}></Menu>
 
           <div className="BodyMC">
                 <div className="Tt1MC">

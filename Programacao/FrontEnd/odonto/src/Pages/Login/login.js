@@ -67,7 +67,7 @@ const api = new OdontoApi();
     }
 
     return(
-        <div>
+        <div className="ContLog">
             
         
 
@@ -77,10 +77,12 @@ const api = new OdontoApi();
             </div>
          }
 
-         <div className="logo">
+           
+          <div className="logo">
                 <Link to= "/"><h1>ODONTO</h1> </Link>
             </div>
-        <div className= "bodyLogin back">
+
+          <div className= "bodyLogin back">
            
            
                 <div className = "card-top">
@@ -124,11 +126,13 @@ const api = new OdontoApi();
 
           <ToastContainer/>
             </div>      
-            <div className="roda">
 
+            <div className="rodap">
+                <h4>Hefesto Tech, 2020 All rights reserved</h4>
             </div>
-            <Rodape/>
+            
         </div>
+        
         
 
     )
