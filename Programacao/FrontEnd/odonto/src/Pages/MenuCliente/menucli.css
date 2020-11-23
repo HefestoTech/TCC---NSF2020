@@ -105,12 +105,12 @@
                     width: 24vw;
                     height: 32vh;
                     position: relative;
-                    right: 680px;
+                    right: 655px;
                 }
 
                 .imgBru img{
-                    width: 30vw;
-                    height: 30vh;                    
+                    width: 33vw;
+                    height: 33vh;                    
                 }
                 
                 .Tt2MC{
@@ -202,8 +202,6 @@
                         .imgDent img{
                             width: 40vw;
                             height: 40vh;
-                            margin-right: 70px;
-                            
                         }
 
                         .Tt3Dent{
