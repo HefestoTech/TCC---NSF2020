@@ -300,7 +300,7 @@ background-size: 31vh;
           
           width: 25vw;
           height: 10vh;
-          margin-top: 3vh;
+          margin-top: 4vh;
           background-color: rgb(62, 73, 82);
           border-top-left-radius: 5px;
           border-top-right-radius: 5px;
@@ -309,11 +309,14 @@ background-size: 31vh;
         }
 
         .pHomee{
+          display: flex;
+          flex-direction: column;
          padding-left: 2vw;
-         padding-top: 4vh;
          color: rgb(223, 223, 223);
          font-size: 25px;
          font-weight: 600;
+         
+         height: 100%;
         }
         
 
@@ -369,10 +372,12 @@ background-size: 31vh;
    }
 
         .Tt6An{
-        margin-bottom: 10vh;
+       display: flex;
+       flex-direction: column;
         width: 70vh;
-        height: 15vh;
+        height: 80%;
         margin-right: 20px;
+        
         }
 
 /*Nosso contato*/
