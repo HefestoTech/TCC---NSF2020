@@ -73,7 +73,7 @@ export default function App() {
     <div className="divimg">
         <div>
           <a class="clinica btn btn-info" role="button"></a>
-          <div className="onclink">Texto sobre a img</div>
+          <div className="onclink"><p class="pCLinica">A odonto clínicas tras a melhor qualidade e melhor atendimento para que o seu sorriso brilhe muito mais!</p></div>
     </div>
   
       <div>

@@ -116,32 +116,50 @@
 /*Imgs na div central*/
 .divimg{
   display: flex;
+  
   justify-content: space-around;
   margin-top: 10vh;
   font-size: 17px;
   font-weight: 400;
   color: rgb(68, 68, 68);
   margin-left: 5vh;
-  height: 25vh;
+  height: 35vh;
+  
 }
 .clinica{
   background-image: url(../../Assets/Fotos/1one.png);
   height:25vh;
   background-repeat: no-repeat;
   background-size: 31vh;
+
+  
+  
  
+}
+.pCLinica{
+  width:15vw;
+  text-align: left;
+  
+  
+
 }
 
 .onclink {
-	height: 0px;
+  width: 15vw;
+  height: 0px;
 	overflow: hidden;
-	transition: height 2.0s;
+  transition: height 2.0s;
+ 
+  
 }
 
 .clinica:active + .onclink {
-  height: 10vh;
-  width: 20vh;
+  height: 30vh;
+  width: 15vw;
+  
+  
 }
+
 
 .clareamento{
   background-image: url(../../Assets/Fotos/2two.jpg);
